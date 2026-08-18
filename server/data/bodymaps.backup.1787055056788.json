@@ -1,7 +1,7 @@
 {
   "male": {
     "bodyProfile": "male",
-    "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/man/133ffef184b2.webp",
+    "imageUrl": "/uploads/bodymap-male.webp",
     "modelUrl": null,
     "labels": [
       {
@@ -111,11 +111,11 @@
       }
     ],
     "labels3d": [],
-    "updatedAt": "2026-08-18T12:10:55.645Z"
+    "updatedAt": "2026-08-18T10:23:48.816Z"
   },
   "female": {
     "bodyProfile": "female",
-    "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/woman/1a3cde32eb20.webp",
+    "imageUrl": "/uploads/bodymap-female.webp",
     "modelUrl": null,
     "labels": [
       {
@@ -230,11 +230,11 @@
       }
     ],
     "labels3d": [],
-    "updatedAt": "2026-08-18T12:10:56.300Z"
+    "updatedAt": "2026-08-18T10:23:49.465Z"
   },
   "child": {
     "bodyProfile": "child",
-    "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/child/aa779347e45b.webp",
+    "imageUrl": "/uploads/bodymap-child.webp",
     "modelUrl": null,
     "labels": [
       {
@@ -344,6 +344,6 @@
       }
     ],
     "labels3d": [],
-    "updatedAt": "2026-08-18T12:10:56.784Z"
+    "updatedAt": "2026-08-18T10:23:49.875Z"
   }
 }
