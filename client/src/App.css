@@ -31,6 +31,75 @@
   color: #fff;
 }
 
+/* Profile picker */
+.profile-picker {
+  max-width: 480px;
+  margin: 2.5rem auto;
+  text-align: center;
+}
+
+.profile-picker .eyebrow {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #7a7686;
+  margin: 0 0 0.3rem;
+}
+
+.profile-picker h2 { margin: 0 0 0.5rem; }
+.profile-picker .section-dek { color: #7a7686; margin-bottom: 1.5rem; }
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.profile-card {
+  border: 1px solid #e2e0e6;
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2d2b55;
+}
+
+.profile-card:hover {
+  border-color: #2d2b55;
+}
+
+.profile-skip {
+  margin-top: 1.25rem;
+  border: none;
+  background: none;
+  color: #7a7686;
+  text-decoration: underline;
+  font-size: 0.85rem;
+}
+
+.profile-switch {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #e7e4f5;
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #2d2b55;
+}
+
+.profile-switch button {
+  border: none;
+  background: none;
+  color: #57534f;
+  font-size: 0.75rem;
+  font-weight: 400;
+  text-decoration: underline;
+}
+
 /* Atlas */
 .atlas {
   display: flex;
@@ -72,6 +141,88 @@
   flex: 1;
 }
 
+.bodymap-panel {
+  background: #fff;
+  border: 1px solid #e2e0e6;
+  border-radius: 10px;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.bodymap-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.bodymap-header h2 {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.bodymap-image {
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.bodymap-admin { margin-top: 1.5rem; }
+.bodymap-admin > .section-dek { color: #7a7686; max-width: 62ch; }
+
+.profile-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin: 1rem 0 1.25rem;
+}
+
+.profile-tabs button {
+  border: 1px solid #d8d6dd;
+  background: #fff;
+  border-radius: 999px;
+  padding: 0.4rem 1rem;
+  font-size: 0.85rem;
+}
+
+.profile-tabs button.active {
+  background: #2d2b55;
+  color: #fff;
+  border-color: #2d2b55;
+}
+
+.bodymap-admin-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.bodymap-admin .preview-wrap {
+  background: #fff;
+  border: 1px solid #e2e0e6;
+  border-radius: 10px;
+  padding: 1.1rem;
+}
+
+.bodymap-admin label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.85rem;
+  color: #4b4855;
+  margin-bottom: 0.75rem;
+}
+
+.organ-marker {
+  width: auto;
+  height: auto;
+  border-radius: 999px;
+  padding: 0.25rem 0.7rem;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  transform: translate(-50%, -50%);
+}
+
 .entry-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
@@ -79,6 +230,7 @@
 }
 
 .entry-card {
+  position: relative;
   border: 1px solid #e2e0e6;
   border-radius: 10px;
   background: #fff;
@@ -87,6 +239,21 @@
   flex-direction: column;
   gap: 0.5rem;
   text-align: left;
+}
+
+.video-badge {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-size: 0.65rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .entry-card img {
@@ -232,6 +399,45 @@
   white-space: pre-wrap;
 }
 
+.rubrics {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.rubric h3 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #7a7686;
+  margin: 0 0 0.3rem;
+}
+
+.rubric p {
+  margin: 0;
+  white-space: pre-wrap;
+  line-height: 1.5;
+}
+
+.drug-tags {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.drug-tags li {
+  background: #e7e4f5;
+  color: #2d2b55;
+  border-radius: 999px;
+  padding: 0.3rem 0.8rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
 /* Admin */
 .admin {
   display: grid;
@@ -260,10 +466,12 @@
 }
 
 .admin-form input,
-.admin-form textarea {
+.admin-form textarea,
+.admin-form select {
   padding: 0.5rem;
   border: 1px solid #d8d6dd;
   border-radius: 6px;
+  background: #fff;
 }
 
 .preview-wrap .hint {
@@ -294,6 +502,48 @@
   background: none;
   color: #c0392b;
   font-size: 0.8rem;
+}
+
+.drug-input-row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.drug-input-row input { flex: 1; }
+
+.drug-input-row button {
+  border: 1px solid #d8d6dd;
+  background: #fff;
+  border-radius: 6px;
+  padding: 0 0.8rem;
+  font-size: 0.85rem;
+}
+
+.drug-list {
+  list-style: none;
+  padding: 0;
+  margin: -0.3rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.drug-list li {
+  background: #e7e4f5;
+  border-radius: 999px;
+  padding: 0.25rem 0.4rem 0.25rem 0.75rem;
+  font-size: 0.82rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.drug-list button {
+  border: none;
+  background: none;
+  color: #57534f;
+  font-size: 0.7rem;
+  cursor: pointer;
 }
 
 .form-actions {

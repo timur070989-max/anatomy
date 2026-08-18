@@ -9,6 +9,7 @@ const UPLOADS_DIR = path.join(__dirname, 'uploads');
 if (!fs.existsSync(UPLOADS_DIR)) fs.mkdirSync(UPLOADS_DIR, { recursive: true });
 
 const MODEL_EXTENSIONS = new Set(['.glb', '.gltf']);
+const VIDEO_EXTENSIONS = new Set(['.mp4', '.webm', '.mov']);
 
 const upload = multer({
   storage: multer.diskStorage({
@@ -18,7 +19,8 @@ const upload = multer({
       cb(null, `${Date.now()}-${Math.random().toString(36).slice(2, 8)}${ext}`);
     },
   }),
-  limits: { fileSize: 60 * 1024 * 1024 },
+  // Global limit covers the largest field (video); image/model are also bounded by fileFilter's type check.
+  limits: { fileSize: 300 * 1024 * 1024 },
   fileFilter: (req, file, cb) => {
     if (file.fieldname === 'image') {
       if (!file.mimetype.startsWith('image/')) return cb(new Error('Only image uploads are allowed for the image field'));
@@ -30,6 +32,12 @@ const upload = multer({
       }
       return cb(null, true);
     }
+    if (file.fieldname === 'video') {
+      if (!VIDEO_EXTENSIONS.has(path.extname(file.originalname).toLowerCase())) {
+        return cb(new Error('Only .mp4, .webm or .mov files are allowed for the video field'));
+      }
+      return cb(null, true);
+    }
     cb(new Error('Unexpected field'));
   },
 });
@@ -37,6 +45,7 @@ const upload = multer({
 const uploadFields = upload.fields([
   { name: 'image', maxCount: 1 },
   { name: 'model', maxCount: 1 },
+  { name: 'video', maxCount: 1 },
 ]);
 
 const app = express();
@@ -46,12 +55,14 @@ app.use('/uploads', express.static(UPLOADS_DIR));
 
 app.get('/', (req, res) => res.json({ ok: true, service: 'anatomy-server' }));
 
+const BODY_PROFILES = new Set(['male', 'female', 'child', 'any']);
+
 app.get('/api/systems', (req, res) => {
-  res.json(store.listSystems());
+  res.json(store.listSystems(req.query.bodyProfile));
 });
 
 app.get('/api/entries', (req, res) => {
-  res.json(store.listEntries(req.query.system));
+  res.json(store.listEntries(req.query.system, req.query.bodyProfile));
 });
 
 app.get('/api/entries/:id', (req, res) => {
@@ -70,25 +81,37 @@ function parseJsonField(value, fieldName) {
 }
 
 app.post('/api/entries', uploadFields, (req, res) => {
-  const { title, system, description, labels, labels3d } = req.body;
-  if (!title || !system) return res.status(400).json({ error: 'title and system are required' });
+  const { title, system, bodyProfile, definition, causes, symptoms, recommendedDrugs, labels, labels3d } = req.body;
+  if (!title || !system) return res.status(400).json({ error: 'title (Нозология) and system (Орган) are required' });
+  if (bodyProfile !== undefined && !BODY_PROFILES.has(bodyProfile)) {
+    return res.status(400).json({ error: 'bodyProfile must be one of male, female, child, any' });
+  }
 
   const imageFile = req.files?.image?.[0];
   const modelFile = req.files?.model?.[0];
+  const videoFile = req.files?.video?.[0];
   const imageUrl = imageFile ? `/uploads/${imageFile.filename}` : req.body.imageUrl || null;
   const modelUrl = modelFile ? `/uploads/${modelFile.filename}` : req.body.modelUrl || null;
+  const videoUrl = videoFile ? `/uploads/${videoFile.filename}` : req.body.videoUrl || null;
 
   const parsedLabels = parseJsonField(labels, 'labels');
   if (!parsedLabels.ok) return res.status(400).json({ error: parsedLabels.error });
   const parsedLabels3d = parseJsonField(labels3d, 'labels3d');
   if (!parsedLabels3d.ok) return res.status(400).json({ error: parsedLabels3d.error });
+  const parsedDrugs = parseJsonField(recommendedDrugs, 'recommendedDrugs');
+  if (!parsedDrugs.ok) return res.status(400).json({ error: parsedDrugs.error });
 
   const entry = store.createEntry({
     title,
     system,
-    description,
+    bodyProfile,
+    definition,
+    causes,
+    symptoms,
+    recommendedDrugs: parsedDrugs.value || [],
     imageUrl,
     modelUrl,
+    videoUrl,
     labels: parsedLabels.value || [],
     labels3d: parsedLabels3d.value || [],
   });
@@ -96,18 +119,27 @@ app.post('/api/entries', uploadFields, (req, res) => {
 });
 
 app.put('/api/entries/:id', uploadFields, (req, res) => {
-  const { title, system, description, labels, labels3d } = req.body;
+  const { title, system, bodyProfile, definition, causes, symptoms, recommendedDrugs, labels, labels3d } = req.body;
+  if (bodyProfile !== undefined && !BODY_PROFILES.has(bodyProfile)) {
+    return res.status(400).json({ error: 'bodyProfile must be one of male, female, child, any' });
+  }
   const data = {};
   if (title !== undefined) data.title = title;
   if (system !== undefined) data.system = system;
-  if (description !== undefined) data.description = description;
+  if (bodyProfile !== undefined) data.bodyProfile = bodyProfile;
+  if (definition !== undefined) data.definition = definition;
+  if (causes !== undefined) data.causes = causes;
+  if (symptoms !== undefined) data.symptoms = symptoms;
 
   const imageFile = req.files?.image?.[0];
   const modelFile = req.files?.model?.[0];
+  const videoFile = req.files?.video?.[0];
   if (imageFile) data.imageUrl = `/uploads/${imageFile.filename}`;
   else if (req.body.imageUrl !== undefined) data.imageUrl = req.body.imageUrl;
   if (modelFile) data.modelUrl = `/uploads/${modelFile.filename}`;
   else if (req.body.modelUrl !== undefined) data.modelUrl = req.body.modelUrl;
+  if (videoFile) data.videoUrl = `/uploads/${videoFile.filename}`;
+  else if (req.body.videoUrl !== undefined) data.videoUrl = req.body.videoUrl;
 
   const parsedLabels = parseJsonField(labels, 'labels');
   if (!parsedLabels.ok) return res.status(400).json({ error: parsedLabels.error });
@@ -115,6 +147,9 @@ app.put('/api/entries/:id', uploadFields, (req, res) => {
   const parsedLabels3d = parseJsonField(labels3d, 'labels3d');
   if (!parsedLabels3d.ok) return res.status(400).json({ error: parsedLabels3d.error });
   if (parsedLabels3d.value !== undefined) data.labels3d = parsedLabels3d.value;
+  const parsedDrugs = parseJsonField(recommendedDrugs, 'recommendedDrugs');
+  if (!parsedDrugs.ok) return res.status(400).json({ error: parsedDrugs.error });
+  if (parsedDrugs.value !== undefined) data.recommendedDrugs = parsedDrugs.value;
 
   const updated = store.updateEntry(req.params.id, data);
   if (!updated) return res.status(404).json({ error: 'Not found' });
@@ -125,6 +160,39 @@ app.delete('/api/entries/:id', (req, res) => {
   const ok = store.deleteEntry(req.params.id);
   if (!ok) return res.status(404).json({ error: 'Not found' });
   res.status(204).end();
+});
+
+const BODY_MAP_PROFILES = new Set(['male', 'female', 'child']);
+
+app.get('/api/bodymaps/:profile', (req, res) => {
+  if (!BODY_MAP_PROFILES.has(req.params.profile)) {
+    return res.status(400).json({ error: 'profile must be one of male, female, child' });
+  }
+  res.json(store.getBodyMap(req.params.profile));
+});
+
+app.put('/api/bodymaps/:profile', uploadFields, (req, res) => {
+  if (!BODY_MAP_PROFILES.has(req.params.profile)) {
+    return res.status(400).json({ error: 'profile must be one of male, female, child' });
+  }
+  const { labels, labels3d } = req.body;
+  const parsedLabels = parseJsonField(labels, 'labels');
+  if (!parsedLabels.ok) return res.status(400).json({ error: parsedLabels.error });
+  const parsedLabels3d = parseJsonField(labels3d, 'labels3d');
+  if (!parsedLabels3d.ok) return res.status(400).json({ error: parsedLabels3d.error });
+
+  const imageFile = req.files?.image?.[0];
+  const modelFile = req.files?.model?.[0];
+  const data = {};
+  if (imageFile) data.imageUrl = `/uploads/${imageFile.filename}`;
+  else if (req.body.imageUrl !== undefined) data.imageUrl = req.body.imageUrl;
+  if (modelFile) data.modelUrl = `/uploads/${modelFile.filename}`;
+  else if (req.body.modelUrl !== undefined) data.modelUrl = req.body.modelUrl;
+  if (parsedLabels.value !== undefined) data.labels = parsedLabels.value;
+  if (parsedLabels3d.value !== undefined) data.labels3d = parsedLabels3d.value;
+
+  const saved = store.saveBodyMap(req.params.profile, data);
+  res.json(saved);
 });
 
 app.use((err, req, res, next) => {

@@ -2,7 +2,13 @@ import { useEffect, useRef, useState } from 'react';
 import { api, resolveImageUrl } from './api';
 import Model3DViewer from './Model3DViewer';
 
-const emptyForm = { title: '', system: '', description: '' };
+const emptyForm = { title: '', system: '', bodyProfile: 'any', definition: '', causes: '', symptoms: '' };
+const BODY_PROFILE_OPTIONS = [
+  { value: 'any', label: 'Универсально (мужчина/женщина/ребёнок)' },
+  { value: 'male', label: 'Мужчина' },
+  { value: 'female', label: 'Женщина' },
+  { value: 'child', label: 'Ребёнок' },
+];
 
 export default function AdminView() {
   const [entries, setEntries] = useState([]);
@@ -14,6 +20,10 @@ export default function AdminView() {
   const [modelFile, setModelFile] = useState(null);
   const [modelPreview, setModelPreview] = useState(null);
   const [labels3d, setLabels3d] = useState([]);
+  const [videoFile, setVideoFile] = useState(null);
+  const [videoPreview, setVideoPreview] = useState(null);
+  const [drugs, setDrugs] = useState([]);
+  const [drugInput, setDrugInput] = useState('');
   const [error, setError] = useState('');
   const [status, setStatus] = useState('');
   const previewRef = useRef(null);
@@ -35,17 +45,32 @@ export default function AdminView() {
     setModelFile(null);
     setModelPreview(null);
     setLabels3d([]);
+    setVideoFile(null);
+    setVideoPreview(null);
+    setDrugs([]);
+    setDrugInput('');
   }
 
   function startEdit(entry) {
     setEditingId(entry.id);
-    setForm({ title: entry.title, system: entry.system, description: entry.description || '' });
+    setForm({
+      title: entry.title,
+      system: entry.system,
+      bodyProfile: entry.bodyProfile || 'any',
+      definition: entry.definition || '',
+      causes: entry.causes || '',
+      symptoms: entry.symptoms || '',
+    });
     setImageFile(null);
     setImagePreview(entry.imageUrl ? resolveImageUrl(entry.imageUrl) : null);
     setLabels(entry.labels || []);
     setModelFile(null);
     setModelPreview(entry.modelUrl ? resolveImageUrl(entry.modelUrl) : null);
     setLabels3d(entry.labels3d || []);
+    setVideoFile(null);
+    setVideoPreview(entry.videoUrl ? resolveImageUrl(entry.videoUrl) : null);
+    setDrugs(entry.recommendedDrugs || []);
+    setDrugInput('');
   }
 
   function onImageChange(e) {
@@ -62,6 +87,13 @@ export default function AdminView() {
     setModelFile(file);
     setModelPreview(URL.createObjectURL(file));
     setLabels3d([]);
+  }
+
+  function onVideoChange(e) {
+    const file = e.target.files[0];
+    if (!file) return;
+    setVideoFile(file);
+    setVideoPreview(URL.createObjectURL(file));
   }
 
   function onPreviewClick(e) {
@@ -88,22 +120,39 @@ export default function AdminView() {
     setLabels3d((prev) => prev.filter((_, idx) => idx !== i));
   }
 
+  function addDrug(e) {
+    e.preventDefault();
+    const name = drugInput.trim();
+    if (!name) return;
+    setDrugs((prev) => [...prev, name]);
+    setDrugInput('');
+  }
+
+  function removeDrug(i) {
+    setDrugs((prev) => prev.filter((_, idx) => idx !== i));
+  }
+
   async function onSubmit(e) {
     e.preventDefault();
     setError('');
     setStatus('');
     if (!form.title || !form.system) {
-      setError('Заполните название и систему');
+      setError('Заполните орган и нозологию (заболевание)');
       return;
     }
     const fd = new FormData();
     fd.append('title', form.title);
     fd.append('system', form.system);
-    fd.append('description', form.description);
+    fd.append('bodyProfile', form.bodyProfile);
+    fd.append('definition', form.definition);
+    fd.append('causes', form.causes);
+    fd.append('symptoms', form.symptoms);
+    fd.append('recommendedDrugs', JSON.stringify(drugs));
     fd.append('labels', JSON.stringify(labels));
     fd.append('labels3d', JSON.stringify(labels3d));
     if (imageFile) fd.append('image', imageFile);
     if (modelFile) fd.append('model', modelFile);
+    if (videoFile) fd.append('video', videoFile);
 
     try {
       if (editingId) {
@@ -139,19 +188,60 @@ export default function AdminView() {
         {status && <p className="status">{status}</p>}
 
         <label>
-          Название
-          <input value={form.title} onChange={(e) => setForm({ ...form, title: e.target.value })} required />
-        </label>
-
-        <label>
-          Система (например: skeletal, muscular, organs)
+          Орган (например: Мозг, Сердце, Лёгкие)
           <input value={form.system} onChange={(e) => setForm({ ...form, system: e.target.value })} required />
         </label>
 
         <label>
-          Описание
-          <textarea value={form.description} onChange={(e) => setForm({ ...form, description: e.target.value })} rows={4} />
+          Нозология (заболевание)
+          <input value={form.title} onChange={(e) => setForm({ ...form, title: e.target.value })} required />
         </label>
+
+        <label>
+          Профиль тела
+          <select value={form.bodyProfile} onChange={(e) => setForm({ ...form, bodyProfile: e.target.value })}>
+            {BODY_PROFILE_OPTIONS.map((opt) => (
+              <option key={opt.value} value={opt.value}>{opt.label}</option>
+            ))}
+          </select>
+        </label>
+
+        <label>
+          Определение
+          <textarea value={form.definition} onChange={(e) => setForm({ ...form, definition: e.target.value })} rows={3} />
+        </label>
+
+        <label>
+          Причины
+          <textarea value={form.causes} onChange={(e) => setForm({ ...form, causes: e.target.value })} rows={3} />
+        </label>
+
+        <label>
+          Симптомы
+          <textarea value={form.symptoms} onChange={(e) => setForm({ ...form, symptoms: e.target.value })} rows={3} />
+        </label>
+
+        <label>
+          Рекомендуемые препараты компании WM
+          <div className="drug-input-row">
+            <input
+              value={drugInput}
+              onChange={(e) => setDrugInput(e.target.value)}
+              onKeyDown={(e) => { if (e.key === 'Enter') addDrug(e); }}
+              placeholder="Название препарата"
+            />
+            <button type="button" onClick={addDrug}>Добавить</button>
+          </div>
+        </label>
+        {drugs.length > 0 && (
+          <ul className="drug-list">
+            {drugs.map((d, i) => (
+              <li key={i}>
+                {d} <button type="button" onClick={() => removeDrug(i)}>удалить</button>
+              </li>
+            ))}
+          </ul>
+        )}
 
         <label>
           Изображение / схема
@@ -202,6 +292,17 @@ export default function AdminView() {
           </div>
         )}
 
+        <label>
+          Видео о патологии (mp4 / webm / mov, в т.ч. рендер 3D-анимации)
+          <input type="file" accept=".mp4,.webm,.mov,video/*" onChange={onVideoChange} />
+        </label>
+
+        {videoPreview && (
+          <div className="preview-wrap">
+            <video src={videoPreview} controls style={{ width: '100%', borderRadius: '8px', display: 'block' }} />
+          </div>
+        )}
+
         <div className="form-actions">
           <button type="submit">{editingId ? 'Сохранить' : 'Добавить'}</button>
           {editingId && <button type="button" onClick={resetForm}>Отмена</button>}
@@ -213,8 +314,9 @@ export default function AdminView() {
         <table>
           <thead>
             <tr>
-              <th>Название</th>
-              <th>Система</th>
+              <th>Нозология</th>
+              <th>Орган</th>
+              <th>Профиль</th>
               <th></th>
             </tr>
           </thead>
@@ -223,6 +325,7 @@ export default function AdminView() {
               <tr key={entry.id}>
                 <td>{entry.title}</td>
                 <td>{entry.system}</td>
+                <td>{BODY_PROFILE_OPTIONS.find((o) => o.value === (entry.bodyProfile || 'any'))?.label.split(' ')[0]}</td>
                 <td className="row-actions">
                   <button onClick={() => startEdit(entry)}>Изменить</button>
                   <button onClick={() => onDelete(entry.id)}>Удалить</button>

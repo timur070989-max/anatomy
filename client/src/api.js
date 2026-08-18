@@ -10,13 +10,24 @@ async function request(path, options = {}) {
   return res.json();
 }
 
+function buildQuery(params) {
+  const usp = new URLSearchParams();
+  Object.entries(params).forEach(([key, value]) => {
+    if (value) usp.set(key, value);
+  });
+  const qs = usp.toString();
+  return qs ? `?${qs}` : '';
+}
+
 export const api = {
-  listSystems: () => request('/api/systems'),
-  listEntries: (system) => request(`/api/entries${system ? `?system=${encodeURIComponent(system)}` : ''}`),
+  listSystems: (bodyProfile) => request(`/api/systems${buildQuery({ bodyProfile })}`),
+  listEntries: (system, bodyProfile) => request(`/api/entries${buildQuery({ system, bodyProfile })}`),
   getEntry: (id) => request(`/api/entries/${id}`),
   createEntry: (formData) => request('/api/entries', { method: 'POST', body: formData }),
   updateEntry: (id, formData) => request(`/api/entries/${id}`, { method: 'PUT', body: formData }),
   deleteEntry: (id) => request(`/api/entries/${id}`, { method: 'DELETE' }),
+  getBodyMap: (profile) => request(`/api/bodymaps/${profile}`),
+  saveBodyMap: (profile, formData) => request(`/api/bodymaps/${profile}`, { method: 'PUT', body: formData }),
 };
 
 export function resolveImageUrl(imageUrl) {

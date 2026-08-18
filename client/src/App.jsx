@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import AtlasView from './AtlasView';
 import AdminView from './AdminView';
+import BodyMapAdmin from './BodyMapAdmin';
 import './App.css';
 
 export default function App() {
@@ -17,9 +18,14 @@ export default function App() {
           <button className={tab === 'admin' ? 'active' : ''} onClick={() => setTab('admin')}>
             Админ
           </button>
+          <button className={tab === 'bodymap' ? 'active' : ''} onClick={() => setTab('bodymap')}>
+            Карта тела
+          </button>
         </nav>
       </header>
-      {tab === 'atlas' ? <AtlasView /> : <AdminView />}
+      {tab === 'atlas' && <AtlasView />}
+      {tab === 'admin' && <AdminView />}
+      {tab === 'bodymap' && <BodyMapAdmin />}
     </div>
   );
 }
