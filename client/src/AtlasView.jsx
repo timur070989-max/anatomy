@@ -73,16 +73,20 @@ export default function AtlasView({ lang = 'ru' }) {
   const bodyMapWrapRef = useRef(null);
   const [hoveredBodyOrgan, setHoveredBodyOrgan] = useState(null);
   const [bodyCursorPos, setBodyCursorPos] = useState(null);
+  const [containerSize, setContainerSize] = useState({ width: 0, height: 0 });
 
   function handleBodyMapPointerMove(e) {
     const container = bodyMapWrapRef.current;
     if (!container || !bodyMap?.labels) return;
 
     const rect = container.getBoundingClientRect();
-    const xPct = ((e.clientX - rect.left) / rect.width) * 100;
-    const yPct = ((e.clientY - rect.top) / rect.height) * 100;
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const xPct = (x / rect.width) * 100;
+    const yPct = (y / rect.height) * 100;
 
-    setBodyCursorPos({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+    setContainerSize({ width: rect.width, height: rect.height });
+    setBodyCursorPos({ x, y, xPct, yPct });
 
     let closest = null;
     let minDist = Infinity;
@@ -295,51 +299,94 @@ export default function AtlasView({ lang = 'ru' }) {
                   }}
                 >
                   <div className="image-with-labels bodymap-image">
-                    <img src={resolveImageUrl(bodyMap.imageUrl)} alt="Карта тела" />
+                    {/* Layer 1: Base Body Silhouette (clean, without internal organs or labels) */}
+                    <img
+                      src={resolveImageUrl(bodyMap.imageUrl)}
+                      alt="Карта тела"
+                      className="bodymap-base-img"
+                    />
 
-                    {/* Show glowing marker ONLY for the specific organ under cursor or currently active filter */}
-                    {(bodyMap.labels || []).map((l, i) => {
-                      const isHovered = hoveredBodyOrgan && hoveredBodyOrgan.organ === l.organ;
-                      const isActive = activeSystem === l.organ;
-
-                      if (!isHovered && !isActive) return null;
-
-                      return (
-                        <button
-                          key={i}
-                          type="button"
-                          className={`organ-marker ${isActive ? 'active' : ''} ${isHovered ? 'hovered' : ''}`}
-                          style={{ left: `${l.x}%`, top: `${l.y}%` }}
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            goToOrgan(l.organ);
-                          }}
-                          aria-label={l.organ}
-                        >
-                          <span className="organ-marker-dot" />
-                          <span className="organ-marker-ring" />
-                          <span className="organ-tooltip">{getTranslatedOrgan(l.organ, lang)}</span>
-                        </button>
-                      );
-                    })}
-
-                    {/* Scanner Live Reticle & Floating HUD Tooltip */}
-                    {hoveredBodyOrgan && bodyCursorPos && (
+                    {/* Layer 2: Interactive Square Bio-Scanner Lens (Only reveals organs inside this square) */}
+                    {bodyCursorPos && containerSize.width > 0 && (
                       <div
-                        className="scanner-live-tooltip"
+                        className={`scanner-lens-square ${hoveredBodyOrgan ? 'organ-detected' : ''}`}
                         style={{
-                          left: `${bodyCursorPos.x + 12}px`,
-                          top: `${bodyCursorPos.y + 12}px`,
+                          left: `${bodyCursorPos.x - 65}px`,
+                          top: `${bodyCursorPos.y - 65}px`,
+                          width: '130px',
+                          height: '130px',
                         }}
                       >
-                        <span className="scanner-dot" />
-                        <span className="scanner-text">{getTranslatedOrgan(hoveredBodyOrgan.organ, lang)}</span>
+                        {/* Internal Organ Anatomy Layer aligned to the lens offset */}
+                        <div
+                          className="scanner-lens-content"
+                          style={{
+                            width: `${containerSize.width}px`,
+                            height: `${containerSize.height}px`,
+                            transform: `translate(${- (bodyCursorPos.x - 65)}px, ${- (bodyCursorPos.y - 65)}px)`,
+                          }}
+                        >
+                          <img
+                            src={resolveImageUrl(bodyMap.imageUrl)}
+                            alt="Анатомический скан"
+                            className="scanner-organ-layer-img"
+                          />
+
+                          {/* Glowing organ hotspot inside the scanner lens */}
+                          {(bodyMap.labels || []).map((l, i) => {
+                            const isHovered = hoveredBodyOrgan && hoveredBodyOrgan.organ === l.organ;
+                            if (!isHovered) return null;
+                            return (
+                              <div
+                                key={i}
+                                className="scanner-organ-hotspot-glow"
+                                style={{ left: `${l.x}%`, top: `${l.y}%` }}
+                              >
+                                <span className="organ-glow-pulse" />
+                                <span className="organ-glow-core" />
+                              </div>
+                            );
+                          })}
+                        </div>
+
+                        {/* Scanner Visual Overlay: Laser line, grid, corner brackets */}
+                        <div className="scanner-laser-sweep" />
+                        <div className="scanner-bracket tl" />
+                        <div className="scanner-bracket tr" />
+                        <div className="scanner-bracket bl" />
+                        <div className="scanner-bracket br" />
+                        <div className="scanner-crosshair" />
+
+                        {/* Live Organ Name HUD attached directly to the scanner box */}
+                        {hoveredBodyOrgan && (
+                          <div className="scanner-lens-hud-tag">
+                            <span className="hud-pulse-dot" />
+                            <span className="hud-organ-name">
+                              {getTranslatedOrgan(hoveredBodyOrgan.organ, lang)}
+                            </span>
+                          </div>
+                        )}
                       </div>
+                    )}
+
+                    {/* Active Filter Marker (if user selected an organ) */}
+                    {activeSystem && (
+                      (bodyMap.labels || []).filter((l) => l.organ === activeSystem).map((l, i) => (
+                        <div
+                          key={i}
+                          className="organ-active-pinned-marker"
+                          style={{ left: `${l.x}%`, top: `${l.y}%` }}
+                        >
+                          <span className="pinned-marker-core" />
+                          <span className="pinned-marker-ring" />
+                          <span className="pinned-marker-tag">{getTranslatedOrgan(l.organ, lang)}</span>
+                        </div>
+                      ))
                     )}
                   </div>
 
                   <div className="bodymap-scanner-hint">
-                    <span>{t.scannerHint}</span>
+                    <span>💡 {t.scannerHint}</span>
                   </div>
                 </div>
               )
