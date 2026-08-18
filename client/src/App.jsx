@@ -11,12 +11,45 @@ import wmLogo from './wm-logo.svg';
 import './App.css';
 
 export default function App() {
-  const [tab, setTab] = useState('atlas');
+  // Determine initial tab from URL path (e.g. /admin, /bodymap, /users)
+  const getInitialTab = () => {
+    const path = window.location.pathname.toLowerCase();
+    const hash = window.location.hash.toLowerCase();
+    if (path.startsWith('/admin') || hash === '#admin' || path.startsWith('/login') || hash === '#login') {
+      return 'admin';
+    }
+    if (path.startsWith('/bodymap') || hash === '#bodymap') {
+      return 'bodymap';
+    }
+    if (path.startsWith('/users') || hash === '#users') {
+      return 'users';
+    }
+    return 'atlas';
+  };
+
+  const [tab, setTab] = useState(getInitialTab);
   const [lang, setLang] = useState('ru');
   const [user, setUser] = useState(null);
   const [authChecked, setAuthChecked] = useState(false);
 
   const t = translations[lang] || translations.ru;
+
+  function navigateTo(newTab) {
+    setTab(newTab);
+    if (newTab === 'atlas') {
+      window.history.pushState({}, '', '/');
+    } else {
+      window.history.pushState({}, '', `/${newTab}`);
+    }
+  }
+
+  useEffect(() => {
+    const handlePopState = () => {
+      setTab(getInitialTab());
+    };
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
 
   useEffect(() => {
     if (!getToken()) {
@@ -33,15 +66,15 @@ export default function App() {
   function logout() {
     setToken(null);
     setUser(null);
-    setTab('atlas');
+    navigateTo('atlas');
   }
 
   return (
     <div className="app wm-minimal-theme">
-      {/* Clean Minimalist Corporate Header */}
+      {/* Clean Minimalist Corporate Header (No login button in public view) */}
       <header className="app-header wm-header">
         <div className="header-brand-group">
-          <div className="wm-logo-wrap" onClick={() => setTab('atlas')} title="World Medicine">
+          <div className="wm-logo-wrap" onClick={() => navigateTo('atlas')} title="World Medicine">
             <img src={wmLogo} alt="World Medicine" className="wm-logo-img" />
           </div>
           <div className="wm-brand-divider" />
@@ -53,17 +86,17 @@ export default function App() {
 
         {user && (
           <nav className="header-nav">
-            <button className={`nav-btn ${tab === 'atlas' ? 'active' : ''}`} onClick={() => setTab('atlas')}>
-              {t.atlas}
+            <button className={`nav-btn ${tab === 'atlas' ? 'active' : ''}`} onClick={() => navigateTo('atlas')}>
+              ← {t.atlas}
             </button>
-            <button className={`nav-btn ${tab === 'admin' ? 'active' : ''}`} onClick={() => setTab('admin')}>
+            <button className={`nav-btn ${tab === 'admin' ? 'active' : ''}`} onClick={() => navigateTo('admin')}>
               {t.adminPanel}
             </button>
-            <button className={`nav-btn ${tab === 'bodymap' ? 'active' : ''}`} onClick={() => setTab('bodymap')}>
+            <button className={`nav-btn ${tab === 'bodymap' ? 'active' : ''}`} onClick={() => navigateTo('bodymap')}>
               {t.bodyMapTab}
             </button>
             {user.role === 'admin' && (
-              <button className={`nav-btn ${tab === 'users' ? 'active' : ''}`} onClick={() => setTab('users')}>
+              <button className={`nav-btn ${tab === 'users' ? 'active' : ''}`} onClick={() => navigateTo('users')}>
                 {t.usersTab}
               </button>
             )}
@@ -89,24 +122,26 @@ export default function App() {
             </button>
           </div>
 
-          {authChecked && (
-            user ? (
-              <div className="session-info">
-                <span className="user-badge">{user.email}</span>
-                <button className="logout-btn" onClick={logout}>{t.logout}</button>
-              </div>
-            ) : (
-              <button className="login-link" onClick={() => setTab('login')}>
-                {t.login}
-              </button>
-            )
+          {authChecked && user && (
+            <div className="session-info">
+              <span className="user-badge">{user.email}</span>
+              <button className="logout-btn" onClick={logout}>{t.logout}</button>
+            </div>
           )}
         </div>
       </header>
 
       <ErrorBoundary>
         {tab === 'atlas' && <AtlasView lang={lang} />}
-        {tab === 'login' && !user && <Login lang={lang} onLoggedIn={(u) => { setUser(u); setTab('admin'); }} />}
+        {tab !== 'atlas' && !user && (
+          <Login
+            lang={lang}
+            onLoggedIn={(u) => {
+              setUser(u);
+              navigateTo(tab === 'login' ? 'admin' : tab);
+            }}
+          />
+        )}
         {tab === 'admin' && user && <AdminView lang={lang} />}
         {tab === 'bodymap' && user && <BodyMapAdmin lang={lang} />}
         {tab === 'users' && user?.role === 'admin' && <UsersAdmin lang={lang} currentUser={user} />}
