@@ -2,13 +2,21 @@ import { useEffect, useRef, useState } from 'react';
 import { api, resolveImageUrl } from './api';
 import Model3DViewer from './Model3DViewer';
 
-const emptyForm = { title: '', system: '', bodyProfile: 'any', definition: '', causes: '', symptoms: '' };
 const BODY_PROFILE_OPTIONS = [
-  { value: 'any', label: 'Универсально (мужчина/женщина/ребёнок)' },
-  { value: 'male', label: 'Мужчина' },
-  { value: 'female', label: 'Женщина' },
-  { value: 'child', label: 'Ребёнок' },
+  { value: 'male', label: 'Мужской (Взрослый)' },
+  { value: 'female', label: 'Женский (Взрослая)' },
+  { value: 'child', label: 'Детский' },
+  { value: 'any', label: 'Любой (Общий)' },
 ];
+
+const emptyForm = {
+  title: '',
+  system: '',
+  bodyProfile: 'any',
+  definition: '',
+  causes: '',
+  symptoms: '',
+};
 
 export default function AdminView() {
   const [entries, setEntries] = useState([]);
@@ -22,6 +30,8 @@ export default function AdminView() {
   const [labels3d, setLabels3d] = useState([]);
   const [videoFile, setVideoFile] = useState(null);
   const [videoPreview, setVideoPreview] = useState(null);
+  const [xrayFile, setXrayFile] = useState(null);
+  const [xrayPreview, setXrayPreview] = useState(null);
   const [drugs, setDrugs] = useState([]);
   const [drugInput, setDrugInput] = useState('');
   const [error, setError] = useState('');
@@ -47,6 +57,8 @@ export default function AdminView() {
     setLabels3d([]);
     setVideoFile(null);
     setVideoPreview(null);
+    setXrayFile(null);
+    setXrayPreview(null);
     setDrugs([]);
     setDrugInput('');
   }
@@ -69,6 +81,8 @@ export default function AdminView() {
     setLabels3d(entry.labels3d || []);
     setVideoFile(null);
     setVideoPreview(entry.videoUrl ? resolveImageUrl(entry.videoUrl) : null);
+    setXrayFile(null);
+    setXrayPreview(entry.xrayUrl ? resolveImageUrl(entry.xrayUrl) : null);
     setDrugs(entry.recommendedDrugs || []);
     setDrugInput('');
   }
@@ -94,6 +108,13 @@ export default function AdminView() {
     if (!file) return;
     setVideoFile(file);
     setVideoPreview(URL.createObjectURL(file));
+  }
+
+  function onXrayChange(e) {
+    const file = e.target.files[0];
+    if (!file) return;
+    setXrayFile(file);
+    setXrayPreview(URL.createObjectURL(file));
   }
 
   function onPreviewClick(e) {
@@ -153,6 +174,7 @@ export default function AdminView() {
     if (imageFile) fd.append('image', imageFile);
     if (modelFile) fd.append('model', modelFile);
     if (videoFile) fd.append('video', videoFile);
+    if (xrayFile) fd.append('xray', xrayFile);
 
     try {
       if (editingId) {
@@ -315,6 +337,29 @@ export default function AdminView() {
           </div>
         )}
 
+        <label>
+          Рентген / КТ / МРТ / Ангиография снимок
+          <input type="file" accept="image/*" onChange={onXrayChange} />
+        </label>
+
+        {xrayPreview && (
+          <div className="preview-wrap">
+            <img src={xrayPreview} alt="Рентген preview" style={{ width: '100%', maxHeight: '240px', objectFit: 'contain', background: '#000', borderRadius: '8px', display: 'block' }} />
+            <button
+              type="button"
+              className="remove-video-btn"
+              onClick={() => {
+                setXrayFile(null);
+                setXrayPreview(null);
+                setForm((prev) => ({ ...prev, xrayUrl: '' }));
+              }}
+              style={{ marginTop: '6px', background: '#ef4444', color: '#fff', border: 'none', padding: '5px 12px', borderRadius: '6px', cursor: 'pointer', fontSize: '0.82rem', fontWeight: '600' }}
+            >
+              🗑️ Открепить рентген снимок
+            </button>
+          </div>
+        )}
+
         <div className="form-actions">
           <button type="submit">{editingId ? 'Сохранить' : 'Добавить'}</button>
           {editingId && <button type="button" onClick={resetForm}>Отмена</button>}
@@ -339,9 +384,10 @@ export default function AdminView() {
                 <td>{entry.title}</td>
                 <td>{entry.system}</td>
                 <td>
-                  <div style={{ display: 'flex', gap: '4px' }}>
+                  <div style={{ display: 'flex', gap: '4px', flexWrap: 'wrap' }}>
                     {entry.modelUrl && <span style={{ background: '#0284c7', color: '#fff', padding: '2px 6px', borderRadius: '4px', fontSize: '0.7rem', fontWeight: 'bold' }}>3D</span>}
                     {entry.videoUrl && <span style={{ background: '#d97706', color: '#fff', padding: '2px 6px', borderRadius: '4px', fontSize: '0.7rem', fontWeight: 'bold' }}>🎬 Видео</span>}
+                    {entry.xrayUrl && <span style={{ background: '#059669', color: '#fff', padding: '2px 6px', borderRadius: '4px', fontSize: '0.7rem', fontWeight: 'bold' }}>🩻 Рентген</span>}
                   </div>
                 </td>
                 <td>{BODY_PROFILE_OPTIONS.find((o) => o.value === (entry.bodyProfile || 'any'))?.label.split(' ')[0]}</td>

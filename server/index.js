@@ -25,8 +25,8 @@ const upload = multer({
   // Global limit covers the largest field (video); image/model are also bounded by fileFilter's type check.
   limits: { fileSize: 300 * 1024 * 1024 },
   fileFilter: (req, file, cb) => {
-    if (file.fieldname === 'image') {
-      if (!file.mimetype.startsWith('image/')) return cb(new Error('Only image uploads are allowed for the image field'));
+    if (file.fieldname === 'image' || file.fieldname === 'xray') {
+      if (!file.mimetype.startsWith('image/')) return cb(new Error('Only image uploads are allowed for image/xray fields'));
       return cb(null, true);
     }
     if (file.fieldname === 'model') {
@@ -49,6 +49,7 @@ const uploadFields = upload.fields([
   { name: 'image', maxCount: 1 },
   { name: 'model', maxCount: 1 },
   { name: 'video', maxCount: 1 },
+  { name: 'xray', maxCount: 1 },
 ]);
 
 const app = express();
@@ -131,9 +132,11 @@ app.post('/api/entries', requireAuth, uploadFields, (req, res) => {
   const imageFile = req.files?.image?.[0];
   const modelFile = req.files?.model?.[0];
   const videoFile = req.files?.video?.[0];
+  const xrayFile = req.files?.xray?.[0];
   const imageUrl = imageFile ? `/uploads/${imageFile.filename}` : req.body.imageUrl || null;
   const modelUrl = modelFile ? `/uploads/${modelFile.filename}` : req.body.modelUrl || null;
   const videoUrl = videoFile ? `/uploads/${videoFile.filename}` : req.body.videoUrl || null;
+  const xrayUrl = xrayFile ? `/uploads/${xrayFile.filename}` : req.body.xrayUrl || null;
 
   const parsedLabels = parseJsonField(labels, 'labels');
   if (!parsedLabels.ok) return res.status(400).json({ error: parsedLabels.error });
@@ -153,6 +156,7 @@ app.post('/api/entries', requireAuth, uploadFields, (req, res) => {
     imageUrl,
     modelUrl,
     videoUrl,
+    xrayUrl,
     labels: parsedLabels.value || [],
     labels3d: parsedLabels3d.value || [],
   });
@@ -175,12 +179,15 @@ app.put('/api/entries/:id', requireAuth, uploadFields, (req, res) => {
   const imageFile = req.files?.image?.[0];
   const modelFile = req.files?.model?.[0];
   const videoFile = req.files?.video?.[0];
+  const xrayFile = req.files?.xray?.[0];
   if (imageFile) data.imageUrl = `/uploads/${imageFile.filename}`;
   else if (req.body.imageUrl !== undefined) data.imageUrl = req.body.imageUrl;
   if (modelFile) data.modelUrl = `/uploads/${modelFile.filename}`;
   else if (req.body.modelUrl !== undefined) data.modelUrl = req.body.modelUrl;
   if (videoFile) data.videoUrl = `/uploads/${videoFile.filename}`;
   else if (req.body.videoUrl !== undefined) data.videoUrl = req.body.videoUrl;
+  if (xrayFile) data.xrayUrl = `/uploads/${xrayFile.filename}`;
+  else if (req.body.xrayUrl !== undefined) data.xrayUrl = req.body.xrayUrl;
 
   const parsedLabels = parseJsonField(labels, 'labels');
   if (!parsedLabels.ok) return res.status(400).json({ error: parsedLabels.error });

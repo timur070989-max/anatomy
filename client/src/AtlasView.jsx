@@ -349,6 +349,16 @@ export default function AtlasView() {
                   >
                     🎬 Анимационное видео {selected.videoUrl ? '' : '🔒'}
                   </button>
+                  {selected.xrayUrl && (
+                    <button
+                      type="button"
+                      className={`xray-tab-btn ${viewMode === 'xray' ? 'active' : ''}`}
+                      onClick={() => setViewMode('xray')}
+                      title="Клинический рентген / КТ / Ангиография снимок"
+                    >
+                      🩻 Рентген / КТ
+                    </button>
+                  )}
                 </div>
 
                 {viewMode === '3d' && selected.modelUrl ? (
@@ -382,6 +392,17 @@ export default function AtlasView() {
                     <div className="video-player-info-badge">
                       <span className="video-rec-dot" />
                       <span>Анимация патологии: <strong>{cleanHtmlText(selected.title)}</strong></span>
+                    </div>
+                  </div>
+                ) : viewMode === 'xray' && selected.xrayUrl ? (
+                  <div className="pathology-xray-box">
+                    <img
+                      src={resolveImageUrl(selected.xrayUrl)}
+                      alt={`Рентген / КТ: ${selected.title}`}
+                      className="pathology-xray-img"
+                    />
+                    <div className="xray-info-badge">
+                      <span>🩻 Клинический снимок (КТ / Ангиография / Рентген): <strong>{cleanHtmlText(selected.title)}</strong></span>
                     </div>
                   </div>
                 ) : (
