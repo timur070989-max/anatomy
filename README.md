@@ -74,12 +74,23 @@ VITE_API_URL=http://localhost:4000
 
 ## Контент
 
-Атлас предзаполнен 7 органами с реальными 3D-моделями (печень, желудок, поджелудочная железа, жёлчный пузырь, обе почки, мочевой пузырь):
+Атлас предзаполнен 8 органами с реальными 3D-моделями:
 
-- **Источник моделей**: [BodyParts3D](http://dbarchive.biosciencedbc.jp/en/bodyparts3d/) — база, на которую опирается сам открытый проект Z-Anatomy (Z-Anatomy распространяется только как Blender-шаблон и требует Blender для экспорта отдельных органов; BodyParts3D даёт то же геометрическое содержимое напрямую в OBJ/STL, без Blender).
-- **Лицензия**: CC BY-SA 2.1 Japan — указана в описании каждой записи.
-- **Конвертация**: STL → GLB через `trimesh` (Python), без потери геометрии.
+- **Печень, желудок, поджелудочная железа, жёлчный пузырь, обе почки, мочевой пузырь** — геометрия из [BodyParts3D](http://dbarchive.biosciencedbc.jp/en/bodyparts3d/) (база, на которую опирается сам открытый проект Z-Anatomy — сам Z-Anatomy распространяется только как Blender-шаблон и требует Blender для экспорта; BodyParts3D даёт то же содержимое напрямую в OBJ/STL). Лицензия CC BY-SA 2.1 Japan, конвертация STL → GLB через `trimesh` (Python), без потери геометрии.
+- **Мозг** — готовая модель (344 отдельные структуры: кора, базальные ганглии, сосуды виллизиева круга, черепные нервы и др.) из открытого проекта [brainproject](https://github.com/itayinbarr/brainproject), который сам построен на Z-Anatomy/BodyParts3D плюс несколько открытых МРТ-атласов (CIT168, Najdenovska, Neudorfer, HCP1065). Лицензия CC BY-SA 4.0, атрибуция — в описании записи.
 - Тексты определений написаны заново на основе общих сведений анатомии/физиологии (не скопированы из чужих источников).
+
+**Ещё не добавлено**: отдельные модели сердца (4 камеры) и лёгких (5 долей) — точные названия частей нашлись в открытом каталоге [anatomed-mcp](https://github.com/pitfa19/anatomed-mcp) (тот же Z-Anatomy → BodyParts3D), но сами файлы (`.glb`) отдаёт Supabase-хостинг, недоступный из окружения, в котором собирался этот проект. Если у вас есть сетевой доступ — можно скачать и добавить их вручную через «Карта тела»/«Админ»:
+
+```
+https://uafyfwyyqzunabpuftue.supabase.co/storage/v1/object/public/models/glb/<Part%20name>.glb
+```
+
+Нужные имена частей (пробел → `%20`): `Left atrium`, `Left ventricle`, `Right atrium`, `Right ventricle` (сердце); `Superior lobe of right lung`, `Middle lobe of right lung`, `Inferior lobe of right lung`, `Superior lobe of left lung`, `Inferior lobe of left lung` (лёгкие).
+
+### Self-hosted Draco decoder
+
+`model-viewer` по умолчанию тянет декодер для Draco-сжатых моделей (как у brainproject) с CDN `gstatic.com` — в закрытых корпоративных сетях это может не работать. Декодер уже сохранён локально в `client/public/draco/` и подключён в `main.jsx` (`ModelViewerElement.dracoDecoderLocation`), так что интернет для этого не нужен.
 
 ## Что можно донастроить позже
 
