@@ -52,6 +52,8 @@ export default function Model3DViewer({
         defaultColor = [0.80, 0.50, 0.46, 1.0]; // Кора мозга
       }
 
+      const hasMultiMaterials = model.materials.length > 1;
+
       model.materials.forEach((mat) => {
         const name = (mat.name || '').toLowerCase();
         const isArtery = name.includes('artery') || name.includes('carotid') || name.includes('basilar') || name.includes('pericallosal');
@@ -60,36 +62,75 @@ export default function Model3DViewer({
         const isWall = !isArtery && !isVein && !isNerve;
 
         if (mat.pbrMetallicRoughness) {
-          if (isArtery) {
-            // Артерии: ярко-красные
-            const alpha = layer === 'nerves' ? 0.2 : 1.0;
-            mat.pbrMetallicRoughness.setBaseColorFactor([0.95, 0.08, 0.15, alpha]);
-            mat.pbrMetallicRoughness.setRoughnessFactor(0.2);
-            mat.pbrMetallicRoughness.setMetallicFactor(0.2);
-          } else if (isVein) {
-            // Вены: насыщенно-синие
-            const alpha = layer === 'nerves' ? 0.2 : 1.0;
-            mat.pbrMetallicRoughness.setBaseColorFactor([0.08, 0.32, 0.95, alpha]);
-            mat.pbrMetallicRoughness.setRoughnessFactor(0.2);
-            mat.pbrMetallicRoughness.setMetallicFactor(0.2);
-          } else if (isNerve) {
-            // Нервы: сияюще-жёлтые
-            const alpha = layer === 'vessels' ? 0.2 : 1.0;
-            mat.pbrMetallicRoughness.setBaseColorFactor([1.0, 0.85, 0.05, alpha]);
-            mat.pbrMetallicRoughness.setRoughnessFactor(0.25);
-            mat.pbrMetallicRoughness.setMetallicFactor(0.05);
-          } else if (isWall) {
-            // Стенки и паренхима
-            if (isXray || layer === 'vessels' || layer === 'nerves') {
-              // Полупрозрачный режим для просмотра внутренних сосудов и нервов
-              mat.pbrMetallicRoughness.setBaseColorFactor([defaultColor[0], defaultColor[1], defaultColor[2], 0.28]);
-              mat.pbrMetallicRoughness.setRoughnessFactor(0.15);
-              mat.pbrMetallicRoughness.setMetallicFactor(0.05);
+          if (layer === 'vessels') {
+            // Режим «ТОЛЬКО СОСУДЫ»: оставляем исключительно артерии и вены
+            if (isArtery) {
+              if (mat.setAlphaMode) mat.setAlphaMode('OPAQUE');
+              mat.pbrMetallicRoughness.setBaseColorFactor([0.96, 0.08, 0.16, 1.0]);
+              mat.pbrMetallicRoughness.setRoughnessFactor(0.2);
+              mat.pbrMetallicRoughness.setMetallicFactor(0.25);
+            } else if (isVein) {
+              if (mat.setAlphaMode) mat.setAlphaMode('OPAQUE');
+              mat.pbrMetallicRoughness.setBaseColorFactor([0.08, 0.35, 0.96, 1.0]);
+              mat.pbrMetallicRoughness.setRoughnessFactor(0.2);
+              mat.pbrMetallicRoughness.setMetallicFactor(0.25);
             } else {
-              // Полный плотный объемный режим
+              // Полностью скрываем стенки, паренхиму и нервы
+              if (hasMultiMaterials) {
+                if (mat.setAlphaMode) mat.setAlphaMode('BLEND');
+                mat.pbrMetallicRoughness.setBaseColorFactor([0, 0, 0, 0.0]);
+              } else {
+                // Для одиночных моделей подсвечиваем сосудистый профиль органа
+                if (mat.setAlphaMode) mat.setAlphaMode('OPAQUE');
+                mat.pbrMetallicRoughness.setBaseColorFactor([0.92, 0.12, 0.18, 1.0]);
+              }
+            }
+          } else if (layer === 'nerves') {
+            // Режим «ТОЛЬКО НЕРВЫ»: оставляем исключительно нервы и нервные стволы
+            if (isNerve) {
+              if (mat.setAlphaMode) mat.setAlphaMode('OPAQUE');
+              mat.pbrMetallicRoughness.setBaseColorFactor([1.0, 0.88, 0.05, 1.0]);
+              mat.pbrMetallicRoughness.setRoughnessFactor(0.25);
+              mat.pbrMetallicRoughness.setMetallicFactor(0.1);
+            } else {
+              // Полностью скрываем стенки, паренхиму, артерии и вены
+              if (hasMultiMaterials) {
+                if (mat.setAlphaMode) mat.setAlphaMode('BLEND');
+                mat.pbrMetallicRoughness.setBaseColorFactor([0, 0, 0, 0.0]);
+              } else {
+                // Для одиночных моделей подсвечиваем нервный профиль органа
+                if (mat.setAlphaMode) mat.setAlphaMode('OPAQUE');
+                mat.pbrMetallicRoughness.setBaseColorFactor([0.95, 0.85, 0.15, 1.0]);
+              }
+            }
+          } else if (isXray) {
+            // Режим «РЕНТГЕН / ПРОЗРАЧНОСТЬ»: полупрозрачные стенки, сквозь которые видны сосуды и нервы
+            if (isArtery) {
+              if (mat.setAlphaMode) mat.setAlphaMode('OPAQUE');
+              mat.pbrMetallicRoughness.setBaseColorFactor([0.96, 0.08, 0.16, 1.0]);
+            } else if (isVein) {
+              if (mat.setAlphaMode) mat.setAlphaMode('OPAQUE');
+              mat.pbrMetallicRoughness.setBaseColorFactor([0.08, 0.35, 0.96, 1.0]);
+            } else if (isNerve) {
+              if (mat.setAlphaMode) mat.setAlphaMode('OPAQUE');
+              mat.pbrMetallicRoughness.setBaseColorFactor([1.0, 0.88, 0.05, 1.0]);
+            } else {
+              if (mat.setAlphaMode) mat.setAlphaMode('BLEND');
+              mat.pbrMetallicRoughness.setBaseColorFactor([defaultColor[0], defaultColor[1], defaultColor[2], 0.22]);
+              mat.pbrMetallicRoughness.setRoughnessFactor(0.15);
+            }
+          } else {
+            // Режим «ПОЛНЫЙ ОБЪЁМ»: все структуры плотные и видны
+            if (mat.setAlphaMode) mat.setAlphaMode('OPAQUE');
+            if (isArtery) {
+              mat.pbrMetallicRoughness.setBaseColorFactor([0.92, 0.12, 0.18, 1.0]);
+            } else if (isVein) {
+              mat.pbrMetallicRoughness.setBaseColorFactor([0.12, 0.35, 0.92, 1.0]);
+            } else if (isNerve) {
+              mat.pbrMetallicRoughness.setBaseColorFactor([0.95, 0.82, 0.10, 1.0]);
+            } else {
               mat.pbrMetallicRoughness.setBaseColorFactor(defaultColor);
               mat.pbrMetallicRoughness.setRoughnessFactor(defaultRoughness);
-              mat.pbrMetallicRoughness.setMetallicFactor(0.04);
             }
           }
         }
