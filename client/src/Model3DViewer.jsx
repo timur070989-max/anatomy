@@ -16,10 +16,9 @@ export default function Model3DViewer({
   const [activeHotspot, setActiveHotspot] = useState(null);
   const [hoveredStructure, setHoveredStructure] = useState(null);
 
-  // Full-volume view modes: 'all' | 'vessels' | 'nerves' | 'ducts'
+  // View modes: solid 3D anatomical volume or translucent X-Ray
   const [xrayMode, setXrayMode] = useState(false);
   const [autoRotate, setAutoRotate] = useState(true);
-  const [highlightLayer, setHighlightLayer] = useState('all');
 
   useEffect(() => {
     setLoading(true);
@@ -28,8 +27,8 @@ export default function Model3DViewer({
     setHoveredStructure(null);
   }, [src]);
 
-  // Apply colors and transparency based on mode and active layer
-  function applyAnatomicalMaterials(el, isXray, layer) {
+  // Apply rich natural anatomical PBR materials
+  function applyAnatomicalMaterials(el, isXray) {
     if (!el) return;
     try {
       const model = el.model;
@@ -74,103 +73,18 @@ export default function Model3DViewer({
         defaultRoughness = 0.45;
       }
 
-      const hasMultiMaterials = model.materials.length > 2;
-
       model.materials.forEach((mat) => {
-        const name = (mat.name || '').toLowerCase();
-        const isArtery = name.includes('artery') || name.includes('carotid') || name.includes('basilar') || name.includes('pericallosal');
-        const isVein = name.includes('sinus') || name.includes('vein');
-        const isNerve = name.includes('nerve') || name.includes('fiber') || name.includes('tract') || name.includes('nucleus');
-        const isDuct = name.includes('duct') || name.includes('lcr') || name.includes('choroid') || name.includes('ventricle') || name.includes('bile') || name.includes('pancreat') || name.includes('ureter');
-
         if (mat.pbrMetallicRoughness) {
-          if (layer === 'vessels') {
-            // Сосудистый профиль: артерии и вены
-            if (isArtery) {
-              if (mat.setAlphaMode) mat.setAlphaMode('OPAQUE');
-              mat.pbrMetallicRoughness.setBaseColorFactor([0.96, 0.08, 0.16, 1.0]);
-              mat.pbrMetallicRoughness.setRoughnessFactor(0.2);
-              mat.pbrMetallicRoughness.setMetallicFactor(0.25);
-            } else if (isVein) {
-              if (mat.setAlphaMode) mat.setAlphaMode('OPAQUE');
-              mat.pbrMetallicRoughness.setBaseColorFactor([0.08, 0.35, 0.96, 1.0]);
-              mat.pbrMetallicRoughness.setRoughnessFactor(0.2);
-              mat.pbrMetallicRoughness.setMetallicFactor(0.25);
-            } else if (hasMultiMaterials) {
-              if (mat.setAlphaMode) mat.setAlphaMode('BLEND');
-              mat.pbrMetallicRoughness.setBaseColorFactor([defaultColor[0], defaultColor[1], defaultColor[2], 0.12]);
-            } else {
-              // Для монолитных органов: ангиографический сосудистый режим
-              if (mat.setAlphaMode) mat.setAlphaMode('OPAQUE');
-              mat.pbrMetallicRoughness.setBaseColorFactor([0.92, 0.14, 0.18, 1.0]);
-              mat.pbrMetallicRoughness.setRoughnessFactor(0.25);
-            }
-          } else if (layer === 'nerves') {
-            // Нервный профиль: нервные волокна и стволы
-            if (isNerve) {
-              if (mat.setAlphaMode) mat.setAlphaMode('OPAQUE');
-              mat.pbrMetallicRoughness.setBaseColorFactor([1.0, 0.88, 0.05, 1.0]);
-              mat.pbrMetallicRoughness.setRoughnessFactor(0.25);
-              mat.pbrMetallicRoughness.setMetallicFactor(0.1);
-            } else if (hasMultiMaterials) {
-              if (mat.setAlphaMode) mat.setAlphaMode('BLEND');
-              mat.pbrMetallicRoughness.setBaseColorFactor([defaultColor[0], defaultColor[1], defaultColor[2], 0.12]);
-            } else {
-              // Для монолитных органов: нейро-проекционный режим
-              if (mat.setAlphaMode) mat.setAlphaMode('OPAQUE');
-              mat.pbrMetallicRoughness.setBaseColorFactor([0.98, 0.85, 0.12, 1.0]);
-              mat.pbrMetallicRoughness.setRoughnessFactor(0.30);
-            }
-          } else if (layer === 'ducts') {
-            // Протоковый профиль: каналы, протоки и ликвор
-            if (isDuct) {
-              if (mat.setAlphaMode) mat.setAlphaMode('OPAQUE');
-              mat.pbrMetallicRoughness.setBaseColorFactor([0.12, 0.85, 0.35, 1.0]);
-              mat.pbrMetallicRoughness.setRoughnessFactor(0.25);
-              mat.pbrMetallicRoughness.setMetallicFactor(0.15);
-            } else if (hasMultiMaterials) {
-              if (mat.setAlphaMode) mat.setAlphaMode('BLEND');
-              mat.pbrMetallicRoughness.setBaseColorFactor([defaultColor[0], defaultColor[1], defaultColor[2], 0.12]);
-            } else {
-              // Для монолитных органов: билиарно-протоковый режим
-              if (mat.setAlphaMode) mat.setAlphaMode('OPAQUE');
-              mat.pbrMetallicRoughness.setBaseColorFactor([0.15, 0.80, 0.35, 1.0]);
-              mat.pbrMetallicRoughness.setRoughnessFactor(0.28);
-            }
-          } else if (isXray) {
+          if (isXray) {
             // Режим «РЕНТГЕН»: стекловидная полупрозрачность
-            if (isArtery) {
-              if (mat.setAlphaMode) mat.setAlphaMode('OPAQUE');
-              mat.pbrMetallicRoughness.setBaseColorFactor([0.96, 0.08, 0.16, 1.0]);
-            } else if (isVein) {
-              if (mat.setAlphaMode) mat.setAlphaMode('OPAQUE');
-              mat.pbrMetallicRoughness.setBaseColorFactor([0.08, 0.35, 0.96, 1.0]);
-            } else if (isNerve) {
-              if (mat.setAlphaMode) mat.setAlphaMode('OPAQUE');
-              mat.pbrMetallicRoughness.setBaseColorFactor([1.0, 0.88, 0.05, 1.0]);
-            } else if (isDuct) {
-              if (mat.setAlphaMode) mat.setAlphaMode('OPAQUE');
-              mat.pbrMetallicRoughness.setBaseColorFactor([0.12, 0.85, 0.35, 1.0]);
-            } else {
-              if (mat.setAlphaMode) mat.setAlphaMode('BLEND');
-              mat.pbrMetallicRoughness.setBaseColorFactor([defaultColor[0], defaultColor[1], defaultColor[2], 0.30]);
-              mat.pbrMetallicRoughness.setRoughnessFactor(0.15);
-            }
+            if (mat.setAlphaMode) mat.setAlphaMode('BLEND');
+            mat.pbrMetallicRoughness.setBaseColorFactor([defaultColor[0], defaultColor[1], defaultColor[2], 0.32]);
+            mat.pbrMetallicRoughness.setRoughnessFactor(0.15);
           } else {
-            // Режим «ПОЛНЫЙ ОБЪЁМ»: полновесный анатомический орган
+            // Режим «ПОЛНЫЙ ОБЪЁМ»: полновесный монолитный анатомический орган
             if (mat.setAlphaMode) mat.setAlphaMode('OPAQUE');
-            if (isArtery) {
-              mat.pbrMetallicRoughness.setBaseColorFactor([0.92, 0.12, 0.18, 1.0]);
-            } else if (isVein) {
-              mat.pbrMetallicRoughness.setBaseColorFactor([0.12, 0.35, 0.92, 1.0]);
-            } else if (isNerve) {
-              mat.pbrMetallicRoughness.setBaseColorFactor([0.95, 0.82, 0.10, 1.0]);
-            } else if (isDuct) {
-              mat.pbrMetallicRoughness.setBaseColorFactor([0.15, 0.80, 0.35, 1.0]);
-            } else {
-              mat.pbrMetallicRoughness.setBaseColorFactor(defaultColor);
-              mat.pbrMetallicRoughness.setRoughnessFactor(defaultRoughness);
-            }
+            mat.pbrMetallicRoughness.setBaseColorFactor(defaultColor);
+            mat.pbrMetallicRoughness.setRoughnessFactor(defaultRoughness);
           }
         }
       });
@@ -186,7 +100,7 @@ export default function Model3DViewer({
     function handleLoad() {
       setLoading(false);
       setLoadError(false);
-      applyAnatomicalMaterials(el, xrayMode, highlightLayer);
+      applyAnatomicalMaterials(el, xrayMode);
     }
 
     function handleError(e) {
@@ -225,13 +139,13 @@ export default function Model3DViewer({
     };
   }, [src, editable, onSurfaceClick]);
 
-  // Update materials when X-Ray or layer selection changes
+  // Update materials when X-Ray toggle changes
   useEffect(() => {
     const el = ref.current;
     if (el && !loading) {
-      applyAnatomicalMaterials(el, xrayMode, highlightLayer);
+      applyAnatomicalMaterials(el, xrayMode);
     }
-  }, [xrayMode, highlightLayer, loading]);
+  }, [xrayMode, loading]);
 
   function handleSelectHotspot(h) {
     setActiveHotspot(h);
@@ -301,46 +215,23 @@ export default function Model3DViewer({
 
   return (
     <div className="model-3d-container">
-      {/* 3D Anatomical Layer Toolbar with Ducts Button */}
+      {/* Clean Streamlined 3D Viewer Toolbar */}
       <div className="model-3d-toolbar">
         <div className="toolbar-left">
-          <span className="toolbar-label">Слои:</span>
+          <span className="toolbar-label">Режим:</span>
           <button
             type="button"
-            className={`layer-btn ${highlightLayer === 'all' && !xrayMode ? 'active' : ''}`}
-            onClick={() => { setHighlightLayer('all'); setXrayMode(false); }}
+            className={`layer-btn ${!xrayMode ? 'active' : ''}`}
+            onClick={() => setXrayMode(false)}
+            title="Полный объёмный анатомический макет органа"
           >
-            🫀 Полный объём
+            🫀 3D Объём
           </button>
           <button
             type="button"
-            className={`layer-btn ${highlightLayer === 'vessels' ? 'active' : ''}`}
-            onClick={() => { setHighlightLayer('vessels'); setXrayMode(true); }}
-            title="Оставить только артерии (красные) и вены (синие)"
-          >
-            🔴 Сосуды
-          </button>
-          <button
-            type="button"
-            className={`layer-btn ${highlightLayer === 'nerves' ? 'active' : ''}`}
-            onClick={() => { setHighlightLayer('nerves'); setXrayMode(true); }}
-            title="Оставить только нервные волокна и узлы (жёлтые)"
-          >
-            🟡 Нервы
-          </button>
-          <button
-            type="button"
-            className={`layer-btn ${highlightLayer === 'ducts' ? 'active' : ''}`}
-            onClick={() => { setHighlightLayer('ducts'); setXrayMode(true); }}
-            title="Оставить только протоки, ликворные пути и каналы (зелёные)"
-          >
-            🟢 Протоки
-          </button>
-          <button
-            type="button"
-            className={`layer-btn ${xrayMode && highlightLayer === 'all' ? 'active' : ''}`}
-            onClick={() => setXrayMode(!xrayMode)}
-            title="Полупрозрачность стенок для обзора внутренних структур"
+            className={`layer-btn ${xrayMode ? 'active' : ''}`}
+            onClick={() => setXrayMode(true)}
+            title="Полупрозрачность стенок для обзора внутренних полостей и структур"
           >
             🩻 Рентген
           </button>
@@ -359,7 +250,7 @@ export default function Model3DViewer({
             type="button"
             className="tool-icon-btn"
             onClick={resetCamera}
-            title="Сбросить камеру"
+            title="Сбросить ракурс камеры"
           >
             🎯
           </button>
@@ -457,14 +348,6 @@ export default function Model3DViewer({
           </div>
         )}
 
-        {/* Anatomical Color Legend Overlay */}
-        <div className="anatomical-legend">
-          <span className="legend-item"><span className="legend-dot red" /> Артерии</span>
-          <span className="legend-item"><span className="legend-dot blue" /> Вены / Синусы</span>
-          <span className="legend-item"><span className="legend-dot yellow" /> Нервы</span>
-          <span className="legend-item"><span className="legend-dot green" /> Протоки</span>
-        </div>
-
         <div className="viewport-hint">
           <span>Наведите курсор на структуру для названия • Вращение: зажмите ЛКМ</span>
         </div>
@@ -473,7 +356,7 @@ export default function Model3DViewer({
       {hotspots.length > 0 && (
         <div className="hotspots-panel">
           <div className="hotspots-panel-header">
-            <span>Анатомическая структура ({hotspots.length} зон):</span>
+            <span>Анатомические структуры ({hotspots.length} зон):</span>
           </div>
           <div className="hotspots-chips">
             {hotspots.map((h, i) => (
