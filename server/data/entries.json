@@ -1858,25 +1858,34 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/2e28d25272ca.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-trachea-bronchi.glb",
+    "modelUrl": "/uploads/organ-nose.glb",
     "labels3d": [
       {
         "x": 0,
         "y": 0.04,
-        "z": 0.02,
+        "z": 0.03,
         "nx": 0,
         "ny": 1,
-        "nz": 0,
-        "text": "Носоглотка и дыхательные пути"
+        "nz": 1,
+        "text": "Спинка носа и носовые кости (Ossa nasalia)"
       },
       {
         "x": 0,
-        "y": -0.04,
-        "z": 0.02,
+        "y": -0.02,
+        "z": 0.04,
         "nx": 0,
         "ny": -1,
         "nz": 1,
-        "text": "Анатомическая зона патологии"
+        "text": "Хрящ перегородки и крылья носа (Cartilago septi nasi)"
+      },
+      {
+        "x": 0.02,
+        "y": 0,
+        "z": -0.02,
+        "nx": 1,
+        "ny": 0,
+        "nz": -1,
+        "text": "Носовая полость и раковины (Concha nasalis)"
       }
     ],
     "videoUrl": null,
@@ -1899,25 +1908,34 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/2e28d25272ca.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-trachea-bronchi.glb",
+    "modelUrl": "/uploads/organ-nose.glb",
     "labels3d": [
       {
         "x": 0,
         "y": 0.04,
-        "z": 0.02,
+        "z": 0.03,
         "nx": 0,
         "ny": 1,
-        "nz": 0,
-        "text": "Носоглотка и дыхательные пути"
+        "nz": 1,
+        "text": "Спинка носа и носовые кости (Ossa nasalia)"
       },
       {
         "x": 0,
-        "y": -0.04,
-        "z": 0.02,
+        "y": -0.02,
+        "z": 0.04,
         "nx": 0,
         "ny": -1,
         "nz": 1,
-        "text": "Анатомическая зона патологии"
+        "text": "Хрящ перегородки и крылья носа (Cartilago septi nasi)"
+      },
+      {
+        "x": 0.02,
+        "y": 0,
+        "z": -0.02,
+        "nx": 1,
+        "ny": 0,
+        "nz": -1,
+        "text": "Носовая полость и раковины (Concha nasalis)"
       }
     ],
     "videoUrl": null,
@@ -1940,25 +1958,34 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/2e28d25272ca.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-trachea-bronchi.glb",
+    "modelUrl": "/uploads/organ-nose.glb",
     "labels3d": [
       {
         "x": 0,
         "y": 0.04,
-        "z": 0.02,
+        "z": 0.03,
         "nx": 0,
         "ny": 1,
-        "nz": 0,
-        "text": "Носоглотка и дыхательные пути"
+        "nz": 1,
+        "text": "Спинка носа и носовые кости (Ossa nasalia)"
       },
       {
         "x": 0,
-        "y": -0.04,
-        "z": 0.02,
+        "y": -0.02,
+        "z": 0.04,
         "nx": 0,
         "ny": -1,
         "nz": 1,
-        "text": "Анатомическая зона патологии"
+        "text": "Хрящ перегородки и крылья носа (Cartilago septi nasi)"
+      },
+      {
+        "x": 0.02,
+        "y": 0,
+        "z": -0.02,
+        "nx": 1,
+        "ny": 0,
+        "nz": -1,
+        "text": "Носовая полость и раковины (Concha nasalis)"
       }
     ],
     "videoUrl": null,
@@ -2252,16 +2279,25 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/21ec912a924d.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-skeleton.glb",
+    "modelUrl": "/uploads/organ-teeth-mouth.glb",
     "labels3d": [
       {
         "x": 0,
-        "y": 0.04,
-        "z": 0.02,
+        "y": 0.02,
+        "z": 0.05,
         "nx": 0,
-        "ny": 1,
+        "ny": 0,
+        "nz": 1,
+        "text": "Резцы и клыки (Dentes incisivi & canini)"
+      },
+      {
+        "x": 0.05,
+        "y": 0.01,
+        "z": 0.02,
+        "nx": 1,
+        "ny": 0,
         "nz": 0,
-        "text": "Челюстно-лицевой аппарат"
+        "text": "Премоляры и моляры (Dentes premolares & molares)"
       },
       {
         "x": 0,
@@ -2270,7 +2306,7 @@
         "nx": 0,
         "ny": -1,
         "nz": 1,
-        "text": "Анатомическая зона патологии"
+        "text": "Нижняя челюсть и десна (Mandibula & Gingiva)"
       }
     ],
     "videoUrl": null,
@@ -2293,16 +2329,25 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/21ec912a924d.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-skeleton.glb",
+    "modelUrl": "/uploads/organ-teeth-mouth.glb",
     "labels3d": [
       {
         "x": 0,
-        "y": 0.04,
-        "z": 0.02,
+        "y": 0.02,
+        "z": 0.05,
         "nx": 0,
-        "ny": 1,
+        "ny": 0,
+        "nz": 1,
+        "text": "Резцы и клыки (Dentes incisivi & canini)"
+      },
+      {
+        "x": 0.05,
+        "y": 0.01,
+        "z": 0.02,
+        "nx": 1,
+        "ny": 0,
         "nz": 0,
-        "text": "Челюстно-лицевой аппарат"
+        "text": "Премоляры и моляры (Dentes premolares & molares)"
       },
       {
         "x": 0,
@@ -2311,7 +2356,7 @@
         "nx": 0,
         "ny": -1,
         "nz": 1,
-        "text": "Анатомическая зона патологии"
+        "text": "Нижняя челюсть и десна (Mandibula & Gingiva)"
       }
     ],
     "videoUrl": null,
@@ -2345,16 +2390,25 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/1621d45d475a.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-trachea-bronchi.glb",
+    "modelUrl": "/uploads/organ-pharynx-larynx.glb",
     "labels3d": [
       {
         "x": 0,
-        "y": 0.04,
-        "z": 0.02,
+        "y": 0.06,
+        "z": 0,
         "nx": 0,
         "ny": 1,
         "nz": 0,
-        "text": "Глотка, гортань и верхние дыхательные пути"
+        "text": "Носоглотка и ротоглотка (Pharynx)"
+      },
+      {
+        "x": 0,
+        "y": 0.01,
+        "z": 0.02,
+        "nx": 0,
+        "ny": 0,
+        "nz": 1,
+        "text": "Гортаноглотка и надгортанник (Epiglottis)"
       },
       {
         "x": 0,
@@ -2363,7 +2417,7 @@
         "nx": 0,
         "ny": -1,
         "nz": 1,
-        "text": "Анатомическая зона патологии"
+        "text": "Голосовые связки и складки (Plicae vocales)"
       }
     ],
     "videoUrl": null,
@@ -2397,16 +2451,25 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/1621d45d475a.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-trachea-bronchi.glb",
+    "modelUrl": "/uploads/organ-pharynx-larynx.glb",
     "labels3d": [
       {
         "x": 0,
-        "y": 0.04,
-        "z": 0.02,
+        "y": 0.06,
+        "z": 0,
         "nx": 0,
         "ny": 1,
         "nz": 0,
-        "text": "Глотка, гортань и верхние дыхательные пути"
+        "text": "Носоглотка и ротоглотка (Pharynx)"
+      },
+      {
+        "x": 0,
+        "y": 0.01,
+        "z": 0.02,
+        "nx": 0,
+        "ny": 0,
+        "nz": 1,
+        "text": "Гортаноглотка и надгортанник (Epiglottis)"
       },
       {
         "x": 0,
@@ -2415,7 +2478,7 @@
         "nx": 0,
         "ny": -1,
         "nz": 1,
-        "text": "Анатомическая зона патологии"
+        "text": "Голосовые связки и складки (Plicae vocales)"
       }
     ],
     "videoUrl": null,
@@ -2449,16 +2512,25 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/1621d45d475a.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-trachea-bronchi.glb",
+    "modelUrl": "/uploads/organ-pharynx-larynx.glb",
     "labels3d": [
       {
         "x": 0,
-        "y": 0.04,
-        "z": 0.02,
+        "y": 0.06,
+        "z": 0,
         "nx": 0,
         "ny": 1,
         "nz": 0,
-        "text": "Глотка, гортань и верхние дыхательные пути"
+        "text": "Носоглотка и ротоглотка (Pharynx)"
+      },
+      {
+        "x": 0,
+        "y": 0.01,
+        "z": 0.02,
+        "nx": 0,
+        "ny": 0,
+        "nz": 1,
+        "text": "Гортаноглотка и надгортанник (Epiglottis)"
       },
       {
         "x": 0,
@@ -2467,7 +2539,7 @@
         "nx": 0,
         "ny": -1,
         "nz": 1,
-        "text": "Анатомическая зона патологии"
+        "text": "Голосовые связки и складки (Plicae vocales)"
       }
     ],
     "videoUrl": null,
@@ -2524,6 +2596,15 @@
         "ny": -1,
         "nz": 1,
         "text": "Перешеек железы (Isthmus glandulae thyroideae)"
+      },
+      {
+        "x": 0,
+        "y": 0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": 1,
+        "nz": 0,
+        "text": "Щитовидный хрящ (Cartilago thyroidea)"
       }
     ],
     "videoUrl": null,
@@ -2579,6 +2660,15 @@
         "ny": -1,
         "nz": 1,
         "text": "Перешеек железы (Isthmus glandulae thyroideae)"
+      },
+      {
+        "x": 0,
+        "y": 0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": 1,
+        "nz": 0,
+        "text": "Щитовидный хрящ (Cartilago thyroidea)"
       }
     ],
     "videoUrl": null,
@@ -2635,6 +2725,15 @@
         "ny": -1,
         "nz": 1,
         "text": "Перешеек железы (Isthmus glandulae thyroideae)"
+      },
+      {
+        "x": 0,
+        "y": 0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": 1,
+        "nz": 0,
+        "text": "Щитовидный хрящ (Cartilago thyroidea)"
       }
     ],
     "videoUrl": null,
@@ -2707,7 +2806,7 @@
         "nx": 0,
         "ny": 0,
         "nz": 1,
-        "text": "Бифуркация трахеи / Карина (Bifurcatio tracheae)"
+        "text": "Карина / бифуркация трахеи (Carina tracheae)"
       }
     ],
     "videoUrl": null,
@@ -2778,7 +2877,7 @@
         "nx": 0,
         "ny": 0,
         "nz": 1,
-        "text": "Бифуркация трахеи / Карина (Bifurcatio tracheae)"
+        "text": "Карина / бифуркация трахеи (Carina tracheae)"
       }
     ],
     "videoUrl": null,
@@ -2849,7 +2948,7 @@
         "nx": 0,
         "ny": 0,
         "nz": 1,
-        "text": "Бифуркация трахеи / Карина (Bifurcatio tracheae)"
+        "text": "Карина / бифуркация трахеи (Carina tracheae)"
       }
     ],
     "videoUrl": null,
@@ -2917,7 +3016,7 @@
         "nx": 0,
         "ny": 0,
         "nz": 1,
-        "text": "Бифуркация трахеи / Карина (Bifurcatio tracheae)"
+        "text": "Карина / бифуркация трахеи (Carina tracheae)"
       }
     ],
     "videoUrl": null,
@@ -2981,7 +3080,7 @@
         "nx": 0,
         "ny": 0,
         "nz": 1,
-        "text": "Бифуркация трахеи / Карина (Bifurcatio tracheae)"
+        "text": "Карина / бифуркация трахеи (Carina tracheae)"
       }
     ],
     "videoUrl": null,
@@ -3054,7 +3153,7 @@
         "nx": 0,
         "ny": 0,
         "nz": 1,
-        "text": "Бифуркация трахеи / Карина (Bifurcatio tracheae)"
+        "text": "Карина / бифуркация трахеи (Carina tracheae)"
       }
     ],
     "videoUrl": null,
@@ -3126,7 +3225,7 @@
         "nx": 0,
         "ny": 0,
         "nz": 1,
-        "text": "Бифуркация трахеи / Карина (Bifurcatio tracheae)"
+        "text": "Карина / бифуркация трахеи (Carina tracheae)"
       }
     ],
     "videoUrl": null,
@@ -3199,7 +3298,7 @@
         "nx": 0,
         "ny": 0,
         "nz": 1,
-        "text": "Бифуркация трахеи / Карина (Bifurcatio tracheae)"
+        "text": "Карина / бифуркация трахеи (Carina tracheae)"
       }
     ],
     "videoUrl": null,
@@ -3270,7 +3369,7 @@
         "nx": 0,
         "ny": 0,
         "nz": 1,
-        "text": "Бифуркация трахеи / Карина (Bifurcatio tracheae)"
+        "text": "Карина / бифуркация трахеи (Carina tracheae)"
       }
     ],
     "videoUrl": null,
@@ -3347,7 +3446,7 @@
         "nx": 0,
         "ny": 0,
         "nz": 1,
-        "text": "Бифуркация трахеи / Карина (Bifurcatio tracheae)"
+        "text": "Карина / бифуркация трахеи (Carina tracheae)"
       }
     ],
     "videoUrl": null,
@@ -3380,52 +3479,34 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/4efeb1ca57a6.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-heart.glb",
+    "modelUrl": "/uploads/organ-nose.glb",
     "labels3d": [
       {
         "x": 0,
-        "y": 0.07,
-        "z": 0.02,
+        "y": 0.04,
+        "z": 0.03,
         "nx": 0,
         "ny": 1,
-        "nz": 0,
-        "text": "Аорта и дуга аорты (Arcus aortae)"
-      },
-      {
-        "x": 0.04,
-        "y": 0.01,
-        "z": 0.03,
-        "nx": 1,
-        "ny": 0,
         "nz": 1,
-        "text": "Левый желудочек (Ventriculus sinister)"
-      },
-      {
-        "x": -0.04,
-        "y": -0.01,
-        "z": 0.03,
-        "nx": -1,
-        "ny": 0,
-        "nz": 1,
-        "text": "Правый желудочек (Ventriculus dexter)"
+        "text": "Спинка носа и носовые кости (Ossa nasalia)"
       },
       {
         "x": 0,
-        "y": -0.06,
-        "z": 0.02,
+        "y": -0.02,
+        "z": 0.04,
         "nx": 0,
         "ny": -1,
         "nz": 1,
-        "text": "Верхушка сердца (Apex cordis)"
+        "text": "Хрящ перегородки и крылья носа (Cartilago septi nasi)"
       },
       {
         "x": 0.02,
-        "y": 0.02,
-        "z": 0.04,
-        "nx": 0,
+        "y": 0,
+        "z": -0.02,
+        "nx": 1,
         "ny": 0,
-        "nz": 1,
-        "text": "Венечные сосуды (Vasa coronaria)"
+        "nz": -1,
+        "text": "Носовая полость и раковины (Concha nasalis)"
       }
     ],
     "videoUrl": null,
@@ -4589,25 +4670,34 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/0f6ea2e1afc9.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-heart.glb",
+    "modelUrl": "/uploads/organ-circulatory-system.glb",
     "labels3d": [
       {
         "x": 0,
-        "y": 0.04,
+        "y": 0.18,
         "z": 0.02,
         "nx": 0,
         "ny": 1,
         "nz": 0,
-        "text": "Сердечно-сосудистая система и магистральные сосуды"
+        "text": "Дуга аорты и сонные артерии (Arcus aortae & A. carotis)"
       },
       {
         "x": 0,
-        "y": -0.04,
-        "z": 0.02,
+        "y": 0,
+        "z": -0.02,
         "nx": 0,
+        "ny": 0,
+        "nz": -1,
+        "text": "Брюшная аорта и нижняя полая вена (Aorta abdominalis & V. cava)"
+      },
+      {
+        "x": 0.05,
+        "y": -0.15,
+        "z": 0.02,
+        "nx": 1,
         "ny": -1,
-        "nz": 1,
-        "text": "Анатомическая зона патологии"
+        "nz": 0,
+        "text": "Подвздошные и бедренные сосуды (Vasa iliaca & femoralia)"
       }
     ],
     "videoUrl": null,
@@ -4637,25 +4727,34 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/0f6ea2e1afc9.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-heart.glb",
+    "modelUrl": "/uploads/organ-circulatory-system.glb",
     "labels3d": [
       {
         "x": 0,
-        "y": 0.04,
+        "y": 0.18,
         "z": 0.02,
         "nx": 0,
         "ny": 1,
         "nz": 0,
-        "text": "Сердечно-сосудистая система и магистральные сосуды"
+        "text": "Дуга аорты и сонные артерии (Arcus aortae & A. carotis)"
       },
       {
         "x": 0,
-        "y": -0.04,
-        "z": 0.02,
+        "y": 0,
+        "z": -0.02,
         "nx": 0,
+        "ny": 0,
+        "nz": -1,
+        "text": "Брюшная аорта и нижняя полая вена (Aorta abdominalis & V. cava)"
+      },
+      {
+        "x": 0.05,
+        "y": -0.15,
+        "z": 0.02,
+        "nx": 1,
         "ny": -1,
-        "nz": 1,
-        "text": "Анатомическая зона патологии"
+        "nz": 0,
+        "text": "Подвздошные и бедренные сосуды (Vasa iliaca & femoralia)"
       }
     ],
     "videoUrl": null,
@@ -4685,25 +4784,34 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/0f6ea2e1afc9.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-heart.glb",
+    "modelUrl": "/uploads/organ-circulatory-system.glb",
     "labels3d": [
       {
         "x": 0,
-        "y": 0.04,
+        "y": 0.18,
         "z": 0.02,
         "nx": 0,
         "ny": 1,
         "nz": 0,
-        "text": "Сердечно-сосудистая система и магистральные сосуды"
+        "text": "Дуга аорты и сонные артерии (Arcus aortae & A. carotis)"
       },
       {
         "x": 0,
-        "y": -0.04,
-        "z": 0.02,
+        "y": 0,
+        "z": -0.02,
         "nx": 0,
+        "ny": 0,
+        "nz": -1,
+        "text": "Брюшная аорта и нижняя полая вена (Aorta abdominalis & V. cava)"
+      },
+      {
+        "x": 0.05,
+        "y": -0.15,
+        "z": 0.02,
+        "nx": 1,
         "ny": -1,
-        "nz": 1,
-        "text": "Анатомическая зона патологии"
+        "nz": 0,
+        "text": "Подвздошные и бедренные сосуды (Vasa iliaca & femoralia)"
       }
     ],
     "videoUrl": null,
@@ -4736,25 +4844,34 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/0f6ea2e1afc9.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-heart.glb",
+    "modelUrl": "/uploads/organ-circulatory-system.glb",
     "labels3d": [
       {
         "x": 0,
-        "y": 0.04,
+        "y": 0.18,
         "z": 0.02,
         "nx": 0,
         "ny": 1,
         "nz": 0,
-        "text": "Сердечно-сосудистая система и магистральные сосуды"
+        "text": "Дуга аорты и сонные артерии (Arcus aortae & A. carotis)"
       },
       {
         "x": 0,
-        "y": -0.04,
-        "z": 0.02,
+        "y": 0,
+        "z": -0.02,
         "nx": 0,
+        "ny": 0,
+        "nz": -1,
+        "text": "Брюшная аорта и нижняя полая вена (Aorta abdominalis & V. cava)"
+      },
+      {
+        "x": 0.05,
+        "y": -0.15,
+        "z": 0.02,
+        "nx": 1,
         "ny": -1,
-        "nz": 1,
-        "text": "Анатомическая зона патологии"
+        "nz": 0,
+        "text": "Подвздошные и бедренные сосуды (Vasa iliaca & femoralia)"
       }
     ],
     "videoUrl": null,
@@ -4782,25 +4899,34 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/0f6ea2e1afc9.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-heart.glb",
+    "modelUrl": "/uploads/organ-circulatory-system.glb",
     "labels3d": [
       {
         "x": 0,
-        "y": 0.04,
+        "y": 0.18,
         "z": 0.02,
         "nx": 0,
         "ny": 1,
         "nz": 0,
-        "text": "Сердечно-сосудистая система и магистральные сосуды"
+        "text": "Дуга аорты и сонные артерии (Arcus aortae & A. carotis)"
       },
       {
         "x": 0,
-        "y": -0.04,
-        "z": 0.02,
+        "y": 0,
+        "z": -0.02,
         "nx": 0,
+        "ny": 0,
+        "nz": -1,
+        "text": "Брюшная аорта и нижняя полая вена (Aorta abdominalis & V. cava)"
+      },
+      {
+        "x": 0.05,
+        "y": -0.15,
+        "z": 0.02,
+        "nx": 1,
         "ny": -1,
-        "nz": 1,
-        "text": "Анатомическая зона патологии"
+        "nz": 0,
+        "text": "Подвздошные и бедренные сосуды (Vasa iliaca & femoralia)"
       }
     ],
     "videoUrl": null,
@@ -4828,25 +4954,34 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/0f6ea2e1afc9.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-heart.glb",
+    "modelUrl": "/uploads/organ-circulatory-system.glb",
     "labels3d": [
       {
         "x": 0,
-        "y": 0.04,
+        "y": 0.18,
         "z": 0.02,
         "nx": 0,
         "ny": 1,
         "nz": 0,
-        "text": "Сердечно-сосудистая система и магистральные сосуды"
+        "text": "Дуга аорты и сонные артерии (Arcus aortae & A. carotis)"
       },
       {
         "x": 0,
-        "y": -0.04,
-        "z": 0.02,
+        "y": 0,
+        "z": -0.02,
         "nx": 0,
+        "ny": 0,
+        "nz": -1,
+        "text": "Брюшная аорта и нижняя полая вена (Aorta abdominalis & V. cava)"
+      },
+      {
+        "x": 0.05,
+        "y": -0.15,
+        "z": 0.02,
+        "nx": 1,
         "ny": -1,
-        "nz": 1,
-        "text": "Анатомическая зона патологии"
+        "nz": 0,
+        "text": "Подвздошные и бедренные сосуды (Vasa iliaca & femoralia)"
       }
     ],
     "videoUrl": null,
@@ -4873,25 +5008,34 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/0f6ea2e1afc9.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-heart.glb",
+    "modelUrl": "/uploads/organ-circulatory-system.glb",
     "labels3d": [
       {
         "x": 0,
-        "y": 0.04,
+        "y": 0.18,
         "z": 0.02,
         "nx": 0,
         "ny": 1,
         "nz": 0,
-        "text": "Сердечно-сосудистая система и магистральные сосуды"
+        "text": "Дуга аорты и сонные артерии (Arcus aortae & A. carotis)"
       },
       {
         "x": 0,
-        "y": -0.04,
-        "z": 0.02,
+        "y": 0,
+        "z": -0.02,
         "nx": 0,
+        "ny": 0,
+        "nz": -1,
+        "text": "Брюшная аорта и нижняя полая вена (Aorta abdominalis & V. cava)"
+      },
+      {
+        "x": 0.05,
+        "y": -0.15,
+        "z": 0.02,
+        "nx": 1,
         "ny": -1,
-        "nz": 1,
-        "text": "Анатомическая зона патологии"
+        "nz": 0,
+        "text": "Подвздошные и бедренные сосуды (Vasa iliaca & femoralia)"
       }
     ],
     "videoUrl": null,
@@ -5557,43 +5701,43 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/f69143f72e8f.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-liver.glb",
+    "modelUrl": "/uploads/organ-gallbladder.glb",
     "labels3d": [
       {
-        "x": -0.06,
-        "y": 0.02,
-        "z": 0.03,
-        "nx": -1,
-        "ny": 0,
-        "nz": 1,
-        "text": "Правая доля печени (Lobus dexter hepatis)"
-      },
-      {
-        "x": 0.06,
-        "y": 0.02,
+        "x": 0,
+        "y": 0.05,
         "z": 0.02,
-        "nx": 1,
-        "ny": 0,
-        "nz": 1,
-        "text": "Левая доля печени (Lobus sinister hepatis)"
-      },
-      {
-        "x": -0.02,
-        "y": -0.05,
-        "z": 0.04,
         "nx": 0,
-        "ny": -1,
+        "ny": 1,
         "nz": 1,
-        "text": "Жёлчный пузырь (Vesica biliaris)"
+        "text": "Дно жёлчного пузыря (Fundus vesicae biliaris)"
       },
       {
         "x": 0,
-        "y": -0.02,
-        "z": -0.03,
+        "y": 0,
+        "z": 0.02,
         "nx": 0,
         "ny": 0,
-        "nz": -1,
-        "text": "Ворота печени и воротная вена (Porta hepatis)"
+        "nz": 1,
+        "text": "Тело жёлчного пузыря (Corpus vesicae biliaris)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Шейка и пузырный проток (Ductus cysticus)"
+      },
+      {
+        "x": 0.02,
+        "y": -0.07,
+        "z": 0,
+        "nx": 1,
+        "ny": -1,
+        "nz": 0,
+        "text": "Общий жёлчный проток (Ductus choledochus)"
       }
     ],
     "videoUrl": null,
@@ -5621,43 +5765,43 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/f69143f72e8f.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-liver.glb",
+    "modelUrl": "/uploads/organ-gallbladder.glb",
     "labels3d": [
       {
-        "x": -0.06,
-        "y": 0.02,
-        "z": 0.03,
-        "nx": -1,
-        "ny": 0,
-        "nz": 1,
-        "text": "Правая доля печени (Lobus dexter hepatis)"
-      },
-      {
-        "x": 0.06,
-        "y": 0.02,
+        "x": 0,
+        "y": 0.05,
         "z": 0.02,
-        "nx": 1,
-        "ny": 0,
-        "nz": 1,
-        "text": "Левая доля печени (Lobus sinister hepatis)"
-      },
-      {
-        "x": -0.02,
-        "y": -0.05,
-        "z": 0.04,
         "nx": 0,
-        "ny": -1,
+        "ny": 1,
         "nz": 1,
-        "text": "Жёлчный пузырь (Vesica biliaris)"
+        "text": "Дно жёлчного пузыря (Fundus vesicae biliaris)"
       },
       {
         "x": 0,
-        "y": -0.02,
-        "z": -0.03,
+        "y": 0,
+        "z": 0.02,
         "nx": 0,
         "ny": 0,
-        "nz": -1,
-        "text": "Ворота печени и воротная вена (Porta hepatis)"
+        "nz": 1,
+        "text": "Тело жёлчного пузыря (Corpus vesicae biliaris)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Шейка и пузырный проток (Ductus cysticus)"
+      },
+      {
+        "x": 0.02,
+        "y": -0.07,
+        "z": 0,
+        "nx": 1,
+        "ny": -1,
+        "nz": 0,
+        "text": "Общий жёлчный проток (Ductus choledochus)"
       }
     ],
     "videoUrl": null,
@@ -5687,43 +5831,43 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/f69143f72e8f.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-liver.glb",
+    "modelUrl": "/uploads/organ-gallbladder.glb",
     "labels3d": [
       {
-        "x": -0.06,
-        "y": 0.02,
-        "z": 0.03,
-        "nx": -1,
-        "ny": 0,
-        "nz": 1,
-        "text": "Правая доля печени (Lobus dexter hepatis)"
-      },
-      {
-        "x": 0.06,
-        "y": 0.02,
+        "x": 0,
+        "y": 0.05,
         "z": 0.02,
-        "nx": 1,
-        "ny": 0,
-        "nz": 1,
-        "text": "Левая доля печени (Lobus sinister hepatis)"
-      },
-      {
-        "x": -0.02,
-        "y": -0.05,
-        "z": 0.04,
         "nx": 0,
-        "ny": -1,
+        "ny": 1,
         "nz": 1,
-        "text": "Жёлчный пузырь (Vesica biliaris)"
+        "text": "Дно жёлчного пузыря (Fundus vesicae biliaris)"
       },
       {
         "x": 0,
-        "y": -0.02,
-        "z": -0.03,
+        "y": 0,
+        "z": 0.02,
         "nx": 0,
         "ny": 0,
-        "nz": -1,
-        "text": "Ворота печени и воротная вена (Porta hepatis)"
+        "nz": 1,
+        "text": "Тело жёлчного пузыря (Corpus vesicae biliaris)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Шейка и пузырный проток (Ductus cysticus)"
+      },
+      {
+        "x": 0.02,
+        "y": -0.07,
+        "z": 0,
+        "nx": 1,
+        "ny": -1,
+        "nz": 0,
+        "text": "Общий жёлчный проток (Ductus choledochus)"
       }
     ],
     "videoUrl": null,
@@ -5749,43 +5893,43 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/f69143f72e8f.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-liver.glb",
+    "modelUrl": "/uploads/organ-gallbladder.glb",
     "labels3d": [
       {
-        "x": -0.06,
-        "y": 0.02,
-        "z": 0.03,
-        "nx": -1,
-        "ny": 0,
-        "nz": 1,
-        "text": "Правая доля печени (Lobus dexter hepatis)"
-      },
-      {
-        "x": 0.06,
-        "y": 0.02,
+        "x": 0,
+        "y": 0.05,
         "z": 0.02,
-        "nx": 1,
-        "ny": 0,
-        "nz": 1,
-        "text": "Левая доля печени (Lobus sinister hepatis)"
-      },
-      {
-        "x": -0.02,
-        "y": -0.05,
-        "z": 0.04,
         "nx": 0,
-        "ny": -1,
+        "ny": 1,
         "nz": 1,
-        "text": "Жёлчный пузырь (Vesica biliaris)"
+        "text": "Дно жёлчного пузыря (Fundus vesicae biliaris)"
       },
       {
         "x": 0,
-        "y": -0.02,
-        "z": -0.03,
+        "y": 0,
+        "z": 0.02,
         "nx": 0,
         "ny": 0,
-        "nz": -1,
-        "text": "Ворота печени и воротная вена (Porta hepatis)"
+        "nz": 1,
+        "text": "Тело жёлчного пузыря (Corpus vesicae biliaris)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Шейка и пузырный проток (Ductus cysticus)"
+      },
+      {
+        "x": 0.02,
+        "y": -0.07,
+        "z": 0,
+        "nx": 1,
+        "ny": -1,
+        "nz": 0,
+        "text": "Общий жёлчный проток (Ductus choledochus)"
       }
     ],
     "videoUrl": null,
@@ -5811,43 +5955,43 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/f69143f72e8f.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-liver.glb",
+    "modelUrl": "/uploads/organ-gallbladder.glb",
     "labels3d": [
       {
-        "x": -0.06,
-        "y": 0.02,
-        "z": 0.03,
-        "nx": -1,
-        "ny": 0,
-        "nz": 1,
-        "text": "Правая доля печени (Lobus dexter hepatis)"
-      },
-      {
-        "x": 0.06,
-        "y": 0.02,
+        "x": 0,
+        "y": 0.05,
         "z": 0.02,
-        "nx": 1,
-        "ny": 0,
-        "nz": 1,
-        "text": "Левая доля печени (Lobus sinister hepatis)"
-      },
-      {
-        "x": -0.02,
-        "y": -0.05,
-        "z": 0.04,
         "nx": 0,
-        "ny": -1,
+        "ny": 1,
         "nz": 1,
-        "text": "Жёлчный пузырь (Vesica biliaris)"
+        "text": "Дно жёлчного пузыря (Fundus vesicae biliaris)"
       },
       {
         "x": 0,
-        "y": -0.02,
-        "z": -0.03,
+        "y": 0,
+        "z": 0.02,
         "nx": 0,
         "ny": 0,
-        "nz": -1,
-        "text": "Ворота печени и воротная вена (Porta hepatis)"
+        "nz": 1,
+        "text": "Тело жёлчного пузыря (Corpus vesicae biliaris)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Шейка и пузырный проток (Ductus cysticus)"
+      },
+      {
+        "x": 0.02,
+        "y": -0.07,
+        "z": 0,
+        "nx": 1,
+        "ny": -1,
+        "nz": 0,
+        "text": "Общий жёлчный проток (Ductus choledochus)"
       }
     ],
     "videoUrl": null,
@@ -5873,43 +6017,43 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/f69143f72e8f.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-liver.glb",
+    "modelUrl": "/uploads/organ-gallbladder.glb",
     "labels3d": [
       {
-        "x": -0.06,
-        "y": 0.02,
-        "z": 0.03,
-        "nx": -1,
-        "ny": 0,
-        "nz": 1,
-        "text": "Правая доля печени (Lobus dexter hepatis)"
-      },
-      {
-        "x": 0.06,
-        "y": 0.02,
+        "x": 0,
+        "y": 0.05,
         "z": 0.02,
-        "nx": 1,
-        "ny": 0,
-        "nz": 1,
-        "text": "Левая доля печени (Lobus sinister hepatis)"
-      },
-      {
-        "x": -0.02,
-        "y": -0.05,
-        "z": 0.04,
         "nx": 0,
-        "ny": -1,
+        "ny": 1,
         "nz": 1,
-        "text": "Жёлчный пузырь (Vesica biliaris)"
+        "text": "Дно жёлчного пузыря (Fundus vesicae biliaris)"
       },
       {
         "x": 0,
-        "y": -0.02,
-        "z": -0.03,
+        "y": 0,
+        "z": 0.02,
         "nx": 0,
         "ny": 0,
-        "nz": -1,
-        "text": "Ворота печени и воротная вена (Porta hepatis)"
+        "nz": 1,
+        "text": "Тело жёлчного пузыря (Corpus vesicae biliaris)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Шейка и пузырный проток (Ductus cysticus)"
+      },
+      {
+        "x": 0.02,
+        "y": -0.07,
+        "z": 0,
+        "nx": 1,
+        "ny": -1,
+        "nz": 0,
+        "text": "Общий жёлчный проток (Ductus choledochus)"
       }
     ],
     "videoUrl": null,
@@ -5937,43 +6081,43 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/f69143f72e8f.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-liver.glb",
+    "modelUrl": "/uploads/organ-gallbladder.glb",
     "labels3d": [
       {
-        "x": -0.06,
-        "y": 0.02,
-        "z": 0.03,
-        "nx": -1,
-        "ny": 0,
-        "nz": 1,
-        "text": "Правая доля печени (Lobus dexter hepatis)"
-      },
-      {
-        "x": 0.06,
-        "y": 0.02,
+        "x": 0,
+        "y": 0.05,
         "z": 0.02,
-        "nx": 1,
-        "ny": 0,
-        "nz": 1,
-        "text": "Левая доля печени (Lobus sinister hepatis)"
-      },
-      {
-        "x": -0.02,
-        "y": -0.05,
-        "z": 0.04,
         "nx": 0,
-        "ny": -1,
+        "ny": 1,
         "nz": 1,
-        "text": "Жёлчный пузырь (Vesica biliaris)"
+        "text": "Дно жёлчного пузыря (Fundus vesicae biliaris)"
       },
       {
         "x": 0,
-        "y": -0.02,
-        "z": -0.03,
+        "y": 0,
+        "z": 0.02,
         "nx": 0,
         "ny": 0,
-        "nz": -1,
-        "text": "Ворота печени и воротная вена (Porta hepatis)"
+        "nz": 1,
+        "text": "Тело жёлчного пузыря (Corpus vesicae biliaris)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Шейка и пузырный проток (Ductus cysticus)"
+      },
+      {
+        "x": 0.02,
+        "y": -0.07,
+        "z": 0,
+        "nx": 1,
+        "ny": -1,
+        "nz": 0,
+        "text": "Общий жёлчный проток (Ductus choledochus)"
       }
     ],
     "videoUrl": null,
@@ -5998,43 +6142,43 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/f69143f72e8f.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-liver.glb",
+    "modelUrl": "/uploads/organ-gallbladder.glb",
     "labels3d": [
       {
-        "x": -0.06,
-        "y": 0.02,
-        "z": 0.03,
-        "nx": -1,
-        "ny": 0,
-        "nz": 1,
-        "text": "Правая доля печени (Lobus dexter hepatis)"
-      },
-      {
-        "x": 0.06,
-        "y": 0.02,
+        "x": 0,
+        "y": 0.05,
         "z": 0.02,
-        "nx": 1,
-        "ny": 0,
-        "nz": 1,
-        "text": "Левая доля печени (Lobus sinister hepatis)"
-      },
-      {
-        "x": -0.02,
-        "y": -0.05,
-        "z": 0.04,
         "nx": 0,
-        "ny": -1,
+        "ny": 1,
         "nz": 1,
-        "text": "Жёлчный пузырь (Vesica biliaris)"
+        "text": "Дно жёлчного пузыря (Fundus vesicae biliaris)"
       },
       {
         "x": 0,
-        "y": -0.02,
-        "z": -0.03,
+        "y": 0,
+        "z": 0.02,
         "nx": 0,
         "ny": 0,
-        "nz": -1,
-        "text": "Ворота печени и воротная вена (Porta hepatis)"
+        "nz": 1,
+        "text": "Тело жёлчного пузыря (Corpus vesicae biliaris)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Шейка и пузырный проток (Ductus cysticus)"
+      },
+      {
+        "x": 0.02,
+        "y": -0.07,
+        "z": 0,
+        "nx": 1,
+        "ny": -1,
+        "nz": 0,
+        "text": "Общий жёлчный проток (Ductus choledochus)"
       }
     ],
     "videoUrl": null,
@@ -6058,43 +6202,43 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/f69143f72e8f.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-liver.glb",
+    "modelUrl": "/uploads/organ-gallbladder.glb",
     "labels3d": [
       {
-        "x": -0.06,
-        "y": 0.02,
-        "z": 0.03,
-        "nx": -1,
-        "ny": 0,
-        "nz": 1,
-        "text": "Правая доля печени (Lobus dexter hepatis)"
-      },
-      {
-        "x": 0.06,
-        "y": 0.02,
+        "x": 0,
+        "y": 0.05,
         "z": 0.02,
-        "nx": 1,
-        "ny": 0,
-        "nz": 1,
-        "text": "Левая доля печени (Lobus sinister hepatis)"
-      },
-      {
-        "x": -0.02,
-        "y": -0.05,
-        "z": 0.04,
         "nx": 0,
-        "ny": -1,
+        "ny": 1,
         "nz": 1,
-        "text": "Жёлчный пузырь (Vesica biliaris)"
+        "text": "Дно жёлчного пузыря (Fundus vesicae biliaris)"
       },
       {
         "x": 0,
-        "y": -0.02,
-        "z": -0.03,
+        "y": 0,
+        "z": 0.02,
         "nx": 0,
         "ny": 0,
-        "nz": -1,
-        "text": "Ворота печени и воротная вена (Porta hepatis)"
+        "nz": 1,
+        "text": "Тело жёлчного пузыря (Corpus vesicae biliaris)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Шейка и пузырный проток (Ductus cysticus)"
+      },
+      {
+        "x": 0.02,
+        "y": -0.07,
+        "z": 0,
+        "nx": 1,
+        "ny": -1,
+        "nz": 0,
+        "text": "Общий жёлчный проток (Ductus choledochus)"
       }
     ],
     "videoUrl": null,
@@ -6118,43 +6262,43 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/f69143f72e8f.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-liver.glb",
+    "modelUrl": "/uploads/organ-gallbladder.glb",
     "labels3d": [
       {
-        "x": -0.06,
-        "y": 0.02,
-        "z": 0.03,
-        "nx": -1,
-        "ny": 0,
-        "nz": 1,
-        "text": "Правая доля печени (Lobus dexter hepatis)"
-      },
-      {
-        "x": 0.06,
-        "y": 0.02,
+        "x": 0,
+        "y": 0.05,
         "z": 0.02,
-        "nx": 1,
-        "ny": 0,
-        "nz": 1,
-        "text": "Левая доля печени (Lobus sinister hepatis)"
-      },
-      {
-        "x": -0.02,
-        "y": -0.05,
-        "z": 0.04,
         "nx": 0,
-        "ny": -1,
+        "ny": 1,
         "nz": 1,
-        "text": "Жёлчный пузырь (Vesica biliaris)"
+        "text": "Дно жёлчного пузыря (Fundus vesicae biliaris)"
       },
       {
         "x": 0,
-        "y": -0.02,
-        "z": -0.03,
+        "y": 0,
+        "z": 0.02,
         "nx": 0,
         "ny": 0,
-        "nz": -1,
-        "text": "Ворота печени и воротная вена (Porta hepatis)"
+        "nz": 1,
+        "text": "Тело жёлчного пузыря (Corpus vesicae biliaris)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Шейка и пузырный проток (Ductus cysticus)"
+      },
+      {
+        "x": 0.02,
+        "y": -0.07,
+        "z": 0,
+        "nx": 1,
+        "ny": -1,
+        "nz": 0,
+        "text": "Общий жёлчный проток (Ductus choledochus)"
       }
     ],
     "videoUrl": null,
@@ -6179,43 +6323,43 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/f69143f72e8f.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-liver.glb",
+    "modelUrl": "/uploads/organ-gallbladder.glb",
     "labels3d": [
       {
-        "x": -0.06,
-        "y": 0.02,
-        "z": 0.03,
-        "nx": -1,
-        "ny": 0,
-        "nz": 1,
-        "text": "Правая доля печени (Lobus dexter hepatis)"
-      },
-      {
-        "x": 0.06,
-        "y": 0.02,
+        "x": 0,
+        "y": 0.05,
         "z": 0.02,
-        "nx": 1,
-        "ny": 0,
-        "nz": 1,
-        "text": "Левая доля печени (Lobus sinister hepatis)"
-      },
-      {
-        "x": -0.02,
-        "y": -0.05,
-        "z": 0.04,
         "nx": 0,
-        "ny": -1,
+        "ny": 1,
         "nz": 1,
-        "text": "Жёлчный пузырь (Vesica biliaris)"
+        "text": "Дно жёлчного пузыря (Fundus vesicae biliaris)"
       },
       {
         "x": 0,
-        "y": -0.02,
-        "z": -0.03,
+        "y": 0,
+        "z": 0.02,
         "nx": 0,
         "ny": 0,
-        "nz": -1,
-        "text": "Ворота печени и воротная вена (Porta hepatis)"
+        "nz": 1,
+        "text": "Тело жёлчного пузыря (Corpus vesicae biliaris)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Шейка и пузырный проток (Ductus cysticus)"
+      },
+      {
+        "x": 0.02,
+        "y": -0.07,
+        "z": 0,
+        "nx": 1,
+        "ny": -1,
+        "nz": 0,
+        "text": "Общий жёлчный проток (Ductus choledochus)"
       }
     ],
     "videoUrl": null,
@@ -6240,43 +6384,43 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/f69143f72e8f.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-liver.glb",
+    "modelUrl": "/uploads/organ-gallbladder.glb",
     "labels3d": [
       {
-        "x": -0.06,
-        "y": 0.02,
-        "z": 0.03,
-        "nx": -1,
-        "ny": 0,
-        "nz": 1,
-        "text": "Правая доля печени (Lobus dexter hepatis)"
-      },
-      {
-        "x": 0.06,
-        "y": 0.02,
+        "x": 0,
+        "y": 0.05,
         "z": 0.02,
-        "nx": 1,
-        "ny": 0,
-        "nz": 1,
-        "text": "Левая доля печени (Lobus sinister hepatis)"
-      },
-      {
-        "x": -0.02,
-        "y": -0.05,
-        "z": 0.04,
         "nx": 0,
-        "ny": -1,
+        "ny": 1,
         "nz": 1,
-        "text": "Жёлчный пузырь (Vesica biliaris)"
+        "text": "Дно жёлчного пузыря (Fundus vesicae biliaris)"
       },
       {
         "x": 0,
-        "y": -0.02,
-        "z": -0.03,
+        "y": 0,
+        "z": 0.02,
         "nx": 0,
         "ny": 0,
-        "nz": -1,
-        "text": "Ворота печени и воротная вена (Porta hepatis)"
+        "nz": 1,
+        "text": "Тело жёлчного пузыря (Corpus vesicae biliaris)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Шейка и пузырный проток (Ductus cysticus)"
+      },
+      {
+        "x": 0.02,
+        "y": -0.07,
+        "z": 0,
+        "nx": 1,
+        "ny": -1,
+        "nz": 0,
+        "text": "Общий жёлчный проток (Ductus choledochus)"
       }
     ],
     "videoUrl": null,
@@ -7098,43 +7242,34 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/1412057b3a9f.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-left-kidney.glb",
+    "modelUrl": "/uploads/organ-nose.glb",
     "labels3d": [
       {
         "x": 0,
-        "y": 0.06,
-        "z": 0.01,
+        "y": 0.04,
+        "z": 0.03,
         "nx": 0,
         "ny": 1,
-        "nz": 0,
-        "text": "Верхний полюс (Extremitas superior)"
+        "nz": 1,
+        "text": "Спинка носа и носовые кости (Ossa nasalia)"
       },
       {
         "x": 0,
-        "y": 0,
+        "y": -0.02,
         "z": 0.04,
         "nx": 0,
-        "ny": 0,
+        "ny": -1,
         "nz": 1,
-        "text": "Корковое вещество (Cortex renalis)"
+        "text": "Хрящ перегородки и крылья носа (Cartilago septi nasi)"
       },
       {
-        "x": 0.04,
-        "y": -0.01,
-        "z": 0,
+        "x": 0.02,
+        "y": 0,
+        "z": -0.02,
         "nx": 1,
         "ny": 0,
-        "nz": 0,
-        "text": "Почечная лоханка и сосуды (Pelvis renalis)"
-      },
-      {
-        "x": 0,
-        "y": -0.06,
-        "z": 0.01,
-        "nx": 0,
-        "ny": -1,
-        "nz": 0,
-        "text": "Нижний полюс и мочеточник (Ureter)"
+        "nz": -1,
+        "text": "Носовая полость и раковины (Concha nasalis)"
       }
     ],
     "videoUrl": null,
@@ -7807,6 +7942,24 @@
         "ny": 0,
         "nz": 1,
         "text": "Тело мочевого пузыря (Corpus vesicae)"
+      },
+      {
+        "x": 0,
+        "y": -0.05,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Шейка пузыря и уретра (Urethra)"
+      },
+      {
+        "x": 0.04,
+        "y": 0.02,
+        "z": -0.02,
+        "nx": 1,
+        "ny": 0,
+        "nz": -1,
+        "text": "Устья мочеточников (Ostium ureteris)"
       }
     ],
     "videoUrl": null,
@@ -7860,6 +8013,24 @@
         "ny": 0,
         "nz": 1,
         "text": "Тело мочевого пузыря (Corpus vesicae)"
+      },
+      {
+        "x": 0,
+        "y": -0.05,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Шейка пузыря и уретра (Urethra)"
+      },
+      {
+        "x": 0.04,
+        "y": 0.02,
+        "z": -0.02,
+        "nx": 1,
+        "ny": 0,
+        "nz": -1,
+        "text": "Устья мочеточников (Ostium ureteris)"
       }
     ],
     "videoUrl": null,
@@ -7889,34 +8060,43 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/32a5662dc4be.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-prostate.glb",
+    "modelUrl": "/uploads/organ-male-reproductive.glb",
     "labels3d": [
       {
         "x": 0,
-        "y": 0.03,
-        "z": 0.02,
+        "y": 0.06,
+        "z": 0.01,
         "nx": 0,
         "ny": 1,
         "nz": 0,
-        "text": "Основание предстательной железы (Basis prostatae)"
+        "text": "Предстательная железа (Prostata)"
+      },
+      {
+        "x": -0.03,
+        "y": -0.05,
+        "z": 0.02,
+        "nx": -1,
+        "ny": -1,
+        "nz": 1,
+        "text": "Правое яичко и придаток (Testis dexter)"
+      },
+      {
+        "x": 0.03,
+        "y": -0.05,
+        "z": 0.02,
+        "nx": 1,
+        "ny": -1,
+        "nz": 1,
+        "text": "Левое яичко и придаток (Testis sinister)"
       },
       {
         "x": 0,
         "y": 0,
-        "z": 0.03,
+        "z": 0.04,
         "nx": 0,
         "ny": 0,
         "nz": 1,
-        "text": "Тело железы и капсула (Corpus prostatae)"
-      },
-      {
-        "x": 0,
-        "y": -0.03,
-        "z": 0.01,
-        "nx": 0,
-        "ny": -1,
-        "nz": 0,
-        "text": "Верхушка железы (Apex prostatae)"
+        "text": "Пещеристые тела и головка (Corpus cavernosum)"
       }
     ],
     "videoUrl": null,
@@ -7946,34 +8126,43 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/32a5662dc4be.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-prostate.glb",
+    "modelUrl": "/uploads/organ-male-reproductive.glb",
     "labels3d": [
       {
         "x": 0,
-        "y": 0.03,
-        "z": 0.02,
+        "y": 0.06,
+        "z": 0.01,
         "nx": 0,
         "ny": 1,
         "nz": 0,
-        "text": "Основание предстательной железы (Basis prostatae)"
+        "text": "Предстательная железа (Prostata)"
+      },
+      {
+        "x": -0.03,
+        "y": -0.05,
+        "z": 0.02,
+        "nx": -1,
+        "ny": -1,
+        "nz": 1,
+        "text": "Правое яичко и придаток (Testis dexter)"
+      },
+      {
+        "x": 0.03,
+        "y": -0.05,
+        "z": 0.02,
+        "nx": 1,
+        "ny": -1,
+        "nz": 1,
+        "text": "Левое яичко и придаток (Testis sinister)"
       },
       {
         "x": 0,
         "y": 0,
-        "z": 0.03,
+        "z": 0.04,
         "nx": 0,
         "ny": 0,
         "nz": 1,
-        "text": "Тело железы и капсула (Corpus prostatae)"
-      },
-      {
-        "x": 0,
-        "y": -0.03,
-        "z": 0.01,
-        "nx": 0,
-        "ny": -1,
-        "nz": 0,
-        "text": "Верхушка железы (Apex prostatae)"
+        "text": "Пещеристые тела и головка (Corpus cavernosum)"
       }
     ],
     "videoUrl": null,
@@ -8003,34 +8192,43 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/32a5662dc4be.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-prostate.glb",
+    "modelUrl": "/uploads/organ-male-reproductive.glb",
     "labels3d": [
       {
         "x": 0,
-        "y": 0.03,
-        "z": 0.02,
+        "y": 0.06,
+        "z": 0.01,
         "nx": 0,
         "ny": 1,
         "nz": 0,
-        "text": "Основание предстательной железы (Basis prostatae)"
+        "text": "Предстательная железа (Prostata)"
+      },
+      {
+        "x": -0.03,
+        "y": -0.05,
+        "z": 0.02,
+        "nx": -1,
+        "ny": -1,
+        "nz": 1,
+        "text": "Правое яичко и придаток (Testis dexter)"
+      },
+      {
+        "x": 0.03,
+        "y": -0.05,
+        "z": 0.02,
+        "nx": 1,
+        "ny": -1,
+        "nz": 1,
+        "text": "Левое яичко и придаток (Testis sinister)"
       },
       {
         "x": 0,
         "y": 0,
-        "z": 0.03,
+        "z": 0.04,
         "nx": 0,
         "ny": 0,
         "nz": 1,
-        "text": "Тело железы и капсула (Corpus prostatae)"
-      },
-      {
-        "x": 0,
-        "y": -0.03,
-        "z": 0.01,
-        "nx": 0,
-        "ny": -1,
-        "nz": 0,
-        "text": "Верхушка железы (Apex prostatae)"
+        "text": "Пещеристые тела и головка (Corpus cavernosum)"
       }
     ],
     "videoUrl": null,
@@ -8061,34 +8259,43 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/32a5662dc4be.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-prostate.glb",
+    "modelUrl": "/uploads/organ-male-reproductive.glb",
     "labels3d": [
       {
         "x": 0,
-        "y": 0.03,
-        "z": 0.02,
+        "y": 0.06,
+        "z": 0.01,
         "nx": 0,
         "ny": 1,
         "nz": 0,
-        "text": "Основание предстательной железы (Basis prostatae)"
+        "text": "Предстательная железа (Prostata)"
+      },
+      {
+        "x": -0.03,
+        "y": -0.05,
+        "z": 0.02,
+        "nx": -1,
+        "ny": -1,
+        "nz": 1,
+        "text": "Правое яичко и придаток (Testis dexter)"
+      },
+      {
+        "x": 0.03,
+        "y": -0.05,
+        "z": 0.02,
+        "nx": 1,
+        "ny": -1,
+        "nz": 1,
+        "text": "Левое яичко и придаток (Testis sinister)"
       },
       {
         "x": 0,
         "y": 0,
-        "z": 0.03,
+        "z": 0.04,
         "nx": 0,
         "ny": 0,
         "nz": 1,
-        "text": "Тело железы и капсула (Corpus prostatae)"
-      },
-      {
-        "x": 0,
-        "y": -0.03,
-        "z": 0.01,
-        "nx": 0,
-        "ny": -1,
-        "nz": 0,
-        "text": "Верхушка железы (Apex prostatae)"
+        "text": "Пещеристые тела и головка (Corpus cavernosum)"
       }
     ],
     "videoUrl": null,
@@ -8114,34 +8321,43 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/32a5662dc4be.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-prostate.glb",
+    "modelUrl": "/uploads/organ-male-reproductive.glb",
     "labels3d": [
       {
         "x": 0,
-        "y": 0.03,
-        "z": 0.02,
+        "y": 0.06,
+        "z": 0.01,
         "nx": 0,
         "ny": 1,
         "nz": 0,
-        "text": "Основание предстательной железы (Basis prostatae)"
+        "text": "Предстательная железа (Prostata)"
+      },
+      {
+        "x": -0.03,
+        "y": -0.05,
+        "z": 0.02,
+        "nx": -1,
+        "ny": -1,
+        "nz": 1,
+        "text": "Правое яичко и придаток (Testis dexter)"
+      },
+      {
+        "x": 0.03,
+        "y": -0.05,
+        "z": 0.02,
+        "nx": 1,
+        "ny": -1,
+        "nz": 1,
+        "text": "Левое яичко и придаток (Testis sinister)"
       },
       {
         "x": 0,
         "y": 0,
-        "z": 0.03,
+        "z": 0.04,
         "nx": 0,
         "ny": 0,
         "nz": 1,
-        "text": "Тело железы и капсула (Corpus prostatae)"
-      },
-      {
-        "x": 0,
-        "y": -0.03,
-        "z": 0.01,
-        "nx": 0,
-        "ny": -1,
-        "nz": 0,
-        "text": "Верхушка железы (Apex prostatae)"
+        "text": "Пещеристые тела и головка (Corpus cavernosum)"
       }
     ],
     "videoUrl": null,
@@ -8181,34 +8397,43 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/32a5662dc4be.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-prostate.glb",
+    "modelUrl": "/uploads/organ-male-reproductive.glb",
     "labels3d": [
       {
         "x": 0,
-        "y": 0.03,
-        "z": 0.02,
+        "y": 0.06,
+        "z": 0.01,
         "nx": 0,
         "ny": 1,
         "nz": 0,
-        "text": "Основание предстательной железы (Basis prostatae)"
+        "text": "Предстательная железа (Prostata)"
+      },
+      {
+        "x": -0.03,
+        "y": -0.05,
+        "z": 0.02,
+        "nx": -1,
+        "ny": -1,
+        "nz": 1,
+        "text": "Правое яичко и придаток (Testis dexter)"
+      },
+      {
+        "x": 0.03,
+        "y": -0.05,
+        "z": 0.02,
+        "nx": 1,
+        "ny": -1,
+        "nz": 1,
+        "text": "Левое яичко и придаток (Testis sinister)"
       },
       {
         "x": 0,
         "y": 0,
-        "z": 0.03,
+        "z": 0.04,
         "nx": 0,
         "ny": 0,
         "nz": 1,
-        "text": "Тело железы и капсула (Corpus prostatae)"
-      },
-      {
-        "x": 0,
-        "y": -0.03,
-        "z": 0.01,
-        "nx": 0,
-        "ny": -1,
-        "nz": 0,
-        "text": "Верхушка железы (Apex prostatae)"
+        "text": "Пещеристые тела и головка (Corpus cavernosum)"
       }
     ],
     "videoUrl": null,
@@ -8233,34 +8458,43 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/32a5662dc4be.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-prostate.glb",
+    "modelUrl": "/uploads/organ-male-reproductive.glb",
     "labels3d": [
       {
         "x": 0,
-        "y": 0.03,
-        "z": 0.02,
+        "y": 0.06,
+        "z": 0.01,
         "nx": 0,
         "ny": 1,
         "nz": 0,
-        "text": "Основание предстательной железы (Basis prostatae)"
+        "text": "Предстательная железа (Prostata)"
+      },
+      {
+        "x": -0.03,
+        "y": -0.05,
+        "z": 0.02,
+        "nx": -1,
+        "ny": -1,
+        "nz": 1,
+        "text": "Правое яичко и придаток (Testis dexter)"
+      },
+      {
+        "x": 0.03,
+        "y": -0.05,
+        "z": 0.02,
+        "nx": 1,
+        "ny": -1,
+        "nz": 1,
+        "text": "Левое яичко и придаток (Testis sinister)"
       },
       {
         "x": 0,
         "y": 0,
-        "z": 0.03,
+        "z": 0.04,
         "nx": 0,
         "ny": 0,
         "nz": 1,
-        "text": "Тело железы и капсула (Corpus prostatae)"
-      },
-      {
-        "x": 0,
-        "y": -0.03,
-        "z": 0.01,
-        "nx": 0,
-        "ny": -1,
-        "nz": 0,
-        "text": "Верхушка железы (Apex prostatae)"
+        "text": "Пещеристые тела и головка (Corpus cavernosum)"
       }
     ],
     "videoUrl": null,
@@ -8298,34 +8532,43 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/32a5662dc4be.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-prostate.glb",
+    "modelUrl": "/uploads/organ-male-reproductive.glb",
     "labels3d": [
       {
         "x": 0,
-        "y": 0.03,
-        "z": 0.02,
+        "y": 0.06,
+        "z": 0.01,
         "nx": 0,
         "ny": 1,
         "nz": 0,
-        "text": "Основание предстательной железы (Basis prostatae)"
+        "text": "Предстательная железа (Prostata)"
+      },
+      {
+        "x": -0.03,
+        "y": -0.05,
+        "z": 0.02,
+        "nx": -1,
+        "ny": -1,
+        "nz": 1,
+        "text": "Правое яичко и придаток (Testis dexter)"
+      },
+      {
+        "x": 0.03,
+        "y": -0.05,
+        "z": 0.02,
+        "nx": 1,
+        "ny": -1,
+        "nz": 1,
+        "text": "Левое яичко и придаток (Testis sinister)"
       },
       {
         "x": 0,
         "y": 0,
-        "z": 0.03,
+        "z": 0.04,
         "nx": 0,
         "ny": 0,
         "nz": 1,
-        "text": "Тело железы и капсула (Corpus prostatae)"
-      },
-      {
-        "x": 0,
-        "y": -0.03,
-        "z": 0.01,
-        "nx": 0,
-        "ny": -1,
-        "nz": 0,
-        "text": "Верхушка железы (Apex prostatae)"
+        "text": "Пещеристые тела и головка (Corpus cavernosum)"
       }
     ],
     "videoUrl": null,
@@ -8363,34 +8606,43 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/32a5662dc4be.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-prostate.glb",
+    "modelUrl": "/uploads/organ-male-reproductive.glb",
     "labels3d": [
       {
         "x": 0,
-        "y": 0.03,
-        "z": 0.02,
+        "y": 0.06,
+        "z": 0.01,
         "nx": 0,
         "ny": 1,
         "nz": 0,
-        "text": "Основание предстательной железы (Basis prostatae)"
+        "text": "Предстательная железа (Prostata)"
+      },
+      {
+        "x": -0.03,
+        "y": -0.05,
+        "z": 0.02,
+        "nx": -1,
+        "ny": -1,
+        "nz": 1,
+        "text": "Правое яичко и придаток (Testis dexter)"
+      },
+      {
+        "x": 0.03,
+        "y": -0.05,
+        "z": 0.02,
+        "nx": 1,
+        "ny": -1,
+        "nz": 1,
+        "text": "Левое яичко и придаток (Testis sinister)"
       },
       {
         "x": 0,
         "y": 0,
-        "z": 0.03,
+        "z": 0.04,
         "nx": 0,
         "ny": 0,
         "nz": 1,
-        "text": "Тело железы и капсула (Corpus prostatae)"
-      },
-      {
-        "x": 0,
-        "y": -0.03,
-        "z": 0.01,
-        "nx": 0,
-        "ny": -1,
-        "nz": 0,
-        "text": "Верхушка железы (Apex prostatae)"
+        "text": "Пещеристые тела и головка (Corpus cavernosum)"
       }
     ],
     "videoUrl": null,
@@ -8418,34 +8670,43 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/32a5662dc4be.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-prostate.glb",
+    "modelUrl": "/uploads/organ-male-reproductive.glb",
     "labels3d": [
       {
         "x": 0,
-        "y": 0.03,
-        "z": 0.02,
+        "y": 0.06,
+        "z": 0.01,
         "nx": 0,
         "ny": 1,
         "nz": 0,
-        "text": "Основание предстательной железы (Basis prostatae)"
+        "text": "Предстательная железа (Prostata)"
+      },
+      {
+        "x": -0.03,
+        "y": -0.05,
+        "z": 0.02,
+        "nx": -1,
+        "ny": -1,
+        "nz": 1,
+        "text": "Правое яичко и придаток (Testis dexter)"
+      },
+      {
+        "x": 0.03,
+        "y": -0.05,
+        "z": 0.02,
+        "nx": 1,
+        "ny": -1,
+        "nz": 1,
+        "text": "Левое яичко и придаток (Testis sinister)"
       },
       {
         "x": 0,
         "y": 0,
-        "z": 0.03,
+        "z": 0.04,
         "nx": 0,
         "ny": 0,
         "nz": 1,
-        "text": "Тело железы и капсула (Corpus prostatae)"
-      },
-      {
-        "x": 0,
-        "y": -0.03,
-        "z": 0.01,
-        "nx": 0,
-        "ny": -1,
-        "nz": 0,
-        "text": "Верхушка железы (Apex prostatae)"
+        "text": "Пещеристые тела и головка (Corpus cavernosum)"
       }
     ],
     "videoUrl": null,
@@ -8471,34 +8732,43 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/32a5662dc4be.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-prostate.glb",
+    "modelUrl": "/uploads/organ-male-reproductive.glb",
     "labels3d": [
       {
         "x": 0,
-        "y": 0.03,
-        "z": 0.02,
+        "y": 0.06,
+        "z": 0.01,
         "nx": 0,
         "ny": 1,
         "nz": 0,
-        "text": "Основание предстательной железы (Basis prostatae)"
+        "text": "Предстательная железа (Prostata)"
+      },
+      {
+        "x": -0.03,
+        "y": -0.05,
+        "z": 0.02,
+        "nx": -1,
+        "ny": -1,
+        "nz": 1,
+        "text": "Правое яичко и придаток (Testis dexter)"
+      },
+      {
+        "x": 0.03,
+        "y": -0.05,
+        "z": 0.02,
+        "nx": 1,
+        "ny": -1,
+        "nz": 1,
+        "text": "Левое яичко и придаток (Testis sinister)"
       },
       {
         "x": 0,
         "y": 0,
-        "z": 0.03,
+        "z": 0.04,
         "nx": 0,
         "ny": 0,
         "nz": 1,
-        "text": "Тело железы и капсула (Corpus prostatae)"
-      },
-      {
-        "x": 0,
-        "y": -0.03,
-        "z": 0.01,
-        "nx": 0,
-        "ny": -1,
-        "nz": 0,
-        "text": "Верхушка железы (Apex prostatae)"
+        "text": "Пещеристые тела и головка (Corpus cavernosum)"
       }
     ],
     "videoUrl": null,
@@ -10969,25 +11239,34 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/woman/bb020f3aa612.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-trachea-bronchi.glb",
+    "modelUrl": "/uploads/organ-nose.glb",
     "labels3d": [
       {
         "x": 0,
         "y": 0.04,
-        "z": 0.02,
+        "z": 0.03,
         "nx": 0,
         "ny": 1,
-        "nz": 0,
-        "text": "Носоглотка и дыхательные пути"
+        "nz": 1,
+        "text": "Спинка носа и носовые кости (Ossa nasalia)"
       },
       {
         "x": 0,
-        "y": -0.04,
-        "z": 0.02,
+        "y": -0.02,
+        "z": 0.04,
         "nx": 0,
         "ny": -1,
         "nz": 1,
-        "text": "Анатомическая зона патологии"
+        "text": "Хрящ перегородки и крылья носа (Cartilago septi nasi)"
+      },
+      {
+        "x": 0.02,
+        "y": 0,
+        "z": -0.02,
+        "nx": 1,
+        "ny": 0,
+        "nz": -1,
+        "text": "Носовая полость и раковины (Concha nasalis)"
       }
     ],
     "videoUrl": null,
@@ -11009,25 +11288,34 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/woman/bb020f3aa612.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-trachea-bronchi.glb",
+    "modelUrl": "/uploads/organ-nose.glb",
     "labels3d": [
       {
         "x": 0,
         "y": 0.04,
-        "z": 0.02,
+        "z": 0.03,
         "nx": 0,
         "ny": 1,
-        "nz": 0,
-        "text": "Носоглотка и дыхательные пути"
+        "nz": 1,
+        "text": "Спинка носа и носовые кости (Ossa nasalia)"
       },
       {
         "x": 0,
-        "y": -0.04,
-        "z": 0.02,
+        "y": -0.02,
+        "z": 0.04,
         "nx": 0,
         "ny": -1,
         "nz": 1,
-        "text": "Анатомическая зона патологии"
+        "text": "Хрящ перегородки и крылья носа (Cartilago septi nasi)"
+      },
+      {
+        "x": 0.02,
+        "y": 0,
+        "z": -0.02,
+        "nx": 1,
+        "ny": 0,
+        "nz": -1,
+        "text": "Носовая полость и раковины (Concha nasalis)"
       }
     ],
     "videoUrl": null,
@@ -11049,25 +11337,34 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/woman/bb020f3aa612.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-trachea-bronchi.glb",
+    "modelUrl": "/uploads/organ-nose.glb",
     "labels3d": [
       {
         "x": 0,
         "y": 0.04,
-        "z": 0.02,
+        "z": 0.03,
         "nx": 0,
         "ny": 1,
-        "nz": 0,
-        "text": "Носоглотка и дыхательные пути"
+        "nz": 1,
+        "text": "Спинка носа и носовые кости (Ossa nasalia)"
       },
       {
         "x": 0,
-        "y": -0.04,
-        "z": 0.02,
+        "y": -0.02,
+        "z": 0.04,
         "nx": 0,
         "ny": -1,
         "nz": 1,
-        "text": "Анатомическая зона патологии"
+        "text": "Хрящ перегородки и крылья носа (Cartilago septi nasi)"
+      },
+      {
+        "x": 0.02,
+        "y": 0,
+        "z": -0.02,
+        "nx": 1,
+        "ny": 0,
+        "nz": -1,
+        "text": "Носовая полость и раковины (Concha nasalis)"
       }
     ],
     "videoUrl": null,
@@ -11355,16 +11652,25 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/woman/dea3326bb52e.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-skeleton.glb",
+    "modelUrl": "/uploads/organ-teeth-mouth.glb",
     "labels3d": [
       {
         "x": 0,
-        "y": 0.04,
-        "z": 0.02,
+        "y": 0.02,
+        "z": 0.05,
         "nx": 0,
-        "ny": 1,
+        "ny": 0,
+        "nz": 1,
+        "text": "Резцы и клыки (Dentes incisivi & canini)"
+      },
+      {
+        "x": 0.05,
+        "y": 0.01,
+        "z": 0.02,
+        "nx": 1,
+        "ny": 0,
         "nz": 0,
-        "text": "Челюстно-лицевой аппарат"
+        "text": "Премоляры и моляры (Dentes premolares & molares)"
       },
       {
         "x": 0,
@@ -11373,7 +11679,7 @@
         "nx": 0,
         "ny": -1,
         "nz": 1,
-        "text": "Анатомическая зона патологии"
+        "text": "Нижняя челюсть и десна (Mandibula & Gingiva)"
       }
     ],
     "videoUrl": null,
@@ -11396,16 +11702,25 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/woman/dea3326bb52e.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-skeleton.glb",
+    "modelUrl": "/uploads/organ-teeth-mouth.glb",
     "labels3d": [
       {
         "x": 0,
-        "y": 0.04,
-        "z": 0.02,
+        "y": 0.02,
+        "z": 0.05,
         "nx": 0,
-        "ny": 1,
+        "ny": 0,
+        "nz": 1,
+        "text": "Резцы и клыки (Dentes incisivi & canini)"
+      },
+      {
+        "x": 0.05,
+        "y": 0.01,
+        "z": 0.02,
+        "nx": 1,
+        "ny": 0,
         "nz": 0,
-        "text": "Челюстно-лицевой аппарат"
+        "text": "Премоляры и моляры (Dentes premolares & molares)"
       },
       {
         "x": 0,
@@ -11414,7 +11729,7 @@
         "nx": 0,
         "ny": -1,
         "nz": 1,
-        "text": "Анатомическая зона патологии"
+        "text": "Нижняя челюсть и десна (Mandibula & Gingiva)"
       }
     ],
     "videoUrl": null,
@@ -11448,16 +11763,25 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/woman/957f337cbfd3.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-trachea-bronchi.glb",
+    "modelUrl": "/uploads/organ-pharynx-larynx.glb",
     "labels3d": [
       {
         "x": 0,
-        "y": 0.04,
-        "z": 0.02,
+        "y": 0.06,
+        "z": 0,
         "nx": 0,
         "ny": 1,
         "nz": 0,
-        "text": "Глотка, гортань и верхние дыхательные пути"
+        "text": "Носоглотка и ротоглотка (Pharynx)"
+      },
+      {
+        "x": 0,
+        "y": 0.01,
+        "z": 0.02,
+        "nx": 0,
+        "ny": 0,
+        "nz": 1,
+        "text": "Гортаноглотка и надгортанник (Epiglottis)"
       },
       {
         "x": 0,
@@ -11466,7 +11790,7 @@
         "nx": 0,
         "ny": -1,
         "nz": 1,
-        "text": "Анатомическая зона патологии"
+        "text": "Голосовые связки и складки (Plicae vocales)"
       }
     ],
     "videoUrl": null,
@@ -11500,16 +11824,25 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/woman/957f337cbfd3.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-trachea-bronchi.glb",
+    "modelUrl": "/uploads/organ-pharynx-larynx.glb",
     "labels3d": [
       {
         "x": 0,
-        "y": 0.04,
-        "z": 0.02,
+        "y": 0.06,
+        "z": 0,
         "nx": 0,
         "ny": 1,
         "nz": 0,
-        "text": "Глотка, гортань и верхние дыхательные пути"
+        "text": "Носоглотка и ротоглотка (Pharynx)"
+      },
+      {
+        "x": 0,
+        "y": 0.01,
+        "z": 0.02,
+        "nx": 0,
+        "ny": 0,
+        "nz": 1,
+        "text": "Гортаноглотка и надгортанник (Epiglottis)"
       },
       {
         "x": 0,
@@ -11518,7 +11851,7 @@
         "nx": 0,
         "ny": -1,
         "nz": 1,
-        "text": "Анатомическая зона патологии"
+        "text": "Голосовые связки и складки (Plicae vocales)"
       }
     ],
     "videoUrl": null,
@@ -11552,16 +11885,25 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/woman/957f337cbfd3.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-trachea-bronchi.glb",
+    "modelUrl": "/uploads/organ-pharynx-larynx.glb",
     "labels3d": [
       {
         "x": 0,
-        "y": 0.04,
-        "z": 0.02,
+        "y": 0.06,
+        "z": 0,
         "nx": 0,
         "ny": 1,
         "nz": 0,
-        "text": "Глотка, гортань и верхние дыхательные пути"
+        "text": "Носоглотка и ротоглотка (Pharynx)"
+      },
+      {
+        "x": 0,
+        "y": 0.01,
+        "z": 0.02,
+        "nx": 0,
+        "ny": 0,
+        "nz": 1,
+        "text": "Гортаноглотка и надгортанник (Epiglottis)"
       },
       {
         "x": 0,
@@ -11570,7 +11912,7 @@
         "nx": 0,
         "ny": -1,
         "nz": 1,
-        "text": "Анатомическая зона патологии"
+        "text": "Голосовые связки и складки (Plicae vocales)"
       }
     ],
     "videoUrl": null,
@@ -11627,6 +11969,15 @@
         "ny": -1,
         "nz": 1,
         "text": "Перешеек железы (Isthmus glandulae thyroideae)"
+      },
+      {
+        "x": 0,
+        "y": 0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": 1,
+        "nz": 0,
+        "text": "Щитовидный хрящ (Cartilago thyroidea)"
       }
     ],
     "videoUrl": null,
@@ -11682,6 +12033,15 @@
         "ny": -1,
         "nz": 1,
         "text": "Перешеек железы (Isthmus glandulae thyroideae)"
+      },
+      {
+        "x": 0,
+        "y": 0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": 1,
+        "nz": 0,
+        "text": "Щитовидный хрящ (Cartilago thyroidea)"
       }
     ],
     "videoUrl": null,
@@ -11738,6 +12098,15 @@
         "ny": -1,
         "nz": 1,
         "text": "Перешеек железы (Isthmus glandulae thyroideae)"
+      },
+      {
+        "x": 0,
+        "y": 0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": 1,
+        "nz": 0,
+        "text": "Щитовидный хрящ (Cartilago thyroidea)"
       }
     ],
     "videoUrl": null,
@@ -11809,7 +12178,7 @@
         "nx": 0,
         "ny": 0,
         "nz": 1,
-        "text": "Бифуркация трахеи / Карина (Bifurcatio tracheae)"
+        "text": "Карина / бифуркация трахеи (Carina tracheae)"
       }
     ],
     "videoUrl": null,
@@ -11877,7 +12246,7 @@
         "nx": 0,
         "ny": 0,
         "nz": 1,
-        "text": "Бифуркация трахеи / Карина (Bifurcatio tracheae)"
+        "text": "Карина / бифуркация трахеи (Carina tracheae)"
       }
     ],
     "videoUrl": null,
@@ -11945,7 +12314,7 @@
         "nx": 0,
         "ny": 0,
         "nz": 1,
-        "text": "Бифуркация трахеи / Карина (Bifurcatio tracheae)"
+        "text": "Карина / бифуркация трахеи (Carina tracheae)"
       }
     ],
     "videoUrl": null,
@@ -12012,7 +12381,7 @@
         "nx": 0,
         "ny": 0,
         "nz": 1,
-        "text": "Бифуркация трахеи / Карина (Bifurcatio tracheae)"
+        "text": "Карина / бифуркация трахеи (Carina tracheae)"
       }
     ],
     "videoUrl": null,
@@ -12076,7 +12445,7 @@
         "nx": 0,
         "ny": 0,
         "nz": 1,
-        "text": "Бифуркация трахеи / Карина (Bifurcatio tracheae)"
+        "text": "Карина / бифуркация трахеи (Carina tracheae)"
       }
     ],
     "videoUrl": null,
@@ -12148,7 +12517,7 @@
         "nx": 0,
         "ny": 0,
         "nz": 1,
-        "text": "Бифуркация трахеи / Карина (Bifurcatio tracheae)"
+        "text": "Карина / бифуркация трахеи (Carina tracheae)"
       }
     ],
     "videoUrl": null,
@@ -12219,7 +12588,7 @@
         "nx": 0,
         "ny": 0,
         "nz": 1,
-        "text": "Бифуркация трахеи / Карина (Bifurcatio tracheae)"
+        "text": "Карина / бифуркация трахеи (Carina tracheae)"
       }
     ],
     "videoUrl": null,
@@ -12291,7 +12660,7 @@
         "nx": 0,
         "ny": 0,
         "nz": 1,
-        "text": "Бифуркация трахеи / Карина (Bifurcatio tracheae)"
+        "text": "Карина / бифуркация трахеи (Carina tracheae)"
       }
     ],
     "videoUrl": null,
@@ -12362,7 +12731,7 @@
         "nx": 0,
         "ny": 0,
         "nz": 1,
-        "text": "Бифуркация трахеи / Карина (Bifurcatio tracheae)"
+        "text": "Карина / бифуркация трахеи (Carina tracheae)"
       }
     ],
     "videoUrl": null,
@@ -12438,7 +12807,7 @@
         "nx": 0,
         "ny": 0,
         "nz": 1,
-        "text": "Бифуркация трахеи / Карина (Bifurcatio tracheae)"
+        "text": "Карина / бифуркация трахеи (Carina tracheae)"
       }
     ],
     "videoUrl": null,
@@ -12528,52 +12897,34 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/woman/b794ca1b0593.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-heart.glb",
+    "modelUrl": "/uploads/organ-nose.glb",
     "labels3d": [
       {
         "x": 0,
-        "y": 0.07,
-        "z": 0.02,
+        "y": 0.04,
+        "z": 0.03,
         "nx": 0,
         "ny": 1,
-        "nz": 0,
-        "text": "Аорта и дуга аорты (Arcus aortae)"
-      },
-      {
-        "x": 0.04,
-        "y": 0.01,
-        "z": 0.03,
-        "nx": 1,
-        "ny": 0,
         "nz": 1,
-        "text": "Левый желудочек (Ventriculus sinister)"
-      },
-      {
-        "x": -0.04,
-        "y": -0.01,
-        "z": 0.03,
-        "nx": -1,
-        "ny": 0,
-        "nz": 1,
-        "text": "Правый желудочек (Ventriculus dexter)"
+        "text": "Спинка носа и носовые кости (Ossa nasalia)"
       },
       {
         "x": 0,
-        "y": -0.06,
-        "z": 0.02,
+        "y": -0.02,
+        "z": 0.04,
         "nx": 0,
         "ny": -1,
         "nz": 1,
-        "text": "Верхушка сердца (Apex cordis)"
+        "text": "Хрящ перегородки и крылья носа (Cartilago septi nasi)"
       },
       {
         "x": 0.02,
-        "y": 0.02,
-        "z": 0.04,
-        "nx": 0,
+        "y": 0,
+        "z": -0.02,
+        "nx": 1,
         "ny": 0,
-        "nz": 1,
-        "text": "Венечные сосуды (Vasa coronaria)"
+        "nz": -1,
+        "text": "Носовая полость и раковины (Concha nasalis)"
       }
     ],
     "videoUrl": null,
@@ -13735,25 +14086,34 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/woman/b95fd53aa815.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-heart.glb",
+    "modelUrl": "/uploads/organ-circulatory-system.glb",
     "labels3d": [
       {
         "x": 0,
-        "y": 0.04,
+        "y": 0.18,
         "z": 0.02,
         "nx": 0,
         "ny": 1,
         "nz": 0,
-        "text": "Сердечно-сосудистая система и магистральные сосуды"
+        "text": "Дуга аорты и сонные артерии (Arcus aortae & A. carotis)"
       },
       {
         "x": 0,
-        "y": -0.04,
-        "z": 0.02,
+        "y": 0,
+        "z": -0.02,
         "nx": 0,
+        "ny": 0,
+        "nz": -1,
+        "text": "Брюшная аорта и нижняя полая вена (Aorta abdominalis & V. cava)"
+      },
+      {
+        "x": 0.05,
+        "y": -0.15,
+        "z": 0.02,
+        "nx": 1,
         "ny": -1,
-        "nz": 1,
-        "text": "Анатомическая зона патологии"
+        "nz": 0,
+        "text": "Подвздошные и бедренные сосуды (Vasa iliaca & femoralia)"
       }
     ],
     "videoUrl": null,
@@ -13778,25 +14138,34 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/woman/b95fd53aa815.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-heart.glb",
+    "modelUrl": "/uploads/organ-circulatory-system.glb",
     "labels3d": [
       {
         "x": 0,
-        "y": 0.04,
+        "y": 0.18,
         "z": 0.02,
         "nx": 0,
         "ny": 1,
         "nz": 0,
-        "text": "Сердечно-сосудистая система и магистральные сосуды"
+        "text": "Дуга аорты и сонные артерии (Arcus aortae & A. carotis)"
       },
       {
         "x": 0,
-        "y": -0.04,
-        "z": 0.02,
+        "y": 0,
+        "z": -0.02,
         "nx": 0,
+        "ny": 0,
+        "nz": -1,
+        "text": "Брюшная аорта и нижняя полая вена (Aorta abdominalis & V. cava)"
+      },
+      {
+        "x": 0.05,
+        "y": -0.15,
+        "z": 0.02,
+        "nx": 1,
         "ny": -1,
-        "nz": 1,
-        "text": "Анатомическая зона патологии"
+        "nz": 0,
+        "text": "Подвздошные и бедренные сосуды (Vasa iliaca & femoralia)"
       }
     ],
     "videoUrl": null,
@@ -13824,25 +14193,34 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/woman/b95fd53aa815.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-heart.glb",
+    "modelUrl": "/uploads/organ-circulatory-system.glb",
     "labels3d": [
       {
         "x": 0,
-        "y": 0.04,
+        "y": 0.18,
         "z": 0.02,
         "nx": 0,
         "ny": 1,
         "nz": 0,
-        "text": "Сердечно-сосудистая система и магистральные сосуды"
+        "text": "Дуга аорты и сонные артерии (Arcus aortae & A. carotis)"
       },
       {
         "x": 0,
-        "y": -0.04,
-        "z": 0.02,
+        "y": 0,
+        "z": -0.02,
         "nx": 0,
+        "ny": 0,
+        "nz": -1,
+        "text": "Брюшная аорта и нижняя полая вена (Aorta abdominalis & V. cava)"
+      },
+      {
+        "x": 0.05,
+        "y": -0.15,
+        "z": 0.02,
+        "nx": 1,
         "ny": -1,
-        "nz": 1,
-        "text": "Анатомическая зона патологии"
+        "nz": 0,
+        "text": "Подвздошные и бедренные сосуды (Vasa iliaca & femoralia)"
       }
     ],
     "videoUrl": null,
@@ -13873,25 +14251,34 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/woman/b95fd53aa815.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-heart.glb",
+    "modelUrl": "/uploads/organ-circulatory-system.glb",
     "labels3d": [
       {
         "x": 0,
-        "y": 0.04,
+        "y": 0.18,
         "z": 0.02,
         "nx": 0,
         "ny": 1,
         "nz": 0,
-        "text": "Сердечно-сосудистая система и магистральные сосуды"
+        "text": "Дуга аорты и сонные артерии (Arcus aortae & A. carotis)"
       },
       {
         "x": 0,
-        "y": -0.04,
-        "z": 0.02,
+        "y": 0,
+        "z": -0.02,
         "nx": 0,
+        "ny": 0,
+        "nz": -1,
+        "text": "Брюшная аорта и нижняя полая вена (Aorta abdominalis & V. cava)"
+      },
+      {
+        "x": 0.05,
+        "y": -0.15,
+        "z": 0.02,
+        "nx": 1,
         "ny": -1,
-        "nz": 1,
-        "text": "Анатомическая зона патологии"
+        "nz": 0,
+        "text": "Подвздошные и бедренные сосуды (Vasa iliaca & femoralia)"
       }
     ],
     "videoUrl": null,
@@ -13919,25 +14306,34 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/woman/b95fd53aa815.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-heart.glb",
+    "modelUrl": "/uploads/organ-circulatory-system.glb",
     "labels3d": [
       {
         "x": 0,
-        "y": 0.04,
+        "y": 0.18,
         "z": 0.02,
         "nx": 0,
         "ny": 1,
         "nz": 0,
-        "text": "Сердечно-сосудистая система и магистральные сосуды"
+        "text": "Дуга аорты и сонные артерии (Arcus aortae & A. carotis)"
       },
       {
         "x": 0,
-        "y": -0.04,
-        "z": 0.02,
+        "y": 0,
+        "z": -0.02,
         "nx": 0,
+        "ny": 0,
+        "nz": -1,
+        "text": "Брюшная аорта и нижняя полая вена (Aorta abdominalis & V. cava)"
+      },
+      {
+        "x": 0.05,
+        "y": -0.15,
+        "z": 0.02,
+        "nx": 1,
         "ny": -1,
-        "nz": 1,
-        "text": "Анатомическая зона патологии"
+        "nz": 0,
+        "text": "Подвздошные и бедренные сосуды (Vasa iliaca & femoralia)"
       }
     ],
     "videoUrl": null,
@@ -13965,25 +14361,34 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/woman/b95fd53aa815.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-heart.glb",
+    "modelUrl": "/uploads/organ-circulatory-system.glb",
     "labels3d": [
       {
         "x": 0,
-        "y": 0.04,
+        "y": 0.18,
         "z": 0.02,
         "nx": 0,
         "ny": 1,
         "nz": 0,
-        "text": "Сердечно-сосудистая система и магистральные сосуды"
+        "text": "Дуга аорты и сонные артерии (Arcus aortae & A. carotis)"
       },
       {
         "x": 0,
-        "y": -0.04,
-        "z": 0.02,
+        "y": 0,
+        "z": -0.02,
         "nx": 0,
+        "ny": 0,
+        "nz": -1,
+        "text": "Брюшная аорта и нижняя полая вена (Aorta abdominalis & V. cava)"
+      },
+      {
+        "x": 0.05,
+        "y": -0.15,
+        "z": 0.02,
+        "nx": 1,
         "ny": -1,
-        "nz": 1,
-        "text": "Анатомическая зона патологии"
+        "nz": 0,
+        "text": "Подвздошные и бедренные сосуды (Vasa iliaca & femoralia)"
       }
     ],
     "videoUrl": null,
@@ -14010,25 +14415,34 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/woman/b95fd53aa815.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-heart.glb",
+    "modelUrl": "/uploads/organ-circulatory-system.glb",
     "labels3d": [
       {
         "x": 0,
-        "y": 0.04,
+        "y": 0.18,
         "z": 0.02,
         "nx": 0,
         "ny": 1,
         "nz": 0,
-        "text": "Сердечно-сосудистая система и магистральные сосуды"
+        "text": "Дуга аорты и сонные артерии (Arcus aortae & A. carotis)"
       },
       {
         "x": 0,
-        "y": -0.04,
-        "z": 0.02,
+        "y": 0,
+        "z": -0.02,
         "nx": 0,
+        "ny": 0,
+        "nz": -1,
+        "text": "Брюшная аорта и нижняя полая вена (Aorta abdominalis & V. cava)"
+      },
+      {
+        "x": 0.05,
+        "y": -0.15,
+        "z": 0.02,
+        "nx": 1,
         "ny": -1,
-        "nz": 1,
-        "text": "Анатомическая зона патологии"
+        "nz": 0,
+        "text": "Подвздошные и бедренные сосуды (Vasa iliaca & femoralia)"
       }
     ],
     "videoUrl": null,
@@ -14675,43 +15089,43 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/woman/b8a53fb639e0.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-liver.glb",
+    "modelUrl": "/uploads/organ-gallbladder.glb",
     "labels3d": [
       {
-        "x": -0.06,
-        "y": 0.02,
-        "z": 0.03,
-        "nx": -1,
-        "ny": 0,
-        "nz": 1,
-        "text": "Правая доля печени (Lobus dexter hepatis)"
-      },
-      {
-        "x": 0.06,
-        "y": 0.02,
+        "x": 0,
+        "y": 0.05,
         "z": 0.02,
-        "nx": 1,
-        "ny": 0,
-        "nz": 1,
-        "text": "Левая доля печени (Lobus sinister hepatis)"
-      },
-      {
-        "x": -0.02,
-        "y": -0.05,
-        "z": 0.04,
         "nx": 0,
-        "ny": -1,
+        "ny": 1,
         "nz": 1,
-        "text": "Жёлчный пузырь (Vesica biliaris)"
+        "text": "Дно жёлчного пузыря (Fundus vesicae biliaris)"
       },
       {
         "x": 0,
-        "y": -0.02,
-        "z": -0.03,
+        "y": 0,
+        "z": 0.02,
         "nx": 0,
         "ny": 0,
-        "nz": -1,
-        "text": "Ворота печени и воротная вена (Porta hepatis)"
+        "nz": 1,
+        "text": "Тело жёлчного пузыря (Corpus vesicae biliaris)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Шейка и пузырный проток (Ductus cysticus)"
+      },
+      {
+        "x": 0.02,
+        "y": -0.07,
+        "z": 0,
+        "nx": 1,
+        "ny": -1,
+        "nz": 0,
+        "text": "Общий жёлчный проток (Ductus choledochus)"
       }
     ],
     "videoUrl": null,
@@ -14739,43 +15153,43 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/woman/b8a53fb639e0.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-liver.glb",
+    "modelUrl": "/uploads/organ-gallbladder.glb",
     "labels3d": [
       {
-        "x": -0.06,
-        "y": 0.02,
-        "z": 0.03,
-        "nx": -1,
-        "ny": 0,
-        "nz": 1,
-        "text": "Правая доля печени (Lobus dexter hepatis)"
-      },
-      {
-        "x": 0.06,
-        "y": 0.02,
+        "x": 0,
+        "y": 0.05,
         "z": 0.02,
-        "nx": 1,
-        "ny": 0,
-        "nz": 1,
-        "text": "Левая доля печени (Lobus sinister hepatis)"
-      },
-      {
-        "x": -0.02,
-        "y": -0.05,
-        "z": 0.04,
         "nx": 0,
-        "ny": -1,
+        "ny": 1,
         "nz": 1,
-        "text": "Жёлчный пузырь (Vesica biliaris)"
+        "text": "Дно жёлчного пузыря (Fundus vesicae biliaris)"
       },
       {
         "x": 0,
-        "y": -0.02,
-        "z": -0.03,
+        "y": 0,
+        "z": 0.02,
         "nx": 0,
         "ny": 0,
-        "nz": -1,
-        "text": "Ворота печени и воротная вена (Porta hepatis)"
+        "nz": 1,
+        "text": "Тело жёлчного пузыря (Corpus vesicae biliaris)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Шейка и пузырный проток (Ductus cysticus)"
+      },
+      {
+        "x": 0.02,
+        "y": -0.07,
+        "z": 0,
+        "nx": 1,
+        "ny": -1,
+        "nz": 0,
+        "text": "Общий жёлчный проток (Ductus choledochus)"
       }
     ],
     "videoUrl": null,
@@ -14804,43 +15218,43 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/woman/b8a53fb639e0.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-liver.glb",
+    "modelUrl": "/uploads/organ-gallbladder.glb",
     "labels3d": [
       {
-        "x": -0.06,
-        "y": 0.02,
-        "z": 0.03,
-        "nx": -1,
-        "ny": 0,
-        "nz": 1,
-        "text": "Правая доля печени (Lobus dexter hepatis)"
-      },
-      {
-        "x": 0.06,
-        "y": 0.02,
+        "x": 0,
+        "y": 0.05,
         "z": 0.02,
-        "nx": 1,
-        "ny": 0,
-        "nz": 1,
-        "text": "Левая доля печени (Lobus sinister hepatis)"
-      },
-      {
-        "x": -0.02,
-        "y": -0.05,
-        "z": 0.04,
         "nx": 0,
-        "ny": -1,
+        "ny": 1,
         "nz": 1,
-        "text": "Жёлчный пузырь (Vesica biliaris)"
+        "text": "Дно жёлчного пузыря (Fundus vesicae biliaris)"
       },
       {
         "x": 0,
-        "y": -0.02,
-        "z": -0.03,
+        "y": 0,
+        "z": 0.02,
         "nx": 0,
         "ny": 0,
-        "nz": -1,
-        "text": "Ворота печени и воротная вена (Porta hepatis)"
+        "nz": 1,
+        "text": "Тело жёлчного пузыря (Corpus vesicae biliaris)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Шейка и пузырный проток (Ductus cysticus)"
+      },
+      {
+        "x": 0.02,
+        "y": -0.07,
+        "z": 0,
+        "nx": 1,
+        "ny": -1,
+        "nz": 0,
+        "text": "Общий жёлчный проток (Ductus choledochus)"
       }
     ],
     "videoUrl": null,
@@ -14866,43 +15280,43 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/woman/b8a53fb639e0.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-liver.glb",
+    "modelUrl": "/uploads/organ-gallbladder.glb",
     "labels3d": [
       {
-        "x": -0.06,
-        "y": 0.02,
-        "z": 0.03,
-        "nx": -1,
-        "ny": 0,
-        "nz": 1,
-        "text": "Правая доля печени (Lobus dexter hepatis)"
-      },
-      {
-        "x": 0.06,
-        "y": 0.02,
+        "x": 0,
+        "y": 0.05,
         "z": 0.02,
-        "nx": 1,
-        "ny": 0,
-        "nz": 1,
-        "text": "Левая доля печени (Lobus sinister hepatis)"
-      },
-      {
-        "x": -0.02,
-        "y": -0.05,
-        "z": 0.04,
         "nx": 0,
-        "ny": -1,
+        "ny": 1,
         "nz": 1,
-        "text": "Жёлчный пузырь (Vesica biliaris)"
+        "text": "Дно жёлчного пузыря (Fundus vesicae biliaris)"
       },
       {
         "x": 0,
-        "y": -0.02,
-        "z": -0.03,
+        "y": 0,
+        "z": 0.02,
         "nx": 0,
         "ny": 0,
-        "nz": -1,
-        "text": "Ворота печени и воротная вена (Porta hepatis)"
+        "nz": 1,
+        "text": "Тело жёлчного пузыря (Corpus vesicae biliaris)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Шейка и пузырный проток (Ductus cysticus)"
+      },
+      {
+        "x": 0.02,
+        "y": -0.07,
+        "z": 0,
+        "nx": 1,
+        "ny": -1,
+        "nz": 0,
+        "text": "Общий жёлчный проток (Ductus choledochus)"
       }
     ],
     "videoUrl": null,
@@ -14928,43 +15342,43 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/woman/b8a53fb639e0.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-liver.glb",
+    "modelUrl": "/uploads/organ-gallbladder.glb",
     "labels3d": [
       {
-        "x": -0.06,
-        "y": 0.02,
-        "z": 0.03,
-        "nx": -1,
-        "ny": 0,
-        "nz": 1,
-        "text": "Правая доля печени (Lobus dexter hepatis)"
-      },
-      {
-        "x": 0.06,
-        "y": 0.02,
+        "x": 0,
+        "y": 0.05,
         "z": 0.02,
-        "nx": 1,
-        "ny": 0,
-        "nz": 1,
-        "text": "Левая доля печени (Lobus sinister hepatis)"
-      },
-      {
-        "x": -0.02,
-        "y": -0.05,
-        "z": 0.04,
         "nx": 0,
-        "ny": -1,
+        "ny": 1,
         "nz": 1,
-        "text": "Жёлчный пузырь (Vesica biliaris)"
+        "text": "Дно жёлчного пузыря (Fundus vesicae biliaris)"
       },
       {
         "x": 0,
-        "y": -0.02,
-        "z": -0.03,
+        "y": 0,
+        "z": 0.02,
         "nx": 0,
         "ny": 0,
-        "nz": -1,
-        "text": "Ворота печени и воротная вена (Porta hepatis)"
+        "nz": 1,
+        "text": "Тело жёлчного пузыря (Corpus vesicae biliaris)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Шейка и пузырный проток (Ductus cysticus)"
+      },
+      {
+        "x": 0.02,
+        "y": -0.07,
+        "z": 0,
+        "nx": 1,
+        "ny": -1,
+        "nz": 0,
+        "text": "Общий жёлчный проток (Ductus choledochus)"
       }
     ],
     "videoUrl": null,
@@ -14990,43 +15404,43 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/woman/b8a53fb639e0.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-liver.glb",
+    "modelUrl": "/uploads/organ-gallbladder.glb",
     "labels3d": [
       {
-        "x": -0.06,
-        "y": 0.02,
-        "z": 0.03,
-        "nx": -1,
-        "ny": 0,
-        "nz": 1,
-        "text": "Правая доля печени (Lobus dexter hepatis)"
-      },
-      {
-        "x": 0.06,
-        "y": 0.02,
+        "x": 0,
+        "y": 0.05,
         "z": 0.02,
-        "nx": 1,
-        "ny": 0,
-        "nz": 1,
-        "text": "Левая доля печени (Lobus sinister hepatis)"
-      },
-      {
-        "x": -0.02,
-        "y": -0.05,
-        "z": 0.04,
         "nx": 0,
-        "ny": -1,
+        "ny": 1,
         "nz": 1,
-        "text": "Жёлчный пузырь (Vesica biliaris)"
+        "text": "Дно жёлчного пузыря (Fundus vesicae biliaris)"
       },
       {
         "x": 0,
-        "y": -0.02,
-        "z": -0.03,
+        "y": 0,
+        "z": 0.02,
         "nx": 0,
         "ny": 0,
-        "nz": -1,
-        "text": "Ворота печени и воротная вена (Porta hepatis)"
+        "nz": 1,
+        "text": "Тело жёлчного пузыря (Corpus vesicae biliaris)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Шейка и пузырный проток (Ductus cysticus)"
+      },
+      {
+        "x": 0.02,
+        "y": -0.07,
+        "z": 0,
+        "nx": 1,
+        "ny": -1,
+        "nz": 0,
+        "text": "Общий жёлчный проток (Ductus choledochus)"
       }
     ],
     "videoUrl": null,
@@ -15054,43 +15468,43 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/woman/b8a53fb639e0.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-liver.glb",
+    "modelUrl": "/uploads/organ-gallbladder.glb",
     "labels3d": [
       {
-        "x": -0.06,
-        "y": 0.02,
-        "z": 0.03,
-        "nx": -1,
-        "ny": 0,
-        "nz": 1,
-        "text": "Правая доля печени (Lobus dexter hepatis)"
-      },
-      {
-        "x": 0.06,
-        "y": 0.02,
+        "x": 0,
+        "y": 0.05,
         "z": 0.02,
-        "nx": 1,
-        "ny": 0,
-        "nz": 1,
-        "text": "Левая доля печени (Lobus sinister hepatis)"
-      },
-      {
-        "x": -0.02,
-        "y": -0.05,
-        "z": 0.04,
         "nx": 0,
-        "ny": -1,
+        "ny": 1,
         "nz": 1,
-        "text": "Жёлчный пузырь (Vesica biliaris)"
+        "text": "Дно жёлчного пузыря (Fundus vesicae biliaris)"
       },
       {
         "x": 0,
-        "y": -0.02,
-        "z": -0.03,
+        "y": 0,
+        "z": 0.02,
         "nx": 0,
         "ny": 0,
-        "nz": -1,
-        "text": "Ворота печени и воротная вена (Porta hepatis)"
+        "nz": 1,
+        "text": "Тело жёлчного пузыря (Corpus vesicae biliaris)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Шейка и пузырный проток (Ductus cysticus)"
+      },
+      {
+        "x": 0.02,
+        "y": -0.07,
+        "z": 0,
+        "nx": 1,
+        "ny": -1,
+        "nz": 0,
+        "text": "Общий жёлчный проток (Ductus choledochus)"
       }
     ],
     "videoUrl": null,
@@ -15115,43 +15529,43 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/woman/b8a53fb639e0.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-liver.glb",
+    "modelUrl": "/uploads/organ-gallbladder.glb",
     "labels3d": [
       {
-        "x": -0.06,
-        "y": 0.02,
-        "z": 0.03,
-        "nx": -1,
-        "ny": 0,
-        "nz": 1,
-        "text": "Правая доля печени (Lobus dexter hepatis)"
-      },
-      {
-        "x": 0.06,
-        "y": 0.02,
+        "x": 0,
+        "y": 0.05,
         "z": 0.02,
-        "nx": 1,
-        "ny": 0,
-        "nz": 1,
-        "text": "Левая доля печени (Lobus sinister hepatis)"
-      },
-      {
-        "x": -0.02,
-        "y": -0.05,
-        "z": 0.04,
         "nx": 0,
-        "ny": -1,
+        "ny": 1,
         "nz": 1,
-        "text": "Жёлчный пузырь (Vesica biliaris)"
+        "text": "Дно жёлчного пузыря (Fundus vesicae biliaris)"
       },
       {
         "x": 0,
-        "y": -0.02,
-        "z": -0.03,
+        "y": 0,
+        "z": 0.02,
         "nx": 0,
         "ny": 0,
-        "nz": -1,
-        "text": "Ворота печени и воротная вена (Porta hepatis)"
+        "nz": 1,
+        "text": "Тело жёлчного пузыря (Corpus vesicae biliaris)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Шейка и пузырный проток (Ductus cysticus)"
+      },
+      {
+        "x": 0.02,
+        "y": -0.07,
+        "z": 0,
+        "nx": 1,
+        "ny": -1,
+        "nz": 0,
+        "text": "Общий жёлчный проток (Ductus choledochus)"
       }
     ],
     "videoUrl": null,
@@ -15175,43 +15589,43 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/woman/b8a53fb639e0.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-liver.glb",
+    "modelUrl": "/uploads/organ-gallbladder.glb",
     "labels3d": [
       {
-        "x": -0.06,
-        "y": 0.02,
-        "z": 0.03,
-        "nx": -1,
-        "ny": 0,
-        "nz": 1,
-        "text": "Правая доля печени (Lobus dexter hepatis)"
-      },
-      {
-        "x": 0.06,
-        "y": 0.02,
+        "x": 0,
+        "y": 0.05,
         "z": 0.02,
-        "nx": 1,
-        "ny": 0,
-        "nz": 1,
-        "text": "Левая доля печени (Lobus sinister hepatis)"
-      },
-      {
-        "x": -0.02,
-        "y": -0.05,
-        "z": 0.04,
         "nx": 0,
-        "ny": -1,
+        "ny": 1,
         "nz": 1,
-        "text": "Жёлчный пузырь (Vesica biliaris)"
+        "text": "Дно жёлчного пузыря (Fundus vesicae biliaris)"
       },
       {
         "x": 0,
-        "y": -0.02,
-        "z": -0.03,
+        "y": 0,
+        "z": 0.02,
         "nx": 0,
         "ny": 0,
-        "nz": -1,
-        "text": "Ворота печени и воротная вена (Porta hepatis)"
+        "nz": 1,
+        "text": "Тело жёлчного пузыря (Corpus vesicae biliaris)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Шейка и пузырный проток (Ductus cysticus)"
+      },
+      {
+        "x": 0.02,
+        "y": -0.07,
+        "z": 0,
+        "nx": 1,
+        "ny": -1,
+        "nz": 0,
+        "text": "Общий жёлчный проток (Ductus choledochus)"
       }
     ],
     "videoUrl": null,
@@ -15235,43 +15649,43 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/woman/b8a53fb639e0.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-liver.glb",
+    "modelUrl": "/uploads/organ-gallbladder.glb",
     "labels3d": [
       {
-        "x": -0.06,
-        "y": 0.02,
-        "z": 0.03,
-        "nx": -1,
-        "ny": 0,
-        "nz": 1,
-        "text": "Правая доля печени (Lobus dexter hepatis)"
-      },
-      {
-        "x": 0.06,
-        "y": 0.02,
+        "x": 0,
+        "y": 0.05,
         "z": 0.02,
-        "nx": 1,
-        "ny": 0,
-        "nz": 1,
-        "text": "Левая доля печени (Lobus sinister hepatis)"
-      },
-      {
-        "x": -0.02,
-        "y": -0.05,
-        "z": 0.04,
         "nx": 0,
-        "ny": -1,
+        "ny": 1,
         "nz": 1,
-        "text": "Жёлчный пузырь (Vesica biliaris)"
+        "text": "Дно жёлчного пузыря (Fundus vesicae biliaris)"
       },
       {
         "x": 0,
-        "y": -0.02,
-        "z": -0.03,
+        "y": 0,
+        "z": 0.02,
         "nx": 0,
         "ny": 0,
-        "nz": -1,
-        "text": "Ворота печени и воротная вена (Porta hepatis)"
+        "nz": 1,
+        "text": "Тело жёлчного пузыря (Corpus vesicae biliaris)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Шейка и пузырный проток (Ductus cysticus)"
+      },
+      {
+        "x": 0.02,
+        "y": -0.07,
+        "z": 0,
+        "nx": 1,
+        "ny": -1,
+        "nz": 0,
+        "text": "Общий жёлчный проток (Ductus choledochus)"
       }
     ],
     "videoUrl": null,
@@ -15296,43 +15710,43 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/woman/b8a53fb639e0.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-liver.glb",
+    "modelUrl": "/uploads/organ-gallbladder.glb",
     "labels3d": [
       {
-        "x": -0.06,
-        "y": 0.02,
-        "z": 0.03,
-        "nx": -1,
-        "ny": 0,
-        "nz": 1,
-        "text": "Правая доля печени (Lobus dexter hepatis)"
-      },
-      {
-        "x": 0.06,
-        "y": 0.02,
+        "x": 0,
+        "y": 0.05,
         "z": 0.02,
-        "nx": 1,
-        "ny": 0,
-        "nz": 1,
-        "text": "Левая доля печени (Lobus sinister hepatis)"
-      },
-      {
-        "x": -0.02,
-        "y": -0.05,
-        "z": 0.04,
         "nx": 0,
-        "ny": -1,
+        "ny": 1,
         "nz": 1,
-        "text": "Жёлчный пузырь (Vesica biliaris)"
+        "text": "Дно жёлчного пузыря (Fundus vesicae biliaris)"
       },
       {
         "x": 0,
-        "y": -0.02,
-        "z": -0.03,
+        "y": 0,
+        "z": 0.02,
         "nx": 0,
         "ny": 0,
-        "nz": -1,
-        "text": "Ворота печени и воротная вена (Porta hepatis)"
+        "nz": 1,
+        "text": "Тело жёлчного пузыря (Corpus vesicae biliaris)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Шейка и пузырный проток (Ductus cysticus)"
+      },
+      {
+        "x": 0.02,
+        "y": -0.07,
+        "z": 0,
+        "nx": 1,
+        "ny": -1,
+        "nz": 0,
+        "text": "Общий жёлчный проток (Ductus choledochus)"
       }
     ],
     "videoUrl": null,
@@ -15357,43 +15771,43 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/woman/b8a53fb639e0.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-liver.glb",
+    "modelUrl": "/uploads/organ-gallbladder.glb",
     "labels3d": [
       {
-        "x": -0.06,
-        "y": 0.02,
-        "z": 0.03,
-        "nx": -1,
-        "ny": 0,
-        "nz": 1,
-        "text": "Правая доля печени (Lobus dexter hepatis)"
-      },
-      {
-        "x": 0.06,
-        "y": 0.02,
+        "x": 0,
+        "y": 0.05,
         "z": 0.02,
-        "nx": 1,
-        "ny": 0,
-        "nz": 1,
-        "text": "Левая доля печени (Lobus sinister hepatis)"
-      },
-      {
-        "x": -0.02,
-        "y": -0.05,
-        "z": 0.04,
         "nx": 0,
-        "ny": -1,
+        "ny": 1,
         "nz": 1,
-        "text": "Жёлчный пузырь (Vesica biliaris)"
+        "text": "Дно жёлчного пузыря (Fundus vesicae biliaris)"
       },
       {
         "x": 0,
-        "y": -0.02,
-        "z": -0.03,
+        "y": 0,
+        "z": 0.02,
         "nx": 0,
         "ny": 0,
-        "nz": -1,
-        "text": "Ворота печени и воротная вена (Porta hepatis)"
+        "nz": 1,
+        "text": "Тело жёлчного пузыря (Corpus vesicae biliaris)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Шейка и пузырный проток (Ductus cysticus)"
+      },
+      {
+        "x": 0.02,
+        "y": -0.07,
+        "z": 0,
+        "nx": 1,
+        "ny": -1,
+        "nz": 0,
+        "text": "Общий жёлчный проток (Ductus choledochus)"
       }
     ],
     "videoUrl": null,
@@ -16210,43 +16624,34 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/woman/a911bb5be433.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-left-kidney.glb",
+    "modelUrl": "/uploads/organ-nose.glb",
     "labels3d": [
       {
         "x": 0,
-        "y": 0.06,
-        "z": 0.01,
+        "y": 0.04,
+        "z": 0.03,
         "nx": 0,
         "ny": 1,
-        "nz": 0,
-        "text": "Верхний полюс (Extremitas superior)"
+        "nz": 1,
+        "text": "Спинка носа и носовые кости (Ossa nasalia)"
       },
       {
         "x": 0,
-        "y": 0,
+        "y": -0.02,
         "z": 0.04,
         "nx": 0,
-        "ny": 0,
+        "ny": -1,
         "nz": 1,
-        "text": "Корковое вещество (Cortex renalis)"
+        "text": "Хрящ перегородки и крылья носа (Cartilago septi nasi)"
       },
       {
-        "x": 0.04,
-        "y": -0.01,
-        "z": 0,
+        "x": 0.02,
+        "y": 0,
+        "z": -0.02,
         "nx": 1,
         "ny": 0,
-        "nz": 0,
-        "text": "Почечная лоханка и сосуды (Pelvis renalis)"
-      },
-      {
-        "x": 0,
-        "y": -0.06,
-        "z": 0.01,
-        "nx": 0,
-        "ny": -1,
-        "nz": 0,
-        "text": "Нижний полюс и мочеточник (Ureter)"
+        "nz": -1,
+        "text": "Носовая полость и раковины (Concha nasalis)"
       }
     ],
     "videoUrl": null,
@@ -16916,6 +17321,24 @@
         "ny": 0,
         "nz": 1,
         "text": "Тело мочевого пузыря (Corpus vesicae)"
+      },
+      {
+        "x": 0,
+        "y": -0.05,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Шейка пузыря и уретра (Urethra)"
+      },
+      {
+        "x": 0.04,
+        "y": 0.02,
+        "z": -0.02,
+        "nx": 1,
+        "ny": 0,
+        "nz": -1,
+        "text": "Устья мочеточников (Ostium ureteris)"
       }
     ],
     "videoUrl": null,
@@ -16969,6 +17392,24 @@
         "ny": 0,
         "nz": 1,
         "text": "Тело мочевого пузыря (Corpus vesicae)"
+      },
+      {
+        "x": 0,
+        "y": -0.05,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Шейка пузыря и уретра (Urethra)"
+      },
+      {
+        "x": 0.04,
+        "y": 0.02,
+        "z": -0.02,
+        "nx": 1,
+        "ny": 0,
+        "nz": -1,
+        "text": "Устья мочеточников (Ostium ureteris)"
       }
     ],
     "videoUrl": null,
@@ -17001,7 +17442,7 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/woman/e06854824b6e.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-prostate.glb",
+    "modelUrl": "/uploads/organ-female-reproductive.glb",
     "labels3d": [
       {
         "x": 0,
@@ -17010,7 +17451,25 @@
         "nx": 0,
         "ny": 1,
         "nz": 0,
-        "text": "Органы малого таза и репродуктивная система"
+        "text": "Матка и дно матки (Fundus uteri)"
+      },
+      {
+        "x": -0.05,
+        "y": 0.02,
+        "z": 0,
+        "nx": -1,
+        "ny": 0,
+        "nz": 0,
+        "text": "Правый яичник и маточная труба (Ovarium dexter)"
+      },
+      {
+        "x": 0.05,
+        "y": 0.02,
+        "z": 0,
+        "nx": 1,
+        "ny": 0,
+        "nz": 0,
+        "text": "Левый яичник и маточная труба (Ovarium sinister)"
       },
       {
         "x": 0,
@@ -17019,7 +17478,7 @@
         "nx": 0,
         "ny": -1,
         "nz": 1,
-        "text": "Анатомическая зона патологии"
+        "text": "Шейка матки и влагалище (Cervix uteri & Vagina)"
       }
     ],
     "videoUrl": null,
@@ -17052,7 +17511,7 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/woman/e06854824b6e.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-prostate.glb",
+    "modelUrl": "/uploads/organ-female-reproductive.glb",
     "labels3d": [
       {
         "x": 0,
@@ -17061,7 +17520,25 @@
         "nx": 0,
         "ny": 1,
         "nz": 0,
-        "text": "Органы малого таза и репродуктивная система"
+        "text": "Матка и дно матки (Fundus uteri)"
+      },
+      {
+        "x": -0.05,
+        "y": 0.02,
+        "z": 0,
+        "nx": -1,
+        "ny": 0,
+        "nz": 0,
+        "text": "Правый яичник и маточная труба (Ovarium dexter)"
+      },
+      {
+        "x": 0.05,
+        "y": 0.02,
+        "z": 0,
+        "nx": 1,
+        "ny": 0,
+        "nz": 0,
+        "text": "Левый яичник и маточная труба (Ovarium sinister)"
       },
       {
         "x": 0,
@@ -17070,7 +17547,7 @@
         "nx": 0,
         "ny": -1,
         "nz": 1,
-        "text": "Анатомическая зона патологии"
+        "text": "Шейка матки и влагалище (Cervix uteri & Vagina)"
       }
     ],
     "videoUrl": null,
@@ -17103,7 +17580,7 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/woman/e06854824b6e.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-prostate.glb",
+    "modelUrl": "/uploads/organ-female-reproductive.glb",
     "labels3d": [
       {
         "x": 0,
@@ -17112,7 +17589,25 @@
         "nx": 0,
         "ny": 1,
         "nz": 0,
-        "text": "Органы малого таза и репродуктивная система"
+        "text": "Матка и дно матки (Fundus uteri)"
+      },
+      {
+        "x": -0.05,
+        "y": 0.02,
+        "z": 0,
+        "nx": -1,
+        "ny": 0,
+        "nz": 0,
+        "text": "Правый яичник и маточная труба (Ovarium dexter)"
+      },
+      {
+        "x": 0.05,
+        "y": 0.02,
+        "z": 0,
+        "nx": 1,
+        "ny": 0,
+        "nz": 0,
+        "text": "Левый яичник и маточная труба (Ovarium sinister)"
       },
       {
         "x": 0,
@@ -17121,7 +17616,7 @@
         "nx": 0,
         "ny": -1,
         "nz": 1,
-        "text": "Анатомическая зона патологии"
+        "text": "Шейка матки и влагалище (Cervix uteri & Vagina)"
       }
     ],
     "videoUrl": null,
@@ -17155,7 +17650,7 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/woman/e06854824b6e.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-prostate.glb",
+    "modelUrl": "/uploads/organ-female-reproductive.glb",
     "labels3d": [
       {
         "x": 0,
@@ -17164,7 +17659,25 @@
         "nx": 0,
         "ny": 1,
         "nz": 0,
-        "text": "Органы малого таза и репродуктивная система"
+        "text": "Матка и дно матки (Fundus uteri)"
+      },
+      {
+        "x": -0.05,
+        "y": 0.02,
+        "z": 0,
+        "nx": -1,
+        "ny": 0,
+        "nz": 0,
+        "text": "Правый яичник и маточная труба (Ovarium dexter)"
+      },
+      {
+        "x": 0.05,
+        "y": 0.02,
+        "z": 0,
+        "nx": 1,
+        "ny": 0,
+        "nz": 0,
+        "text": "Левый яичник и маточная труба (Ovarium sinister)"
       },
       {
         "x": 0,
@@ -17173,7 +17686,7 @@
         "nx": 0,
         "ny": -1,
         "nz": 1,
-        "text": "Анатомическая зона патологии"
+        "text": "Шейка матки и влагалище (Cervix uteri & Vagina)"
       }
     ],
     "videoUrl": null,
@@ -17203,7 +17716,7 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/woman/e06854824b6e.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-prostate.glb",
+    "modelUrl": "/uploads/organ-female-reproductive.glb",
     "labels3d": [
       {
         "x": 0,
@@ -17212,7 +17725,25 @@
         "nx": 0,
         "ny": 1,
         "nz": 0,
-        "text": "Органы малого таза и репродуктивная система"
+        "text": "Матка и дно матки (Fundus uteri)"
+      },
+      {
+        "x": -0.05,
+        "y": 0.02,
+        "z": 0,
+        "nx": -1,
+        "ny": 0,
+        "nz": 0,
+        "text": "Правый яичник и маточная труба (Ovarium dexter)"
+      },
+      {
+        "x": 0.05,
+        "y": 0.02,
+        "z": 0,
+        "nx": 1,
+        "ny": 0,
+        "nz": 0,
+        "text": "Левый яичник и маточная труба (Ovarium sinister)"
       },
       {
         "x": 0,
@@ -17221,7 +17752,7 @@
         "nx": 0,
         "ny": -1,
         "nz": 1,
-        "text": "Анатомическая зона патологии"
+        "text": "Шейка матки и влагалище (Cervix uteri & Vagina)"
       }
     ],
     "videoUrl": null,
@@ -17256,7 +17787,7 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/woman/e06854824b6e.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-prostate.glb",
+    "modelUrl": "/uploads/organ-female-reproductive.glb",
     "labels3d": [
       {
         "x": 0,
@@ -17265,7 +17796,25 @@
         "nx": 0,
         "ny": 1,
         "nz": 0,
-        "text": "Органы малого таза и репродуктивная система"
+        "text": "Матка и дно матки (Fundus uteri)"
+      },
+      {
+        "x": -0.05,
+        "y": 0.02,
+        "z": 0,
+        "nx": -1,
+        "ny": 0,
+        "nz": 0,
+        "text": "Правый яичник и маточная труба (Ovarium dexter)"
+      },
+      {
+        "x": 0.05,
+        "y": 0.02,
+        "z": 0,
+        "nx": 1,
+        "ny": 0,
+        "nz": 0,
+        "text": "Левый яичник и маточная труба (Ovarium sinister)"
       },
       {
         "x": 0,
@@ -17274,7 +17823,7 @@
         "nx": 0,
         "ny": -1,
         "nz": 1,
-        "text": "Анатомическая зона патологии"
+        "text": "Шейка матки и влагалище (Cervix uteri & Vagina)"
       }
     ],
     "videoUrl": null,
@@ -17303,7 +17852,7 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/woman/e06854824b6e.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-prostate.glb",
+    "modelUrl": "/uploads/organ-female-reproductive.glb",
     "labels3d": [
       {
         "x": 0,
@@ -17312,7 +17861,25 @@
         "nx": 0,
         "ny": 1,
         "nz": 0,
-        "text": "Органы малого таза и репродуктивная система"
+        "text": "Матка и дно матки (Fundus uteri)"
+      },
+      {
+        "x": -0.05,
+        "y": 0.02,
+        "z": 0,
+        "nx": -1,
+        "ny": 0,
+        "nz": 0,
+        "text": "Правый яичник и маточная труба (Ovarium dexter)"
+      },
+      {
+        "x": 0.05,
+        "y": 0.02,
+        "z": 0,
+        "nx": 1,
+        "ny": 0,
+        "nz": 0,
+        "text": "Левый яичник и маточная труба (Ovarium sinister)"
       },
       {
         "x": 0,
@@ -17321,7 +17888,7 @@
         "nx": 0,
         "ny": -1,
         "nz": 1,
-        "text": "Анатомическая зона патологии"
+        "text": "Шейка матки и влагалище (Cervix uteri & Vagina)"
       }
     ],
     "videoUrl": null,
@@ -17360,7 +17927,7 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/woman/e06854824b6e.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-prostate.glb",
+    "modelUrl": "/uploads/organ-female-reproductive.glb",
     "labels3d": [
       {
         "x": 0,
@@ -17369,7 +17936,25 @@
         "nx": 0,
         "ny": 1,
         "nz": 0,
-        "text": "Органы малого таза и репродуктивная система"
+        "text": "Матка и дно матки (Fundus uteri)"
+      },
+      {
+        "x": -0.05,
+        "y": 0.02,
+        "z": 0,
+        "nx": -1,
+        "ny": 0,
+        "nz": 0,
+        "text": "Правый яичник и маточная труба (Ovarium dexter)"
+      },
+      {
+        "x": 0.05,
+        "y": 0.02,
+        "z": 0,
+        "nx": 1,
+        "ny": 0,
+        "nz": 0,
+        "text": "Левый яичник и маточная труба (Ovarium sinister)"
       },
       {
         "x": 0,
@@ -17378,7 +17963,7 @@
         "nx": 0,
         "ny": -1,
         "nz": 1,
-        "text": "Анатомическая зона патологии"
+        "text": "Шейка матки и влагалище (Cervix uteri & Vagina)"
       }
     ],
     "videoUrl": null,
@@ -17417,7 +18002,7 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/woman/e06854824b6e.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-prostate.glb",
+    "modelUrl": "/uploads/organ-female-reproductive.glb",
     "labels3d": [
       {
         "x": 0,
@@ -17426,7 +18011,25 @@
         "nx": 0,
         "ny": 1,
         "nz": 0,
-        "text": "Органы малого таза и репродуктивная система"
+        "text": "Матка и дно матки (Fundus uteri)"
+      },
+      {
+        "x": -0.05,
+        "y": 0.02,
+        "z": 0,
+        "nx": -1,
+        "ny": 0,
+        "nz": 0,
+        "text": "Правый яичник и маточная труба (Ovarium dexter)"
+      },
+      {
+        "x": 0.05,
+        "y": 0.02,
+        "z": 0,
+        "nx": 1,
+        "ny": 0,
+        "nz": 0,
+        "text": "Левый яичник и маточная труба (Ovarium sinister)"
       },
       {
         "x": 0,
@@ -17435,7 +18038,7 @@
         "nx": 0,
         "ny": -1,
         "nz": 1,
-        "text": "Анатомическая зона патологии"
+        "text": "Шейка матки и влагалище (Cervix uteri & Vagina)"
       }
     ],
     "videoUrl": null,
@@ -17472,7 +18075,7 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/woman/e06854824b6e.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-prostate.glb",
+    "modelUrl": "/uploads/organ-female-reproductive.glb",
     "labels3d": [
       {
         "x": 0,
@@ -17481,7 +18084,25 @@
         "nx": 0,
         "ny": 1,
         "nz": 0,
-        "text": "Органы малого таза и репродуктивная система"
+        "text": "Матка и дно матки (Fundus uteri)"
+      },
+      {
+        "x": -0.05,
+        "y": 0.02,
+        "z": 0,
+        "nx": -1,
+        "ny": 0,
+        "nz": 0,
+        "text": "Правый яичник и маточная труба (Ovarium dexter)"
+      },
+      {
+        "x": 0.05,
+        "y": 0.02,
+        "z": 0,
+        "nx": 1,
+        "ny": 0,
+        "nz": 0,
+        "text": "Левый яичник и маточная труба (Ovarium sinister)"
       },
       {
         "x": 0,
@@ -17490,7 +18111,7 @@
         "nx": 0,
         "ny": -1,
         "nz": 1,
-        "text": "Анатомическая зона патологии"
+        "text": "Шейка матки и влагалище (Cervix uteri & Vagina)"
       }
     ],
     "videoUrl": null,
@@ -17535,7 +18156,7 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/woman/e06854824b6e.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-prostate.glb",
+    "modelUrl": "/uploads/organ-female-reproductive.glb",
     "labels3d": [
       {
         "x": 0,
@@ -17544,7 +18165,25 @@
         "nx": 0,
         "ny": 1,
         "nz": 0,
-        "text": "Органы малого таза и репродуктивная система"
+        "text": "Матка и дно матки (Fundus uteri)"
+      },
+      {
+        "x": -0.05,
+        "y": 0.02,
+        "z": 0,
+        "nx": -1,
+        "ny": 0,
+        "nz": 0,
+        "text": "Правый яичник и маточная труба (Ovarium dexter)"
+      },
+      {
+        "x": 0.05,
+        "y": 0.02,
+        "z": 0,
+        "nx": 1,
+        "ny": 0,
+        "nz": 0,
+        "text": "Левый яичник и маточная труба (Ovarium sinister)"
       },
       {
         "x": 0,
@@ -17553,7 +18192,7 @@
         "nx": 0,
         "ny": -1,
         "nz": 1,
-        "text": "Анатомическая зона патологии"
+        "text": "Шейка матки и влагалище (Cervix uteri & Vagina)"
       }
     ],
     "videoUrl": null,
@@ -17578,7 +18217,7 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/woman/e06854824b6e.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-prostate.glb",
+    "modelUrl": "/uploads/organ-female-reproductive.glb",
     "labels3d": [
       {
         "x": 0,
@@ -17587,7 +18226,25 @@
         "nx": 0,
         "ny": 1,
         "nz": 0,
-        "text": "Органы малого таза и репродуктивная система"
+        "text": "Матка и дно матки (Fundus uteri)"
+      },
+      {
+        "x": -0.05,
+        "y": 0.02,
+        "z": 0,
+        "nx": -1,
+        "ny": 0,
+        "nz": 0,
+        "text": "Правый яичник и маточная труба (Ovarium dexter)"
+      },
+      {
+        "x": 0.05,
+        "y": 0.02,
+        "z": 0,
+        "nx": 1,
+        "ny": 0,
+        "nz": 0,
+        "text": "Левый яичник и маточная труба (Ovarium sinister)"
       },
       {
         "x": 0,
@@ -17596,7 +18253,7 @@
         "nx": 0,
         "ny": -1,
         "nz": 1,
-        "text": "Анатомическая зона патологии"
+        "text": "Шейка матки и влагалище (Cervix uteri & Vagina)"
       }
     ],
     "videoUrl": null,
@@ -17638,7 +18295,7 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/woman/e06854824b6e.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-prostate.glb",
+    "modelUrl": "/uploads/organ-female-reproductive.glb",
     "labels3d": [
       {
         "x": 0,
@@ -17647,7 +18304,25 @@
         "nx": 0,
         "ny": 1,
         "nz": 0,
-        "text": "Органы малого таза и репродуктивная система"
+        "text": "Матка и дно матки (Fundus uteri)"
+      },
+      {
+        "x": -0.05,
+        "y": 0.02,
+        "z": 0,
+        "nx": -1,
+        "ny": 0,
+        "nz": 0,
+        "text": "Правый яичник и маточная труба (Ovarium dexter)"
+      },
+      {
+        "x": 0.05,
+        "y": 0.02,
+        "z": 0,
+        "nx": 1,
+        "ny": 0,
+        "nz": 0,
+        "text": "Левый яичник и маточная труба (Ovarium sinister)"
       },
       {
         "x": 0,
@@ -17656,7 +18331,7 @@
         "nx": 0,
         "ny": -1,
         "nz": 1,
-        "text": "Анатомическая зона патологии"
+        "text": "Шейка матки и влагалище (Cervix uteri & Vagina)"
       }
     ],
     "videoUrl": null,
@@ -17679,7 +18354,7 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/woman/e06854824b6e.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-prostate.glb",
+    "modelUrl": "/uploads/organ-female-reproductive.glb",
     "labels3d": [
       {
         "x": 0,
@@ -17688,7 +18363,25 @@
         "nx": 0,
         "ny": 1,
         "nz": 0,
-        "text": "Органы малого таза и репродуктивная система"
+        "text": "Матка и дно матки (Fundus uteri)"
+      },
+      {
+        "x": -0.05,
+        "y": 0.02,
+        "z": 0,
+        "nx": -1,
+        "ny": 0,
+        "nz": 0,
+        "text": "Правый яичник и маточная труба (Ovarium dexter)"
+      },
+      {
+        "x": 0.05,
+        "y": 0.02,
+        "z": 0,
+        "nx": 1,
+        "ny": 0,
+        "nz": 0,
+        "text": "Левый яичник и маточная труба (Ovarium sinister)"
       },
       {
         "x": 0,
@@ -17697,7 +18390,7 @@
         "nx": 0,
         "ny": -1,
         "nz": 1,
-        "text": "Анатомическая зона патологии"
+        "text": "Шейка матки и влагалище (Cervix uteri & Vagina)"
       }
     ],
     "videoUrl": null,
@@ -19134,25 +19827,34 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/child/99c55c0dd0d1.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-trachea-bronchi.glb",
+    "modelUrl": "/uploads/organ-nose.glb",
     "labels3d": [
       {
         "x": 0,
         "y": 0.04,
-        "z": 0.02,
+        "z": 0.03,
         "nx": 0,
         "ny": 1,
-        "nz": 0,
-        "text": "Носоглотка и дыхательные пути"
+        "nz": 1,
+        "text": "Спинка носа и носовые кости (Ossa nasalia)"
       },
       {
         "x": 0,
-        "y": -0.04,
-        "z": 0.02,
+        "y": -0.02,
+        "z": 0.04,
         "nx": 0,
         "ny": -1,
         "nz": 1,
-        "text": "Анатомическая зона патологии"
+        "text": "Хрящ перегородки и крылья носа (Cartilago septi nasi)"
+      },
+      {
+        "x": 0.02,
+        "y": 0,
+        "z": -0.02,
+        "nx": 1,
+        "ny": 0,
+        "nz": -1,
+        "text": "Носовая полость и раковины (Concha nasalis)"
       }
     ],
     "videoUrl": null,
@@ -19181,25 +19883,34 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/child/99c55c0dd0d1.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-trachea-bronchi.glb",
+    "modelUrl": "/uploads/organ-nose.glb",
     "labels3d": [
       {
         "x": 0,
         "y": 0.04,
-        "z": 0.02,
+        "z": 0.03,
         "nx": 0,
         "ny": 1,
-        "nz": 0,
-        "text": "Носоглотка и дыхательные пути"
+        "nz": 1,
+        "text": "Спинка носа и носовые кости (Ossa nasalia)"
       },
       {
         "x": 0,
-        "y": -0.04,
-        "z": 0.02,
+        "y": -0.02,
+        "z": 0.04,
         "nx": 0,
         "ny": -1,
         "nz": 1,
-        "text": "Анатомическая зона патологии"
+        "text": "Хрящ перегородки и крылья носа (Cartilago septi nasi)"
+      },
+      {
+        "x": 0.02,
+        "y": 0,
+        "z": -0.02,
+        "nx": 1,
+        "ny": 0,
+        "nz": -1,
+        "text": "Носовая полость и раковины (Concha nasalis)"
       }
     ],
     "videoUrl": null,
@@ -19220,25 +19931,34 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/child/99c55c0dd0d1.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-trachea-bronchi.glb",
+    "modelUrl": "/uploads/organ-nose.glb",
     "labels3d": [
       {
         "x": 0,
         "y": 0.04,
-        "z": 0.02,
+        "z": 0.03,
         "nx": 0,
         "ny": 1,
-        "nz": 0,
-        "text": "Носоглотка и дыхательные пути"
+        "nz": 1,
+        "text": "Спинка носа и носовые кости (Ossa nasalia)"
       },
       {
         "x": 0,
-        "y": -0.04,
-        "z": 0.02,
+        "y": -0.02,
+        "z": 0.04,
         "nx": 0,
         "ny": -1,
         "nz": 1,
-        "text": "Анатомическая зона патологии"
+        "text": "Хрящ перегородки и крылья носа (Cartilago septi nasi)"
+      },
+      {
+        "x": 0.02,
+        "y": 0,
+        "z": -0.02,
+        "nx": 1,
+        "ny": 0,
+        "nz": -1,
+        "text": "Носовая полость и раковины (Concha nasalis)"
       }
     ],
     "videoUrl": null,
@@ -19265,25 +19985,34 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/child/99c55c0dd0d1.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-trachea-bronchi.glb",
+    "modelUrl": "/uploads/organ-nose.glb",
     "labels3d": [
       {
         "x": 0,
         "y": 0.04,
-        "z": 0.02,
+        "z": 0.03,
         "nx": 0,
         "ny": 1,
-        "nz": 0,
-        "text": "Носоглотка и дыхательные пути"
+        "nz": 1,
+        "text": "Спинка носа и носовые кости (Ossa nasalia)"
       },
       {
         "x": 0,
-        "y": -0.04,
-        "z": 0.02,
+        "y": -0.02,
+        "z": 0.04,
         "nx": 0,
         "ny": -1,
         "nz": 1,
-        "text": "Анатомическая зона патологии"
+        "text": "Хрящ перегородки и крылья носа (Cartilago septi nasi)"
+      },
+      {
+        "x": 0.02,
+        "y": 0,
+        "z": -0.02,
+        "nx": 1,
+        "ny": 0,
+        "nz": -1,
+        "text": "Носовая полость и раковины (Concha nasalis)"
       }
     ],
     "videoUrl": null,
@@ -19523,16 +20252,25 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/child/2f2204a89c6e.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-skeleton.glb",
+    "modelUrl": "/uploads/organ-teeth-mouth.glb",
     "labels3d": [
       {
         "x": 0,
-        "y": 0.04,
-        "z": 0.02,
+        "y": 0.02,
+        "z": 0.05,
         "nx": 0,
-        "ny": 1,
+        "ny": 0,
+        "nz": 1,
+        "text": "Резцы и клыки (Dentes incisivi & canini)"
+      },
+      {
+        "x": 0.05,
+        "y": 0.01,
+        "z": 0.02,
+        "nx": 1,
+        "ny": 0,
         "nz": 0,
-        "text": "Челюстно-лицевой аппарат"
+        "text": "Премоляры и моляры (Dentes premolares & molares)"
       },
       {
         "x": 0,
@@ -19541,7 +20279,7 @@
         "nx": 0,
         "ny": -1,
         "nz": 1,
-        "text": "Анатомическая зона патологии"
+        "text": "Нижняя челюсть и десна (Mandibula & Gingiva)"
       }
     ],
     "videoUrl": null,
@@ -19563,16 +20301,25 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/child/2f2204a89c6e.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-skeleton.glb",
+    "modelUrl": "/uploads/organ-teeth-mouth.glb",
     "labels3d": [
       {
         "x": 0,
-        "y": 0.04,
-        "z": 0.02,
+        "y": 0.02,
+        "z": 0.05,
         "nx": 0,
-        "ny": 1,
+        "ny": 0,
+        "nz": 1,
+        "text": "Резцы и клыки (Dentes incisivi & canini)"
+      },
+      {
+        "x": 0.05,
+        "y": 0.01,
+        "z": 0.02,
+        "nx": 1,
+        "ny": 0,
         "nz": 0,
-        "text": "Челюстно-лицевой аппарат"
+        "text": "Премоляры и моляры (Dentes premolares & molares)"
       },
       {
         "x": 0,
@@ -19581,7 +20328,7 @@
         "nx": 0,
         "ny": -1,
         "nz": 1,
-        "text": "Анатомическая зона патологии"
+        "text": "Нижняя челюсть и десна (Mandibula & Gingiva)"
       }
     ],
     "videoUrl": null,
@@ -19610,16 +20357,25 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/child/2f2204a89c6e.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-skeleton.glb",
+    "modelUrl": "/uploads/organ-teeth-mouth.glb",
     "labels3d": [
       {
         "x": 0,
-        "y": 0.04,
-        "z": 0.02,
+        "y": 0.02,
+        "z": 0.05,
         "nx": 0,
-        "ny": 1,
+        "ny": 0,
+        "nz": 1,
+        "text": "Резцы и клыки (Dentes incisivi & canini)"
+      },
+      {
+        "x": 0.05,
+        "y": 0.01,
+        "z": 0.02,
+        "nx": 1,
+        "ny": 0,
         "nz": 0,
-        "text": "Челюстно-лицевой аппарат"
+        "text": "Премоляры и моляры (Dentes premolares & molares)"
       },
       {
         "x": 0,
@@ -19628,7 +20384,7 @@
         "nx": 0,
         "ny": -1,
         "nz": 1,
-        "text": "Анатомическая зона патологии"
+        "text": "Нижняя челюсть и десна (Mandibula & Gingiva)"
       }
     ],
     "videoUrl": null,
@@ -19658,16 +20414,25 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/child/8aec8ac428f2.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-trachea-bronchi.glb",
+    "modelUrl": "/uploads/organ-pharynx-larynx.glb",
     "labels3d": [
       {
         "x": 0,
-        "y": 0.04,
-        "z": 0.02,
+        "y": 0.06,
+        "z": 0,
         "nx": 0,
         "ny": 1,
         "nz": 0,
-        "text": "Глотка, гортань и верхние дыхательные пути"
+        "text": "Носоглотка и ротоглотка (Pharynx)"
+      },
+      {
+        "x": 0,
+        "y": 0.01,
+        "z": 0.02,
+        "nx": 0,
+        "ny": 0,
+        "nz": 1,
+        "text": "Гортаноглотка и надгортанник (Epiglottis)"
       },
       {
         "x": 0,
@@ -19676,7 +20441,7 @@
         "nx": 0,
         "ny": -1,
         "nz": 1,
-        "text": "Анатомическая зона патологии"
+        "text": "Голосовые связки и складки (Plicae vocales)"
       }
     ],
     "videoUrl": null,
@@ -19709,16 +20474,25 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/child/8aec8ac428f2.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-trachea-bronchi.glb",
+    "modelUrl": "/uploads/organ-pharynx-larynx.glb",
     "labels3d": [
       {
         "x": 0,
-        "y": 0.04,
-        "z": 0.02,
+        "y": 0.06,
+        "z": 0,
         "nx": 0,
         "ny": 1,
         "nz": 0,
-        "text": "Глотка, гортань и верхние дыхательные пути"
+        "text": "Носоглотка и ротоглотка (Pharynx)"
+      },
+      {
+        "x": 0,
+        "y": 0.01,
+        "z": 0.02,
+        "nx": 0,
+        "ny": 0,
+        "nz": 1,
+        "text": "Гортаноглотка и надгортанник (Epiglottis)"
       },
       {
         "x": 0,
@@ -19727,7 +20501,7 @@
         "nx": 0,
         "ny": -1,
         "nz": 1,
-        "text": "Анатомическая зона патологии"
+        "text": "Голосовые связки и складки (Plicae vocales)"
       }
     ],
     "videoUrl": null,
@@ -19758,16 +20532,25 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/child/8aec8ac428f2.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-trachea-bronchi.glb",
+    "modelUrl": "/uploads/organ-pharynx-larynx.glb",
     "labels3d": [
       {
         "x": 0,
-        "y": 0.04,
-        "z": 0.02,
+        "y": 0.06,
+        "z": 0,
         "nx": 0,
         "ny": 1,
         "nz": 0,
-        "text": "Глотка, гортань и верхние дыхательные пути"
+        "text": "Носоглотка и ротоглотка (Pharynx)"
+      },
+      {
+        "x": 0,
+        "y": 0.01,
+        "z": 0.02,
+        "nx": 0,
+        "ny": 0,
+        "nz": 1,
+        "text": "Гортаноглотка и надгортанник (Epiglottis)"
       },
       {
         "x": 0,
@@ -19776,7 +20559,7 @@
         "nx": 0,
         "ny": -1,
         "nz": 1,
-        "text": "Анатомическая зона патологии"
+        "text": "Голосовые связки и складки (Plicae vocales)"
       }
     ],
     "videoUrl": null,
@@ -19831,6 +20614,15 @@
         "ny": -1,
         "nz": 1,
         "text": "Перешеек железы (Isthmus glandulae thyroideae)"
+      },
+      {
+        "x": 0,
+        "y": 0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": 1,
+        "nz": 0,
+        "text": "Щитовидный хрящ (Cartilago thyroidea)"
       }
     ],
     "videoUrl": null,
@@ -19884,6 +20676,15 @@
         "ny": -1,
         "nz": 1,
         "text": "Перешеек железы (Isthmus glandulae thyroideae)"
+      },
+      {
+        "x": 0,
+        "y": 0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": 1,
+        "nz": 0,
+        "text": "Щитовидный хрящ (Cartilago thyroidea)"
       }
     ],
     "videoUrl": null,
@@ -19938,6 +20739,15 @@
         "ny": -1,
         "nz": 1,
         "text": "Перешеек железы (Isthmus glandulae thyroideae)"
+      },
+      {
+        "x": 0,
+        "y": 0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": 1,
+        "nz": 0,
+        "text": "Щитовидный хрящ (Cartilago thyroidea)"
       }
     ],
     "videoUrl": null,
@@ -20005,7 +20815,7 @@
         "nx": 0,
         "ny": 0,
         "nz": 1,
-        "text": "Бифуркация трахеи / Карина (Bifurcatio tracheae)"
+        "text": "Карина / бифуркация трахеи (Carina tracheae)"
       }
     ],
     "videoUrl": null,
@@ -20071,7 +20881,7 @@
         "nx": 0,
         "ny": 0,
         "nz": 1,
-        "text": "Бифуркация трахеи / Карина (Bifurcatio tracheae)"
+        "text": "Карина / бифуркация трахеи (Carina tracheae)"
       }
     ],
     "videoUrl": null,
@@ -20137,7 +20947,7 @@
         "nx": 0,
         "ny": 0,
         "nz": 1,
-        "text": "Бифуркация трахеи / Карина (Bifurcatio tracheae)"
+        "text": "Карина / бифуркация трахеи (Carina tracheae)"
       }
     ],
     "videoUrl": null,
@@ -20202,7 +21012,7 @@
         "nx": 0,
         "ny": 0,
         "nz": 1,
-        "text": "Бифуркация трахеи / Карина (Bifurcatio tracheae)"
+        "text": "Карина / бифуркация трахеи (Carina tracheae)"
       }
     ],
     "videoUrl": null,
@@ -20264,7 +21074,7 @@
         "nx": 0,
         "ny": 0,
         "nz": 1,
-        "text": "Бифуркация трахеи / Карина (Bifurcatio tracheae)"
+        "text": "Карина / бифуркация трахеи (Carina tracheae)"
       }
     ],
     "videoUrl": null,
@@ -20332,7 +21142,7 @@
         "nx": 0,
         "ny": 0,
         "nz": 1,
-        "text": "Бифуркация трахеи / Карина (Bifurcatio tracheae)"
+        "text": "Карина / бифуркация трахеи (Carina tracheae)"
       }
     ],
     "videoUrl": null,
@@ -20396,7 +21206,7 @@
         "nx": 0,
         "ny": 0,
         "nz": 1,
-        "text": "Бифуркация трахеи / Карина (Bifurcatio tracheae)"
+        "text": "Карина / бифуркация трахеи (Carina tracheae)"
       }
     ],
     "videoUrl": null,
@@ -20464,7 +21274,7 @@
         "nx": 0,
         "ny": 0,
         "nz": 1,
-        "text": "Бифуркация трахеи / Карина (Bifurcatio tracheae)"
+        "text": "Карина / бифуркация трахеи (Carina tracheae)"
       }
     ],
     "videoUrl": null,
@@ -20533,7 +21343,7 @@
         "nx": 0,
         "ny": 0,
         "nz": 1,
-        "text": "Бифуркация трахеи / Карина (Bifurcatio tracheae)"
+        "text": "Карина / бифуркация трахеи (Carina tracheae)"
       }
     ],
     "videoUrl": null,
@@ -20603,7 +21413,7 @@
         "nx": 0,
         "ny": 0,
         "nz": 1,
-        "text": "Бифуркация трахеи / Карина (Bifurcatio tracheae)"
+        "text": "Карина / бифуркация трахеи (Carina tracheae)"
       }
     ],
     "videoUrl": null,
@@ -20668,7 +21478,7 @@
         "nx": 0,
         "ny": 0,
         "nz": 1,
-        "text": "Бифуркация трахеи / Карина (Bifurcatio tracheae)"
+        "text": "Карина / бифуркация трахеи (Carina tracheae)"
       }
     ],
     "videoUrl": null,
@@ -20735,7 +21545,7 @@
         "nx": 0,
         "ny": 0,
         "nz": 1,
-        "text": "Бифуркация трахеи / Карина (Bifurcatio tracheae)"
+        "text": "Карина / бифуркация трахеи (Carina tracheae)"
       }
     ],
     "videoUrl": null,
@@ -20806,7 +21616,7 @@
         "nx": 0,
         "ny": 0,
         "nz": 1,
-        "text": "Бифуркация трахеи / Карина (Bifurcatio tracheae)"
+        "text": "Карина / бифуркация трахеи (Carina tracheae)"
       }
     ],
     "videoUrl": null,
@@ -21713,25 +22523,34 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/child/65ff0f1a4c94.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-heart.glb",
+    "modelUrl": "/uploads/organ-circulatory-system.glb",
     "labels3d": [
       {
         "x": 0,
-        "y": 0.04,
+        "y": 0.18,
         "z": 0.02,
         "nx": 0,
         "ny": 1,
         "nz": 0,
-        "text": "Сердечно-сосудистая система и магистральные сосуды"
+        "text": "Дуга аорты и сонные артерии (Arcus aortae & A. carotis)"
       },
       {
         "x": 0,
-        "y": -0.04,
-        "z": 0.02,
+        "y": 0,
+        "z": -0.02,
         "nx": 0,
+        "ny": 0,
+        "nz": -1,
+        "text": "Брюшная аорта и нижняя полая вена (Aorta abdominalis & V. cava)"
+      },
+      {
+        "x": 0.05,
+        "y": -0.15,
+        "z": 0.02,
+        "nx": 1,
         "ny": -1,
-        "nz": 1,
-        "text": "Анатомическая зона патологии"
+        "nz": 0,
+        "text": "Подвздошные и бедренные сосуды (Vasa iliaca & femoralia)"
       }
     ],
     "videoUrl": null,
@@ -21763,25 +22582,34 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/child/65ff0f1a4c94.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-heart.glb",
+    "modelUrl": "/uploads/organ-circulatory-system.glb",
     "labels3d": [
       {
         "x": 0,
-        "y": 0.04,
+        "y": 0.18,
         "z": 0.02,
         "nx": 0,
         "ny": 1,
         "nz": 0,
-        "text": "Сердечно-сосудистая система и магистральные сосуды"
+        "text": "Дуга аорты и сонные артерии (Arcus aortae & A. carotis)"
       },
       {
         "x": 0,
-        "y": -0.04,
-        "z": 0.02,
+        "y": 0,
+        "z": -0.02,
         "nx": 0,
+        "ny": 0,
+        "nz": -1,
+        "text": "Брюшная аорта и нижняя полая вена (Aorta abdominalis & V. cava)"
+      },
+      {
+        "x": 0.05,
+        "y": -0.15,
+        "z": 0.02,
+        "nx": 1,
         "ny": -1,
-        "nz": 1,
-        "text": "Анатомическая зона патологии"
+        "nz": 0,
+        "text": "Подвздошные и бедренные сосуды (Vasa iliaca & femoralia)"
       }
     ],
     "videoUrl": null,
@@ -21807,25 +22635,34 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/child/65ff0f1a4c94.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-heart.glb",
+    "modelUrl": "/uploads/organ-circulatory-system.glb",
     "labels3d": [
       {
         "x": 0,
-        "y": 0.04,
+        "y": 0.18,
         "z": 0.02,
         "nx": 0,
         "ny": 1,
         "nz": 0,
-        "text": "Сердечно-сосудистая система и магистральные сосуды"
+        "text": "Дуга аорты и сонные артерии (Arcus aortae & A. carotis)"
       },
       {
         "x": 0,
-        "y": -0.04,
-        "z": 0.02,
+        "y": 0,
+        "z": -0.02,
         "nx": 0,
+        "ny": 0,
+        "nz": -1,
+        "text": "Брюшная аорта и нижняя полая вена (Aorta abdominalis & V. cava)"
+      },
+      {
+        "x": 0.05,
+        "y": -0.15,
+        "z": 0.02,
+        "nx": 1,
         "ny": -1,
-        "nz": 1,
-        "text": "Анатомическая зона патологии"
+        "nz": 0,
+        "text": "Подвздошные и бедренные сосуды (Vasa iliaca & femoralia)"
       }
     ],
     "videoUrl": null,
@@ -21854,25 +22691,34 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/child/65ff0f1a4c94.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-heart.glb",
+    "modelUrl": "/uploads/organ-circulatory-system.glb",
     "labels3d": [
       {
         "x": 0,
-        "y": 0.04,
+        "y": 0.18,
         "z": 0.02,
         "nx": 0,
         "ny": 1,
         "nz": 0,
-        "text": "Сердечно-сосудистая система и магистральные сосуды"
+        "text": "Дуга аорты и сонные артерии (Arcus aortae & A. carotis)"
       },
       {
         "x": 0,
-        "y": -0.04,
-        "z": 0.02,
+        "y": 0,
+        "z": -0.02,
         "nx": 0,
+        "ny": 0,
+        "nz": -1,
+        "text": "Брюшная аорта и нижняя полая вена (Aorta abdominalis & V. cava)"
+      },
+      {
+        "x": 0.05,
+        "y": -0.15,
+        "z": 0.02,
+        "nx": 1,
         "ny": -1,
-        "nz": 1,
-        "text": "Анатомическая зона патологии"
+        "nz": 0,
+        "text": "Подвздошные и бедренные сосуды (Vasa iliaca & femoralia)"
       }
     ],
     "videoUrl": null,
@@ -21903,25 +22749,34 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/child/65ff0f1a4c94.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-heart.glb",
+    "modelUrl": "/uploads/organ-circulatory-system.glb",
     "labels3d": [
       {
         "x": 0,
-        "y": 0.04,
+        "y": 0.18,
         "z": 0.02,
         "nx": 0,
         "ny": 1,
         "nz": 0,
-        "text": "Сердечно-сосудистая система и магистральные сосуды"
+        "text": "Дуга аорты и сонные артерии (Arcus aortae & A. carotis)"
       },
       {
         "x": 0,
-        "y": -0.04,
-        "z": 0.02,
+        "y": 0,
+        "z": -0.02,
         "nx": 0,
+        "ny": 0,
+        "nz": -1,
+        "text": "Брюшная аорта и нижняя полая вена (Aorta abdominalis & V. cava)"
+      },
+      {
+        "x": 0.05,
+        "y": -0.15,
+        "z": 0.02,
+        "nx": 1,
         "ny": -1,
-        "nz": 1,
-        "text": "Анатомическая зона патологии"
+        "nz": 0,
+        "text": "Подвздошные и бедренные сосуды (Vasa iliaca & femoralia)"
       }
     ],
     "videoUrl": null,
@@ -22555,43 +23410,43 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/child/5f6af95d4c10.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-liver.glb",
+    "modelUrl": "/uploads/organ-gallbladder.glb",
     "labels3d": [
       {
-        "x": -0.06,
-        "y": 0.02,
-        "z": 0.03,
-        "nx": -1,
-        "ny": 0,
-        "nz": 1,
-        "text": "Правая доля печени (Lobus dexter hepatis)"
-      },
-      {
-        "x": 0.06,
-        "y": 0.02,
+        "x": 0,
+        "y": 0.05,
         "z": 0.02,
-        "nx": 1,
-        "ny": 0,
-        "nz": 1,
-        "text": "Левая доля печени (Lobus sinister hepatis)"
-      },
-      {
-        "x": -0.02,
-        "y": -0.05,
-        "z": 0.04,
         "nx": 0,
-        "ny": -1,
+        "ny": 1,
         "nz": 1,
-        "text": "Жёлчный пузырь (Vesica biliaris)"
+        "text": "Дно жёлчного пузыря (Fundus vesicae biliaris)"
       },
       {
         "x": 0,
-        "y": -0.02,
-        "z": -0.03,
+        "y": 0,
+        "z": 0.02,
         "nx": 0,
         "ny": 0,
-        "nz": -1,
-        "text": "Ворота печени и воротная вена (Porta hepatis)"
+        "nz": 1,
+        "text": "Тело жёлчного пузыря (Corpus vesicae biliaris)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Шейка и пузырный проток (Ductus cysticus)"
+      },
+      {
+        "x": 0.02,
+        "y": -0.07,
+        "z": 0,
+        "nx": 1,
+        "ny": -1,
+        "nz": 0,
+        "text": "Общий жёлчный проток (Ductus choledochus)"
       }
     ],
     "videoUrl": null,
@@ -22621,43 +23476,43 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/child/5f6af95d4c10.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-liver.glb",
+    "modelUrl": "/uploads/organ-gallbladder.glb",
     "labels3d": [
       {
-        "x": -0.06,
-        "y": 0.02,
-        "z": 0.03,
-        "nx": -1,
-        "ny": 0,
-        "nz": 1,
-        "text": "Правая доля печени (Lobus dexter hepatis)"
-      },
-      {
-        "x": 0.06,
-        "y": 0.02,
+        "x": 0,
+        "y": 0.05,
         "z": 0.02,
-        "nx": 1,
-        "ny": 0,
-        "nz": 1,
-        "text": "Левая доля печени (Lobus sinister hepatis)"
-      },
-      {
-        "x": -0.02,
-        "y": -0.05,
-        "z": 0.04,
         "nx": 0,
-        "ny": -1,
+        "ny": 1,
         "nz": 1,
-        "text": "Жёлчный пузырь (Vesica biliaris)"
+        "text": "Дно жёлчного пузыря (Fundus vesicae biliaris)"
       },
       {
         "x": 0,
-        "y": -0.02,
-        "z": -0.03,
+        "y": 0,
+        "z": 0.02,
         "nx": 0,
         "ny": 0,
-        "nz": -1,
-        "text": "Ворота печени и воротная вена (Porta hepatis)"
+        "nz": 1,
+        "text": "Тело жёлчного пузыря (Corpus vesicae biliaris)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Шейка и пузырный проток (Ductus cysticus)"
+      },
+      {
+        "x": 0.02,
+        "y": -0.07,
+        "z": 0,
+        "nx": 1,
+        "ny": -1,
+        "nz": 0,
+        "text": "Общий жёлчный проток (Ductus choledochus)"
       }
     ],
     "videoUrl": null,
@@ -22682,43 +23537,43 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/child/5f6af95d4c10.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-liver.glb",
+    "modelUrl": "/uploads/organ-gallbladder.glb",
     "labels3d": [
       {
-        "x": -0.06,
-        "y": 0.02,
-        "z": 0.03,
-        "nx": -1,
-        "ny": 0,
-        "nz": 1,
-        "text": "Правая доля печени (Lobus dexter hepatis)"
-      },
-      {
-        "x": 0.06,
-        "y": 0.02,
+        "x": 0,
+        "y": 0.05,
         "z": 0.02,
-        "nx": 1,
-        "ny": 0,
-        "nz": 1,
-        "text": "Левая доля печени (Lobus sinister hepatis)"
-      },
-      {
-        "x": -0.02,
-        "y": -0.05,
-        "z": 0.04,
         "nx": 0,
-        "ny": -1,
+        "ny": 1,
         "nz": 1,
-        "text": "Жёлчный пузырь (Vesica biliaris)"
+        "text": "Дно жёлчного пузыря (Fundus vesicae biliaris)"
       },
       {
         "x": 0,
-        "y": -0.02,
-        "z": -0.03,
+        "y": 0,
+        "z": 0.02,
         "nx": 0,
         "ny": 0,
-        "nz": -1,
-        "text": "Ворота печени и воротная вена (Porta hepatis)"
+        "nz": 1,
+        "text": "Тело жёлчного пузыря (Corpus vesicae biliaris)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Шейка и пузырный проток (Ductus cysticus)"
+      },
+      {
+        "x": 0.02,
+        "y": -0.07,
+        "z": 0,
+        "nx": 1,
+        "ny": -1,
+        "nz": 0,
+        "text": "Общий жёлчный проток (Ductus choledochus)"
       }
     ],
     "videoUrl": null,
@@ -22743,43 +23598,43 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/child/5f6af95d4c10.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-liver.glb",
+    "modelUrl": "/uploads/organ-gallbladder.glb",
     "labels3d": [
       {
-        "x": -0.06,
-        "y": 0.02,
-        "z": 0.03,
-        "nx": -1,
-        "ny": 0,
-        "nz": 1,
-        "text": "Правая доля печени (Lobus dexter hepatis)"
-      },
-      {
-        "x": 0.06,
-        "y": 0.02,
+        "x": 0,
+        "y": 0.05,
         "z": 0.02,
-        "nx": 1,
-        "ny": 0,
-        "nz": 1,
-        "text": "Левая доля печени (Lobus sinister hepatis)"
-      },
-      {
-        "x": -0.02,
-        "y": -0.05,
-        "z": 0.04,
         "nx": 0,
-        "ny": -1,
+        "ny": 1,
         "nz": 1,
-        "text": "Жёлчный пузырь (Vesica biliaris)"
+        "text": "Дно жёлчного пузыря (Fundus vesicae biliaris)"
       },
       {
         "x": 0,
-        "y": -0.02,
-        "z": -0.03,
+        "y": 0,
+        "z": 0.02,
         "nx": 0,
         "ny": 0,
-        "nz": -1,
-        "text": "Ворота печени и воротная вена (Porta hepatis)"
+        "nz": 1,
+        "text": "Тело жёлчного пузыря (Corpus vesicae biliaris)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Шейка и пузырный проток (Ductus cysticus)"
+      },
+      {
+        "x": 0.02,
+        "y": -0.07,
+        "z": 0,
+        "nx": 1,
+        "ny": -1,
+        "nz": 0,
+        "text": "Общий жёлчный проток (Ductus choledochus)"
       }
     ],
     "videoUrl": null,
@@ -22804,43 +23659,43 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/child/5f6af95d4c10.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-liver.glb",
+    "modelUrl": "/uploads/organ-gallbladder.glb",
     "labels3d": [
       {
-        "x": -0.06,
-        "y": 0.02,
-        "z": 0.03,
-        "nx": -1,
-        "ny": 0,
-        "nz": 1,
-        "text": "Правая доля печени (Lobus dexter hepatis)"
-      },
-      {
-        "x": 0.06,
-        "y": 0.02,
+        "x": 0,
+        "y": 0.05,
         "z": 0.02,
-        "nx": 1,
-        "ny": 0,
-        "nz": 1,
-        "text": "Левая доля печени (Lobus sinister hepatis)"
-      },
-      {
-        "x": -0.02,
-        "y": -0.05,
-        "z": 0.04,
         "nx": 0,
-        "ny": -1,
+        "ny": 1,
         "nz": 1,
-        "text": "Жёлчный пузырь (Vesica biliaris)"
+        "text": "Дно жёлчного пузыря (Fundus vesicae biliaris)"
       },
       {
         "x": 0,
-        "y": -0.02,
-        "z": -0.03,
+        "y": 0,
+        "z": 0.02,
         "nx": 0,
         "ny": 0,
-        "nz": -1,
-        "text": "Ворота печени и воротная вена (Porta hepatis)"
+        "nz": 1,
+        "text": "Тело жёлчного пузыря (Corpus vesicae biliaris)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Шейка и пузырный проток (Ductus cysticus)"
+      },
+      {
+        "x": 0.02,
+        "y": -0.07,
+        "z": 0,
+        "nx": 1,
+        "ny": -1,
+        "nz": 0,
+        "text": "Общий жёлчный проток (Ductus choledochus)"
       }
     ],
     "videoUrl": null,
@@ -22867,43 +23722,43 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/child/5f6af95d4c10.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-liver.glb",
+    "modelUrl": "/uploads/organ-gallbladder.glb",
     "labels3d": [
       {
-        "x": -0.06,
-        "y": 0.02,
-        "z": 0.03,
-        "nx": -1,
-        "ny": 0,
-        "nz": 1,
-        "text": "Правая доля печени (Lobus dexter hepatis)"
-      },
-      {
-        "x": 0.06,
-        "y": 0.02,
+        "x": 0,
+        "y": 0.05,
         "z": 0.02,
-        "nx": 1,
-        "ny": 0,
-        "nz": 1,
-        "text": "Левая доля печени (Lobus sinister hepatis)"
-      },
-      {
-        "x": -0.02,
-        "y": -0.05,
-        "z": 0.04,
         "nx": 0,
-        "ny": -1,
+        "ny": 1,
         "nz": 1,
-        "text": "Жёлчный пузырь (Vesica biliaris)"
+        "text": "Дно жёлчного пузыря (Fundus vesicae biliaris)"
       },
       {
         "x": 0,
-        "y": -0.02,
-        "z": -0.03,
+        "y": 0,
+        "z": 0.02,
         "nx": 0,
         "ny": 0,
-        "nz": -1,
-        "text": "Ворота печени и воротная вена (Porta hepatis)"
+        "nz": 1,
+        "text": "Тело жёлчного пузыря (Corpus vesicae biliaris)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Шейка и пузырный проток (Ductus cysticus)"
+      },
+      {
+        "x": 0.02,
+        "y": -0.07,
+        "z": 0,
+        "nx": 1,
+        "ny": -1,
+        "nz": 0,
+        "text": "Общий жёлчный проток (Ductus choledochus)"
       }
     ],
     "videoUrl": null,
@@ -22931,43 +23786,43 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/child/5f6af95d4c10.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-liver.glb",
+    "modelUrl": "/uploads/organ-gallbladder.glb",
     "labels3d": [
       {
-        "x": -0.06,
-        "y": 0.02,
-        "z": 0.03,
-        "nx": -1,
-        "ny": 0,
-        "nz": 1,
-        "text": "Правая доля печени (Lobus dexter hepatis)"
-      },
-      {
-        "x": 0.06,
-        "y": 0.02,
+        "x": 0,
+        "y": 0.05,
         "z": 0.02,
-        "nx": 1,
-        "ny": 0,
-        "nz": 1,
-        "text": "Левая доля печени (Lobus sinister hepatis)"
-      },
-      {
-        "x": -0.02,
-        "y": -0.05,
-        "z": 0.04,
         "nx": 0,
-        "ny": -1,
+        "ny": 1,
         "nz": 1,
-        "text": "Жёлчный пузырь (Vesica biliaris)"
+        "text": "Дно жёлчного пузыря (Fundus vesicae biliaris)"
       },
       {
         "x": 0,
-        "y": -0.02,
-        "z": -0.03,
+        "y": 0,
+        "z": 0.02,
         "nx": 0,
         "ny": 0,
-        "nz": -1,
-        "text": "Ворота печени и воротная вена (Porta hepatis)"
+        "nz": 1,
+        "text": "Тело жёлчного пузыря (Corpus vesicae biliaris)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Шейка и пузырный проток (Ductus cysticus)"
+      },
+      {
+        "x": 0.02,
+        "y": -0.07,
+        "z": 0,
+        "nx": 1,
+        "ny": -1,
+        "nz": 0,
+        "text": "Общий жёлчный проток (Ductus choledochus)"
       }
     ],
     "videoUrl": null,
@@ -24104,6 +24959,24 @@
         "ny": 0,
         "nz": 1,
         "text": "Тело мочевого пузыря (Corpus vesicae)"
+      },
+      {
+        "x": 0,
+        "y": -0.05,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Шейка пузыря и уретра (Urethra)"
+      },
+      {
+        "x": 0.04,
+        "y": 0.02,
+        "z": -0.02,
+        "nx": 1,
+        "ny": 0,
+        "nz": -1,
+        "text": "Устья мочеточников (Ostium ureteris)"
       }
     ],
     "videoUrl": null,
@@ -24149,6 +25022,24 @@
         "ny": 0,
         "nz": 1,
         "text": "Тело мочевого пузыря (Corpus vesicae)"
+      },
+      {
+        "x": 0,
+        "y": -0.05,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Шейка пузыря и уретра (Urethra)"
+      },
+      {
+        "x": 0.04,
+        "y": 0.02,
+        "z": -0.02,
+        "nx": 1,
+        "ny": 0,
+        "nz": -1,
+        "text": "Устья мочеточников (Ostium ureteris)"
       }
     ],
     "videoUrl": null,
@@ -24172,34 +25063,43 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/child/fba86c4a8e59.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-prostate.glb",
+    "modelUrl": "/uploads/organ-male-reproductive.glb",
     "labels3d": [
       {
         "x": 0,
-        "y": 0.03,
-        "z": 0.02,
+        "y": 0.06,
+        "z": 0.01,
         "nx": 0,
         "ny": 1,
         "nz": 0,
-        "text": "Основание предстательной железы (Basis prostatae)"
+        "text": "Предстательная железа (Prostata)"
+      },
+      {
+        "x": -0.03,
+        "y": -0.05,
+        "z": 0.02,
+        "nx": -1,
+        "ny": -1,
+        "nz": 1,
+        "text": "Правое яичко и придаток (Testis dexter)"
+      },
+      {
+        "x": 0.03,
+        "y": -0.05,
+        "z": 0.02,
+        "nx": 1,
+        "ny": -1,
+        "nz": 1,
+        "text": "Левое яичко и придаток (Testis sinister)"
       },
       {
         "x": 0,
         "y": 0,
-        "z": 0.03,
+        "z": 0.04,
         "nx": 0,
         "ny": 0,
         "nz": 1,
-        "text": "Тело железы и капсула (Corpus prostatae)"
-      },
-      {
-        "x": 0,
-        "y": -0.03,
-        "z": 0.01,
-        "nx": 0,
-        "ny": -1,
-        "nz": 0,
-        "text": "Верхушка железы (Apex prostatae)"
+        "text": "Пещеристые тела и головка (Corpus cavernosum)"
       }
     ],
     "videoUrl": null,
@@ -24226,34 +25126,43 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/child/fba86c4a8e59.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-prostate.glb",
+    "modelUrl": "/uploads/organ-male-reproductive.glb",
     "labels3d": [
       {
         "x": 0,
-        "y": 0.03,
-        "z": 0.02,
+        "y": 0.06,
+        "z": 0.01,
         "nx": 0,
         "ny": 1,
         "nz": 0,
-        "text": "Основание предстательной железы (Basis prostatae)"
+        "text": "Предстательная железа (Prostata)"
+      },
+      {
+        "x": -0.03,
+        "y": -0.05,
+        "z": 0.02,
+        "nx": -1,
+        "ny": -1,
+        "nz": 1,
+        "text": "Правое яичко и придаток (Testis dexter)"
+      },
+      {
+        "x": 0.03,
+        "y": -0.05,
+        "z": 0.02,
+        "nx": 1,
+        "ny": -1,
+        "nz": 1,
+        "text": "Левое яичко и придаток (Testis sinister)"
       },
       {
         "x": 0,
         "y": 0,
-        "z": 0.03,
+        "z": 0.04,
         "nx": 0,
         "ny": 0,
         "nz": 1,
-        "text": "Тело железы и капсула (Corpus prostatae)"
-      },
-      {
-        "x": 0,
-        "y": -0.03,
-        "z": 0.01,
-        "nx": 0,
-        "ny": -1,
-        "nz": 0,
-        "text": "Верхушка железы (Apex prostatae)"
+        "text": "Пещеристые тела и головка (Corpus cavernosum)"
       }
     ],
     "videoUrl": null,
@@ -24280,34 +25189,43 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/child/fba86c4a8e59.webp",
     "labels": [],
-    "modelUrl": "/uploads/organ-prostate.glb",
+    "modelUrl": "/uploads/organ-male-reproductive.glb",
     "labels3d": [
       {
         "x": 0,
-        "y": 0.03,
-        "z": 0.02,
+        "y": 0.06,
+        "z": 0.01,
         "nx": 0,
         "ny": 1,
         "nz": 0,
-        "text": "Основание предстательной железы (Basis prostatae)"
+        "text": "Предстательная железа (Prostata)"
+      },
+      {
+        "x": -0.03,
+        "y": -0.05,
+        "z": 0.02,
+        "nx": -1,
+        "ny": -1,
+        "nz": 1,
+        "text": "Правое яичко и придаток (Testis dexter)"
+      },
+      {
+        "x": 0.03,
+        "y": -0.05,
+        "z": 0.02,
+        "nx": 1,
+        "ny": -1,
+        "nz": 1,
+        "text": "Левое яичко и придаток (Testis sinister)"
       },
       {
         "x": 0,
         "y": 0,
-        "z": 0.03,
+        "z": 0.04,
         "nx": 0,
         "ny": 0,
         "nz": 1,
-        "text": "Тело железы и капсула (Corpus prostatae)"
-      },
-      {
-        "x": 0,
-        "y": -0.03,
-        "z": 0.01,
-        "nx": 0,
-        "ny": -1,
-        "nz": 0,
-        "text": "Верхушка железы (Apex prostatae)"
+        "text": "Пещеристые тела и головка (Corpus cavernosum)"
       }
     ],
     "videoUrl": null,
