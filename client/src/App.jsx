@@ -4,6 +4,7 @@ import AdminView from './AdminView';
 import BodyMapAdmin from './BodyMapAdmin';
 import UsersAdmin from './UsersAdmin';
 import Login from './Login';
+import ErrorBoundary from './ErrorBoundary';
 import { api, getToken, setToken } from './api';
 import './App.css';
 
@@ -66,11 +67,13 @@ export default function App() {
         )}
       </header>
 
-      {tab === 'atlas' && <AtlasView />}
-      {tab === 'login' && !user && <Login onLoggedIn={(u) => { setUser(u); setTab('admin'); }} />}
-      {tab === 'admin' && user && <AdminView />}
-      {tab === 'bodymap' && user && <BodyMapAdmin />}
-      {tab === 'users' && user?.role === 'admin' && <UsersAdmin currentUser={user} />}
+      <ErrorBoundary>
+        {tab === 'atlas' && <AtlasView />}
+        {tab === 'login' && !user && <Login onLoggedIn={(u) => { setUser(u); setTab('admin'); }} />}
+        {tab === 'admin' && user && <AdminView />}
+        {tab === 'bodymap' && user && <BodyMapAdmin />}
+        {tab === 'users' && user?.role === 'admin' && <UsersAdmin currentUser={user} />}
+      </ErrorBoundary>
     </div>
   );
 }
