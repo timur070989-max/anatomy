@@ -311,10 +311,10 @@ export default function AtlasView({ lang = 'ru' }) {
                       <div
                         className={`scanner-lens-square ${hoveredBodyOrgan ? 'organ-detected' : ''}`}
                         style={{
-                          left: `${bodyCursorPos.x - 65}px`,
-                          top: `${bodyCursorPos.y - 65}px`,
-                          width: '130px',
-                          height: '130px',
+                          left: `${bodyCursorPos.x - 68}px`,
+                          top: `${bodyCursorPos.y - 68}px`,
+                          width: '136px',
+                          height: '136px',
                         }}
                       >
                         {/* Internal Organ Anatomy Layer aligned to the lens offset */}
@@ -323,7 +323,7 @@ export default function AtlasView({ lang = 'ru' }) {
                           style={{
                             width: `${containerSize.width}px`,
                             height: `${containerSize.height}px`,
-                            transform: `translate(${- (bodyCursorPos.x - 65)}px, ${- (bodyCursorPos.y - 65)}px)`,
+                            transform: `translate(${- (bodyCursorPos.x - 68)}px, ${- (bodyCursorPos.y - 68)}px)`,
                           }}
                         >
                           <img
@@ -357,7 +357,7 @@ export default function AtlasView({ lang = 'ru' }) {
                         <div className="scanner-bracket br" />
                         <div className="scanner-crosshair" />
 
-                        {/* Live Organ Name HUD attached directly to the scanner box */}
+                        {/* Live Organ Name HUD placed directly INSIDE the bottom of the scanner box */}
                         {hoveredBodyOrgan && (
                           <div className="scanner-lens-hud-tag">
                             <span className="hud-pulse-dot" />

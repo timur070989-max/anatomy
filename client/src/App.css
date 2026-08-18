@@ -550,37 +550,45 @@ body {
   opacity: 0.6;
 }
 
-/* Scanner Lens HUD Tag */
+/* Scanner Lens HUD Tag - strictly INSIDE the bottom of the scanner square */
 .scanner-lens-hud-tag {
   position: absolute;
-  bottom: calc(100% + 8px);
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(6, 14, 29, 0.95);
+  bottom: 6px;
+  left: 6px;
+  right: 6px;
+  background: rgba(6, 14, 29, 0.92);
   border: 1px solid var(--wm-cyan);
-  box-shadow: 0 0 14px rgba(0, 229, 255, 0.4);
-  border-radius: 20px;
-  padding: 4px 12px;
+  box-shadow: 0 0 10px rgba(0, 229, 255, 0.35);
+  border-radius: 6px;
+  padding: 3px 6px;
   display: flex;
   align-items: center;
-  gap: 6px;
-  white-space: nowrap;
+  justify-content: center;
+  gap: 5px;
   z-index: 50;
+  pointer-events: none;
+  backdrop-filter: blur(4px);
+  box-sizing: border-box;
 }
 
 .hud-pulse-dot {
-  width: 7px;
-  height: 7px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background: var(--wm-cyan);
-  box-shadow: 0 0 8px var(--wm-cyan);
+  box-shadow: 0 0 6px var(--wm-cyan);
+  flex-shrink: 0;
 }
 
 .hud-organ-name {
   color: #ffffff;
-  font-size: 0.8rem;
+  font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.3px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* Active Pinned Marker for chosen organ */
