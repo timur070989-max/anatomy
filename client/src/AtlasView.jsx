@@ -88,16 +88,34 @@ export default function AtlasView({ lang = 'ru' }) {
     let xPct = (x / wrapRect.width) * 100;
     let yPct = (y / wrapRect.height) * 100;
 
+    let imgOffsetX = 0;
+    let imgOffsetY = 0;
+    let imgWidth = wrapRect.width;
+    let imgHeight = wrapRect.height;
+
     if (imgEl) {
       const imgRect = imgEl.getBoundingClientRect();
       if (imgRect.width > 0 && imgRect.height > 0) {
         xPct = ((e.clientX - imgRect.left) / imgRect.width) * 100;
         yPct = ((e.clientY - imgRect.top) / imgRect.height) * 100;
+        imgOffsetX = imgRect.left - wrapRect.left;
+        imgOffsetY = imgRect.top - wrapRect.top;
+        imgWidth = imgRect.width;
+        imgHeight = imgRect.height;
       }
     }
 
     setContainerSize({ width: wrapRect.width, height: wrapRect.height });
-    setBodyCursorPos({ x, y, xPct, yPct });
+    setBodyCursorPos({
+      cursorX: x,
+      cursorY: y,
+      imgOffsetX,
+      imgOffsetY,
+      imgWidth,
+      imgHeight,
+      xPct,
+      yPct,
+    });
 
     let closest = null;
     let minDist = Infinity;
@@ -106,7 +124,7 @@ export default function AtlasView({ lang = 'ru' }) {
       const dx = l.x - xPct;
       const dy = l.y - yPct;
       const dist = Math.sqrt(dx * dx + dy * dy);
-      if (dist < minDist && dist < 12) {
+      if (dist < minDist && dist < 14) {
         minDist = dist;
         closest = l;
       }
@@ -318,36 +336,37 @@ export default function AtlasView({ lang = 'ru' }) {
                       className="bodymap-base-img"
                     />
 
-                    {/* Layer 2: Internal Organs Layer (Visible ONLY inside the scanner box via clip-path) */}
-                    {bodyCursorPos && (
-                      <img
-                        src={resolveImageUrl(bodyMap.organsUrl || bodyMap.imageUrl)}
-                        alt="Анатомический срез"
-                        className="bodymap-organs-img"
-                        style={{
-                          clipPath: `inset(${bodyCursorPos.y - 68}px calc(100% - ${bodyCursorPos.x + 68}px) calc(100% - ${bodyCursorPos.y + 68}px) ${bodyCursorPos.x - 68}px round 8px)`,
-                        }}
-                      />
-                    )}
-
-                    {/* Layer 3: High-Tech Viewfinder Square with Laser & Inside HUD */}
-                    {bodyCursorPos && (
+                    {/* Layer 2: Interactive Square Scanner Viewfinder (Organs visible ONLY inside this box) */}
+                    {bodyCursorPos && bodyCursorPos.imgWidth > 0 && (
                       <div
                         className={`scanner-viewfinder-square ${hoveredBodyOrgan ? 'organ-detected' : ''}`}
                         style={{
-                          left: `${bodyCursorPos.x - 68}px`,
-                          top: `${bodyCursorPos.y - 68}px`,
+                          left: `${bodyCursorPos.cursorX - 68}px`,
+                          top: `${bodyCursorPos.cursorY - 68}px`,
                           width: '136px',
                           height: '136px',
                         }}
                       >
+                        {/* Internal Organs Image positioned strictly inside the viewfinder window */}
+                        <img
+                          src={resolveImageUrl(bodyMap.organsUrl || bodyMap.imageUrl)}
+                          alt="Анатомический срез"
+                          className="scanner-inner-organs-img"
+                          style={{
+                            left: `${bodyCursorPos.imgOffsetX - (bodyCursorPos.cursorX - 68)}px`,
+                            top: `${bodyCursorPos.imgOffsetY - (bodyCursorPos.cursorY - 68)}px`,
+                            width: `${bodyCursorPos.imgWidth}px`,
+                            height: `${bodyCursorPos.imgHeight}px`,
+                          }}
+                        />
+
                         {/* Glowing organ hotspot inside the scanner viewfinder */}
                         {hoveredBodyOrgan && (
                           <div
                             className="scanner-organ-hotspot-glow"
                             style={{
-                              left: `${(hoveredBodyOrgan.x / 100) * containerSize.width - (bodyCursorPos.x - 68)}px`,
-                              top: `${(hoveredBodyOrgan.y / 100) * containerSize.height - (bodyCursorPos.y - 68)}px`,
+                              left: `${bodyCursorPos.imgOffsetX + (hoveredBodyOrgan.x / 100) * bodyCursorPos.imgWidth - (bodyCursorPos.cursorX - 68)}px`,
+                              top: `${bodyCursorPos.imgOffsetY + (hoveredBodyOrgan.y / 100) * bodyCursorPos.imgHeight - (bodyCursorPos.cursorY - 68)}px`,
                             }}
                           >
                             <span className="organ-glow-pulse" />
