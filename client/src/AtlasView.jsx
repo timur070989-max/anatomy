@@ -267,10 +267,14 @@ export default function AtlasView() {
                     <div className="pathology-item-main">
                       <div className="pathology-item-title-row">
                         <span className="pathology-name">{cleanHtmlText(entry.title)}</span>
-                        {entry.modelUrl && (
-                          <span className="badge-3d" title="Доступна интерактивная 3D-модель органа">3D</span>
-                        )}
-                        <span className="badge-video" title="Доступна видео-анимация">🎬</span>
+                        <div className="pathology-item-badges">
+                          {entry.modelUrl && (
+                            <span className="badge-3d" title="Доступна интерактивная 3D-модель органа">3D</span>
+                          )}
+                          {entry.videoUrl && (
+                            <span className="badge-video" title="Доступно анимационное видео патологии">🎬 Видео</span>
+                          )}
+                        </div>
                       </div>
                       <div className="pathology-item-sub">
                         <span className="pathology-organ-tag">{entry.system}</span>
@@ -309,6 +313,7 @@ export default function AtlasView() {
                     type="button"
                     className={viewMode === '2d' ? 'active' : ''}
                     onClick={() => setViewMode('2d')}
+                    title="2D анатомическая схема"
                   >
                     🖼️ 2D Схема
                   </button>
@@ -316,15 +321,23 @@ export default function AtlasView() {
                     type="button"
                     className={viewMode === '3d' ? 'active' : ''}
                     onClick={() => setViewMode('3d')}
+                    disabled={!selected.modelUrl}
+                    style={!selected.modelUrl ? { opacity: 0.45, cursor: 'not-allowed' } : undefined}
+                    title={selected.modelUrl ? 'Интерактивная 3D-модель органа' : '3D-модель не привязана'}
                   >
                     🧊 3D Модель
                   </button>
                   <button
                     type="button"
-                    className={viewMode === 'video' ? 'active' : ''}
-                    onClick={() => setViewMode('video')}
+                    className={`video-tab-btn ${viewMode === 'video' ? 'active' : ''} ${!selected.videoUrl ? 'disabled-tab' : ''}`}
+                    onClick={() => {
+                      if (selected.videoUrl) setViewMode('video');
+                    }}
+                    disabled={!selected.videoUrl}
+                    style={!selected.videoUrl ? { opacity: 0.40, cursor: 'not-allowed', filter: 'grayscale(0.8)' } : undefined}
+                    title={selected.videoUrl ? 'Смотреть анимационное видео патологии' : 'Анимационное видео не прикреплено в админ-панели'}
                   >
-                    🎬 Анимационное видео
+                    🎬 Анимационное видео {selected.videoUrl ? '' : '🔒'}
                   </button>
                 </div>
 
@@ -335,23 +348,21 @@ export default function AtlasView() {
                     onHotspotClick={(label) => setActiveLabel(label)}
                     height={400}
                   />
-                ) : viewMode === 'video' ? (
-                  selected.videoUrl ? (
+                ) : viewMode === 'video' && selected.videoUrl ? (
+                  <div className="pathology-video-player-box">
                     <video
+                      key={selected.videoUrl}
                       src={resolveImageUrl(selected.videoUrl)}
                       controls
                       autoPlay
-                      loop
-                      style={{ width: '100%', height: '400px', objectFit: 'contain', background: '#000', borderRadius: '10px', display: 'block' }}
+                      playsInline
+                      className="pathology-video-player"
                     />
-                  ) : (
-                    <Model3DViewer
-                      src={resolveImageUrl(selected.modelUrl || '/uploads/organ-brain.glb')}
-                      hotspots={[]}
-                      height={400}
-                      isAnimatedVideo={true}
-                    />
-                  )
+                    <div className="video-player-info-badge">
+                      <span className="video-rec-dot" />
+                      <span>Анимация патологии: <strong>{cleanHtmlText(selected.title)}</strong></span>
+                    </div>
+                  </div>
                 ) : (
                   selected.imageUrl ? (
                     <div className="modal-image-preview">

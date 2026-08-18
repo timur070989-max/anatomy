@@ -299,7 +299,19 @@ export default function AdminView() {
 
         {videoPreview && (
           <div className="preview-wrap">
-            <video src={videoPreview} controls style={{ width: '100%', borderRadius: '8px', display: 'block' }} />
+            <video src={videoPreview} controls style={{ width: '100%', maxHeight: '240px', borderRadius: '8px', display: 'block', background: '#000' }} />
+            <button
+              type="button"
+              className="remove-video-btn"
+              onClick={() => {
+                setVideoFile(null);
+                setVideoPreview(null);
+                setForm((prev) => ({ ...prev, videoUrl: '' }));
+              }}
+              style={{ marginTop: '6px', background: '#ef4444', color: '#fff', border: 'none', padding: '5px 12px', borderRadius: '6px', cursor: 'pointer', fontSize: '0.82rem', fontWeight: '600' }}
+            >
+              🗑️ Открепить видео от патологии
+            </button>
           </div>
         )}
 
@@ -316,6 +328,7 @@ export default function AdminView() {
             <tr>
               <th>Нозология</th>
               <th>Орган</th>
+              <th>Медиа</th>
               <th>Профиль</th>
               <th></th>
             </tr>
@@ -325,6 +338,12 @@ export default function AdminView() {
               <tr key={entry.id}>
                 <td>{entry.title}</td>
                 <td>{entry.system}</td>
+                <td>
+                  <div style={{ display: 'flex', gap: '4px' }}>
+                    {entry.modelUrl && <span style={{ background: '#0284c7', color: '#fff', padding: '2px 6px', borderRadius: '4px', fontSize: '0.7rem', fontWeight: 'bold' }}>3D</span>}
+                    {entry.videoUrl && <span style={{ background: '#d97706', color: '#fff', padding: '2px 6px', borderRadius: '4px', fontSize: '0.7rem', fontWeight: 'bold' }}>🎬 Видео</span>}
+                  </div>
+                </td>
                 <td>{BODY_PROFILE_OPTIONS.find((o) => o.value === (entry.bodyProfile || 'any'))?.label.split(' ')[0]}</td>
                 <td className="row-actions">
                   <button onClick={() => startEdit(entry)}>Изменить</button>

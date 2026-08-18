@@ -1716,3 +1716,61 @@
   padding: 0.3rem 0.6rem;
   font-size: 0.8rem;
 }
+
+/* Pathology Dedicated Video Player */
+.pathology-video-player-box {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  background: #020617;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(217, 119, 6, 0.35);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+}
+
+.pathology-video-player {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #000;
+  display: block;
+}
+
+.video-player-info-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(15, 23, 42, 0.88);
+  border: 1px solid rgba(217, 119, 6, 0.5);
+  color: #fef3c7;
+  font-size: 0.76rem;
+  padding: 5px 12px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  backdrop-filter: blur(6px);
+  pointer-events: none;
+  z-index: 10;
+}
+
+.video-rec-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ef4444;
+  box-shadow: 0 0 8px #ef4444;
+  animation: recPulse 1.2s infinite;
+}
+
+.video-tab-btn.disabled-tab {
+  opacity: 0.45 !important;
+  cursor: not-allowed !important;
+  background: #f1f5f9 !important;
+  color: #94a3b8 !important;
+  border-color: #e2e8f0 !important;
+}
+
