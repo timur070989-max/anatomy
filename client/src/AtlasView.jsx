@@ -327,7 +327,7 @@ export default function AtlasView({ lang = 'ru' }) {
                           }}
                         >
                           <img
-                            src={resolveImageUrl(bodyMap.imageUrl)}
+                            src={resolveImageUrl(bodyMap.organsUrl || bodyMap.imageUrl)}
                             alt="Анатомический скан"
                             className="scanner-organ-layer-img"
                           />
