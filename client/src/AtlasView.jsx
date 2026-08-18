@@ -132,7 +132,6 @@ export default function AtlasView() {
             </button>
           ))}
         </div>
-        <button className="profile-skip" onClick={() => setBodyProfile('all')}>Показать всё без фильтра</button>
       </div>
     );
   }
@@ -152,12 +151,6 @@ export default function AtlasView() {
               {p.label}
             </button>
           ))}
-          <button
-            className={`profile-pill ${bodyProfile === 'all' ? 'active' : ''}`}
-            onClick={() => { setBodyProfile('all'); setActiveSystem(''); setSearchQuery(''); }}
-          >
-            Все
-          </button>
         </div>
 
         <div className="system-status-badge">
