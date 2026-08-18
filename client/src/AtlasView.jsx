@@ -46,6 +46,16 @@ export default function AtlasView() {
     setOpenAccordion((prev) => (prev === section ? '' : section));
   }
 
+  function getYoutubeEmbedUrl(url) {
+    if (!url) return null;
+    if (url.includes('youtube.com/embed/')) return url;
+    const match = url.match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([\w-]{11})/);
+    if (match && match[1]) {
+      return `https://www.youtube.com/embed/${match[1]}?autoplay=1&rel=0`;
+    }
+    return null;
+  }
+
   // 'all' means "show everything, no profile filter"
   const apiProfile = bodyProfile && bodyProfile !== 'all' ? bodyProfile : undefined;
 
@@ -350,14 +360,25 @@ export default function AtlasView() {
                   />
                 ) : viewMode === 'video' && selected.videoUrl ? (
                   <div className="pathology-video-player-box">
-                    <video
-                      key={selected.videoUrl}
-                      src={resolveImageUrl(selected.videoUrl)}
-                      controls
-                      autoPlay
-                      playsInline
-                      className="pathology-video-player"
-                    />
+                    {getYoutubeEmbedUrl(selected.videoUrl) ? (
+                      <iframe
+                        src={getYoutubeEmbedUrl(selected.videoUrl)}
+                        title={selected.title}
+                        className="pathology-video-player"
+                        style={{ width: '100%', height: '100%', border: 'none' }}
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                      />
+                    ) : (
+                      <video
+                        key={selected.videoUrl}
+                        src={resolveImageUrl(selected.videoUrl)}
+                        controls
+                        autoPlay
+                        playsInline
+                        className="pathology-video-player"
+                      />
+                    )}
                     <div className="video-player-info-badge">
                       <span className="video-rec-dot" />
                       <span>Анимация патологии: <strong>{cleanHtmlText(selected.title)}</strong></span>
