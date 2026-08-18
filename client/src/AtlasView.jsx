@@ -397,12 +397,12 @@ export default function AtlasView({ lang = 'ru' }) {
                         <span className="pathology-organ-tag">{getEntrySystem(entry)}</span>
                         {entry.recommendedDrugs && entry.recommendedDrugs.length > 0 && (
                           <span className="pathology-drugs-count">
-                            💊 {entry.recommendedDrugs.length} {t.wmDrugsPrefix}
+                            <svg className="badge-svg-icon" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" strokeWidth="2" style={{marginRight: 4}}><path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"/><path d="m8.5 8.5 7 7"/></svg>
+                            {entry.recommendedDrugs.length} {t.wmDrugsPrefix}
                           </span>
                         )}
                       </div>
                     </div>
-                    <span className="pathology-arrow">→</span>
                   </button>
                 ))
               )}
@@ -432,7 +432,8 @@ export default function AtlasView({ lang = 'ru' }) {
                     onClick={() => setViewMode('2d')}
                     title={t.schema2DTab}
                   >
-                    🖼️ {t.schema2DTab}
+                    <svg className="tab-svg-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                    {t.schema2DTab}
                   </button>
                   <button
                     type="button"
@@ -442,7 +443,8 @@ export default function AtlasView({ lang = 'ru' }) {
                     style={!selected.modelUrl ? { opacity: 0.45, cursor: 'not-allowed' } : undefined}
                     title={selected.modelUrl ? t.model3DTab : '3D-модель не привязана'}
                   >
-                    🧊 {t.model3DTab}
+                    <svg className="tab-svg-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                    {t.model3DTab}
                   </button>
                   <button
                     type="button"
@@ -454,7 +456,11 @@ export default function AtlasView({ lang = 'ru' }) {
                     style={!selected.videoUrl ? { opacity: 0.40, cursor: 'not-allowed', filter: 'grayscale(0.8)' } : undefined}
                     title={selected.videoUrl ? t.videoTab : t.videoLockedTooltip}
                   >
-                    🎬 {t.videoTab} {selected.videoUrl ? '' : '🔒'}
+                    <svg className="tab-svg-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                    {t.videoTab}
+                    {!selected.videoUrl && (
+                      <svg className="tab-svg-icon" viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" strokeWidth="2" style={{ marginLeft: 4 }}><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                    )}
                   </button>
                   {selected.xrayUrl && (
                     <button
@@ -463,7 +469,8 @@ export default function AtlasView({ lang = 'ru' }) {
                       onClick={() => setViewMode('xray')}
                       title={t.xrayTab}
                     >
-                      🩻 {t.xrayTab}
+                      <svg className="tab-svg-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/></svg>
+                      {t.xrayTab}
                     </button>
                   )}
                 </div>
@@ -509,7 +516,7 @@ export default function AtlasView({ lang = 'ru' }) {
                       className="pathology-xray-img"
                     />
                     <div className="xray-info-badge">
-                      <span>🩻 {t.xrayTab}: <strong>{cleanHtmlText(getEntryTitle(selected))}</strong></span>
+                      <span>{t.xrayTab}: <strong>{cleanHtmlText(getEntryTitle(selected))}</strong></span>
                     </div>
                   </div>
                 ) : (
@@ -537,7 +544,7 @@ export default function AtlasView({ lang = 'ru' }) {
                         onClick={() => toggleAccordion('definition')}
                       >
                         <div className="accordion-title-wrap">
-                          <span className="accordion-icon">📖</span>
+                          <svg className="acc-svg-icon" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" strokeWidth="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
                           <span className="accordion-title">{t.definition}</span>
                         </div>
                         <span className="accordion-arrow">{openAccordion === 'definition' ? '▲' : '▼'}</span>
@@ -559,7 +566,7 @@ export default function AtlasView({ lang = 'ru' }) {
                         onClick={() => toggleAccordion('causes')}
                       >
                         <div className="accordion-title-wrap">
-                          <span className="accordion-icon">🧬</span>
+                          <svg className="acc-svg-icon" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
                           <span className="accordion-title">{t.causes}</span>
                         </div>
                         <span className="accordion-arrow">{openAccordion === 'causes' ? '▲' : '▼'}</span>
@@ -581,7 +588,7 @@ export default function AtlasView({ lang = 'ru' }) {
                         onClick={() => toggleAccordion('symptoms')}
                       >
                         <div className="accordion-title-wrap">
-                          <span className="accordion-icon">🩺</span>
+                          <svg className="acc-svg-icon" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
                           <span className="accordion-title">{t.symptoms}</span>
                         </div>
                         <span className="accordion-arrow">{openAccordion === 'symptoms' ? '▲' : '▼'}</span>
@@ -603,7 +610,7 @@ export default function AtlasView({ lang = 'ru' }) {
                         onClick={() => toggleAccordion('drugs')}
                       >
                         <div className="accordion-title-wrap">
-                          <span className="accordion-icon">💊</span>
+                          <svg className="acc-svg-icon" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" strokeWidth="2"><path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"/><path d="m8.5 8.5 7 7"/></svg>
                           <span className="accordion-title">
                             {t.recommendedDrugs} ({selected.recommendedDrugs.length})
                           </span>
@@ -615,7 +622,7 @@ export default function AtlasView({ lang = 'ru' }) {
                           <div className="drug-cards-grid">
                             {selected.recommendedDrugs.map((drug, i) => (
                               <div key={i} className="drug-badge-card">
-                                <span className="drug-icon">💊</span>
+                                <svg className="badge-svg-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2"><path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"/><path d="m8.5 8.5 7 7"/></svg>
                                 <span className="drug-name">{cleanHtmlText(drug)}</span>
                               </div>
                             ))}

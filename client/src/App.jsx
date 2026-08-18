@@ -78,16 +78,14 @@ export default function App() {
               onClick={() => setLang('ru')}
               title="Русский язык"
             >
-              <span className="flag-icon">🇷🇺</span>
-              <span className="lang-label">RU</span>
+              RU
             </button>
             <button
               className={`lang-btn ${lang === 'uz' ? 'active' : ''}`}
               onClick={() => setLang('uz')}
               title="O'zbek tili"
             >
-              <span className="flag-icon">🇺🇿</span>
-              <span className="lang-label">UZ</span>
+              UZ
             </button>
           </div>
 
