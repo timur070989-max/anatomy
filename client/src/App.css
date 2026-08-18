@@ -1269,6 +1269,46 @@
 .legend-dot.yellow { background: #eab308; box-shadow: 0 0 6px #eab308; }
 .legend-dot.green { background: #22c55e; box-shadow: 0 0 6px #22c55e; }
 
+/* Live Cursor 3D Floating Tooltip */
+.cursor-3d-tooltip {
+  position: absolute;
+  background: rgba(15, 23, 42, 0.95);
+  border: 1px solid rgba(56, 189, 248, 0.6);
+  color: #f8fafc;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 25;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), 0 0 12px rgba(56, 189, 248, 0.3);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  animation: tooltipPop 0.15s ease-out;
+  transition: transform 0.08s ease-out;
+}
+
+.cursor-3d-tooltip .tooltip-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #38bdf8;
+  box-shadow: 0 0 8px #38bdf8;
+}
+
+.cursor-3d-tooltip .tooltip-title {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+@keyframes tooltipPop {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
 .hotspot-3d {
   display: flex;
   align-items: center;

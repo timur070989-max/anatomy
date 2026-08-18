@@ -10,19 +10,22 @@ export default function Model3DViewer({
   isAnimatedVideo = false,
 }) {
   const ref = useRef(null);
+  const containerRef = useRef(null);
   const [loading, setLoading] = useState(true);
   const [loadError, setLoadError] = useState(false);
   const [activeHotspot, setActiveHotspot] = useState(null);
+  const [hoveredStructure, setHoveredStructure] = useState(null);
 
-  // Full-volume view modes
+  // Full-volume view modes: 'all' | 'vessels' | 'nerves' | 'ducts'
   const [xrayMode, setXrayMode] = useState(false);
   const [autoRotate, setAutoRotate] = useState(true);
-  const [highlightLayer, setHighlightLayer] = useState('all'); // 'all' | 'vessels' | 'nerves' | 'walls'
+  const [highlightLayer, setHighlightLayer] = useState('all');
 
   useEffect(() => {
     setLoading(true);
     setLoadError(false);
     setActiveHotspot(null);
+    setHoveredStructure(null);
   }, [src]);
 
   // Apply colors and transparency based on mode and active layer
@@ -59,11 +62,11 @@ export default function Model3DViewer({
         const isArtery = name.includes('artery') || name.includes('carotid') || name.includes('basilar') || name.includes('pericallosal');
         const isVein = name.includes('sinus') || name.includes('vein');
         const isNerve = name.includes('nerve') || name.includes('fiber') || name.includes('tract') || name.includes('nucleus');
-        const isWall = !isArtery && !isVein && !isNerve;
+        const isDuct = name.includes('duct') || name.includes('lcr') || name.includes('choroid') || name.includes('ventricle') || name.includes('bile') || name.includes('pancreat') || name.includes('ureter');
 
         if (mat.pbrMetallicRoughness) {
           if (layer === 'vessels') {
-            // Режим «ТОЛЬКО СОСУДЫ»: оставляем исключительно артерии и вены
+            // Режим «ТОЛЬКО СОСУДЫ»: артерии (красные) и вены (синие)
             if (isArtery) {
               if (mat.setAlphaMode) mat.setAlphaMode('OPAQUE');
               mat.pbrMetallicRoughness.setBaseColorFactor([0.96, 0.08, 0.16, 1.0]);
@@ -75,36 +78,48 @@ export default function Model3DViewer({
               mat.pbrMetallicRoughness.setRoughnessFactor(0.2);
               mat.pbrMetallicRoughness.setMetallicFactor(0.25);
             } else {
-              // Полностью скрываем стенки, паренхиму и нервы
               if (hasMultiMaterials) {
                 if (mat.setAlphaMode) mat.setAlphaMode('BLEND');
                 mat.pbrMetallicRoughness.setBaseColorFactor([0, 0, 0, 0.0]);
               } else {
-                // Для одиночных моделей подсвечиваем сосудистый профиль органа
                 if (mat.setAlphaMode) mat.setAlphaMode('OPAQUE');
                 mat.pbrMetallicRoughness.setBaseColorFactor([0.92, 0.12, 0.18, 1.0]);
               }
             }
           } else if (layer === 'nerves') {
-            // Режим «ТОЛЬКО НЕРВЫ»: оставляем исключительно нервы и нервные стволы
+            // Режим «ТОЛЬКО НЕРВЫ»: нервы и стволы (жёлтые)
             if (isNerve) {
               if (mat.setAlphaMode) mat.setAlphaMode('OPAQUE');
               mat.pbrMetallicRoughness.setBaseColorFactor([1.0, 0.88, 0.05, 1.0]);
               mat.pbrMetallicRoughness.setRoughnessFactor(0.25);
               mat.pbrMetallicRoughness.setMetallicFactor(0.1);
             } else {
-              // Полностью скрываем стенки, паренхиму, артерии и вены
               if (hasMultiMaterials) {
                 if (mat.setAlphaMode) mat.setAlphaMode('BLEND');
                 mat.pbrMetallicRoughness.setBaseColorFactor([0, 0, 0, 0.0]);
               } else {
-                // Для одиночных моделей подсвечиваем нервный профиль органа
                 if (mat.setAlphaMode) mat.setAlphaMode('OPAQUE');
                 mat.pbrMetallicRoughness.setBaseColorFactor([0.95, 0.85, 0.15, 1.0]);
               }
             }
+          } else if (layer === 'ducts') {
+            // Режим «ТОЛЬКО ПРОТОКИ»: протоки, ликворные пути и желудочки (изумрудные)
+            if (isDuct) {
+              if (mat.setAlphaMode) mat.setAlphaMode('OPAQUE');
+              mat.pbrMetallicRoughness.setBaseColorFactor([0.12, 0.85, 0.35, 1.0]);
+              mat.pbrMetallicRoughness.setRoughnessFactor(0.25);
+              mat.pbrMetallicRoughness.setMetallicFactor(0.15);
+            } else {
+              if (hasMultiMaterials) {
+                if (mat.setAlphaMode) mat.setAlphaMode('BLEND');
+                mat.pbrMetallicRoughness.setBaseColorFactor([0, 0, 0, 0.0]);
+              } else {
+                if (mat.setAlphaMode) mat.setAlphaMode('OPAQUE');
+                mat.pbrMetallicRoughness.setBaseColorFactor([0.15, 0.80, 0.35, 1.0]);
+              }
+            }
           } else if (isXray) {
-            // Режим «РЕНТГЕН / ПРОЗРАЧНОСТЬ»: полупрозрачные стенки, сквозь которые видны сосуды и нервы
+            // Режим «РЕНТГЕН / ПРОЗРАЧНОСТЬ»: полупрозрачные стенки
             if (isArtery) {
               if (mat.setAlphaMode) mat.setAlphaMode('OPAQUE');
               mat.pbrMetallicRoughness.setBaseColorFactor([0.96, 0.08, 0.16, 1.0]);
@@ -114,6 +129,9 @@ export default function Model3DViewer({
             } else if (isNerve) {
               if (mat.setAlphaMode) mat.setAlphaMode('OPAQUE');
               mat.pbrMetallicRoughness.setBaseColorFactor([1.0, 0.88, 0.05, 1.0]);
+            } else if (isDuct) {
+              if (mat.setAlphaMode) mat.setAlphaMode('OPAQUE');
+              mat.pbrMetallicRoughness.setBaseColorFactor([0.12, 0.85, 0.35, 1.0]);
             } else {
               if (mat.setAlphaMode) mat.setAlphaMode('BLEND');
               mat.pbrMetallicRoughness.setBaseColorFactor([defaultColor[0], defaultColor[1], defaultColor[2], 0.22]);
@@ -128,6 +146,8 @@ export default function Model3DViewer({
               mat.pbrMetallicRoughness.setBaseColorFactor([0.12, 0.35, 0.92, 1.0]);
             } else if (isNerve) {
               mat.pbrMetallicRoughness.setBaseColorFactor([0.95, 0.82, 0.10, 1.0]);
+            } else if (isDuct) {
+              mat.pbrMetallicRoughness.setBaseColorFactor([0.15, 0.80, 0.35, 1.0]);
             } else {
               mat.pbrMetallicRoughness.setBaseColorFactor(defaultColor);
               mat.pbrMetallicRoughness.setRoughnessFactor(defaultRoughness);
@@ -208,6 +228,50 @@ export default function Model3DViewer({
     }
   }
 
+  // Handle pointer move to detect and display hover structure name
+  function handlePointerMove(e) {
+    const el = ref.current;
+    const container = containerRef.current;
+    if (!el || !container || isAnimatedVideo) return;
+
+    const rect = container.getBoundingClientRect();
+    const clientX = e.clientX;
+    const clientY = e.clientY;
+
+    const x = clientX - rect.left;
+    const y = clientY - rect.top;
+
+    try {
+      const hit = el.positionAndNormalFromPoint(clientX, clientY);
+      if (hit && hotspots.length > 0) {
+        // Find closest anatomical hotspot to the surface point
+        let closest = null;
+        let minDist = Infinity;
+        hotspots.forEach((h) => {
+          const dx = h.x - hit.position.x;
+          const dy = h.y - hit.position.y;
+          const dz = h.z - hit.position.z;
+          const dist = Math.sqrt(dx * dx + dy * dy + dz * dz);
+          if (dist < minDist) {
+            minDist = dist;
+            closest = h;
+          }
+        });
+
+        if (closest) {
+          setHoveredStructure({ text: closest.text, x, y });
+          return;
+        }
+      }
+    } catch (err) {
+      // Ignored if point test unsupported
+    }
+  }
+
+  function handlePointerLeave() {
+    setHoveredStructure(null);
+  }
+
   if (!src) {
     return (
       <div style={{ height: `${height}px`, display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#0f172a', color: '#94a3b8', borderRadius: '10px' }}>
@@ -218,10 +282,10 @@ export default function Model3DViewer({
 
   return (
     <div className="model-3d-container">
-      {/* 3D Anatomical Layer Toolbar */}
+      {/* 3D Anatomical Layer Toolbar with Ducts Button */}
       <div className="model-3d-toolbar">
         <div className="toolbar-left">
-          <span className="toolbar-label">Анатомический слой:</span>
+          <span className="toolbar-label">Слои:</span>
           <button
             type="button"
             className={`layer-btn ${highlightLayer === 'all' && !xrayMode ? 'active' : ''}`}
@@ -233,17 +297,25 @@ export default function Model3DViewer({
             type="button"
             className={`layer-btn ${highlightLayer === 'vessels' ? 'active' : ''}`}
             onClick={() => { setHighlightLayer('vessels'); setXrayMode(true); }}
-            title="Подсветить артерии (красные) и вены (синие)"
+            title="Оставить только артерии (красные) и вены (синие)"
           >
-            🔴 Сосуды (Арт./Вены)
+            🔴 Сосуды
           </button>
           <button
             type="button"
             className={`layer-btn ${highlightLayer === 'nerves' ? 'active' : ''}`}
             onClick={() => { setHighlightLayer('nerves'); setXrayMode(true); }}
-            title="Подсветить нервные волокна (жёлтые)"
+            title="Оставить только нервные волокна и узлы (жёлтые)"
           >
             🟡 Нервы
+          </button>
+          <button
+            type="button"
+            className={`layer-btn ${highlightLayer === 'ducts' ? 'active' : ''}`}
+            onClick={() => { setHighlightLayer('ducts'); setXrayMode(true); }}
+            title="Оставить только протоки, ликворные пути и каналы (зелёные)"
+          >
+            🟢 Протоки
           </button>
           <button
             type="button"
@@ -251,7 +323,7 @@ export default function Model3DViewer({
             onClick={() => setXrayMode(!xrayMode)}
             title="Полупрозрачность стенок для обзора внутренних структур"
           >
-            🩻 Рентген / Прозрачность
+            🩻 Рентген
           </button>
         </div>
 
@@ -276,7 +348,10 @@ export default function Model3DViewer({
       </div>
 
       <div
+        ref={containerRef}
         className="model-3d-viewport"
+        onPointerMove={handlePointerMove}
+        onPointerLeave={handlePointerLeave}
         style={{
           position: 'relative',
           width: '100%',
@@ -333,6 +408,7 @@ export default function Model3DViewer({
                 e.stopPropagation();
                 handleSelectHotspot(h);
               }}
+              onPointerEnter={() => setHoveredStructure({ text: h.text })}
             >
               <span className="hotspot-badge">{i + 1}</span>
               <span className="hotspot-tooltip">{h.text}</span>
@@ -340,7 +416,22 @@ export default function Model3DViewer({
           ))}
         </model-viewer>
 
-        {activeHotspot && (
+        {/* Live Cursor Floating Hover Tooltip */}
+        {hoveredStructure && (
+          <div
+            className="cursor-3d-tooltip"
+            style={
+              hoveredStructure.x !== undefined && hoveredStructure.y !== undefined
+                ? { left: `${hoveredStructure.x + 12}px`, top: `${hoveredStructure.y + 12}px` }
+                : { left: '50%', bottom: '40px', transform: 'translateX(-50%)' }
+            }
+          >
+            <span className="tooltip-dot" />
+            <span className="tooltip-title">{hoveredStructure.text}</span>
+          </div>
+        )}
+
+        {activeHotspot && !hoveredStructure && (
           <div className="active-hotspot-banner">
             <span className="banner-icon">📍</span>
             <span className="banner-title">{activeHotspot.text}</span>
@@ -356,7 +447,7 @@ export default function Model3DViewer({
         </div>
 
         <div className="viewport-hint">
-          <span>Вращение: зажмите ЛКМ • Зум: колесо мыши</span>
+          <span>Наведите курсор на структуру для названия • Вращение: зажмите ЛКМ</span>
         </div>
       </div>
 
@@ -372,6 +463,8 @@ export default function Model3DViewer({
                 type="button"
                 className={`hotspot-chip ${activeHotspot?.text === h.text ? 'active' : ''}`}
                 onClick={() => handleSelectHotspot(h)}
+                onPointerEnter={() => setHoveredStructure({ text: h.text })}
+                onPointerLeave={() => setHoveredStructure(null)}
               >
                 <span className="chip-index">{i + 1}</span>
                 <span className="chip-name">{h.text}</span>
