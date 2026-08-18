@@ -23,6 +23,30 @@ function cleanHtmlText(text) {
     .trim();
 }
 
+function parseDrugsGrouped(drugList) {
+  if (!drugList || !Array.isArray(drugList)) return {};
+  const groups = {};
+
+  drugList.forEach((item) => {
+    if (!item) return;
+    const parts = item.split(':');
+    let group = 'Препараты выбора World Medicine';
+    let drugName = item;
+
+    if (parts.length >= 2) {
+      group = parts[0].trim();
+      drugName = parts.slice(1).join(':').trim();
+    }
+
+    if (!groups[group]) {
+      groups[group] = [];
+    }
+    groups[group].push(drugName);
+  });
+
+  return groups;
+}
+
 export default function AtlasView({ lang = 'ru' }) {
   const [bodyProfile, setBodyProfile] = useState('male');
   const [systems, setSystems] = useState([]);
@@ -35,6 +59,8 @@ export default function AtlasView({ lang = 'ru' }) {
   const [bodyMap, setBodyMap] = useState(null);
   const [bodyMapView, setBodyMapView] = useState('2d');
   const [error, setError] = useState('');
+
+  const [openDrugCategory, setOpenDrugCategory] = useState(null);
 
   const t = translations[lang] || translations.ru;
 
@@ -142,6 +168,7 @@ export default function AtlasView({ lang = 'ru' }) {
     setActiveLabel(null);
     setViewMode(entry.modelUrl ? '3d' : entry.imageUrl ? '2d' : 'video');
     setOpenAccordion('definition');
+    setOpenDrugCategory(null);
   }
 
   // Filter entries by search query
@@ -601,7 +628,7 @@ export default function AtlasView({ lang = 'ru' }) {
                     </div>
                   )}
 
-                  {/* Препараты World Medicine */}
+                  {/* Препараты World Medicine: Группировка по нозологиям/категориям с раскрытием препаратов при клике */}
                   {selected.recommendedDrugs && selected.recommendedDrugs.length > 0 && (
                     <div className={`accordion-card ${openAccordion === 'drugs' ? 'open' : ''}`}>
                       <button
@@ -619,13 +646,56 @@ export default function AtlasView({ lang = 'ru' }) {
                       </button>
                       {openAccordion === 'drugs' && (
                         <div className="accordion-content">
-                          <div className="drug-cards-grid">
-                            {selected.recommendedDrugs.map((drug, i) => (
-                              <div key={i} className="drug-badge-card">
-                                <svg className="badge-svg-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2"><path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"/><path d="m8.5 8.5 7 7"/></svg>
-                                <span className="drug-name">{cleanHtmlText(drug)}</span>
-                              </div>
-                            ))}
+                          <p className="drug-groups-intro">
+                            {lang === 'uz' ? 'Farmakoterapevtik guruh / nozologiyani tanlang:' : 'Выберите категорию / нозологию для раскрытия препаратов:'}
+                          </p>
+                          <div className="drug-categories-stack">
+                            {Object.entries(parseDrugsGrouped(selected.recommendedDrugs)).map(([category, drugsInCat], catIdx) => {
+                              const isCatOpen = openDrugCategory === category || Object.keys(parseDrugsGrouped(selected.recommendedDrugs)).length === 1;
+                              return (
+                                <div key={catIdx} className={`drug-category-item ${isCatOpen ? 'open' : ''}`}>
+                                  <button
+                                    type="button"
+                                    className="drug-category-header"
+                                    onClick={() => setOpenDrugCategory(isCatOpen ? null : category)}
+                                  >
+                                    <div className="category-header-left">
+                                      <svg className="cat-icon-svg" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+                                      <span className="category-name">{category}</span>
+                                    </div>
+                                    <div className="category-header-right">
+                                      <span className="cat-count-badge">{drugsInCat.length} преп.</span>
+                                      <span className="cat-arrow">{isCatOpen ? '▲' : '▼'}</span>
+                                    </div>
+                                  </button>
+
+                                  {isCatOpen && (
+                                    <div className="drugs-revealed-list">
+                                      {drugsInCat.map((drugName, drugIdx) => (
+                                        <div key={drugIdx} className="drug-item-card">
+                                          <div className="drug-item-info">
+                                            <div className="drug-item-title-row">
+                                              <svg className="badge-svg-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2"><path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"/><path d="m8.5 8.5 7 7"/></svg>
+                                              <strong className="drug-item-name">{cleanHtmlText(drugName)}</strong>
+                                              <span className="drug-item-brand-tag">World Medicine</span>
+                                            </div>
+                                          </div>
+                                          <a
+                                            href={`https://www.worldmedicine.uz/?s=${encodeURIComponent(drugName.split(' ')[0])}`}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="drug-view-btn"
+                                            title="Открыть описание препарата на сайте World Medicine"
+                                          >
+                                            {lang === 'uz' ? 'Batafsil ↗' : 'Подробнее ↗'}
+                                          </a>
+                                        </div>
+                                      ))}
+                                    </div>
+                                  )}
+                                </div>
+                              );
+                            })}
                           </div>
                         </div>
                       )}

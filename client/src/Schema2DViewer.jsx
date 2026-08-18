@@ -22,7 +22,7 @@ export default function Schema2DViewer({
 
     setCursorPos({ x: e.clientX - rect.left, y: e.clientY - rect.top });
 
-    // Check proximity to any label (within 10% distance radius)
+    // Check proximity to any label (within 12% distance radius)
     let closest = null;
     let minDist = Infinity;
 
@@ -36,11 +36,7 @@ export default function Schema2DViewer({
       }
     });
 
-    if (closest) {
-      setHoveredLabel(closest);
-    } else {
-      setHoveredLabel(null);
-    }
+    setHoveredLabel(closest);
   }
 
   function handlePointerLeave() {
