@@ -1,9 +1,12 @@
+require('dotenv').config();
 const fs = require('fs');
 const path = require('path');
 const express = require('express');
 const cors = require('cors');
 const multer = require('multer');
 const store = require('./store');
+const userStore = require('./userStore');
+const { issueToken, requireAuth, requireRole } = require('./auth');
 
 const UPLOADS_DIR = path.join(__dirname, 'uploads');
 if (!fs.existsSync(UPLOADS_DIR)) fs.mkdirSync(UPLOADS_DIR, { recursive: true });
@@ -55,6 +58,44 @@ app.use('/uploads', express.static(UPLOADS_DIR));
 
 app.get('/', (req, res) => res.json({ ok: true, service: 'anatomy-server' }));
 
+app.post('/api/auth/login', (req, res) => {
+  const { email, password } = req.body || {};
+  if (!email || !password) return res.status(400).json({ error: 'email and password are required' });
+  const user = userStore.getUserByEmail(email);
+  if (!user || !userStore.verifyPassword(password, user.passwordHash)) {
+    return res.status(401).json({ error: 'Invalid email or password' });
+  }
+  const token = issueToken(user);
+  res.json({ token, user: { id: user.id, email: user.email, role: user.role } });
+});
+
+app.get('/api/auth/me', requireAuth, (req, res) => {
+  res.json({ user: req.user });
+});
+
+app.get('/api/users', requireAuth, requireRole('admin'), (req, res) => {
+  res.json(userStore.listUsers());
+});
+
+app.post('/api/users', requireAuth, requireRole('admin'), (req, res) => {
+  const { email, password, role } = req.body || {};
+  if (!email || !password || !role) return res.status(400).json({ error: 'email, password and role are required' });
+  if (!['admin', 'editor'].includes(role)) return res.status(400).json({ error: 'role must be admin or editor' });
+  try {
+    const user = userStore.createUser({ email, password, role });
+    res.status(201).json(user);
+  } catch (err) {
+    res.status(400).json({ error: err.message });
+  }
+});
+
+app.delete('/api/users/:id', requireAuth, requireRole('admin'), (req, res) => {
+  if (req.params.id === req.user.id) return res.status(400).json({ error: 'Cannot delete your own account while logged in as it' });
+  const ok = userStore.deleteUser(req.params.id);
+  if (!ok) return res.status(404).json({ error: 'Not found' });
+  res.status(204).end();
+});
+
 const BODY_PROFILES = new Set(['male', 'female', 'child', 'any']);
 
 app.get('/api/systems', (req, res) => {
@@ -80,7 +121,7 @@ function parseJsonField(value, fieldName) {
   }
 }
 
-app.post('/api/entries', uploadFields, (req, res) => {
+app.post('/api/entries', requireAuth, uploadFields, (req, res) => {
   const { title, system, bodyProfile, definition, causes, symptoms, recommendedDrugs, labels, labels3d } = req.body;
   if (!title || !system) return res.status(400).json({ error: 'title (Нозология) and system (Орган) are required' });
   if (bodyProfile !== undefined && !BODY_PROFILES.has(bodyProfile)) {
@@ -118,7 +159,7 @@ app.post('/api/entries', uploadFields, (req, res) => {
   res.status(201).json(entry);
 });
 
-app.put('/api/entries/:id', uploadFields, (req, res) => {
+app.put('/api/entries/:id', requireAuth, uploadFields, (req, res) => {
   const { title, system, bodyProfile, definition, causes, symptoms, recommendedDrugs, labels, labels3d } = req.body;
   if (bodyProfile !== undefined && !BODY_PROFILES.has(bodyProfile)) {
     return res.status(400).json({ error: 'bodyProfile must be one of male, female, child, any' });
@@ -156,7 +197,7 @@ app.put('/api/entries/:id', uploadFields, (req, res) => {
   res.json(updated);
 });
 
-app.delete('/api/entries/:id', (req, res) => {
+app.delete('/api/entries/:id', requireAuth, (req, res) => {
   const ok = store.deleteEntry(req.params.id);
   if (!ok) return res.status(404).json({ error: 'Not found' });
   res.status(204).end();
@@ -171,7 +212,7 @@ app.get('/api/bodymaps/:profile', (req, res) => {
   res.json(store.getBodyMap(req.params.profile));
 });
 
-app.put('/api/bodymaps/:profile', uploadFields, (req, res) => {
+app.put('/api/bodymaps/:profile', requireAuth, uploadFields, (req, res) => {
   if (!BODY_MAP_PROFILES.has(req.params.profile)) {
     return res.status(400).json({ error: 'profile must be one of male, female, child' });
   }
