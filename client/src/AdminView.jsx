@@ -1,27 +1,35 @@
 import { useEffect, useRef, useState } from 'react';
 import { api, resolveImageUrl } from './api';
+import { translations, getTranslatedOrgan } from './i18n';
 import Model3DViewer from './Model3DViewer';
 
 const BODY_PROFILE_OPTIONS = [
-  { value: 'male', label: 'Мужской (Взрослый)' },
-  { value: 'female', label: 'Женский (Взрослая)' },
-  { value: 'child', label: 'Детский' },
-  { value: 'any', label: 'Любой (Общий)' },
+  { value: 'male', label: 'Мужской (Взрослый) / Erkak' },
+  { value: 'female', label: 'Женский (Взрослая) / Ayol' },
+  { value: 'child', label: 'Детский / Bola' },
+  { value: 'any', label: 'Любой (Общий) / Umumiy' },
 ];
 
 const emptyForm = {
   title: '',
+  titleUz: '',
   system: '',
+  systemUz: '',
   bodyProfile: 'any',
   definition: '',
+  definitionUz: '',
   causes: '',
+  causesUz: '',
   symptoms: '',
+  symptomsUz: '',
 };
 
-export default function AdminView() {
+export default function AdminView({ lang = 'ru' }) {
   const [entries, setEntries] = useState([]);
   const [form, setForm] = useState(emptyForm);
   const [editingId, setEditingId] = useState(null);
+  const [formLang, setFormLang] = useState('ru'); // 'ru' | 'uz'
+
   const [imageFile, setImageFile] = useState(null);
   const [imagePreview, setImagePreview] = useState(null);
   const [labels, setLabels] = useState([]);
@@ -37,6 +45,8 @@ export default function AdminView() {
   const [error, setError] = useState('');
   const [status, setStatus] = useState('');
   const previewRef = useRef(null);
+
+  const t = translations[lang] || translations.ru;
 
   function refresh() {
     api.listEntries().then(setEntries).catch((e) => setError(e.message));
@@ -66,12 +76,17 @@ export default function AdminView() {
   function startEdit(entry) {
     setEditingId(entry.id);
     setForm({
-      title: entry.title,
-      system: entry.system,
+      title: entry.title || '',
+      titleUz: entry.titleUz || '',
+      system: entry.system || '',
+      systemUz: entry.systemUz || '',
       bodyProfile: entry.bodyProfile || 'any',
       definition: entry.definition || '',
+      definitionUz: entry.definitionUz || '',
       causes: entry.causes || '',
+      causesUz: entry.causesUz || '',
       symptoms: entry.symptoms || '',
+      symptomsUz: entry.symptomsUz || '',
     });
     setImageFile(null);
     setImagePreview(entry.imageUrl ? resolveImageUrl(entry.imageUrl) : null);
@@ -122,7 +137,7 @@ export default function AdminView() {
     const rect = previewRef.current.getBoundingClientRect();
     const x = ((e.clientX - rect.left) / rect.width) * 100;
     const y = ((e.clientY - rect.top) / rect.height) * 100;
-    const text = window.prompt('Подпись для метки:');
+    const text = window.prompt(lang === 'uz' ? 'Belgi uchun matn:' : 'Подпись для метки:');
     if (!text) return;
     setLabels((prev) => [...prev, { x: Math.round(x * 10) / 10, y: Math.round(y * 10) / 10, text }]);
   }
@@ -132,7 +147,7 @@ export default function AdminView() {
   }
 
   function onModelSurfaceClick(point) {
-    const text = window.prompt('Подпись для метки на модели:');
+    const text = window.prompt(lang === 'uz' ? 'Modeldagi belgi matni:' : 'Подпись для метки на модели:');
     if (!text) return;
     setLabels3d((prev) => [...prev, { ...point, text }]);
   }
@@ -143,84 +158,180 @@ export default function AdminView() {
 
   function addDrug(e) {
     e.preventDefault();
-    const name = drugInput.trim();
-    if (!name) return;
-    setDrugs((prev) => [...prev, name]);
+    const trimmed = drugInput.trim();
+    if (!trimmed) return;
+    if (!drugs.includes(trimmed)) setDrugs([...drugs, trimmed]);
     setDrugInput('');
   }
 
   function removeDrug(i) {
-    setDrugs((prev) => prev.filter((_, idx) => idx !== i));
+    setDrugs(drugs.filter((_, idx) => idx !== i));
   }
 
-  async function onSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
     setError('');
     setStatus('');
-    if (!form.title || !form.system) {
-      setError('Заполните орган и нозологию (заболевание)');
-      return;
-    }
-    const fd = new FormData();
-    fd.append('title', form.title);
-    fd.append('system', form.system);
-    fd.append('bodyProfile', form.bodyProfile);
-    fd.append('definition', form.definition);
-    fd.append('causes', form.causes);
-    fd.append('symptoms', form.symptoms);
-    fd.append('recommendedDrugs', JSON.stringify(drugs));
-    fd.append('labels', JSON.stringify(labels));
-    fd.append('labels3d', JSON.stringify(labels3d));
-    if (imageFile) fd.append('image', imageFile);
-    if (modelFile) fd.append('model', modelFile);
-    if (videoFile) fd.append('video', videoFile);
-    if (xrayFile) fd.append('xray', xrayFile);
-
     try {
+      const payload = {
+        ...form,
+        labels,
+        labels3d,
+        recommendedDrugs: drugs,
+      };
+
+      if (imageFile) payload.image = imageFile;
+      if (modelFile) payload.model = modelFile;
+      if (videoFile) payload.video = videoFile;
+      else if (videoPreview === null && editingId) payload.videoUrl = '';
+
+      if (xrayFile) payload.xray = xrayFile;
+      else if (xrayPreview === null && editingId) payload.xrayUrl = '';
+
       if (editingId) {
-        await api.updateEntry(editingId, fd);
-        setStatus('Запись обновлена');
+        await api.updateEntry(editingId, payload);
+        setStatus('✓ Запись успешно обновлена / Muvaffaqiyatli saqlandi');
       } else {
-        await api.createEntry(fd);
-        setStatus('Запись добавлена');
+        await api.createEntry(payload);
+        setStatus('✓ Новая патология успешно добавлена / Muvaffaqiyatli qoʻshildi');
       }
       resetForm();
       refresh();
-    } catch (err) {
-      setError(err.message);
+    } catch (e) {
+      setError(e.message);
     }
   }
 
-  async function onDelete(id) {
-    if (!window.confirm('Удалить запись?')) return;
+  async function handleDelete(id) {
+    if (!window.confirm(lang === 'uz' ? 'Ushbu yozuvni oʻchirishni tasdiqlaysizmi?' : 'Удалить эту запись?')) return;
     try {
       await api.deleteEntry(id);
-      refresh();
       if (editingId === id) resetForm();
-    } catch (err) {
-      setError(err.message);
+      refresh();
+    } catch (e) {
+      setError(e.message);
     }
   }
 
   return (
     <div className="admin">
-      <form className="admin-form" onSubmit={onSubmit}>
-        <h2>{editingId ? 'Редактировать запись' : 'Новая запись'}</h2>
+      <form className="admin-form" onSubmit={handleSubmit}>
+        <div className="admin-form-header">
+          <h2>{editingId ? t.editEntry : t.createEntry}</h2>
+          {/* Form Language Tab (RU / UZ) */}
+          <div className="form-lang-toggle">
+            <button
+              type="button"
+              className={`form-lang-btn ${formLang === 'ru' ? 'active' : ''}`}
+              onClick={() => setFormLang('ru')}
+            >
+              🇷🇺 RU
+            </button>
+            <button
+              type="button"
+              className={`form-lang-btn ${formLang === 'uz' ? 'active' : ''}`}
+              onClick={() => setFormLang('uz')}
+            >
+              🇺🇿 UZ
+            </button>
+          </div>
+        </div>
+
         {error && <p className="error">{error}</p>}
-        {status && <p className="status">{status}</p>}
+        {status && <p className="status-success">{status}</p>}
+
+        {/* Bilingual Fields Switch */}
+        {formLang === 'ru' ? (
+          <>
+            <label>
+              {t.titleField}
+              <input
+                required
+                value={form.title}
+                onChange={(e) => setForm({ ...form, title: e.target.value })}
+                placeholder="Например: Атеросклероз сосудов головного мозга"
+              />
+            </label>
+            <label>
+              {t.systemField}
+              <input
+                value={form.system}
+                onChange={(e) => setForm({ ...form, system: e.target.value })}
+                placeholder="Например: Мозг, Спиной мозг"
+              />
+            </label>
+            <label>
+              {t.definitionField}
+              <textarea
+                value={form.definition}
+                onChange={(e) => setForm({ ...form, definition: e.target.value })}
+                rows={3}
+              />
+            </label>
+            <label>
+              {t.causesField}
+              <textarea
+                value={form.causes}
+                onChange={(e) => setForm({ ...form, causes: e.target.value })}
+                rows={3}
+              />
+            </label>
+            <label>
+              {t.symptomsField}
+              <textarea
+                value={form.symptoms}
+                onChange={(e) => setForm({ ...form, symptoms: e.target.value })}
+                rows={3}
+              />
+            </label>
+          </>
+        ) : (
+          <>
+            <label>
+              {t.titleUzField}
+              <input
+                value={form.titleUz}
+                onChange={(e) => setForm({ ...form, titleUz: e.target.value })}
+                placeholder="Masalan: Bosh miya qon tomirlari aterosklerozi"
+              />
+            </label>
+            <label>
+              {t.systemUzField}
+              <input
+                value={form.systemUz}
+                onChange={(e) => setForm({ ...form, systemUz: e.target.value })}
+                placeholder="Masalan: Bosh miya, Orqa miya"
+              />
+            </label>
+            <label>
+              {t.definitionUzField}
+              <textarea
+                value={form.definitionUz}
+                onChange={(e) => setForm({ ...form, definitionUz: e.target.value })}
+                rows={3}
+              />
+            </label>
+            <label>
+              {t.causesUzField}
+              <textarea
+                value={form.causesUz}
+                onChange={(e) => setForm({ ...form, causesUz: e.target.value })}
+                rows={3}
+              />
+            </label>
+            <label>
+              {t.symptomsUzField}
+              <textarea
+                value={form.symptomsUz}
+                onChange={(e) => setForm({ ...form, symptomsUz: e.target.value })}
+                rows={3}
+              />
+            </label>
+          </>
+        )}
 
         <label>
-          Орган (например: Мозг, Сердце, Лёгкие)
-          <input value={form.system} onChange={(e) => setForm({ ...form, system: e.target.value })} required />
-        </label>
-
-        <label>
-          Нозология (заболевание)
-          <input value={form.title} onChange={(e) => setForm({ ...form, title: e.target.value })} required />
-        </label>
-
-        <label>
-          Профиль тела
+          Профиль тела / Tana profili
           <select value={form.bodyProfile} onChange={(e) => setForm({ ...form, bodyProfile: e.target.value })}>
             {BODY_PROFILE_OPTIONS.map((opt) => (
               <option key={opt.value} value={opt.value}>{opt.label}</option>
@@ -229,50 +340,35 @@ export default function AdminView() {
         </label>
 
         <label>
-          Определение
-          <textarea value={form.definition} onChange={(e) => setForm({ ...form, definition: e.target.value })} rows={3} />
-        </label>
-
-        <label>
-          Причины
-          <textarea value={form.causes} onChange={(e) => setForm({ ...form, causes: e.target.value })} rows={3} />
-        </label>
-
-        <label>
-          Симптомы
-          <textarea value={form.symptoms} onChange={(e) => setForm({ ...form, symptoms: e.target.value })} rows={3} />
-        </label>
-
-        <label>
-          Рекомендуемые препараты компании WM
+          {t.drugsField}
           <div className="drug-input-row">
             <input
               value={drugInput}
               onChange={(e) => setDrugInput(e.target.value)}
               onKeyDown={(e) => { if (e.key === 'Enter') addDrug(e); }}
-              placeholder="Название препарата"
+              placeholder="Название препарата / Dori vositasi nomi"
             />
-            <button type="button" onClick={addDrug}>Добавить</button>
+            <button type="button" onClick={addDrug}>+ Добавить</button>
           </div>
         </label>
         {drugs.length > 0 && (
           <ul className="drug-list">
             {drugs.map((d, i) => (
               <li key={i}>
-                {d} <button type="button" onClick={() => removeDrug(i)}>удалить</button>
+                💊 {d} <button type="button" onClick={() => removeDrug(i)}>✕</button>
               </li>
             ))}
           </ul>
         )}
 
         <label>
-          Изображение / схема
+          Изображение / 2D Схема
           <input type="file" accept="image/*" onChange={onImageChange} />
         </label>
 
         {imagePreview && (
           <div className="preview-wrap">
-            <p className="hint">Кликните по картинке, чтобы добавить метку с подписью</p>
+            <p className="hint">Кликните по картинке, чтобы поставить интерактивную метку</p>
             <div className="image-with-labels" ref={previewRef} onClick={onPreviewClick}>
               <img src={imagePreview} alt="preview" />
               {labels.map((label, i) => (
@@ -300,7 +396,7 @@ export default function AdminView() {
 
         {modelPreview && (
           <div className="preview-wrap">
-            <p className="hint">Кликните по модели, чтобы поставить метку прямо на её поверхности</p>
+            <p className="hint">Кликните по 3D-модели для размещения 3D-меток</p>
             <Model3DViewer src={modelPreview} hotspots={labels3d} editable onSurfaceClick={onModelSurfaceClick} height={260} />
             {labels3d.length > 0 && (
               <ul className="label-list">
@@ -315,85 +411,87 @@ export default function AdminView() {
         )}
 
         <label>
-          Видео о патологии (mp4 / webm / mov, в т.ч. рендер 3D-анимации)
+          {t.videoTab} (mp4 / webm / mov)
           <input type="file" accept=".mp4,.webm,.mov,video/*" onChange={onVideoChange} />
         </label>
 
         {videoPreview && (
           <div className="preview-wrap">
-            <video src={videoPreview} controls style={{ width: '100%', maxHeight: '240px', borderRadius: '8px', display: 'block', background: '#000' }} />
+            <video src={videoPreview} controls style={{ width: '100%', maxHeight: '220px', borderRadius: '8px', display: 'block', background: '#000' }} />
             <button
               type="button"
               className="remove-video-btn"
               onClick={() => {
                 setVideoFile(null);
                 setVideoPreview(null);
-                setForm((prev) => ({ ...prev, videoUrl: '' }));
               }}
-              style={{ marginTop: '6px', background: '#ef4444', color: '#fff', border: 'none', padding: '5px 12px', borderRadius: '6px', cursor: 'pointer', fontSize: '0.82rem', fontWeight: '600' }}
             >
-              🗑️ Открепить видео от патологии
+              ✕ {t.detachVideo}
             </button>
           </div>
         )}
 
         <label>
-          Рентген / КТ / МРТ / Ангиография снимок
+          {t.xrayFileField}
           <input type="file" accept="image/*" onChange={onXrayChange} />
         </label>
 
         {xrayPreview && (
           <div className="preview-wrap">
-            <img src={xrayPreview} alt="Рентген preview" style={{ width: '100%', maxHeight: '240px', objectFit: 'contain', background: '#000', borderRadius: '8px', display: 'block' }} />
+            <img src={xrayPreview} alt="Рентген preview" style={{ width: '100%', maxHeight: '220px', objectFit: 'contain', borderRadius: '8px', display: 'block', background: '#000' }} />
             <button
               type="button"
               className="remove-video-btn"
               onClick={() => {
                 setXrayFile(null);
                 setXrayPreview(null);
-                setForm((prev) => ({ ...prev, xrayUrl: '' }));
               }}
-              style={{ marginTop: '6px', background: '#ef4444', color: '#fff', border: 'none', padding: '5px 12px', borderRadius: '6px', cursor: 'pointer', fontSize: '0.82rem', fontWeight: '600' }}
             >
-              🗑️ Открепить рентген снимок
+              ✕ {t.detachXray}
             </button>
           </div>
         )}
 
         <div className="form-actions">
-          <button type="submit">{editingId ? 'Сохранить' : 'Добавить'}</button>
-          {editingId && <button type="button" onClick={resetForm}>Отмена</button>}
+          <button type="submit" className="save-btn">{t.saveBtn}</button>
+          {editingId && (
+            <button type="button" className="cancel-btn" onClick={resetForm}>{t.cancelBtn}</button>
+          )}
         </div>
       </form>
 
       <div className="admin-list">
-        <h2>Все записи ({entries.length})</h2>
+        <h2>{t.adminTitle} ({entries.length})</h2>
         <table>
           <thead>
             <tr>
-              <th>Нозология</th>
-              <th>Орган</th>
+              <th>{t.titleField}</th>
+              <th>{t.organLabel}</th>
               <th>Медиа</th>
-              <th>Профиль</th>
-              <th></th>
+              <th>Действия</th>
             </tr>
           </thead>
           <tbody>
             {entries.map((entry) => (
               <tr key={entry.id}>
-                <td>{entry.title}</td>
-                <td>{entry.system}</td>
                 <td>
-                  <div style={{ display: 'flex', gap: '4px', flexWrap: 'wrap' }}>
-                    {entry.modelUrl && <span style={{ background: '#0284c7', color: '#fff', padding: '2px 6px', borderRadius: '4px', fontSize: '0.7rem', fontWeight: 'bold' }}>3D</span>}
-                    {entry.videoUrl && <span style={{ background: '#d97706', color: '#fff', padding: '2px 6px', borderRadius: '4px', fontSize: '0.7rem', fontWeight: 'bold' }}>🎬 Видео</span>}
-                    {entry.xrayUrl && <span style={{ background: '#059669', color: '#fff', padding: '2px 6px', borderRadius: '4px', fontSize: '0.7rem', fontWeight: 'bold' }}>🩻 Рентген</span>}
+                  <strong>{lang === 'uz' && entry.titleUz ? entry.titleUz : entry.title}</strong>
+                  {entry.titleUz && lang !== 'uz' && <span className="uz-subtitle-tag"> (UZ: {entry.titleUz})</span>}
+                </td>
+                <td>{lang === 'uz' && entry.systemUz ? entry.systemUz : getTranslatedOrgan(entry.system, lang)}</td>
+                <td>
+                  <div className="media-badges-cell">
+                    {entry.modelUrl && <span className="badge-3d">3D</span>}
+                    {entry.videoUrl && <span className="badge-video">🎬 Video</span>}
+                    {entry.xrayUrl && <span className="badge-xray">🩻 X-Ray</span>}
+                    {entry.imageUrl && <span className="badge-2d-table">2D</span>}
                   </div>
                 </td>
-                <td>{BODY_PROFILE_OPTIONS.find((o) => o.value === (entry.bodyProfile || 'any'))?.label.split(' ')[0]}</td>
-                <td className="row-actions">
-                  <button onClick={() => startEdit(entry)}>Изменить</button>
-                  <button onClick={() => onDelete(entry.id)}>Удалить</button>
+                <td>
+                  <div className="table-actions">
+                    <button type="button" className="edit-btn" onClick={() => startEdit(entry)}>✏️</button>
+                    <button type="button" className="delete-btn" onClick={() => handleDelete(entry.id)}>🗑️</button>
+                  </div>
                 </td>
               </tr>
             ))}

@@ -147,11 +147,16 @@ app.post('/api/entries', requireAuth, uploadFields, (req, res) => {
 
   const entry = store.createEntry({
     title,
+    titleUz: req.body.titleUz,
     system,
+    systemUz: req.body.systemUz,
     bodyProfile,
     definition,
+    definitionUz: req.body.definitionUz,
     causes,
+    causesUz: req.body.causesUz,
     symptoms,
+    symptomsUz: req.body.symptomsUz,
     recommendedDrugs: parsedDrugs.value || [],
     imageUrl,
     modelUrl,
@@ -164,17 +169,30 @@ app.post('/api/entries', requireAuth, uploadFields, (req, res) => {
 });
 
 app.put('/api/entries/:id', requireAuth, uploadFields, (req, res) => {
-  const { title, system, bodyProfile, definition, causes, symptoms, recommendedDrugs, labels, labels3d } = req.body;
+  const {
+    title, titleUz,
+    system, systemUz,
+    bodyProfile,
+    definition, definitionUz,
+    causes, causesUz,
+    symptoms, symptomsUz,
+    recommendedDrugs, labels, labels3d
+  } = req.body;
   if (bodyProfile !== undefined && !BODY_PROFILES.has(bodyProfile)) {
     return res.status(400).json({ error: 'bodyProfile must be one of male, female, child, any' });
   }
   const data = {};
   if (title !== undefined) data.title = title;
+  if (titleUz !== undefined) data.titleUz = titleUz;
   if (system !== undefined) data.system = system;
+  if (systemUz !== undefined) data.systemUz = systemUz;
   if (bodyProfile !== undefined) data.bodyProfile = bodyProfile;
   if (definition !== undefined) data.definition = definition;
+  if (definitionUz !== undefined) data.definitionUz = definitionUz;
   if (causes !== undefined) data.causes = causes;
+  if (causesUz !== undefined) data.causesUz = causesUz;
   if (symptoms !== undefined) data.symptoms = symptoms;
+  if (symptomsUz !== undefined) data.symptomsUz = symptomsUz;
 
   const imageFile = req.files?.image?.[0];
   const modelFile = req.files?.model?.[0];

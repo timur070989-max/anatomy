@@ -1,13 +1,8 @@
 import { useEffect, useState, useMemo, useRef } from 'react';
 import { api, resolveImageUrl } from './api';
+import { translations, getTranslatedOrgan } from './i18n';
 import Model3DViewer from './Model3DViewer';
 import Schema2DViewer from './Schema2DViewer';
-
-const PROFILES = [
-  { id: 'male', label: 'Мужчина' },
-  { id: 'female', label: 'Женщина' },
-  { id: 'child', label: 'Ребёнок' },
-];
 
 function cleanHtmlText(text) {
   if (!text) return '';
@@ -28,7 +23,7 @@ function cleanHtmlText(text) {
     .trim();
 }
 
-export default function AtlasView() {
+export default function AtlasView({ lang = 'ru' }) {
   const [bodyProfile, setBodyProfile] = useState('male');
   const [systems, setSystems] = useState([]);
   const [activeSystem, setActiveSystem] = useState('');
@@ -40,6 +35,14 @@ export default function AtlasView() {
   const [bodyMap, setBodyMap] = useState(null);
   const [bodyMapView, setBodyMapView] = useState('2d');
   const [error, setError] = useState('');
+
+  const t = translations[lang] || translations.ru;
+
+  const PROFILES = [
+    { id: 'male', label: t.male },
+    { id: 'female', label: t.female },
+    { id: 'child', label: t.child },
+  ];
 
   const bodyMapWrapRef = useRef(null);
   const [hoveredBodyOrgan, setHoveredBodyOrgan] = useState(null);
@@ -93,7 +96,6 @@ export default function AtlasView() {
     return null;
   }
 
-  // 'all' means "show everything, no profile filter"
   const apiProfile = bodyProfile && bodyProfile !== 'all' ? bodyProfile : undefined;
 
   useEffect(() => {
@@ -139,7 +141,6 @@ export default function AtlasView() {
     setSelected(entry);
     setActiveLabel(null);
     setViewMode(entry.modelUrl ? '3d' : entry.imageUrl ? '2d' : 'video');
-    // Open only 'definition' accordion by default
     setOpenAccordion('definition');
   }
 
@@ -147,20 +148,45 @@ export default function AtlasView() {
   const filteredEntries = useMemo(() => {
     if (!searchQuery.trim()) return entries;
     const q = searchQuery.toLowerCase().trim();
-    return entries.filter(
-      (e) =>
-        e.title.toLowerCase().includes(q) ||
-        (e.system && e.system.toLowerCase().includes(q)) ||
-        (e.recommendedDrugs && e.recommendedDrugs.some((d) => d.toLowerCase().includes(q)))
-    );
-  }, [entries, searchQuery]);
+    return entries.filter((e) => {
+      const title = (lang === 'uz' && e.titleUz ? e.titleUz : e.title).toLowerCase();
+      const system = (lang === 'uz' && e.systemUz ? e.systemUz : e.system || '').toLowerCase();
+      const drugs = (e.recommendedDrugs || []).join(' ').toLowerCase();
+      return title.includes(q) || system.includes(q) || drugs.includes(q);
+    });
+  }, [entries, searchQuery, lang]);
+
+  function getEntryTitle(entry) {
+    if (!entry) return '';
+    return lang === 'uz' && entry.titleUz ? entry.titleUz : entry.title;
+  }
+
+  function getEntrySystem(entry) {
+    if (!entry) return '';
+    if (lang === 'uz' && entry.systemUz) return entry.systemUz;
+    return getTranslatedOrgan(entry.system, lang);
+  }
+
+  function getEntryDefinition(entry) {
+    if (!entry) return '';
+    return lang === 'uz' && entry.definitionUz ? entry.definitionUz : entry.definition;
+  }
+
+  function getEntryCauses(entry) {
+    if (!entry) return '';
+    return lang === 'uz' && entry.causesUz ? entry.causesUz : entry.causes;
+  }
+
+  function getEntrySymptoms(entry) {
+    if (!entry) return '';
+    return lang === 'uz' && entry.symptomsUz ? entry.symptomsUz : entry.symptoms;
+  }
 
   if (bodyProfile === null) {
     return (
       <div className="profile-picker">
         <p className="eyebrow">World Medicine</p>
-        <h2>Интерактивный атлас анатомии</h2>
-        <p className="section-dek">Выберите профиль тела для просмотра анатомических структур и патологий:</p>
+        <h2>{t.appTitle}</h2>
         <div className="profile-grid">
           {PROFILES.map((p) => (
             <button key={p.id} className="profile-card" onClick={() => setBodyProfile(p.id)}>
@@ -177,7 +203,7 @@ export default function AtlasView() {
       {/* Top Profile & Filter Navigation Bar */}
       <div className="atlas-top-bar">
         <div className="profile-pills">
-          <span className="profile-pills-label">Профиль:</span>
+          <span className="profile-pills-label">{t.profile}</span>
           {PROFILES.map((p) => (
             <button
               key={p.id}
@@ -192,13 +218,13 @@ export default function AtlasView() {
         <div className="system-status-badge">
           {activeSystem ? (
             <div className="active-filter">
-              <span>Орган: <strong>{activeSystem}</strong> ({entries.length} патологий)</span>
+              <span>{t.organLabel} <strong>{getTranslatedOrgan(activeSystem, lang)}</strong> ({entries.length} {t.pathologiesCount})</span>
               <button className="reset-filter-btn" onClick={() => { setActiveSystem(''); setSearchQuery(''); }}>
-                ✕ Показать все органы
+                {t.showAllOrgans}
               </button>
             </div>
           ) : (
-            <span className="hint-text">💡 Кликните по любому органу на теле для фильтрации</span>
+            <span className="hint-text">💡 {t.scannerHint}</span>
           )}
         </div>
       </div>
@@ -212,13 +238,13 @@ export default function AtlasView() {
           <div className="pane-card bodymap-card">
             <div className="bodymap-header">
               <div className="bodymap-title">
-                <h2>Карта тела</h2>
-                <span className="bodymap-subtitle">Наведите курсор и нажмите на орган</span>
+                <h2>{t.bodyMapTitle}</h2>
+                <span className="bodymap-subtitle">{t.bodyMapSubtitle}</span>
               </div>
               {bodyMap?.imageUrl && bodyMap?.modelUrl && (
                 <div className="view-toggle">
-                  <button className={bodyMapView === '2d' ? 'active' : ''} onClick={() => setBodyMapView('2d')}>2D Карта</button>
-                  <button className={bodyMapView === '3d' ? 'active' : ''} onClick={() => setBodyMapView('3d')}>3D Тело</button>
+                  <button className={bodyMapView === '2d' ? 'active' : ''} onClick={() => setBodyMapView('2d')}>{t.view2D}</button>
+                  <button className={bodyMapView === '3d' ? 'active' : ''} onClick={() => setBodyMapView('3d')}>{t.view3D}</button>
                 </div>
               )}
             </div>
@@ -226,7 +252,7 @@ export default function AtlasView() {
             {bodyMapView === '3d' && bodyMap?.modelUrl ? (
               <Model3DViewer
                 src={resolveImageUrl(bodyMap.modelUrl)}
-                hotspots={(bodyMap.labels3d || []).map((l) => ({ ...l, text: l.organ }))}
+                hotspots={(bodyMap.labels3d || []).map((l) => ({ ...l, text: getTranslatedOrgan(l.organ, lang) }))}
                 onHotspotClick={(l) => goToOrgan(l.organ)}
                 height={520}
               />
@@ -265,7 +291,7 @@ export default function AtlasView() {
                         >
                           <span className="organ-marker-dot" />
                           <span className="organ-marker-ring" />
-                          <span className="organ-tooltip">{l.organ}</span>
+                          <span className="organ-tooltip">{getTranslatedOrgan(l.organ, lang)}</span>
                         </button>
                       );
                     })}
@@ -280,13 +306,13 @@ export default function AtlasView() {
                         }}
                       >
                         <span className="scanner-dot" />
-                        <span className="scanner-text">{hoveredBodyOrgan.organ}</span>
+                        <span className="scanner-text">{getTranslatedOrgan(hoveredBodyOrgan.organ, lang)}</span>
                       </div>
                     )}
                   </div>
 
                   <div className="bodymap-scanner-hint">
-                    <span>💡 Наведите курсор на тело для сканирования и выбора органа</span>
+                    <span>{t.scannerHint}</span>
                   </div>
                 </div>
               )
@@ -302,21 +328,22 @@ export default function AtlasView() {
                 <h3>
                   {activeSystem ? (
                     <>
-                      <span>Патологии: </span>
-                      <span className="active-organ-title">{activeSystem}</span>
+                      <span>{t.pathologiesForOrgan} </span>
+                      <span className="active-organ-title">{getTranslatedOrgan(activeSystem, lang)}</span>
                     </>
                   ) : (
-                    <span>Все нозологии и патологии</span>
+                    <span>{t.allPathologiesTitle}</span>
                   )}
                   <span className="count-pill">{filteredEntries.length}</span>
                 </h3>
+                <span className="pathology-subtitle">{t.selectDiseaseToOpen}</span>
               </div>
 
               {/* Quick Search inside this organ */}
               <div className="pathology-search-box">
                 <input
                   type="text"
-                  placeholder="Поиск патологии или симптома..."
+                  placeholder={t.searchPlaceholder}
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="pathology-search-input"
@@ -332,7 +359,7 @@ export default function AtlasView() {
               {filteredEntries.length === 0 ? (
                 <div className="empty-pathology-state">
                   <span className="empty-icon">🔍</span>
-                  <p>Ничего не найдено{searchQuery ? ` по запросу «${searchQuery}»` : ''}.</p>
+                  <p>{t.notFound}{searchQuery ? ` «${searchQuery}»` : ''}.</p>
                 </div>
               ) : (
                 filteredEntries.map((entry) => (
@@ -344,21 +371,33 @@ export default function AtlasView() {
                   >
                     <div className="pathology-item-main">
                       <div className="pathology-item-title-row">
-                        <span className="pathology-name">{cleanHtmlText(entry.title)}</span>
+                        <span className="pathology-name">{cleanHtmlText(getEntryTitle(entry))}</span>
                         <div className="pathology-item-badges">
                           {entry.modelUrl && (
-                            <span className="badge-3d" title="Доступна интерактивная 3D-модель органа">3D</span>
+                            <span className="badge-2d badge-3d" title={t.model3DTab}>
+                              <svg className="badge-svg-icon" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                              3D
+                            </span>
                           )}
                           {entry.videoUrl && (
-                            <span className="badge-video" title="Доступно анимационное видео патологии">🎬 Видео</span>
+                            <span className="badge-2d badge-video" title={t.videoTab}>
+                              <svg className="badge-svg-icon" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" strokeWidth="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                              Video
+                            </span>
+                          )}
+                          {entry.xrayUrl && (
+                            <span className="badge-2d badge-xray" title={t.xrayTab}>
+                              <svg className="badge-svg-icon" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/></svg>
+                              X-Ray
+                            </span>
                           )}
                         </div>
                       </div>
                       <div className="pathology-item-sub">
-                        <span className="pathology-organ-tag">{entry.system}</span>
+                        <span className="pathology-organ-tag">{getEntrySystem(entry)}</span>
                         {entry.recommendedDrugs && entry.recommendedDrugs.length > 0 && (
                           <span className="pathology-drugs-count">
-                            💊 {entry.recommendedDrugs.length} преп. World Medicine
+                            💊 {entry.recommendedDrugs.length} {t.wmDrugsPrefix}
                           </span>
                         )}
                       </div>
@@ -379,21 +418,21 @@ export default function AtlasView() {
             <button className="close" onClick={() => setSelected(null)} aria-label="Закрыть">×</button>
             
             <div className="modal-header-section">
-              <span className="system-tag">{selected.system}</span>
-              <h2>{cleanHtmlText(selected.title)}</h2>
+              <span className="system-tag">{getEntrySystem(selected)}</span>
+              <h2>{cleanHtmlText(getEntryTitle(selected))}</h2>
             </div>
 
             <div className="modal-split-layout">
-              {/* Left Column: Visual Media (2D Схема, 3D Модель, 🎬 Анимационное видео) */}
+              {/* Left Column: Visual Media (2D Схема, 3D Модель, 🎬 Анимационное видео, 🩻 Рентген) */}
               <div className="modal-media-col">
                 <div className="view-toggle modal-view-toggle">
                   <button
                     type="button"
                     className={viewMode === '2d' ? 'active' : ''}
                     onClick={() => setViewMode('2d')}
-                    title="2D анатомическая схема"
+                    title={t.schema2DTab}
                   >
-                    🖼️ 2D Схема
+                    🖼️ {t.schema2DTab}
                   </button>
                   <button
                     type="button"
@@ -401,9 +440,9 @@ export default function AtlasView() {
                     onClick={() => setViewMode('3d')}
                     disabled={!selected.modelUrl}
                     style={!selected.modelUrl ? { opacity: 0.45, cursor: 'not-allowed' } : undefined}
-                    title={selected.modelUrl ? 'Интерактивная 3D-модель органа' : '3D-модель не привязана'}
+                    title={selected.modelUrl ? t.model3DTab : '3D-модель не привязана'}
                   >
-                    🧊 3D Модель
+                    🧊 {t.model3DTab}
                   </button>
                   <button
                     type="button"
@@ -413,18 +452,18 @@ export default function AtlasView() {
                     }}
                     disabled={!selected.videoUrl}
                     style={!selected.videoUrl ? { opacity: 0.40, cursor: 'not-allowed', filter: 'grayscale(0.8)' } : undefined}
-                    title={selected.videoUrl ? 'Смотреть анимационное видео патологии' : 'Анимационное видео не прикреплено в админ-панели'}
+                    title={selected.videoUrl ? t.videoTab : t.videoLockedTooltip}
                   >
-                    🎬 Анимационное видео {selected.videoUrl ? '' : '🔒'}
+                    🎬 {t.videoTab} {selected.videoUrl ? '' : '🔒'}
                   </button>
                   {selected.xrayUrl && (
                     <button
                       type="button"
                       className={`xray-tab-btn ${viewMode === 'xray' ? 'active' : ''}`}
                       onClick={() => setViewMode('xray')}
-                      title="Клинический рентген / КТ / Ангиография снимок"
+                      title={t.xrayTab}
                     >
-                      🩻 Рентген / КТ
+                      🩻 {t.xrayTab}
                     </button>
                   )}
                 </div>
@@ -459,24 +498,24 @@ export default function AtlasView() {
                     )}
                     <div className="video-player-info-badge">
                       <span className="video-rec-dot" />
-                      <span>Анимация патологии: <strong>{cleanHtmlText(selected.title)}</strong></span>
+                      <span>{t.videoTab}: <strong>{cleanHtmlText(getEntryTitle(selected))}</strong></span>
                     </div>
                   </div>
                 ) : viewMode === 'xray' && selected.xrayUrl ? (
                   <div className="pathology-xray-box">
                     <img
                       src={resolveImageUrl(selected.xrayUrl)}
-                      alt={`Рентген / КТ: ${selected.title}`}
+                      alt={`${t.xrayTab}: ${selected.title}`}
                       className="pathology-xray-img"
                     />
                     <div className="xray-info-badge">
-                      <span>🩻 Клинический снимок (КТ / Ангиография / Рентген): <strong>{cleanHtmlText(selected.title)}</strong></span>
+                      <span>🩻 {t.xrayTab}: <strong>{cleanHtmlText(getEntryTitle(selected))}</strong></span>
                     </div>
                   </div>
                 ) : (
                   <Schema2DViewer
                     src={resolveImageUrl(selected.imageUrl)}
-                    title={selected.title}
+                    title={getEntryTitle(selected)}
                     labels={selected.labels || []}
                     activeLabel={activeLabel}
                     onSelectLabel={(label) => setActiveLabel(label)}
@@ -486,11 +525,11 @@ export default function AtlasView() {
                 {activeLabel && <p className="label-text">Выбрана зона: <strong>{activeLabel.text}</strong></p>}
               </div>
 
-              {/* Right Column: Accordion Sections (Single-accordion mode: only one open at a time) */}
+              {/* Right Column: Accordion Sections */}
               <div className="modal-dossier-col">
                 <div className="accordion-list">
-                  {/* Определение */}
-                  {selected.definition && (
+                  {/* Определение / Ta'rif */}
+                  {getEntryDefinition(selected) && (
                     <div className={`accordion-card ${openAccordion === 'definition' ? 'open' : ''}`}>
                       <button
                         type="button"
@@ -499,20 +538,20 @@ export default function AtlasView() {
                       >
                         <div className="accordion-title-wrap">
                           <span className="accordion-icon">📖</span>
-                          <span className="accordion-title">Определение</span>
+                          <span className="accordion-title">{t.definition}</span>
                         </div>
                         <span className="accordion-arrow">{openAccordion === 'definition' ? '▲' : '▼'}</span>
                       </button>
                       {openAccordion === 'definition' && (
                         <div className="accordion-content">
-                          <p>{cleanHtmlText(selected.definition)}</p>
+                          <p>{cleanHtmlText(getEntryDefinition(selected))}</p>
                         </div>
                       )}
                     </div>
                   )}
 
-                  {/* Причины */}
-                  {selected.causes && (
+                  {/* Причины / Sabablari */}
+                  {getEntryCauses(selected) && (
                     <div className={`accordion-card ${openAccordion === 'causes' ? 'open' : ''}`}>
                       <button
                         type="button"
@@ -521,20 +560,20 @@ export default function AtlasView() {
                       >
                         <div className="accordion-title-wrap">
                           <span className="accordion-icon">🧬</span>
-                          <span className="accordion-title">Причины</span>
+                          <span className="accordion-title">{t.causes}</span>
                         </div>
                         <span className="accordion-arrow">{openAccordion === 'causes' ? '▲' : '▼'}</span>
                       </button>
                       {openAccordion === 'causes' && (
                         <div className="accordion-content">
-                          <p>{cleanHtmlText(selected.causes)}</p>
+                          <p>{cleanHtmlText(getEntryCauses(selected))}</p>
                         </div>
                       )}
                     </div>
                   )}
 
-                  {/* Симптомы */}
-                  {selected.symptoms && (
+                  {/* Симптомы / Belgilari */}
+                  {getEntrySymptoms(selected) && (
                     <div className={`accordion-card ${openAccordion === 'symptoms' ? 'open' : ''}`}>
                       <button
                         type="button"
@@ -543,13 +582,13 @@ export default function AtlasView() {
                       >
                         <div className="accordion-title-wrap">
                           <span className="accordion-icon">🩺</span>
-                          <span className="accordion-title">Симптомы</span>
+                          <span className="accordion-title">{t.symptoms}</span>
                         </div>
                         <span className="accordion-arrow">{openAccordion === 'symptoms' ? '▲' : '▼'}</span>
                       </button>
                       {openAccordion === 'symptoms' && (
                         <div className="accordion-content">
-                          <p>{cleanHtmlText(selected.symptoms)}</p>
+                          <p>{cleanHtmlText(getEntrySymptoms(selected))}</p>
                         </div>
                       )}
                     </div>
@@ -566,7 +605,7 @@ export default function AtlasView() {
                         <div className="accordion-title-wrap">
                           <span className="accordion-icon">💊</span>
                           <span className="accordion-title">
-                            Препараты World Medicine ({selected.recommendedDrugs.length})
+                            {t.recommendedDrugs} ({selected.recommendedDrugs.length})
                           </span>
                         </div>
                         <span className="accordion-arrow">{openAccordion === 'drugs' ? '▲' : '▼'}</span>
