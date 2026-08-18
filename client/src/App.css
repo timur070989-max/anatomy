@@ -303,19 +303,39 @@
   color: #64748b;
 }
 
-.bodymap-panel {
+/* Main Side-by-Side Split Studio Layout */
+.atlas-main-split {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+@media (max-width: 960px) {
+  .atlas-main-split {
+    grid-template-columns: 1fr;
+  }
+}
+
+.pane-card {
   background: #ffffff;
   border: 1px solid #e2e8f0;
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  border-radius: 14px;
+  padding: 1.25rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+}
+
+/* Left Pane: Body Map */
+.bodymap-card {
+  display: flex;
+  flex-direction: column;
 }
 
 .bodymap-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
 }
 
 .bodymap-title h2 {
@@ -332,12 +352,12 @@
 .bodymap-interactive-wrap {
   display: flex;
   justify-content: center;
-  padding: 1rem 0;
+  padding: 0.5rem 0;
 }
 
 .bodymap-image {
   position: relative;
-  max-width: 440px;
+  max-width: 400px;
   width: 100%;
   margin: 0 auto;
 }
@@ -347,6 +367,214 @@
   height: auto;
   display: block;
   border-radius: 8px;
+}
+
+/* Right Pane: Pathology Button Stack (Стопка кнопок) */
+.pathology-stack-card {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  max-height: calc(100vh - 170px);
+  min-height: 520px;
+  position: sticky;
+  top: 1.5rem;
+}
+
+.pathology-stack-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #f1f5f9;
+  margin-bottom: 0.75rem;
+}
+
+.stack-title-wrap h3 {
+  font-size: 1.15rem;
+  color: #0f172a;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.active-organ-title {
+  color: #0284c7;
+  font-weight: 700;
+}
+
+.count-pill {
+  background: #f1f5f9;
+  color: #475569;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid #e2e8f0;
+}
+
+.pathology-search-box {
+  position: relative;
+  width: 100%;
+}
+
+.pathology-search-input {
+  width: 100%;
+  padding: 0.55rem 2rem 0.55rem 0.85rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  background: #f8fafc;
+  outline: none;
+  transition: all 0.15s ease;
+  box-sizing: border-box;
+}
+
+.pathology-search-input:focus {
+  background: #ffffff;
+  border-color: #0284c7;
+  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+}
+
+.search-clear-btn {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  font-size: 0.85rem;
+  padding: 4px;
+}
+
+.search-clear-btn:hover {
+  color: #0f172a;
+}
+
+.pathology-stack-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  overflow-y: auto;
+  padding-right: 6px;
+  flex: 1;
+}
+
+/* Individual Pathology Button in Stack */
+.pathology-button-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 0.85rem 1.1rem;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+  width: 100%;
+}
+
+.pathology-button-item:hover {
+  background: #f8fafc;
+  border-color: #0284c7;
+  transform: translateX(4px);
+  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.12);
+}
+
+.pathology-item-main {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  flex: 1;
+}
+
+.pathology-item-title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.pathology-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #0f172a;
+  line-height: 1.35;
+}
+
+.pathology-button-item:hover .pathology-name {
+  color: #0284c7;
+}
+
+.badge-3d {
+  background: #0284c7;
+  color: #ffffff;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(2, 132, 199, 0.3);
+  letter-spacing: 0.5px;
+}
+
+.badge-video {
+  background: #64748b;
+  color: #ffffff;
+  font-size: 0.65rem;
+  padding: 2px 5px;
+  border-radius: 4px;
+}
+
+.pathology-item-sub {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.78rem;
+}
+
+.pathology-organ-tag {
+  color: #64748b;
+  background: #f1f5f9;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+
+.pathology-drugs-count {
+  color: #15803d;
+  font-weight: 600;
+}
+
+.pathology-arrow {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #cbd5e1;
+  margin-left: 0.75rem;
+  transition: all 0.2s ease;
+}
+
+.pathology-button-item:hover .pathology-arrow {
+  color: #0284c7;
+  transform: translateX(4px);
+}
+
+.empty-pathology-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+  color: #64748b;
+  text-align: center;
+}
+
+.empty-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
 }
 
 /* Organ Interactive Markers & Hover Tooltips */

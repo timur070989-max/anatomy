@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import { api, resolveImageUrl } from './api';
 import Model3DViewer from './Model3DViewer';
 
@@ -13,6 +13,7 @@ export default function AtlasView() {
   const [systems, setSystems] = useState([]);
   const [activeSystem, setActiveSystem] = useState('');
   const [entries, setEntries] = useState([]);
+  const [searchQuery, setSearchQuery] = useState('');
   const [selected, setSelected] = useState(null);
   const [activeLabel, setActiveLabel] = useState(null);
   const [viewMode, setViewMode] = useState('2d');
@@ -70,7 +71,7 @@ export default function AtlasView() {
       setActiveSystem('');
     } else {
       setActiveSystem(organ);
-      document.getElementById('entry-grid-anchor')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setSearchQuery('');
     }
   }
 
@@ -78,7 +79,6 @@ export default function AtlasView() {
     setSelected(entry);
     setActiveLabel(null);
     setViewMode(entry.modelUrl ? '3d' : entry.imageUrl ? '2d' : 'video');
-    // Open all available sections by default
     setAccordion({
       definition: true,
       causes: true,
@@ -86,6 +86,18 @@ export default function AtlasView() {
       drugs: true,
     });
   }
+
+  // Filter entries by search query
+  const filteredEntries = useMemo(() => {
+    if (!searchQuery.trim()) return entries;
+    const q = searchQuery.toLowerCase().trim();
+    return entries.filter(
+      (e) =>
+        e.title.toLowerCase().includes(q) ||
+        (e.system && e.system.toLowerCase().includes(q)) ||
+        (e.recommendedDrugs && e.recommendedDrugs.some((d) => d.toLowerCase().includes(q)))
+    );
+  }, [entries, searchQuery]);
 
   if (bodyProfile === null) {
     return (
@@ -115,14 +127,14 @@ export default function AtlasView() {
             <button
               key={p.id}
               className={`profile-pill ${bodyProfile === p.id ? 'active' : ''}`}
-              onClick={() => { setBodyProfile(p.id); setActiveSystem(''); }}
+              onClick={() => { setBodyProfile(p.id); setActiveSystem(''); setSearchQuery(''); }}
             >
               {p.label}
             </button>
           ))}
           <button
             className={`profile-pill ${bodyProfile === 'all' ? 'active' : ''}`}
-            onClick={() => { setBodyProfile('all'); setActiveSystem(''); }}
+            onClick={() => { setBodyProfile('all'); setActiveSystem(''); setSearchQuery(''); }}
           >
             Все
           </button>
@@ -132,97 +144,143 @@ export default function AtlasView() {
           {activeSystem ? (
             <div className="active-filter">
               <span>Орган: <strong>{activeSystem}</strong> ({entries.length} патологий)</span>
-              <button className="reset-filter-btn" onClick={() => setActiveSystem('')}>✕ Сбросить</button>
+              <button className="reset-filter-btn" onClick={() => { setActiveSystem(''); setSearchQuery(''); }}>
+                ✕ Показать все органы
+              </button>
             </div>
           ) : (
-            <span className="hint-text">💡 Наведите курсор на орган на теле и кликните для фильтрации</span>
+            <span className="hint-text">💡 Кликните по любому органу на теле для фильтрации</span>
           )}
         </div>
       </div>
 
       {error && <p className="error">{error}</p>}
 
-      {/* Center Interactive Body Map View */}
-      {bodyMap && (bodyMap.imageUrl || bodyMap.modelUrl) && (
-        <div className="bodymap-panel">
-          <div className="bodymap-header">
-            <div className="bodymap-title">
-              <h2>Интерактивная карта тела</h2>
-              <span className="bodymap-subtitle">Наведите курсор на орган на теле для просмотра названия</span>
-            </div>
-            {bodyMap.imageUrl && bodyMap.modelUrl && (
-              <div className="view-toggle">
-                <button className={bodyMapView === '2d' ? 'active' : ''} onClick={() => setBodyMapView('2d')}>2D Карта</button>
-                <button className={bodyMapView === '3d' ? 'active' : ''} onClick={() => setBodyMapView('3d')}>3D Тело</button>
+      {/* Main 2-Pane Side-by-Side Studio Layout */}
+      <div className="atlas-main-split">
+        {/* Left Pane: Interactive Body Map */}
+        <div className="atlas-body-pane">
+          <div className="pane-card bodymap-card">
+            <div className="bodymap-header">
+              <div className="bodymap-title">
+                <h2>Карта тела</h2>
+                <span className="bodymap-subtitle">Наведите курсор и нажмите на орган</span>
               </div>
+              {bodyMap?.imageUrl && bodyMap?.modelUrl && (
+                <div className="view-toggle">
+                  <button className={bodyMapView === '2d' ? 'active' : ''} onClick={() => setBodyMapView('2d')}>2D Карта</button>
+                  <button className={bodyMapView === '3d' ? 'active' : ''} onClick={() => setBodyMapView('3d')}>3D Тело</button>
+                </div>
+              )}
+            </div>
+
+            {bodyMapView === '3d' && bodyMap?.modelUrl ? (
+              <Model3DViewer
+                src={resolveImageUrl(bodyMap.modelUrl)}
+                hotspots={(bodyMap.labels3d || []).map((l) => ({ ...l, text: l.organ }))}
+                onHotspotClick={(l) => goToOrgan(l.organ)}
+                height={520}
+              />
+            ) : (
+              bodyMap?.imageUrl && (
+                <div className="bodymap-interactive-wrap">
+                  <div className="image-with-labels bodymap-image">
+                    <img src={resolveImageUrl(bodyMap.imageUrl)} alt="Карта тела" />
+                    {(bodyMap.labels || []).map((l, i) => (
+                      <button
+                        key={i}
+                        type="button"
+                        className={`organ-marker ${activeSystem === l.organ ? 'active' : ''}`}
+                        style={{ left: `${l.x}%`, top: `${l.y}%` }}
+                        onClick={() => goToOrgan(l.organ)}
+                        aria-label={l.organ}
+                      >
+                        <span className="organ-marker-dot" />
+                        <span className="organ-marker-ring" />
+                        <span className="organ-tooltip">{l.organ}</span>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )
             )}
           </div>
-
-          {bodyMapView === '3d' && bodyMap.modelUrl ? (
-            <Model3DViewer
-              src={resolveImageUrl(bodyMap.modelUrl)}
-              hotspots={(bodyMap.labels3d || []).map((l) => ({ ...l, text: l.organ }))}
-              onHotspotClick={(l) => goToOrgan(l.organ)}
-              height={460}
-            />
-          ) : (
-            bodyMap.imageUrl && (
-              <div className="bodymap-interactive-wrap">
-                <div className="image-with-labels bodymap-image">
-                  <img src={resolveImageUrl(bodyMap.imageUrl)} alt="Карта тела" />
-                  {(bodyMap.labels || []).map((l, i) => (
-                    <button
-                      key={i}
-                      type="button"
-                      className={`organ-marker ${activeSystem === l.organ ? 'active' : ''}`}
-                      style={{ left: `${l.x}%`, top: `${l.y}%` }}
-                      onClick={() => goToOrgan(l.organ)}
-                      aria-label={l.organ}
-                    >
-                      <span className="organ-marker-dot" />
-                      <span className="organ-marker-ring" />
-                      <span className="organ-tooltip">{l.organ}</span>
-                    </button>
-                  ))}
-                </div>
-              </div>
-            )
-          )}
         </div>
-      )}
 
-      {/* Disease / Pathologies Grid Anchor */}
-      <div id="entry-grid-anchor" />
+        {/* Right Pane: Pathology Buttons Stack (Стопка кнопок патологий) */}
+        <div className="atlas-pathology-pane">
+          <div className="pane-card pathology-stack-card">
+            <div className="pathology-stack-header">
+              <div className="stack-title-wrap">
+                <h3>
+                  {activeSystem ? (
+                    <>
+                      <span>Патологии: </span>
+                      <span className="active-organ-title">{activeSystem}</span>
+                    </>
+                  ) : (
+                    <span>Все нозологии и патологии</span>
+                  )}
+                  <span className="count-pill">{filteredEntries.length}</span>
+                </h3>
+              </div>
 
-      <div className="entries-section-header">
-        <h3>
-          {activeSystem ? `Патологии органа: ${activeSystem}` : 'Все патологии и нозологии'}
-          <span className="entries-count">({entries.length})</span>
-        </h3>
-      </div>
+              {/* Quick Search inside this organ */}
+              <div className="pathology-search-box">
+                <input
+                  type="text"
+                  placeholder="Поиск патологии или симптома..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="pathology-search-input"
+                />
+                {searchQuery && (
+                  <button className="search-clear-btn" onClick={() => setSearchQuery('')}>✕</button>
+                )}
+              </div>
+            </div>
 
-      {entries.length === 0 && !error && (
-        <p className="empty">Пока нет записей для выбранного органа.</p>
-      )}
-
-      <div className="entry-grid">
-        {entries.map((entry) => (
-          <button
-            key={entry.id}
-            className="entry-card"
-            onClick={() => openEntry(entry)}
-          >
-            {entry.imageUrl ? (
-              <img src={resolveImageUrl(entry.imageUrl)} alt={entry.title} />
-            ) : (
-              <div className="no-image">{entry.modelUrl ? '3D-модель' : entry.videoUrl ? 'Видео' : 'Нет изображения'}</div>
-            )}
-            {entry.modelUrl && <span className="model3d-badge" title="Доступна интерактивная 3D-модель">3D</span>}
-            {entry.videoUrl && <span className="video-badge" title="Есть видео">▶</span>}
-            <span className="entry-system-badge">{entry.system}</span>
-            <span className="entry-title-text">{entry.title}</span>
-          </button>
-        ))}
+            {/* Pathology Buttons Vertical Stack */}
+            <div className="pathology-stack-list">
+              {filteredEntries.length === 0 ? (
+                <div className="empty-pathology-state">
+                  <span className="empty-icon">🔍</span>
+                  <p>Ничего не найдено{searchQuery ? ` по запросу «${searchQuery}»` : ''}.</p>
+                </div>
+              ) : (
+                filteredEntries.map((entry) => (
+                  <button
+                    key={entry.id}
+                    type="button"
+                    className="pathology-button-item"
+                    onClick={() => openEntry(entry)}
+                  >
+                    <div className="pathology-item-main">
+                      <div className="pathology-item-title-row">
+                        <span className="pathology-name">{entry.title}</span>
+                        {entry.modelUrl && (
+                          <span className="badge-3d" title="Доступна интерактивная 3D-модель органа">3D</span>
+                        )}
+                        {entry.videoUrl && (
+                          <span className="badge-video" title="Есть видеоматериал">▶</span>
+                        )}
+                      </div>
+                      <div className="pathology-item-sub">
+                        <span className="pathology-organ-tag">{entry.system}</span>
+                        {entry.recommendedDrugs && entry.recommendedDrugs.length > 0 && (
+                          <span className="pathology-drugs-count">
+                            💊 {entry.recommendedDrugs.length} преп. World Medicine
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                    <span className="pathology-arrow">→</span>
+                  </button>
+                ))
+              )}
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* 2-Column Dossier Detail Modal */}
