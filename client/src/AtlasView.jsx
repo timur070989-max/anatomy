@@ -420,15 +420,6 @@ export default function AtlasView({ lang = 'ru' }) {
                           )}
                         </div>
                       </div>
-                      <div className="pathology-item-sub">
-                        <span className="pathology-organ-tag">{getEntrySystem(entry)}</span>
-                        {entry.recommendedDrugs && entry.recommendedDrugs.length > 0 && (
-                          <span className="pathology-drugs-count">
-                            <svg className="badge-svg-icon" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" strokeWidth="2" style={{marginRight: 4}}><path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"/><path d="m8.5 8.5 7 7"/></svg>
-                            {entry.recommendedDrugs.length} {t.wmDrugsPrefix}
-                          </span>
-                        )}
-                      </div>
                     </div>
                   </button>
                 ))

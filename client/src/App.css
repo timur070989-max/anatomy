@@ -632,7 +632,7 @@ body {
   border-radius: 4px;
 }
 
-/* Pathology Button Item - HIGH CONTRAST, 100% FULL-WIDTH */
+/* Pathology Button Item - MINIMALIST, HIGH CONTRAST, 100% FULL-WIDTH */
 .pathology-button-item {
   width: 100%;
   display: flex;
@@ -641,7 +641,7 @@ body {
   background-color: var(--wm-item-bg) !important;
   border: 1px solid var(--wm-border) !important;
   border-radius: 10px;
-  padding: 0.9rem 1.1rem;
+  padding: 0.8rem 1.1rem;
   color: var(--wm-text-white) !important;
   text-align: left;
   cursor: pointer;
@@ -661,8 +661,8 @@ body {
 
 .pathology-item-main {
   display: flex;
-  flex-direction: column;
-  gap: 5px;
+  align-items: center;
+  justify-content: space-between;
   flex: 1;
   min-width: 0;
   width: 100%;
@@ -671,8 +671,8 @@ body {
 .pathology-item-title-row {
   display: flex;
   align-items: center;
-  gap: 8px;
-  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
   width: 100%;
 }
 
@@ -682,11 +682,13 @@ body {
   color: #ffffff !important;
   line-height: 1.35;
   word-break: break-word;
+  flex: 1;
 }
 
 .pathology-item-badges {
   display: flex;
   gap: 4px;
+  flex-shrink: 0;
 }
 
 /* Corporate 2D Flat Vector Badges */
