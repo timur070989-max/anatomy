@@ -255,12 +255,35 @@ function assembleMultiMaterialGlb(parts) {
 
   const binBuffer = Buffer.concat(binaryChunks);
 
+  // Filter materials to ONLY those actually referenced by primitives
+  const usedMatIndices = new Set();
+  meshes.forEach((m) => {
+    m.primitives.forEach((p) => {
+      if (p.material !== undefined) usedMatIndices.add(p.material);
+    });
+  });
+
+  const finalMaterials = [];
+  const oldToNewMatIndex = {};
+  Array.from(usedMatIndices).sort().forEach((oldIdx, newIdx) => {
+    finalMaterials.push(MATERIALS[oldIdx]);
+    oldToNewMatIndex[oldIdx] = newIdx;
+  });
+
+  meshes.forEach((m) => {
+    m.primitives.forEach((p) => {
+      if (p.material !== undefined) {
+        p.material = oldToNewMatIndex[p.material] ?? 0;
+      }
+    });
+  });
+
   const gltf = {
     asset: { version: '2.0', generator: 'Antigravity-MultiLayer-Medical-GLB' },
     scenes: [{ nodes: nodes.map((_, i) => i) }],
     nodes,
     meshes,
-    materials: MATERIALS,
+    materials: finalMaterials,
     accessors,
     bufferViews,
     buffers: [{ byteLength: binBuffer.length }],
