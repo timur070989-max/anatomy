@@ -1937,3 +1937,104 @@ body {
   color: var(--wm-cyan-soft);
   font-weight: 400;
 }
+
+/* Login Form */
+.login-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  padding: 2rem 1rem;
+}
+
+.login-form {
+  background: var(--wm-card);
+  border: 1px solid var(--wm-border);
+  border-radius: 14px;
+  padding: 2.2rem 2rem;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 82, 156, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.login-header h2 {
+  margin: 0 0 0.3rem 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.login-subtitle {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--wm-cyan-soft);
+}
+
+.login-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--wm-text-sub);
+}
+
+.login-form input {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--wm-border);
+  border-radius: 8px;
+  padding: 0.65rem 0.85rem;
+  color: #ffffff;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.login-form input:focus {
+  border-color: var(--wm-blue-accent);
+}
+
+.login-submit-btn {
+  background: var(--wm-blue-primary);
+  border: 1px solid var(--wm-blue-accent);
+  color: #ffffff;
+  padding: 0.75rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 0.4rem;
+  transition: all 0.15s ease;
+}
+
+.login-submit-btn:hover:not(:disabled) {
+  background: var(--wm-blue-accent);
+}
+
+.default-login-credentials {
+  margin-top: 0.8rem;
+  padding: 0.8rem;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px dashed var(--wm-border);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 0.78rem;
+  color: var(--wm-text-sub);
+}
+
+.default-login-credentials code {
+  color: var(--wm-cyan);
+  background: rgba(0, 229, 255, 0.1);
+  padding: 1px 5px;
+  border-radius: 4px;
+}

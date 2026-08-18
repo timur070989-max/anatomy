@@ -25,21 +25,44 @@ export default function Login({ onLoggedIn }) {
   return (
     <div className="login-wrap">
       <form className="login-form" onSubmit={onSubmit}>
-        <h2>Вход в админку</h2>
+        <div className="login-header">
+          <h2>Вход в панель управления</h2>
+          <p className="login-subtitle">World Medicine Anatomical Atlas</p>
+        </div>
+
         {error && <p className="error">{error}</p>}
+
         <label>
-          Email
-          <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required autoFocus />
+          Email администратора
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="admin@worldmedicine.com"
+            required
+            autoFocus
+          />
         </label>
+
         <label>
           Пароль
-          <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="••••••••"
+            required
+          />
         </label>
-        <button type="submit" disabled={busy}>{busy ? 'Входим…' : 'Войти'}</button>
-        <p className="login-hint">
-          Первого администратора создаёт человек с доступом к серверу:
-          <code>node scripts/create-admin.js email password</code>
-        </p>
+
+        <button type="submit" className="login-submit-btn" disabled={busy}>
+          {busy ? 'Проверка данных…' : 'Войти в панель'}
+        </button>
+
+        <div className="default-login-credentials">
+          <span>Логин: <code>admin@worldmedicine.com</code></span>
+          <span>Пароль: <code>admin123</code></span>
+        </div>
       </form>
     </div>
   );
