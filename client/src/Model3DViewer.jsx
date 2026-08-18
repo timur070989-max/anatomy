@@ -1,7 +1,14 @@
 import { useEffect, useRef, useState } from 'react';
 
-// Google <model-viewer> web component wrapper with full-volume anatomical controls (walls, vessels, nerves, X-Ray)
-export default function Model3DViewer({ src, hotspots = [], editable = false, onSurfaceClick, onHotspotClick, height = 400 }) {
+export default function Model3DViewer({
+  src,
+  hotspots = [],
+  editable = false,
+  onSurfaceClick,
+  onHotspotClick,
+  height = 400,
+  isAnimatedVideo = false,
+}) {
   const ref = useRef(null);
   const [loading, setLoading] = useState(true);
   const [loadError, setLoadError] = useState(false);
@@ -253,13 +260,20 @@ export default function Model3DViewer({ src, hotspots = [], editable = false, on
           </div>
         )}
 
+        {isAnimatedVideo && (
+          <div className="animated-video-badge">
+            <span className="rec-dot" />
+            <span>АНИМАЦИОННЫЙ 3D ВИДЕО-ОБЗОР</span>
+          </div>
+        )}
+
         <model-viewer
           ref={ref}
           src={src}
           camera-controls
           touch-action="pan-y"
-          auto-rotate={autoRotate && !editable ? '' : undefined}
-          rotation-per-second="18deg"
+          auto-rotate={(autoRotate || isAnimatedVideo) && !editable ? '' : undefined}
+          rotation-per-second={isAnimatedVideo ? '32deg' : '18deg'}
           shadow-intensity="1.6"
           shadow-softness="0.75"
           exposure="1.15"
@@ -267,7 +281,7 @@ export default function Model3DViewer({ src, hotspots = [], editable = false, on
           reveal="auto"
           style={{ width: '100%', height: '100%', outline: 'none' }}
         >
-          {hotspots.map((h, i) => (
+          {!isAnimatedVideo && hotspots.map((h, i) => (
             <button
               key={i}
               slot={`hotspot-${i}`}

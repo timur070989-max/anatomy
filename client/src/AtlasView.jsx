@@ -8,6 +8,24 @@ const PROFILES = [
   { id: 'child', label: 'Ребёнок' },
 ];
 
+function cleanHtmlText(text) {
+  if (!text) return '';
+  return text
+    .replace(/&mdash;/g, '—')
+    .replace(/&ndash;/g, '–')
+    .replace(/&nbsp;/g, ' ')
+    .replace(/&quot;/g, '"')
+    .replace(/&laquo;/g, '«')
+    .replace(/&raquo;/g, '»')
+    .replace(/&hellip;/g, '...')
+    .replace(/&amp;/g, '&')
+    .replace(/<br\s*[\/]?>/gi, '\n')
+    .replace(/<\/p>/gi, '\n\n')
+    .replace(/<p>/gi, '')
+    .replace(/<[^>]*>/g, '')
+    .trim();
+}
+
 export default function AtlasView() {
   const [bodyProfile, setBodyProfile] = useState('male');
   const [systems, setSystems] = useState([]);
@@ -16,21 +34,16 @@ export default function AtlasView() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selected, setSelected] = useState(null);
   const [activeLabel, setActiveLabel] = useState(null);
-  const [viewMode, setViewMode] = useState('2d');
+  const [viewMode, setViewMode] = useState('3d');
   const [bodyMap, setBodyMap] = useState(null);
   const [bodyMapView, setBodyMapView] = useState('2d');
   const [error, setError] = useState('');
 
-  // Accordion state for dossier sections in modal
-  const [accordion, setAccordion] = useState({
-    definition: true,
-    causes: true,
-    symptoms: true,
-    drugs: true,
-  });
+  // Single active accordion section: only one open at any time
+  const [openAccordion, setOpenAccordion] = useState('definition');
 
   function toggleAccordion(section) {
-    setAccordion((prev) => ({ ...prev, [section]: !prev[section] }));
+    setOpenAccordion((prev) => (prev === section ? '' : section));
   }
 
   // 'all' means "show everything, no profile filter"
@@ -79,12 +92,8 @@ export default function AtlasView() {
     setSelected(entry);
     setActiveLabel(null);
     setViewMode(entry.modelUrl ? '3d' : entry.imageUrl ? '2d' : 'video');
-    setAccordion({
-      definition: true,
-      causes: true,
-      symptoms: true,
-      drugs: true,
-    });
+    // Open only 'definition' accordion by default
+    setOpenAccordion('definition');
   }
 
   // Filter entries by search query
@@ -207,7 +216,7 @@ export default function AtlasView() {
           </div>
         </div>
 
-        {/* Right Pane: Pathology Buttons Stack (Стопка кнопок патологий) */}
+        {/* Right Pane: Pathology Buttons Stack */}
         <div className="atlas-pathology-pane">
           <div className="pane-card pathology-stack-card">
             <div className="pathology-stack-header">
@@ -257,13 +266,11 @@ export default function AtlasView() {
                   >
                     <div className="pathology-item-main">
                       <div className="pathology-item-title-row">
-                        <span className="pathology-name">{entry.title}</span>
+                        <span className="pathology-name">{cleanHtmlText(entry.title)}</span>
                         {entry.modelUrl && (
                           <span className="badge-3d" title="Доступна интерактивная 3D-модель органа">3D</span>
                         )}
-                        {entry.videoUrl && (
-                          <span className="badge-video" title="Есть видеоматериал">▶</span>
-                        )}
+                        <span className="badge-video" title="Доступна видео-анимация">🎬</span>
                       </div>
                       <div className="pathology-item-sub">
                         <span className="pathology-organ-tag">{entry.system}</span>
@@ -291,31 +298,35 @@ export default function AtlasView() {
             
             <div className="modal-header-section">
               <span className="system-tag">{selected.system}</span>
-              <h2>{selected.title}</h2>
+              <h2>{cleanHtmlText(selected.title)}</h2>
             </div>
 
             <div className="modal-split-layout">
-              {/* Left Column: Visual Media (3D Model / 2D Diagram / Video) */}
+              {/* Left Column: Visual Media (2D Схема, 3D Модель, 🎬 Анимационное видео) */}
               <div className="modal-media-col">
-                {(() => {
-                  const modes = [
-                    selected.imageUrl && '2d',
-                    selected.modelUrl && '3d',
-                    selected.videoUrl && 'video',
-                  ].filter(Boolean);
-                  const labels = { '2d': '2D Схема', '3d': '3D Модель', video: 'Видео' };
-                  return (
-                    modes.length > 1 && (
-                      <div className="view-toggle">
-                        {modes.map((m) => (
-                          <button key={m} className={viewMode === m ? 'active' : ''} onClick={() => setViewMode(m)}>
-                            {labels[m]}
-                          </button>
-                        ))}
-                      </div>
-                    )
-                  );
-                })()}
+                <div className="view-toggle modal-view-toggle">
+                  <button
+                    type="button"
+                    className={viewMode === '2d' ? 'active' : ''}
+                    onClick={() => setViewMode('2d')}
+                  >
+                    🖼️ 2D Схема
+                  </button>
+                  <button
+                    type="button"
+                    className={viewMode === '3d' ? 'active' : ''}
+                    onClick={() => setViewMode('3d')}
+                  >
+                    🧊 3D Модель
+                  </button>
+                  <button
+                    type="button"
+                    className={viewMode === 'video' ? 'active' : ''}
+                    onClick={() => setViewMode('video')}
+                  >
+                    🎬 Анимационное видео
+                  </button>
+                </div>
 
                 {viewMode === '3d' && selected.modelUrl ? (
                   <Model3DViewer
@@ -324,28 +335,49 @@ export default function AtlasView() {
                     onHotspotClick={(label) => setActiveLabel(label)}
                     height={400}
                   />
-                ) : viewMode === 'video' && selected.videoUrl ? (
-                  <video
-                    src={resolveImageUrl(selected.videoUrl)}
-                    controls
-                    style={{ width: '100%', borderRadius: '10px', display: 'block' }}
-                  />
+                ) : viewMode === 'video' ? (
+                  selected.videoUrl ? (
+                    <video
+                      src={resolveImageUrl(selected.videoUrl)}
+                      controls
+                      autoPlay
+                      loop
+                      style={{ width: '100%', height: '400px', objectFit: 'contain', background: '#000', borderRadius: '10px', display: 'block' }}
+                    />
+                  ) : (
+                    <Model3DViewer
+                      src={resolveImageUrl(selected.modelUrl || '/uploads/organ-brain.glb')}
+                      hotspots={[]}
+                      height={400}
+                      isAnimatedVideo={true}
+                    />
+                  )
                 ) : (
-                  selected.imageUrl && (
+                  selected.imageUrl ? (
                     <div className="modal-image-preview">
                       <img src={resolveImageUrl(selected.imageUrl)} alt={selected.title} />
+                    </div>
+                  ) : selected.modelUrl ? (
+                    <Model3DViewer
+                      src={resolveImageUrl(selected.modelUrl)}
+                      hotspots={selected.labels3d || []}
+                      height={400}
+                    />
+                  ) : (
+                    <div className="modal-image-preview">
+                      <p>Изображение подготавливается</p>
                     </div>
                   )
                 )}
                 {activeLabel && <p className="label-text">Выбрана зона: <strong>{activeLabel.text}</strong></p>}
               </div>
 
-              {/* Right Column: Accordion Sections (Определение, Причины, Симптомы, Препараты) */}
+              {/* Right Column: Accordion Sections (Single-accordion mode: only one open at a time) */}
               <div className="modal-dossier-col">
                 <div className="accordion-list">
                   {/* Определение */}
                   {selected.definition && (
-                    <div className={`accordion-card ${accordion.definition ? 'open' : ''}`}>
+                    <div className={`accordion-card ${openAccordion === 'definition' ? 'open' : ''}`}>
                       <button
                         type="button"
                         className="accordion-header"
@@ -355,11 +387,11 @@ export default function AtlasView() {
                           <span className="accordion-icon">📖</span>
                           <span className="accordion-title">Определение</span>
                         </div>
-                        <span className="accordion-arrow">{accordion.definition ? '▲' : '▼'}</span>
+                        <span className="accordion-arrow">{openAccordion === 'definition' ? '▲' : '▼'}</span>
                       </button>
-                      {accordion.definition && (
+                      {openAccordion === 'definition' && (
                         <div className="accordion-content">
-                          <p>{selected.definition}</p>
+                          <p>{cleanHtmlText(selected.definition)}</p>
                         </div>
                       )}
                     </div>
@@ -367,7 +399,7 @@ export default function AtlasView() {
 
                   {/* Причины */}
                   {selected.causes && (
-                    <div className={`accordion-card ${accordion.causes ? 'open' : ''}`}>
+                    <div className={`accordion-card ${openAccordion === 'causes' ? 'open' : ''}`}>
                       <button
                         type="button"
                         className="accordion-header"
@@ -377,11 +409,11 @@ export default function AtlasView() {
                           <span className="accordion-icon">🧬</span>
                           <span className="accordion-title">Причины</span>
                         </div>
-                        <span className="accordion-arrow">{accordion.causes ? '▲' : '▼'}</span>
+                        <span className="accordion-arrow">{openAccordion === 'causes' ? '▲' : '▼'}</span>
                       </button>
-                      {accordion.causes && (
+                      {openAccordion === 'causes' && (
                         <div className="accordion-content">
-                          <p>{selected.causes}</p>
+                          <p>{cleanHtmlText(selected.causes)}</p>
                         </div>
                       )}
                     </div>
@@ -389,7 +421,7 @@ export default function AtlasView() {
 
                   {/* Симптомы */}
                   {selected.symptoms && (
-                    <div className={`accordion-card ${accordion.symptoms ? 'open' : ''}`}>
+                    <div className={`accordion-card ${openAccordion === 'symptoms' ? 'open' : ''}`}>
                       <button
                         type="button"
                         className="accordion-header"
@@ -399,11 +431,11 @@ export default function AtlasView() {
                           <span className="accordion-icon">🩺</span>
                           <span className="accordion-title">Симптомы</span>
                         </div>
-                        <span className="accordion-arrow">{accordion.symptoms ? '▲' : '▼'}</span>
+                        <span className="accordion-arrow">{openAccordion === 'symptoms' ? '▲' : '▼'}</span>
                       </button>
-                      {accordion.symptoms && (
+                      {openAccordion === 'symptoms' && (
                         <div className="accordion-content">
-                          <p>{selected.symptoms}</p>
+                          <p>{cleanHtmlText(selected.symptoms)}</p>
                         </div>
                       )}
                     </div>
@@ -411,7 +443,7 @@ export default function AtlasView() {
 
                   {/* Препараты World Medicine */}
                   {selected.recommendedDrugs && selected.recommendedDrugs.length > 0 && (
-                    <div className={`accordion-card ${accordion.drugs ? 'open' : ''}`}>
+                    <div className={`accordion-card ${openAccordion === 'drugs' ? 'open' : ''}`}>
                       <button
                         type="button"
                         className="accordion-header"
@@ -423,15 +455,15 @@ export default function AtlasView() {
                             Препараты World Medicine ({selected.recommendedDrugs.length})
                           </span>
                         </div>
-                        <span className="accordion-arrow">{accordion.drugs ? '▲' : '▼'}</span>
+                        <span className="accordion-arrow">{openAccordion === 'drugs' ? '▲' : '▼'}</span>
                       </button>
-                      {accordion.drugs && (
+                      {openAccordion === 'drugs' && (
                         <div className="accordion-content">
                           <div className="drug-cards-grid">
                             {selected.recommendedDrugs.map((drug, i) => (
                               <div key={i} className="drug-badge-card">
                                 <span className="drug-icon">💊</span>
-                                <span className="drug-name">{drug}</span>
+                                <span className="drug-name">{cleanHtmlText(drug)}</span>
                               </div>
                             ))}
                           </div>
