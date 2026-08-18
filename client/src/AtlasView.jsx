@@ -1,4 +1,4 @@
-import { useEffect, useState, useMemo } from 'react';
+import { useEffect, useState, useMemo, useRef } from 'react';
 import { api, resolveImageUrl } from './api';
 import Model3DViewer from './Model3DViewer';
 import Schema2DViewer from './Schema2DViewer';
@@ -24,6 +24,7 @@ function cleanHtmlText(text) {
     .replace(/<\/p>/gi, '\n\n')
     .replace(/<p>/gi, '')
     .replace(/<[^>]*>/g, '')
+    .replace(/\s+/g, ' ')
     .trim();
 }
 
@@ -39,6 +40,41 @@ export default function AtlasView() {
   const [bodyMap, setBodyMap] = useState(null);
   const [bodyMapView, setBodyMapView] = useState('2d');
   const [error, setError] = useState('');
+
+  const bodyMapWrapRef = useRef(null);
+  const [hoveredBodyOrgan, setHoveredBodyOrgan] = useState(null);
+  const [bodyCursorPos, setBodyCursorPos] = useState(null);
+
+  function handleBodyMapPointerMove(e) {
+    const container = bodyMapWrapRef.current;
+    if (!container || !bodyMap?.labels) return;
+
+    const rect = container.getBoundingClientRect();
+    const xPct = ((e.clientX - rect.left) / rect.width) * 100;
+    const yPct = ((e.clientY - rect.top) / rect.height) * 100;
+
+    setBodyCursorPos({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+
+    let closest = null;
+    let minDist = Infinity;
+
+    (bodyMap.labels || []).forEach((l) => {
+      const dx = l.x - xPct;
+      const dy = l.y - yPct;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      if (dist < minDist && dist < 12) {
+        minDist = dist;
+        closest = l;
+      }
+    });
+
+    setHoveredBodyOrgan(closest);
+  }
+
+  function handleBodyMapPointerLeave() {
+    setHoveredBodyOrgan(null);
+    setBodyCursorPos(null);
+  }
 
   // Single active accordion section: only one open at any time
   const [openAccordion, setOpenAccordion] = useState('definition');
@@ -196,23 +232,61 @@ export default function AtlasView() {
               />
             ) : (
               bodyMap?.imageUrl && (
-                <div className="bodymap-interactive-wrap">
+                <div
+                  ref={bodyMapWrapRef}
+                  className="bodymap-interactive-wrap"
+                  onPointerMove={handleBodyMapPointerMove}
+                  onPointerLeave={handleBodyMapPointerLeave}
+                  onClick={() => {
+                    if (hoveredBodyOrgan) goToOrgan(hoveredBodyOrgan.organ);
+                  }}
+                >
                   <div className="image-with-labels bodymap-image">
                     <img src={resolveImageUrl(bodyMap.imageUrl)} alt="Карта тела" />
-                    {(bodyMap.labels || []).map((l, i) => (
-                      <button
-                        key={i}
-                        type="button"
-                        className={`organ-marker ${activeSystem === l.organ ? 'active' : ''}`}
-                        style={{ left: `${l.x}%`, top: `${l.y}%` }}
-                        onClick={() => goToOrgan(l.organ)}
-                        aria-label={l.organ}
+
+                    {/* Show glowing marker ONLY for the specific organ under cursor or currently active filter */}
+                    {(bodyMap.labels || []).map((l, i) => {
+                      const isHovered = hoveredBodyOrgan && hoveredBodyOrgan.organ === l.organ;
+                      const isActive = activeSystem === l.organ;
+
+                      if (!isHovered && !isActive) return null;
+
+                      return (
+                        <button
+                          key={i}
+                          type="button"
+                          className={`organ-marker ${isActive ? 'active' : ''} ${isHovered ? 'hovered' : ''}`}
+                          style={{ left: `${l.x}%`, top: `${l.y}%` }}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            goToOrgan(l.organ);
+                          }}
+                          aria-label={l.organ}
+                        >
+                          <span className="organ-marker-dot" />
+                          <span className="organ-marker-ring" />
+                          <span className="organ-tooltip">{l.organ}</span>
+                        </button>
+                      );
+                    })}
+
+                    {/* Scanner Live Reticle & Floating HUD Tooltip */}
+                    {hoveredBodyOrgan && bodyCursorPos && (
+                      <div
+                        className="scanner-live-tooltip"
+                        style={{
+                          left: `${bodyCursorPos.x + 12}px`,
+                          top: `${bodyCursorPos.y + 12}px`,
+                        }}
                       >
-                        <span className="organ-marker-dot" />
-                        <span className="organ-marker-ring" />
-                        <span className="organ-tooltip">{l.organ}</span>
-                      </button>
-                    ))}
+                        <span className="scanner-dot" />
+                        <span className="scanner-text">{hoveredBodyOrgan.organ}</span>
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="bodymap-scanner-hint">
+                    <span>💡 Наведите курсор на тело для сканирования и выбора органа</span>
                   </div>
                 </div>
               )

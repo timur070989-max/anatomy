@@ -47,26 +47,24 @@ export default function App() {
           </div>
         </div>
 
-        <nav className="header-nav">
-          <button className={`nav-btn ${tab === 'atlas' ? 'active' : ''}`} onClick={() => setTab('atlas')}>
-            Атлас
-          </button>
-          {user && (
-            <>
-              <button className={`nav-btn ${tab === 'admin' ? 'active' : ''}`} onClick={() => setTab('admin')}>
-                Админ-панель
+        {user && (
+          <nav className="header-nav">
+            <button className={`nav-btn ${tab === 'atlas' ? 'active' : ''}`} onClick={() => setTab('atlas')}>
+              Атлас
+            </button>
+            <button className={`nav-btn ${tab === 'admin' ? 'active' : ''}`} onClick={() => setTab('admin')}>
+              Админ-панель
+            </button>
+            <button className={`nav-btn ${tab === 'bodymap' ? 'active' : ''}`} onClick={() => setTab('bodymap')}>
+              Карта тела
+            </button>
+            {user.role === 'admin' && (
+              <button className={`nav-btn ${tab === 'users' ? 'active' : ''}`} onClick={() => setTab('users')}>
+                Пользователи
               </button>
-              <button className={`nav-btn ${tab === 'bodymap' ? 'active' : ''}`} onClick={() => setTab('bodymap')}>
-                Карта тела
-              </button>
-              {user.role === 'admin' && (
-                <button className={`nav-btn ${tab === 'users' ? 'active' : ''}`} onClick={() => setTab('users')}>
-                  Пользователи
-                </button>
-              )}
-            </>
-          )}
-        </nav>
+            )}
+          </nav>
+        )}
 
         {authChecked && (
           user ? (
