@@ -547,7 +547,15 @@ export default function AtlasView({ lang = 'ru' }) {
                     height={400}
                   />
                 )}
-                {activeLabel && <p className="label-text">Выбрана зона: <strong>{activeLabel.text}</strong></p>}
+                {activeLabel && (
+                  <div className="active-selected-zone-card">
+                    <span className="zone-pulse-dot" />
+                    <span className="zone-label-title">
+                      {lang === 'uz' ? 'Tanlangan anatomik hudud:' : 'Выбранная анатомическая зона:'}
+                    </span>
+                    <strong className="zone-label-name">{activeLabel.text}</strong>
+                  </div>
+                )}
               </div>
 
               {/* Right Column: Accordion Sections */}

@@ -1051,6 +1051,200 @@ body {
   background: var(--wm-blue-accent);
 }
 
+/* 3D Hotspot Pins directly attached to 3D Model */
+.hotspot-3d {
+  background: var(--wm-blue-primary);
+  border: 2px solid #00E5FF;
+  border-radius: 50%;
+  width: 26px;
+  height: 26px;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.74rem;
+  box-shadow: 0 0 14px rgba(0, 229, 255, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
+}
+
+.hotspot-3d:hover,
+.hotspot-3d.active {
+  background: #00E5FF;
+  color: #000000;
+  transform: scale(1.35);
+  box-shadow: 0 0 24px #00E5FF;
+  z-index: 50;
+}
+
+.hotspot-badge {
+  line-height: 1;
+  display: block;
+}
+
+.hotspot-tooltip {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #060e1d;
+  border: 1px solid var(--wm-blue-accent);
+  color: #ffffff;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.85);
+  z-index: 60;
+}
+
+.hotspot-3d:hover .hotspot-tooltip,
+.hotspot-3d.active .hotspot-tooltip {
+  opacity: 1;
+}
+
+/* 3D Structure Chips List below the 3D model */
+.hotspots-panel {
+  background: #060e1d;
+  border: 1px solid var(--wm-border);
+  border-radius: 10px;
+  padding: 10px 12px;
+  width: 100%;
+  margin-top: 8px;
+  box-sizing: border-box;
+}
+
+.hotspots-panel-header {
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--wm-cyan-soft);
+  margin-bottom: 8px;
+}
+
+.hotspots-chips {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+.hotspot-chip {
+  width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  background-color: var(--wm-item-bg) !important;
+  border: 1px solid var(--wm-border) !important;
+  color: #ffffff !important;
+  padding: 8px 12px !important;
+  border-radius: 8px !important;
+  font-size: 0.84rem !important;
+  text-align: left !important;
+  cursor: pointer !important;
+  transition: all 0.15s ease !important;
+  box-sizing: border-box !important;
+}
+
+.hotspot-chip:hover,
+.hotspot-chip.active {
+  background-color: var(--wm-item-hover) !important;
+  border-color: var(--wm-blue-accent) !important;
+  color: #ffffff !important;
+  transform: translateX(3px);
+}
+
+.hotspot-chip .chip-index {
+  background: var(--wm-blue-primary);
+  border: 1px solid var(--wm-blue-accent);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.72rem;
+  padding: 2px 8px;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.hotspot-chip .chip-name {
+  color: #ffffff;
+  font-size: 0.84rem;
+  font-weight: 600;
+  flex: 1;
+}
+
+/* Active Hotspot Floating Banner & Selected Zone Card */
+.active-hotspot-banner {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(6, 14, 29, 0.92);
+  border: 1px solid var(--wm-cyan);
+  padding: 5px 14px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 20;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
+}
+
+.banner-pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--wm-cyan);
+  box-shadow: 0 0 8px var(--wm-cyan);
+}
+
+.banner-title {
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.active-selected-zone-card {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0, 82, 156, 0.25);
+  border: 1px solid var(--wm-blue-accent);
+  border-radius: 8px;
+  padding: 8px 14px;
+  margin-top: 8px;
+  color: #ffffff;
+  font-size: 0.84rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.zone-pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--wm-cyan);
+  box-shadow: 0 0 8px var(--wm-cyan);
+  flex-shrink: 0;
+}
+
+.zone-label-title {
+  color: var(--wm-cyan-soft);
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.zone-label-name {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.88rem;
+}
+
 /* ==========================================================================
    2D Schema Viewer
    ========================================================================== */
