@@ -71,21 +71,32 @@ export default function AtlasView({ lang = 'ru' }) {
   ];
 
   const bodyMapWrapRef = useRef(null);
+  const bodyImgRef = useRef(null);
   const [hoveredBodyOrgan, setHoveredBodyOrgan] = useState(null);
   const [bodyCursorPos, setBodyCursorPos] = useState(null);
   const [containerSize, setContainerSize] = useState({ width: 0, height: 0 });
 
   function handleBodyMapPointerMove(e) {
     const container = bodyMapWrapRef.current;
+    const imgEl = bodyImgRef.current;
     if (!container || !bodyMap?.labels) return;
 
-    const rect = container.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    const xPct = (x / rect.width) * 100;
-    const yPct = (y / rect.height) * 100;
+    const wrapRect = container.getBoundingClientRect();
+    const x = e.clientX - wrapRect.left;
+    const y = e.clientY - wrapRect.top;
 
-    setContainerSize({ width: rect.width, height: rect.height });
+    let xPct = (x / wrapRect.width) * 100;
+    let yPct = (y / wrapRect.height) * 100;
+
+    if (imgEl) {
+      const imgRect = imgEl.getBoundingClientRect();
+      if (imgRect.width > 0 && imgRect.height > 0) {
+        xPct = ((e.clientX - imgRect.left) / imgRect.width) * 100;
+        yPct = ((e.clientY - imgRect.top) / imgRect.height) * 100;
+      }
+    }
+
+    setContainerSize({ width: wrapRect.width, height: wrapRect.height });
     setBodyCursorPos({ x, y, xPct, yPct });
 
     let closest = null;
@@ -301,15 +312,28 @@ export default function AtlasView({ lang = 'ru' }) {
                   <div className="image-with-labels bodymap-image">
                     {/* Layer 1: Base Body Silhouette (clean, without internal organs or labels) */}
                     <img
+                      ref={bodyImgRef}
                       src={resolveImageUrl(bodyMap.imageUrl)}
                       alt="Карта тела"
                       className="bodymap-base-img"
                     />
 
-                    {/* Layer 2: Interactive Square Bio-Scanner Lens (Only reveals organs inside this square) */}
-                    {bodyCursorPos && containerSize.width > 0 && (
+                    {/* Layer 2: Internal Organs Layer (Visible ONLY inside the scanner box via clip-path) */}
+                    {bodyCursorPos && (
+                      <img
+                        src={resolveImageUrl(bodyMap.organsUrl || bodyMap.imageUrl)}
+                        alt="Анатомический срез"
+                        className="bodymap-organs-img"
+                        style={{
+                          clipPath: `inset(${bodyCursorPos.y - 68}px calc(100% - ${bodyCursorPos.x + 68}px) calc(100% - ${bodyCursorPos.y + 68}px) ${bodyCursorPos.x - 68}px round 8px)`,
+                        }}
+                      />
+                    )}
+
+                    {/* Layer 3: High-Tech Viewfinder Square with Laser & Inside HUD */}
+                    {bodyCursorPos && (
                       <div
-                        className={`scanner-lens-square ${hoveredBodyOrgan ? 'organ-detected' : ''}`}
+                        className={`scanner-viewfinder-square ${hoveredBodyOrgan ? 'organ-detected' : ''}`}
                         style={{
                           left: `${bodyCursorPos.x - 68}px`,
                           top: `${bodyCursorPos.y - 68}px`,
@@ -317,39 +341,21 @@ export default function AtlasView({ lang = 'ru' }) {
                           height: '136px',
                         }}
                       >
-                        {/* Internal Organ Anatomy Layer aligned to the lens offset */}
-                        <div
-                          className="scanner-lens-content"
-                          style={{
-                            width: `${containerSize.width}px`,
-                            height: `${containerSize.height}px`,
-                            transform: `translate(${- (bodyCursorPos.x - 68)}px, ${- (bodyCursorPos.y - 68)}px)`,
-                          }}
-                        >
-                          <img
-                            src={resolveImageUrl(bodyMap.organsUrl || bodyMap.imageUrl)}
-                            alt="Анатомический скан"
-                            className="scanner-organ-layer-img"
-                          />
+                        {/* Glowing organ hotspot inside the scanner viewfinder */}
+                        {hoveredBodyOrgan && (
+                          <div
+                            className="scanner-organ-hotspot-glow"
+                            style={{
+                              left: `${(hoveredBodyOrgan.x / 100) * containerSize.width - (bodyCursorPos.x - 68)}px`,
+                              top: `${(hoveredBodyOrgan.y / 100) * containerSize.height - (bodyCursorPos.y - 68)}px`,
+                            }}
+                          >
+                            <span className="organ-glow-pulse" />
+                            <span className="organ-glow-core" />
+                          </div>
+                        )}
 
-                          {/* Glowing organ hotspot inside the scanner lens */}
-                          {(bodyMap.labels || []).map((l, i) => {
-                            const isHovered = hoveredBodyOrgan && hoveredBodyOrgan.organ === l.organ;
-                            if (!isHovered) return null;
-                            return (
-                              <div
-                                key={i}
-                                className="scanner-organ-hotspot-glow"
-                                style={{ left: `${l.x}%`, top: `${l.y}%` }}
-                              >
-                                <span className="organ-glow-pulse" />
-                                <span className="organ-glow-core" />
-                              </div>
-                            );
-                          })}
-                        </div>
-
-                        {/* Scanner Visual Overlay: Laser line, grid, corner brackets */}
+                        {/* Scanner Laser Sweep & Corner Brackets */}
                         <div className="scanner-laser-sweep" />
                         <div className="scanner-bracket tl" />
                         <div className="scanner-bracket tr" />
@@ -357,7 +363,7 @@ export default function AtlasView({ lang = 'ru' }) {
                         <div className="scanner-bracket br" />
                         <div className="scanner-crosshair" />
 
-                        {/* Live Organ Name HUD placed directly INSIDE the bottom of the scanner box */}
+                        {/* Live Organ Name HUD placed strictly INSIDE the scanner box */}
                         {hoveredBodyOrgan && (
                           <div className="scanner-lens-hud-tag">
                             <span className="hud-pulse-dot" />

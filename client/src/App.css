@@ -426,21 +426,39 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
-.bodymap-base-img {
-  max-height: 500px;
+.bodymap-base-img,
+.bodymap-organs-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-height: 480px;
+  max-width: 92%;
   width: auto;
+  height: auto;
   object-fit: contain;
   display: block;
   user-select: none;
   pointer-events: none;
-  opacity: 0.85;
+}
+
+.bodymap-base-img {
+  z-index: 10;
+  opacity: 0.9;
   filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.7));
 }
 
-/* Square Bio-Scanner Lens */
-.scanner-lens-square {
+.bodymap-organs-img {
+  z-index: 20;
+  filter: drop-shadow(0 0 14px rgba(0, 229, 255, 0.4));
+  transition: none;
+}
+
+/* High-Tech Square Viewfinder */
+.scanner-viewfinder-square {
   position: absolute;
   border: 2px solid var(--wm-cyan);
   border-radius: 8px;
@@ -448,31 +466,12 @@ body {
   pointer-events: none;
   z-index: 40;
   box-shadow: 0 0 25px rgba(0, 229, 255, 0.45), inset 0 0 20px rgba(0, 229, 255, 0.25);
-  background: rgba(4, 12, 28, 0.82);
   transition: border-color 0.15s, box-shadow 0.15s;
 }
 
-.scanner-lens-square.organ-detected {
+.scanner-viewfinder-square.organ-detected {
   border-color: #38bdf8;
   box-shadow: 0 0 30px rgba(56, 189, 248, 0.7), inset 0 0 25px rgba(56, 189, 248, 0.35);
-}
-
-.scanner-lens-content {
-  position: absolute;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.scanner-organ-layer-img {
-  max-height: 500px;
-  width: auto;
-  object-fit: contain;
-  display: block;
-  filter: brightness(1.25) contrast(1.2) saturate(1.8) drop-shadow(0 0 10px rgba(0, 229, 255, 0.5));
 }
 
 .scanner-organ-hotspot-glow {
