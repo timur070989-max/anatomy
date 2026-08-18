@@ -20,6 +20,52 @@ export default function Model3DViewer({ src, hotspots = [], editable = false, on
     function handleLoad() {
       setLoading(false);
       setLoadError(false);
+
+      // Enhance organ PBR colors matching World Medicine body map
+      try {
+        const model = el.model;
+        if (model && model.materials && model.materials.length > 0) {
+          const srcLower = (src || '').toLowerCase();
+          let color = null;
+          let roughness = 0.35;
+          let metallic = 0.04;
+
+          if (srcLower.includes('liver')) {
+            color = [0.62, 0.22, 0.18, 1.0]; // Тёмно-бордовая печень
+            roughness = 0.35;
+          } else if (srcLower.includes('gallbladder')) {
+            color = [0.18, 0.50, 0.22, 1.0]; // Изумрудно-зелёный жёлчный пузырь
+            roughness = 0.28;
+          } else if (srcLower.includes('stomach')) {
+            color = [0.82, 0.48, 0.44, 1.0]; // Телесно-розовый желудок
+            roughness = 0.40;
+          } else if (srcLower.includes('pancreas')) {
+            color = [0.85, 0.66, 0.36, 1.0]; // Охристо-золотистая поджелудочная
+            roughness = 0.52;
+          } else if (srcLower.includes('kidney')) {
+            color = [0.54, 0.16, 0.14, 1.0]; // Тёмно-красные почки
+            roughness = 0.34;
+          } else if (srcLower.includes('bladder')) {
+            color = [0.88, 0.52, 0.40, 1.0]; // Янтарно-розовый мочевой пузырь
+            roughness = 0.38;
+          } else if (srcLower.includes('brain')) {
+            color = [0.82, 0.65, 0.62, 1.0]; // Серо-розовый мозг
+            roughness = 0.45;
+          }
+
+          if (color) {
+            model.materials.forEach((mat) => {
+              if (mat.pbrMetallicRoughness) {
+                mat.pbrMetallicRoughness.setBaseColorFactor(color);
+                mat.pbrMetallicRoughness.setRoughnessFactor(roughness);
+                mat.pbrMetallicRoughness.setMetallicFactor(metallic);
+              }
+            });
+          }
+        }
+      } catch (err) {
+        console.warn('Material coloring info:', err);
+      }
     }
 
     function handleError(e) {
