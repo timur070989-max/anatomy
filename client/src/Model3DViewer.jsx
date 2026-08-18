@@ -36,26 +36,45 @@ export default function Model3DViewer({
       if (!model || !model.materials || model.materials.length === 0) return;
 
       const srcLower = (src || '').toLowerCase();
-      let defaultColor = [0.75, 0.45, 0.42, 1.0];
+      let defaultColor = [0.78, 0.45, 0.42, 1.0];
       let defaultRoughness = 0.38;
 
-      if (srcLower.includes('liver')) {
-        defaultColor = [0.62, 0.22, 0.18, 1.0]; // Тёмно-бордовая печень
-      } else if (srcLower.includes('gallbladder')) {
-        defaultColor = [0.18, 0.50, 0.22, 1.0]; // Изумрудно-зелёный жёлчный пузырь
+      if (srcLower.includes('heart')) {
+        defaultColor = [0.78, 0.14, 0.16, 1.0]; // Myocardium Crimson Heart
+        defaultRoughness = 0.32;
+      } else if (srcLower.includes('liver')) {
+        defaultColor = [0.62, 0.22, 0.18, 1.0]; // Deep Liver Maroon
+        defaultRoughness = 0.35;
       } else if (srcLower.includes('stomach')) {
-        defaultColor = [0.82, 0.48, 0.44, 1.0]; // Телесно-розовый желудок
-      } else if (srcLower.includes('pancreas')) {
-        defaultColor = [0.85, 0.66, 0.36, 1.0]; // Охристо-золотистая поджелудочная
+        defaultColor = [0.82, 0.48, 0.44, 1.0]; // Gastric Mucosa Pink
+        defaultRoughness = 0.38;
       } else if (srcLower.includes('kidney')) {
-        defaultColor = [0.54, 0.16, 0.14, 1.0]; // Тёмно-красные почки
+        defaultColor = [0.54, 0.16, 0.14, 1.0]; // Renal Dark Bean Red
+        defaultRoughness = 0.34;
+      } else if (srcLower.includes('pancreas')) {
+        defaultColor = [0.85, 0.66, 0.36, 1.0]; // Golden Ochre Pancreas
+        defaultRoughness = 0.48;
+      } else if (srcLower.includes('lung') || srcLower.includes('trachea')) {
+        defaultColor = [0.88, 0.52, 0.56, 1.0]; // Pulmonary Pink Lungs
+        defaultRoughness = 0.42;
+      } else if (srcLower.includes('skeleton')) {
+        defaultColor = [0.94, 0.92, 0.86, 1.0]; // Bone Ivory Skeleton
+        defaultRoughness = 0.48;
+      } else if (srcLower.includes('ear')) {
+        defaultColor = [0.88, 0.72, 0.65, 1.0]; // Auricular Ear Flesh
+        defaultRoughness = 0.40;
       } else if (srcLower.includes('bladder')) {
-        defaultColor = [0.88, 0.52, 0.40, 1.0]; // Янтарно-розовый мочевой пузырь
+        defaultColor = [0.88, 0.52, 0.40, 1.0]; // Bladder Amber-Pink
+        defaultRoughness = 0.38;
+      } else if (srcLower.includes('intestine')) {
+        defaultColor = [0.82, 0.58, 0.46, 1.0]; // Intestinal Warm Flesh
+        defaultRoughness = 0.42;
       } else if (srcLower.includes('brain')) {
-        defaultColor = [0.80, 0.50, 0.46, 1.0]; // Кора мозга
+        defaultColor = [0.80, 0.50, 0.46, 1.0]; // Cerebral Cortex
+        defaultRoughness = 0.45;
       }
 
-      const hasMultiMaterials = model.materials.length > 1;
+      const hasMultiMaterials = model.materials.length > 2;
 
       model.materials.forEach((mat) => {
         const name = (mat.name || '').toLowerCase();
@@ -66,7 +85,7 @@ export default function Model3DViewer({
 
         if (mat.pbrMetallicRoughness) {
           if (layer === 'vessels') {
-            // Режим «ТОЛЬКО СОСУДЫ»: артерии (красные) и вены (синие)
+            // Сосудистый профиль: артерии и вены
             if (isArtery) {
               if (mat.setAlphaMode) mat.setAlphaMode('OPAQUE');
               mat.pbrMetallicRoughness.setBaseColorFactor([0.96, 0.08, 0.16, 1.0]);
@@ -77,49 +96,49 @@ export default function Model3DViewer({
               mat.pbrMetallicRoughness.setBaseColorFactor([0.08, 0.35, 0.96, 1.0]);
               mat.pbrMetallicRoughness.setRoughnessFactor(0.2);
               mat.pbrMetallicRoughness.setMetallicFactor(0.25);
+            } else if (hasMultiMaterials) {
+              if (mat.setAlphaMode) mat.setAlphaMode('BLEND');
+              mat.pbrMetallicRoughness.setBaseColorFactor([defaultColor[0], defaultColor[1], defaultColor[2], 0.12]);
             } else {
-              if (hasMultiMaterials) {
-                if (mat.setAlphaMode) mat.setAlphaMode('BLEND');
-                mat.pbrMetallicRoughness.setBaseColorFactor([0, 0, 0, 0.0]);
-              } else {
-                if (mat.setAlphaMode) mat.setAlphaMode('OPAQUE');
-                mat.pbrMetallicRoughness.setBaseColorFactor([0.92, 0.12, 0.18, 1.0]);
-              }
+              // Для монолитных органов: ангиографический сосудистый режим
+              if (mat.setAlphaMode) mat.setAlphaMode('OPAQUE');
+              mat.pbrMetallicRoughness.setBaseColorFactor([0.92, 0.14, 0.18, 1.0]);
+              mat.pbrMetallicRoughness.setRoughnessFactor(0.25);
             }
           } else if (layer === 'nerves') {
-            // Режим «ТОЛЬКО НЕРВЫ»: нервы и стволы (жёлтые)
+            // Нервный профиль: нервные волокна и стволы
             if (isNerve) {
               if (mat.setAlphaMode) mat.setAlphaMode('OPAQUE');
               mat.pbrMetallicRoughness.setBaseColorFactor([1.0, 0.88, 0.05, 1.0]);
               mat.pbrMetallicRoughness.setRoughnessFactor(0.25);
               mat.pbrMetallicRoughness.setMetallicFactor(0.1);
+            } else if (hasMultiMaterials) {
+              if (mat.setAlphaMode) mat.setAlphaMode('BLEND');
+              mat.pbrMetallicRoughness.setBaseColorFactor([defaultColor[0], defaultColor[1], defaultColor[2], 0.12]);
             } else {
-              if (hasMultiMaterials) {
-                if (mat.setAlphaMode) mat.setAlphaMode('BLEND');
-                mat.pbrMetallicRoughness.setBaseColorFactor([0, 0, 0, 0.0]);
-              } else {
-                if (mat.setAlphaMode) mat.setAlphaMode('OPAQUE');
-                mat.pbrMetallicRoughness.setBaseColorFactor([0.95, 0.85, 0.15, 1.0]);
-              }
+              // Для монолитных органов: нейро-проекционный режим
+              if (mat.setAlphaMode) mat.setAlphaMode('OPAQUE');
+              mat.pbrMetallicRoughness.setBaseColorFactor([0.98, 0.85, 0.12, 1.0]);
+              mat.pbrMetallicRoughness.setRoughnessFactor(0.30);
             }
           } else if (layer === 'ducts') {
-            // Режим «ТОЛЬКО ПРОТОКИ»: протоки, ликворные пути и желудочки (изумрудные)
+            // Протоковый профиль: каналы, протоки и ликвор
             if (isDuct) {
               if (mat.setAlphaMode) mat.setAlphaMode('OPAQUE');
               mat.pbrMetallicRoughness.setBaseColorFactor([0.12, 0.85, 0.35, 1.0]);
               mat.pbrMetallicRoughness.setRoughnessFactor(0.25);
               mat.pbrMetallicRoughness.setMetallicFactor(0.15);
+            } else if (hasMultiMaterials) {
+              if (mat.setAlphaMode) mat.setAlphaMode('BLEND');
+              mat.pbrMetallicRoughness.setBaseColorFactor([defaultColor[0], defaultColor[1], defaultColor[2], 0.12]);
             } else {
-              if (hasMultiMaterials) {
-                if (mat.setAlphaMode) mat.setAlphaMode('BLEND');
-                mat.pbrMetallicRoughness.setBaseColorFactor([0, 0, 0, 0.0]);
-              } else {
-                if (mat.setAlphaMode) mat.setAlphaMode('OPAQUE');
-                mat.pbrMetallicRoughness.setBaseColorFactor([0.15, 0.80, 0.35, 1.0]);
-              }
+              // Для монолитных органов: билиарно-протоковый режим
+              if (mat.setAlphaMode) mat.setAlphaMode('OPAQUE');
+              mat.pbrMetallicRoughness.setBaseColorFactor([0.15, 0.80, 0.35, 1.0]);
+              mat.pbrMetallicRoughness.setRoughnessFactor(0.28);
             }
           } else if (isXray) {
-            // Режим «РЕНТГЕН / ПРОЗРАЧНОСТЬ»: полупрозрачные стенки
+            // Режим «РЕНТГЕН»: стекловидная полупрозрачность
             if (isArtery) {
               if (mat.setAlphaMode) mat.setAlphaMode('OPAQUE');
               mat.pbrMetallicRoughness.setBaseColorFactor([0.96, 0.08, 0.16, 1.0]);
@@ -134,11 +153,11 @@ export default function Model3DViewer({
               mat.pbrMetallicRoughness.setBaseColorFactor([0.12, 0.85, 0.35, 1.0]);
             } else {
               if (mat.setAlphaMode) mat.setAlphaMode('BLEND');
-              mat.pbrMetallicRoughness.setBaseColorFactor([defaultColor[0], defaultColor[1], defaultColor[2], 0.22]);
+              mat.pbrMetallicRoughness.setBaseColorFactor([defaultColor[0], defaultColor[1], defaultColor[2], 0.30]);
               mat.pbrMetallicRoughness.setRoughnessFactor(0.15);
             }
           } else {
-            // Режим «ПОЛНЫЙ ОБЪЁМ»: все структуры плотные и видны
+            // Режим «ПОЛНЫЙ ОБЪЁМ»: полновесный анатомический орган
             if (mat.setAlphaMode) mat.setAlphaMode('OPAQUE');
             if (isArtery) {
               mat.pbrMetallicRoughness.setBaseColorFactor([0.92, 0.12, 0.18, 1.0]);
