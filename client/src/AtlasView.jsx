@@ -1,6 +1,7 @@
 import { useEffect, useState, useMemo } from 'react';
 import { api, resolveImageUrl } from './api';
 import Model3DViewer from './Model3DViewer';
+import Schema2DViewer from './Schema2DViewer';
 
 const PROFILES = [
   { id: 'male', label: 'Мужчина' },
@@ -406,21 +407,14 @@ export default function AtlasView() {
                     </div>
                   </div>
                 ) : (
-                  selected.imageUrl ? (
-                    <div className="modal-image-preview">
-                      <img src={resolveImageUrl(selected.imageUrl)} alt={selected.title} />
-                    </div>
-                  ) : selected.modelUrl ? (
-                    <Model3DViewer
-                      src={resolveImageUrl(selected.modelUrl)}
-                      hotspots={selected.labels3d || []}
-                      height={400}
-                    />
-                  ) : (
-                    <div className="modal-image-preview">
-                      <p>Изображение подготавливается</p>
-                    </div>
-                  )
+                  <Schema2DViewer
+                    src={resolveImageUrl(selected.imageUrl)}
+                    title={selected.title}
+                    labels={selected.labels || []}
+                    activeLabel={activeLabel}
+                    onSelectLabel={(label) => setActiveLabel(label)}
+                    height={400}
+                  />
                 )}
                 {activeLabel && <p className="label-text">Выбрана зона: <strong>{activeLabel.text}</strong></p>}
               </div>
