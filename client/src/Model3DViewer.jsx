@@ -1,17 +1,96 @@
 import { useEffect, useRef, useState } from 'react';
 
-// Google <model-viewer> web component wrapper with 3D anatomical hotspots and structure navigator
-export default function Model3DViewer({ src, hotspots = [], editable = false, onSurfaceClick, onHotspotClick, height = 380 }) {
+// Google <model-viewer> web component wrapper with full-volume anatomical controls (walls, vessels, nerves, X-Ray)
+export default function Model3DViewer({ src, hotspots = [], editable = false, onSurfaceClick, onHotspotClick, height = 400 }) {
   const ref = useRef(null);
   const [loading, setLoading] = useState(true);
   const [loadError, setLoadError] = useState(false);
   const [activeHotspot, setActiveHotspot] = useState(null);
+
+  // Full-volume view modes
+  const [xrayMode, setXrayMode] = useState(false);
+  const [autoRotate, setAutoRotate] = useState(true);
+  const [highlightLayer, setHighlightLayer] = useState('all'); // 'all' | 'vessels' | 'nerves' | 'walls'
 
   useEffect(() => {
     setLoading(true);
     setLoadError(false);
     setActiveHotspot(null);
   }, [src]);
+
+  // Apply colors and transparency based on mode and active layer
+  function applyAnatomicalMaterials(el, isXray, layer) {
+    if (!el) return;
+    try {
+      const model = el.model;
+      if (!model || !model.materials || model.materials.length === 0) return;
+
+      const srcLower = (src || '').toLowerCase();
+      let defaultColor = [0.75, 0.45, 0.42, 1.0];
+      let defaultRoughness = 0.38;
+
+      if (srcLower.includes('liver')) {
+        defaultColor = [0.62, 0.22, 0.18, 1.0]; // Тёмно-бордовая печень
+      } else if (srcLower.includes('gallbladder')) {
+        defaultColor = [0.18, 0.50, 0.22, 1.0]; // Изумрудно-зелёный жёлчный пузырь
+      } else if (srcLower.includes('stomach')) {
+        defaultColor = [0.82, 0.48, 0.44, 1.0]; // Телесно-розовый желудок
+      } else if (srcLower.includes('pancreas')) {
+        defaultColor = [0.85, 0.66, 0.36, 1.0]; // Охристо-золотистая поджелудочная
+      } else if (srcLower.includes('kidney')) {
+        defaultColor = [0.54, 0.16, 0.14, 1.0]; // Тёмно-красные почки
+      } else if (srcLower.includes('bladder')) {
+        defaultColor = [0.88, 0.52, 0.40, 1.0]; // Янтарно-розовый мочевой пузырь
+      } else if (srcLower.includes('brain')) {
+        defaultColor = [0.80, 0.50, 0.46, 1.0]; // Кора мозга
+      }
+
+      model.materials.forEach((mat) => {
+        const name = (mat.name || '').toLowerCase();
+        const isArtery = name.includes('artery') || name.includes('carotid') || name.includes('basilar') || name.includes('pericallosal');
+        const isVein = name.includes('sinus') || name.includes('vein');
+        const isNerve = name.includes('nerve') || name.includes('fiber') || name.includes('tract') || name.includes('nucleus');
+        const isWall = !isArtery && !isVein && !isNerve;
+
+        if (mat.pbrMetallicRoughness) {
+          if (isArtery) {
+            // Артерии: ярко-красные
+            const alpha = layer === 'nerves' ? 0.2 : 1.0;
+            mat.pbrMetallicRoughness.setBaseColorFactor([0.95, 0.08, 0.15, alpha]);
+            mat.pbrMetallicRoughness.setRoughnessFactor(0.2);
+            mat.pbrMetallicRoughness.setMetallicFactor(0.2);
+          } else if (isVein) {
+            // Вены: насыщенно-синие
+            const alpha = layer === 'nerves' ? 0.2 : 1.0;
+            mat.pbrMetallicRoughness.setBaseColorFactor([0.08, 0.32, 0.95, alpha]);
+            mat.pbrMetallicRoughness.setRoughnessFactor(0.2);
+            mat.pbrMetallicRoughness.setMetallicFactor(0.2);
+          } else if (isNerve) {
+            // Нервы: сияюще-жёлтые
+            const alpha = layer === 'vessels' ? 0.2 : 1.0;
+            mat.pbrMetallicRoughness.setBaseColorFactor([1.0, 0.85, 0.05, alpha]);
+            mat.pbrMetallicRoughness.setRoughnessFactor(0.25);
+            mat.pbrMetallicRoughness.setMetallicFactor(0.05);
+          } else if (isWall) {
+            // Стенки и паренхима
+            if (isXray || layer === 'vessels' || layer === 'nerves') {
+              // Полупрозрачный режим для просмотра внутренних сосудов и нервов
+              mat.pbrMetallicRoughness.setBaseColorFactor([defaultColor[0], defaultColor[1], defaultColor[2], 0.28]);
+              mat.pbrMetallicRoughness.setRoughnessFactor(0.15);
+              mat.pbrMetallicRoughness.setMetallicFactor(0.05);
+            } else {
+              // Полный плотный объемный режим
+              mat.pbrMetallicRoughness.setBaseColorFactor(defaultColor);
+              mat.pbrMetallicRoughness.setRoughnessFactor(defaultRoughness);
+              mat.pbrMetallicRoughness.setMetallicFactor(0.04);
+            }
+          }
+        }
+      });
+    } catch (err) {
+      console.warn('Material adjustment info:', err);
+    }
+  }
 
   useEffect(() => {
     const el = ref.current;
@@ -20,52 +99,7 @@ export default function Model3DViewer({ src, hotspots = [], editable = false, on
     function handleLoad() {
       setLoading(false);
       setLoadError(false);
-
-      // Enhance organ PBR colors matching World Medicine body map
-      try {
-        const model = el.model;
-        if (model && model.materials && model.materials.length > 0) {
-          const srcLower = (src || '').toLowerCase();
-          let color = null;
-          let roughness = 0.35;
-          let metallic = 0.04;
-
-          if (srcLower.includes('liver')) {
-            color = [0.62, 0.22, 0.18, 1.0]; // Тёмно-бордовая печень
-            roughness = 0.35;
-          } else if (srcLower.includes('gallbladder')) {
-            color = [0.18, 0.50, 0.22, 1.0]; // Изумрудно-зелёный жёлчный пузырь
-            roughness = 0.28;
-          } else if (srcLower.includes('stomach')) {
-            color = [0.82, 0.48, 0.44, 1.0]; // Телесно-розовый желудок
-            roughness = 0.40;
-          } else if (srcLower.includes('pancreas')) {
-            color = [0.85, 0.66, 0.36, 1.0]; // Охристо-золотистая поджелудочная
-            roughness = 0.52;
-          } else if (srcLower.includes('kidney')) {
-            color = [0.54, 0.16, 0.14, 1.0]; // Тёмно-красные почки
-            roughness = 0.34;
-          } else if (srcLower.includes('bladder')) {
-            color = [0.88, 0.52, 0.40, 1.0]; // Янтарно-розовый мочевой пузырь
-            roughness = 0.38;
-          } else if (srcLower.includes('brain')) {
-            color = [0.82, 0.65, 0.62, 1.0]; // Серо-розовый мозг
-            roughness = 0.45;
-          }
-
-          if (color) {
-            model.materials.forEach((mat) => {
-              if (mat.pbrMetallicRoughness) {
-                mat.pbrMetallicRoughness.setBaseColorFactor(color);
-                mat.pbrMetallicRoughness.setRoughnessFactor(roughness);
-                mat.pbrMetallicRoughness.setMetallicFactor(metallic);
-              }
-            });
-          }
-        }
-      } catch (err) {
-        console.warn('Material coloring info:', err);
-      }
+      applyAnatomicalMaterials(el, xrayMode, highlightLayer);
     }
 
     function handleError(e) {
@@ -104,9 +138,26 @@ export default function Model3DViewer({ src, hotspots = [], editable = false, on
     };
   }, [src, editable, onSurfaceClick]);
 
+  // Update materials when X-Ray or layer selection changes
+  useEffect(() => {
+    const el = ref.current;
+    if (el && !loading) {
+      applyAnatomicalMaterials(el, xrayMode, highlightLayer);
+    }
+  }, [xrayMode, highlightLayer, loading]);
+
   function handleSelectHotspot(h) {
     setActiveHotspot(h);
     onHotspotClick?.(h);
+  }
+
+  function resetCamera() {
+    const el = ref.current;
+    if (el) {
+      el.cameraOrbit = '0deg 75deg 105%';
+      el.cameraTarget = 'auto auto auto';
+      el.fieldOfView = 'auto';
+    }
   }
 
   if (!src) {
@@ -119,6 +170,63 @@ export default function Model3DViewer({ src, hotspots = [], editable = false, on
 
   return (
     <div className="model-3d-container">
+      {/* 3D Anatomical Layer Toolbar */}
+      <div className="model-3d-toolbar">
+        <div className="toolbar-left">
+          <span className="toolbar-label">Анатомический слой:</span>
+          <button
+            type="button"
+            className={`layer-btn ${highlightLayer === 'all' && !xrayMode ? 'active' : ''}`}
+            onClick={() => { setHighlightLayer('all'); setXrayMode(false); }}
+          >
+            🫀 Полный объём
+          </button>
+          <button
+            type="button"
+            className={`layer-btn ${highlightLayer === 'vessels' ? 'active' : ''}`}
+            onClick={() => { setHighlightLayer('vessels'); setXrayMode(true); }}
+            title="Подсветить артерии (красные) и вены (синие)"
+          >
+            🔴 Сосуды (Арт./Вены)
+          </button>
+          <button
+            type="button"
+            className={`layer-btn ${highlightLayer === 'nerves' ? 'active' : ''}`}
+            onClick={() => { setHighlightLayer('nerves'); setXrayMode(true); }}
+            title="Подсветить нервные волокна (жёлтые)"
+          >
+            🟡 Нервы
+          </button>
+          <button
+            type="button"
+            className={`layer-btn ${xrayMode && highlightLayer === 'all' ? 'active' : ''}`}
+            onClick={() => setXrayMode(!xrayMode)}
+            title="Полупрозрачность стенок для обзора внутренних структур"
+          >
+            🩻 Рентген / Прозрачность
+          </button>
+        </div>
+
+        <div className="toolbar-right">
+          <button
+            type="button"
+            className={`tool-icon-btn ${autoRotate ? 'active' : ''}`}
+            onClick={() => setAutoRotate(!autoRotate)}
+            title={autoRotate ? 'Остановить вращение' : 'Включить авто-вращение'}
+          >
+            🔄
+          </button>
+          <button
+            type="button"
+            className="tool-icon-btn"
+            onClick={resetCamera}
+            title="Сбросить камеру"
+          >
+            🎯
+          </button>
+        </div>
+      </div>
+
       <div
         className="model-3d-viewport"
         style={{
@@ -129,13 +237,13 @@ export default function Model3DViewer({ src, hotspots = [], editable = false, on
           overflow: 'hidden',
           background: 'radial-gradient(circle at 50% 40%, #1e293b 0%, #0f172a 65%, #020617 100%)',
           boxShadow: 'inset 0 0 40px rgba(0, 0, 0, 0.6), 0 4px 20px rgba(0, 0, 0, 0.3)',
-          border: '1px solid rgba(56, 189, 248, 0.2)',
+          border: '1px solid rgba(56, 189, 248, 0.25)',
         }}
       >
         {loading && (
           <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', color: '#38bdf8', zIndex: 10, background: 'rgba(15, 23, 42, 0.85)' }}>
             <div style={{ width: '32px', height: '32px', border: '3px solid #0284c7', borderTopColor: 'transparent', borderRadius: '50%', animation: 'spin 0.8s linear infinite', marginBottom: '10px' }} />
-            <span style={{ fontSize: '0.85rem' }}>Загрузка 3D анатомической модели...</span>
+            <span style={{ fontSize: '0.85rem' }}>Загрузка 3D анатомического макета...</span>
           </div>
         )}
 
@@ -150,11 +258,11 @@ export default function Model3DViewer({ src, hotspots = [], editable = false, on
           src={src}
           camera-controls
           touch-action="pan-y"
-          auto-rotate={editable ? undefined : ''}
-          rotation-per-second="20deg"
-          shadow-intensity="1.5"
-          shadow-softness="0.8"
-          exposure="1.1"
+          auto-rotate={autoRotate && !editable ? '' : undefined}
+          rotation-per-second="18deg"
+          shadow-intensity="1.6"
+          shadow-softness="0.75"
+          exposure="1.15"
           loading="eager"
           reveal="auto"
           style={{ width: '100%', height: '100%', outline: 'none' }}
@@ -184,8 +292,16 @@ export default function Model3DViewer({ src, hotspots = [], editable = false, on
           </div>
         )}
 
+        {/* Anatomical Color Legend Overlay */}
+        <div className="anatomical-legend">
+          <span className="legend-item"><span className="legend-dot red" /> Артерии</span>
+          <span className="legend-item"><span className="legend-dot blue" /> Вены / Синусы</span>
+          <span className="legend-item"><span className="legend-dot yellow" /> Нервы</span>
+          <span className="legend-item"><span className="legend-dot green" /> Протоки</span>
+        </div>
+
         <div className="viewport-hint">
-          <span>Вращение: зажмите ЛКМ • Масштаб: колесо мыши</span>
+          <span>Вращение: зажмите ЛКМ • Зум: колесо мыши</span>
         </div>
       </div>
 

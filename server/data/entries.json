@@ -18,8 +18,54 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/0bc0e91d07e7.webp",
     "labels": [],
-    "modelUrl": null,
-    "labels3d": [],
+    "modelUrl": "/uploads/organ-brain.glb",
+    "labels3d": [
+      {
+        "x": 0,
+        "y": 0.05,
+        "z": 0.05,
+        "nx": 0,
+        "ny": 0,
+        "nz": 1,
+        "text": "Кора больших полушарий (Cortex cerebri)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Виллизиев круг и сосудистая сеть (Circulus arteriosus)"
+      },
+      {
+        "x": -0.03,
+        "y": -0.06,
+        "z": -0.02,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Базилярная артерия и ствол (Arteria basilaris)"
+      },
+      {
+        "x": 0,
+        "y": 0.08,
+        "z": -0.01,
+        "nx": 0,
+        "ny": 1,
+        "nz": 0,
+        "text": "Верхний сагиттальный синус (Sinus sagittalis superior)"
+      },
+      {
+        "x": 0,
+        "y": -0.05,
+        "z": -0.05,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Мозжечок и проводящие пути (Cerebellum)"
+      }
+    ],
     "videoUrl": null,
     "createdAt": "2026-08-18T12:10:55.646Z",
     "updatedAt": "2026-08-18T12:10:55.646Z"
@@ -42,8 +88,54 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/0bc0e91d07e7.webp",
     "labels": [],
-    "modelUrl": null,
-    "labels3d": [],
+    "modelUrl": "/uploads/organ-brain.glb",
+    "labels3d": [
+      {
+        "x": 0,
+        "y": 0.05,
+        "z": 0.05,
+        "nx": 0,
+        "ny": 0,
+        "nz": 1,
+        "text": "Кора больших полушарий (Cortex cerebri)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Виллизиев круг и сосудистая сеть (Circulus arteriosus)"
+      },
+      {
+        "x": -0.03,
+        "y": -0.06,
+        "z": -0.02,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Базилярная артерия и ствол (Arteria basilaris)"
+      },
+      {
+        "x": 0,
+        "y": 0.08,
+        "z": -0.01,
+        "nx": 0,
+        "ny": 1,
+        "nz": 0,
+        "text": "Верхний сагиттальный синус (Sinus sagittalis superior)"
+      },
+      {
+        "x": 0,
+        "y": -0.05,
+        "z": -0.05,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Мозжечок и проводящие пути (Cerebellum)"
+      }
+    ],
     "videoUrl": null,
     "createdAt": "2026-08-18T12:10:55.646Z",
     "updatedAt": "2026-08-18T12:10:55.646Z"
@@ -69,8 +161,54 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/0bc0e91d07e7.webp",
     "labels": [],
-    "modelUrl": null,
-    "labels3d": [],
+    "modelUrl": "/uploads/organ-brain.glb",
+    "labels3d": [
+      {
+        "x": 0,
+        "y": 0.05,
+        "z": 0.05,
+        "nx": 0,
+        "ny": 0,
+        "nz": 1,
+        "text": "Кора больших полушарий (Cortex cerebri)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Виллизиев круг и сосудистая сеть (Circulus arteriosus)"
+      },
+      {
+        "x": -0.03,
+        "y": -0.06,
+        "z": -0.02,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Базилярная артерия и ствол (Arteria basilaris)"
+      },
+      {
+        "x": 0,
+        "y": 0.08,
+        "z": -0.01,
+        "nx": 0,
+        "ny": 1,
+        "nz": 0,
+        "text": "Верхний сагиттальный синус (Sinus sagittalis superior)"
+      },
+      {
+        "x": 0,
+        "y": -0.05,
+        "z": -0.05,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Мозжечок и проводящие пути (Cerebellum)"
+      }
+    ],
     "videoUrl": null,
     "createdAt": "2026-08-18T12:10:55.646Z",
     "updatedAt": "2026-08-18T12:10:55.646Z"
@@ -94,8 +232,54 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/0bc0e91d07e7.webp",
     "labels": [],
-    "modelUrl": null,
-    "labels3d": [],
+    "modelUrl": "/uploads/organ-brain.glb",
+    "labels3d": [
+      {
+        "x": 0,
+        "y": 0.05,
+        "z": 0.05,
+        "nx": 0,
+        "ny": 0,
+        "nz": 1,
+        "text": "Кора больших полушарий (Cortex cerebri)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Виллизиев круг и сосудистая сеть (Circulus arteriosus)"
+      },
+      {
+        "x": -0.03,
+        "y": -0.06,
+        "z": -0.02,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Базилярная артерия и ствол (Arteria basilaris)"
+      },
+      {
+        "x": 0,
+        "y": 0.08,
+        "z": -0.01,
+        "nx": 0,
+        "ny": 1,
+        "nz": 0,
+        "text": "Верхний сагиттальный синус (Sinus sagittalis superior)"
+      },
+      {
+        "x": 0,
+        "y": -0.05,
+        "z": -0.05,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Мозжечок и проводящие пути (Cerebellum)"
+      }
+    ],
     "videoUrl": null,
     "createdAt": "2026-08-18T12:10:55.646Z",
     "updatedAt": "2026-08-18T12:10:55.646Z"
@@ -117,8 +301,54 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/0bc0e91d07e7.webp",
     "labels": [],
-    "modelUrl": null,
-    "labels3d": [],
+    "modelUrl": "/uploads/organ-brain.glb",
+    "labels3d": [
+      {
+        "x": 0,
+        "y": 0.05,
+        "z": 0.05,
+        "nx": 0,
+        "ny": 0,
+        "nz": 1,
+        "text": "Кора больших полушарий (Cortex cerebri)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Виллизиев круг и сосудистая сеть (Circulus arteriosus)"
+      },
+      {
+        "x": -0.03,
+        "y": -0.06,
+        "z": -0.02,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Базилярная артерия и ствол (Arteria basilaris)"
+      },
+      {
+        "x": 0,
+        "y": 0.08,
+        "z": -0.01,
+        "nx": 0,
+        "ny": 1,
+        "nz": 0,
+        "text": "Верхний сагиттальный синус (Sinus sagittalis superior)"
+      },
+      {
+        "x": 0,
+        "y": -0.05,
+        "z": -0.05,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Мозжечок и проводящие пути (Cerebellum)"
+      }
+    ],
     "videoUrl": null,
     "createdAt": "2026-08-18T12:10:55.646Z",
     "updatedAt": "2026-08-18T12:10:55.646Z"
@@ -145,8 +375,54 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/0bc0e91d07e7.webp",
     "labels": [],
-    "modelUrl": null,
-    "labels3d": [],
+    "modelUrl": "/uploads/organ-brain.glb",
+    "labels3d": [
+      {
+        "x": 0,
+        "y": 0.05,
+        "z": 0.05,
+        "nx": 0,
+        "ny": 0,
+        "nz": 1,
+        "text": "Кора больших полушарий (Cortex cerebri)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Виллизиев круг и сосудистая сеть (Circulus arteriosus)"
+      },
+      {
+        "x": -0.03,
+        "y": -0.06,
+        "z": -0.02,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Базилярная артерия и ствол (Arteria basilaris)"
+      },
+      {
+        "x": 0,
+        "y": 0.08,
+        "z": -0.01,
+        "nx": 0,
+        "ny": 1,
+        "nz": 0,
+        "text": "Верхний сагиттальный синус (Sinus sagittalis superior)"
+      },
+      {
+        "x": 0,
+        "y": -0.05,
+        "z": -0.05,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Мозжечок и проводящие пути (Cerebellum)"
+      }
+    ],
     "videoUrl": null,
     "createdAt": "2026-08-18T12:10:55.646Z",
     "updatedAt": "2026-08-18T12:10:55.646Z"
@@ -171,8 +447,54 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/0bc0e91d07e7.webp",
     "labels": [],
-    "modelUrl": null,
-    "labels3d": [],
+    "modelUrl": "/uploads/organ-brain.glb",
+    "labels3d": [
+      {
+        "x": 0,
+        "y": 0.05,
+        "z": 0.05,
+        "nx": 0,
+        "ny": 0,
+        "nz": 1,
+        "text": "Кора больших полушарий (Cortex cerebri)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Виллизиев круг и сосудистая сеть (Circulus arteriosus)"
+      },
+      {
+        "x": -0.03,
+        "y": -0.06,
+        "z": -0.02,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Базилярная артерия и ствол (Arteria basilaris)"
+      },
+      {
+        "x": 0,
+        "y": 0.08,
+        "z": -0.01,
+        "nx": 0,
+        "ny": 1,
+        "nz": 0,
+        "text": "Верхний сагиттальный синус (Sinus sagittalis superior)"
+      },
+      {
+        "x": 0,
+        "y": -0.05,
+        "z": -0.05,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Мозжечок и проводящие пути (Cerebellum)"
+      }
+    ],
     "videoUrl": null,
     "createdAt": "2026-08-18T12:10:55.646Z",
     "updatedAt": "2026-08-18T12:10:55.646Z"
@@ -198,8 +520,54 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/0bc0e91d07e7.webp",
     "labels": [],
-    "modelUrl": null,
-    "labels3d": [],
+    "modelUrl": "/uploads/organ-brain.glb",
+    "labels3d": [
+      {
+        "x": 0,
+        "y": 0.05,
+        "z": 0.05,
+        "nx": 0,
+        "ny": 0,
+        "nz": 1,
+        "text": "Кора больших полушарий (Cortex cerebri)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Виллизиев круг и сосудистая сеть (Circulus arteriosus)"
+      },
+      {
+        "x": -0.03,
+        "y": -0.06,
+        "z": -0.02,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Базилярная артерия и ствол (Arteria basilaris)"
+      },
+      {
+        "x": 0,
+        "y": 0.08,
+        "z": -0.01,
+        "nx": 0,
+        "ny": 1,
+        "nz": 0,
+        "text": "Верхний сагиттальный синус (Sinus sagittalis superior)"
+      },
+      {
+        "x": 0,
+        "y": -0.05,
+        "z": -0.05,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Мозжечок и проводящие пути (Cerebellum)"
+      }
+    ],
     "videoUrl": null,
     "createdAt": "2026-08-18T12:10:55.646Z",
     "updatedAt": "2026-08-18T12:10:55.646Z"
@@ -221,8 +589,54 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/0bc0e91d07e7.webp",
     "labels": [],
-    "modelUrl": null,
-    "labels3d": [],
+    "modelUrl": "/uploads/organ-brain.glb",
+    "labels3d": [
+      {
+        "x": 0,
+        "y": 0.05,
+        "z": 0.05,
+        "nx": 0,
+        "ny": 0,
+        "nz": 1,
+        "text": "Кора больших полушарий (Cortex cerebri)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Виллизиев круг и сосудистая сеть (Circulus arteriosus)"
+      },
+      {
+        "x": -0.03,
+        "y": -0.06,
+        "z": -0.02,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Базилярная артерия и ствол (Arteria basilaris)"
+      },
+      {
+        "x": 0,
+        "y": 0.08,
+        "z": -0.01,
+        "nx": 0,
+        "ny": 1,
+        "nz": 0,
+        "text": "Верхний сагиттальный синус (Sinus sagittalis superior)"
+      },
+      {
+        "x": 0,
+        "y": -0.05,
+        "z": -0.05,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Мозжечок и проводящие пути (Cerebellum)"
+      }
+    ],
     "videoUrl": null,
     "createdAt": "2026-08-18T12:10:55.646Z",
     "updatedAt": "2026-08-18T12:10:55.646Z"
@@ -245,8 +659,54 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/0bc0e91d07e7.webp",
     "labels": [],
-    "modelUrl": null,
-    "labels3d": [],
+    "modelUrl": "/uploads/organ-brain.glb",
+    "labels3d": [
+      {
+        "x": 0,
+        "y": 0.05,
+        "z": 0.05,
+        "nx": 0,
+        "ny": 0,
+        "nz": 1,
+        "text": "Кора больших полушарий (Cortex cerebri)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Виллизиев круг и сосудистая сеть (Circulus arteriosus)"
+      },
+      {
+        "x": -0.03,
+        "y": -0.06,
+        "z": -0.02,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Базилярная артерия и ствол (Arteria basilaris)"
+      },
+      {
+        "x": 0,
+        "y": 0.08,
+        "z": -0.01,
+        "nx": 0,
+        "ny": 1,
+        "nz": 0,
+        "text": "Верхний сагиттальный синус (Sinus sagittalis superior)"
+      },
+      {
+        "x": 0,
+        "y": -0.05,
+        "z": -0.05,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Мозжечок и проводящие пути (Cerebellum)"
+      }
+    ],
     "videoUrl": null,
     "createdAt": "2026-08-18T12:10:55.646Z",
     "updatedAt": "2026-08-18T12:10:55.646Z"
@@ -267,8 +727,54 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/0bc0e91d07e7.webp",
     "labels": [],
-    "modelUrl": null,
-    "labels3d": [],
+    "modelUrl": "/uploads/organ-brain.glb",
+    "labels3d": [
+      {
+        "x": 0,
+        "y": 0.05,
+        "z": 0.05,
+        "nx": 0,
+        "ny": 0,
+        "nz": 1,
+        "text": "Кора больших полушарий (Cortex cerebri)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Виллизиев круг и сосудистая сеть (Circulus arteriosus)"
+      },
+      {
+        "x": -0.03,
+        "y": -0.06,
+        "z": -0.02,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Базилярная артерия и ствол (Arteria basilaris)"
+      },
+      {
+        "x": 0,
+        "y": 0.08,
+        "z": -0.01,
+        "nx": 0,
+        "ny": 1,
+        "nz": 0,
+        "text": "Верхний сагиттальный синус (Sinus sagittalis superior)"
+      },
+      {
+        "x": 0,
+        "y": -0.05,
+        "z": -0.05,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Мозжечок и проводящие пути (Cerebellum)"
+      }
+    ],
     "videoUrl": null,
     "createdAt": "2026-08-18T12:10:55.646Z",
     "updatedAt": "2026-08-18T12:10:55.646Z"
@@ -291,8 +797,54 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/0bc0e91d07e7.webp",
     "labels": [],
-    "modelUrl": null,
-    "labels3d": [],
+    "modelUrl": "/uploads/organ-brain.glb",
+    "labels3d": [
+      {
+        "x": 0,
+        "y": 0.05,
+        "z": 0.05,
+        "nx": 0,
+        "ny": 0,
+        "nz": 1,
+        "text": "Кора больших полушарий (Cortex cerebri)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Виллизиев круг и сосудистая сеть (Circulus arteriosus)"
+      },
+      {
+        "x": -0.03,
+        "y": -0.06,
+        "z": -0.02,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Базилярная артерия и ствол (Arteria basilaris)"
+      },
+      {
+        "x": 0,
+        "y": 0.08,
+        "z": -0.01,
+        "nx": 0,
+        "ny": 1,
+        "nz": 0,
+        "text": "Верхний сагиттальный синус (Sinus sagittalis superior)"
+      },
+      {
+        "x": 0,
+        "y": -0.05,
+        "z": -0.05,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Мозжечок и проводящие пути (Cerebellum)"
+      }
+    ],
     "videoUrl": null,
     "createdAt": "2026-08-18T12:10:55.646Z",
     "updatedAt": "2026-08-18T12:10:55.646Z"
@@ -314,8 +866,54 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/0bc0e91d07e7.webp",
     "labels": [],
-    "modelUrl": null,
-    "labels3d": [],
+    "modelUrl": "/uploads/organ-brain.glb",
+    "labels3d": [
+      {
+        "x": 0,
+        "y": 0.05,
+        "z": 0.05,
+        "nx": 0,
+        "ny": 0,
+        "nz": 1,
+        "text": "Кора больших полушарий (Cortex cerebri)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Виллизиев круг и сосудистая сеть (Circulus arteriosus)"
+      },
+      {
+        "x": -0.03,
+        "y": -0.06,
+        "z": -0.02,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Базилярная артерия и ствол (Arteria basilaris)"
+      },
+      {
+        "x": 0,
+        "y": 0.08,
+        "z": -0.01,
+        "nx": 0,
+        "ny": 1,
+        "nz": 0,
+        "text": "Верхний сагиттальный синус (Sinus sagittalis superior)"
+      },
+      {
+        "x": 0,
+        "y": -0.05,
+        "z": -0.05,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Мозжечок и проводящие пути (Cerebellum)"
+      }
+    ],
     "videoUrl": null,
     "createdAt": "2026-08-18T12:10:55.646Z",
     "updatedAt": "2026-08-18T12:10:55.646Z"
@@ -338,8 +936,54 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/0bc0e91d07e7.webp",
     "labels": [],
-    "modelUrl": null,
-    "labels3d": [],
+    "modelUrl": "/uploads/organ-brain.glb",
+    "labels3d": [
+      {
+        "x": 0,
+        "y": 0.05,
+        "z": 0.05,
+        "nx": 0,
+        "ny": 0,
+        "nz": 1,
+        "text": "Кора больших полушарий (Cortex cerebri)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Виллизиев круг и сосудистая сеть (Circulus arteriosus)"
+      },
+      {
+        "x": -0.03,
+        "y": -0.06,
+        "z": -0.02,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Базилярная артерия и ствол (Arteria basilaris)"
+      },
+      {
+        "x": 0,
+        "y": 0.08,
+        "z": -0.01,
+        "nx": 0,
+        "ny": 1,
+        "nz": 0,
+        "text": "Верхний сагиттальный синус (Sinus sagittalis superior)"
+      },
+      {
+        "x": 0,
+        "y": -0.05,
+        "z": -0.05,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Мозжечок и проводящие пути (Cerebellum)"
+      }
+    ],
     "videoUrl": null,
     "createdAt": "2026-08-18T12:10:55.646Z",
     "updatedAt": "2026-08-18T12:10:55.646Z"
@@ -361,8 +1005,54 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/0bc0e91d07e7.webp",
     "labels": [],
-    "modelUrl": null,
-    "labels3d": [],
+    "modelUrl": "/uploads/organ-brain.glb",
+    "labels3d": [
+      {
+        "x": 0,
+        "y": 0.05,
+        "z": 0.05,
+        "nx": 0,
+        "ny": 0,
+        "nz": 1,
+        "text": "Кора больших полушарий (Cortex cerebri)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Виллизиев круг и сосудистая сеть (Circulus arteriosus)"
+      },
+      {
+        "x": -0.03,
+        "y": -0.06,
+        "z": -0.02,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Базилярная артерия и ствол (Arteria basilaris)"
+      },
+      {
+        "x": 0,
+        "y": 0.08,
+        "z": -0.01,
+        "nx": 0,
+        "ny": 1,
+        "nz": 0,
+        "text": "Верхний сагиттальный синус (Sinus sagittalis superior)"
+      },
+      {
+        "x": 0,
+        "y": -0.05,
+        "z": -0.05,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Мозжечок и проводящие пути (Cerebellum)"
+      }
+    ],
     "videoUrl": null,
     "createdAt": "2026-08-18T12:10:55.646Z",
     "updatedAt": "2026-08-18T12:10:55.646Z"
@@ -395,8 +1085,54 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/0bc0e91d07e7.webp",
     "labels": [],
-    "modelUrl": null,
-    "labels3d": [],
+    "modelUrl": "/uploads/organ-brain.glb",
+    "labels3d": [
+      {
+        "x": 0,
+        "y": 0.05,
+        "z": 0.05,
+        "nx": 0,
+        "ny": 0,
+        "nz": 1,
+        "text": "Кора больших полушарий (Cortex cerebri)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Виллизиев круг и сосудистая сеть (Circulus arteriosus)"
+      },
+      {
+        "x": -0.03,
+        "y": -0.06,
+        "z": -0.02,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Базилярная артерия и ствол (Arteria basilaris)"
+      },
+      {
+        "x": 0,
+        "y": 0.08,
+        "z": -0.01,
+        "nx": 0,
+        "ny": 1,
+        "nz": 0,
+        "text": "Верхний сагиттальный синус (Sinus sagittalis superior)"
+      },
+      {
+        "x": 0,
+        "y": -0.05,
+        "z": -0.05,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Мозжечок и проводящие пути (Cerebellum)"
+      }
+    ],
     "videoUrl": null,
     "createdAt": "2026-08-18T12:10:55.646Z",
     "updatedAt": "2026-08-18T12:10:55.646Z"
@@ -1738,8 +2474,54 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/00a54954c6e7.webp",
     "labels": [],
-    "modelUrl": null,
-    "labels3d": [],
+    "modelUrl": "/uploads/organ-brain.glb",
+    "labels3d": [
+      {
+        "x": 0,
+        "y": 0.05,
+        "z": 0.05,
+        "nx": 0,
+        "ny": 0,
+        "nz": 1,
+        "text": "Кора больших полушарий (Cortex cerebri)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Виллизиев круг и сосудистая сеть (Circulus arteriosus)"
+      },
+      {
+        "x": -0.03,
+        "y": -0.06,
+        "z": -0.02,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Базилярная артерия и ствол (Arteria basilaris)"
+      },
+      {
+        "x": 0,
+        "y": 0.08,
+        "z": -0.01,
+        "nx": 0,
+        "ny": 1,
+        "nz": 0,
+        "text": "Верхний сагиттальный синус (Sinus sagittalis superior)"
+      },
+      {
+        "x": 0,
+        "y": -0.05,
+        "z": -0.05,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Мозжечок и проводящие пути (Cerebellum)"
+      }
+    ],
     "videoUrl": null,
     "createdAt": "2026-08-18T12:10:55.648Z",
     "updatedAt": "2026-08-18T12:10:55.648Z"
@@ -1772,8 +2554,54 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/00a54954c6e7.webp",
     "labels": [],
-    "modelUrl": null,
-    "labels3d": [],
+    "modelUrl": "/uploads/organ-brain.glb",
+    "labels3d": [
+      {
+        "x": 0,
+        "y": 0.05,
+        "z": 0.05,
+        "nx": 0,
+        "ny": 0,
+        "nz": 1,
+        "text": "Кора больших полушарий (Cortex cerebri)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Виллизиев круг и сосудистая сеть (Circulus arteriosus)"
+      },
+      {
+        "x": -0.03,
+        "y": -0.06,
+        "z": -0.02,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Базилярная артерия и ствол (Arteria basilaris)"
+      },
+      {
+        "x": 0,
+        "y": 0.08,
+        "z": -0.01,
+        "nx": 0,
+        "ny": 1,
+        "nz": 0,
+        "text": "Верхний сагиттальный синус (Sinus sagittalis superior)"
+      },
+      {
+        "x": 0,
+        "y": -0.05,
+        "z": -0.05,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Мозжечок и проводящие пути (Cerebellum)"
+      }
+    ],
     "videoUrl": null,
     "createdAt": "2026-08-18T12:10:55.648Z",
     "updatedAt": "2026-08-18T12:10:55.648Z"
@@ -1806,8 +2634,54 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/00a54954c6e7.webp",
     "labels": [],
-    "modelUrl": null,
-    "labels3d": [],
+    "modelUrl": "/uploads/organ-brain.glb",
+    "labels3d": [
+      {
+        "x": 0,
+        "y": 0.05,
+        "z": 0.05,
+        "nx": 0,
+        "ny": 0,
+        "nz": 1,
+        "text": "Кора больших полушарий (Cortex cerebri)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Виллизиев круг и сосудистая сеть (Circulus arteriosus)"
+      },
+      {
+        "x": -0.03,
+        "y": -0.06,
+        "z": -0.02,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Базилярная артерия и ствол (Arteria basilaris)"
+      },
+      {
+        "x": 0,
+        "y": 0.08,
+        "z": -0.01,
+        "nx": 0,
+        "ny": 1,
+        "nz": 0,
+        "text": "Верхний сагиттальный синус (Sinus sagittalis superior)"
+      },
+      {
+        "x": 0,
+        "y": -0.05,
+        "z": -0.05,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Мозжечок и проводящие пути (Cerebellum)"
+      }
+    ],
     "videoUrl": null,
     "createdAt": "2026-08-18T12:10:55.648Z",
     "updatedAt": "2026-08-18T12:10:55.648Z"
@@ -1840,8 +2714,54 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/00a54954c6e7.webp",
     "labels": [],
-    "modelUrl": null,
-    "labels3d": [],
+    "modelUrl": "/uploads/organ-brain.glb",
+    "labels3d": [
+      {
+        "x": 0,
+        "y": 0.05,
+        "z": 0.05,
+        "nx": 0,
+        "ny": 0,
+        "nz": 1,
+        "text": "Кора больших полушарий (Cortex cerebri)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Виллизиев круг и сосудистая сеть (Circulus arteriosus)"
+      },
+      {
+        "x": -0.03,
+        "y": -0.06,
+        "z": -0.02,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Базилярная артерия и ствол (Arteria basilaris)"
+      },
+      {
+        "x": 0,
+        "y": 0.08,
+        "z": -0.01,
+        "nx": 0,
+        "ny": 1,
+        "nz": 0,
+        "text": "Верхний сагиттальный синус (Sinus sagittalis superior)"
+      },
+      {
+        "x": 0,
+        "y": -0.05,
+        "z": -0.05,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Мозжечок и проводящие пути (Cerebellum)"
+      }
+    ],
     "videoUrl": null,
     "createdAt": "2026-08-18T12:10:55.648Z",
     "updatedAt": "2026-08-18T12:10:55.648Z"
@@ -1873,8 +2793,54 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/00a54954c6e7.webp",
     "labels": [],
-    "modelUrl": null,
-    "labels3d": [],
+    "modelUrl": "/uploads/organ-brain.glb",
+    "labels3d": [
+      {
+        "x": 0,
+        "y": 0.05,
+        "z": 0.05,
+        "nx": 0,
+        "ny": 0,
+        "nz": 1,
+        "text": "Кора больших полушарий (Cortex cerebri)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Виллизиев круг и сосудистая сеть (Circulus arteriosus)"
+      },
+      {
+        "x": -0.03,
+        "y": -0.06,
+        "z": -0.02,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Базилярная артерия и ствол (Arteria basilaris)"
+      },
+      {
+        "x": 0,
+        "y": 0.08,
+        "z": -0.01,
+        "nx": 0,
+        "ny": 1,
+        "nz": 0,
+        "text": "Верхний сагиттальный синус (Sinus sagittalis superior)"
+      },
+      {
+        "x": 0,
+        "y": -0.05,
+        "z": -0.05,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Мозжечок и проводящие пути (Cerebellum)"
+      }
+    ],
     "videoUrl": null,
     "createdAt": "2026-08-18T12:10:55.648Z",
     "updatedAt": "2026-08-18T12:10:55.648Z"
@@ -1904,8 +2870,54 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/00a54954c6e7.webp",
     "labels": [],
-    "modelUrl": null,
-    "labels3d": [],
+    "modelUrl": "/uploads/organ-brain.glb",
+    "labels3d": [
+      {
+        "x": 0,
+        "y": 0.05,
+        "z": 0.05,
+        "nx": 0,
+        "ny": 0,
+        "nz": 1,
+        "text": "Кора больших полушарий (Cortex cerebri)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Виллизиев круг и сосудистая сеть (Circulus arteriosus)"
+      },
+      {
+        "x": -0.03,
+        "y": -0.06,
+        "z": -0.02,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Базилярная артерия и ствол (Arteria basilaris)"
+      },
+      {
+        "x": 0,
+        "y": 0.08,
+        "z": -0.01,
+        "nx": 0,
+        "ny": 1,
+        "nz": 0,
+        "text": "Верхний сагиттальный синус (Sinus sagittalis superior)"
+      },
+      {
+        "x": 0,
+        "y": -0.05,
+        "z": -0.05,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Мозжечок и проводящие пути (Cerebellum)"
+      }
+    ],
     "videoUrl": null,
     "createdAt": "2026-08-18T12:10:55.650Z",
     "updatedAt": "2026-08-18T12:10:55.650Z"
@@ -1935,8 +2947,54 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/00a54954c6e7.webp",
     "labels": [],
-    "modelUrl": null,
-    "labels3d": [],
+    "modelUrl": "/uploads/organ-brain.glb",
+    "labels3d": [
+      {
+        "x": 0,
+        "y": 0.05,
+        "z": 0.05,
+        "nx": 0,
+        "ny": 0,
+        "nz": 1,
+        "text": "Кора больших полушарий (Cortex cerebri)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Виллизиев круг и сосудистая сеть (Circulus arteriosus)"
+      },
+      {
+        "x": -0.03,
+        "y": -0.06,
+        "z": -0.02,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Базилярная артерия и ствол (Arteria basilaris)"
+      },
+      {
+        "x": 0,
+        "y": 0.08,
+        "z": -0.01,
+        "nx": 0,
+        "ny": 1,
+        "nz": 0,
+        "text": "Верхний сагиттальный синус (Sinus sagittalis superior)"
+      },
+      {
+        "x": 0,
+        "y": -0.05,
+        "z": -0.05,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Мозжечок и проводящие пути (Cerebellum)"
+      }
+    ],
     "videoUrl": null,
     "createdAt": "2026-08-18T12:10:55.650Z",
     "updatedAt": "2026-08-18T12:10:55.650Z"
@@ -1969,8 +3027,54 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/00a54954c6e7.webp",
     "labels": [],
-    "modelUrl": null,
-    "labels3d": [],
+    "modelUrl": "/uploads/organ-brain.glb",
+    "labels3d": [
+      {
+        "x": 0,
+        "y": 0.05,
+        "z": 0.05,
+        "nx": 0,
+        "ny": 0,
+        "nz": 1,
+        "text": "Кора больших полушарий (Cortex cerebri)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Виллизиев круг и сосудистая сеть (Circulus arteriosus)"
+      },
+      {
+        "x": -0.03,
+        "y": -0.06,
+        "z": -0.02,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Базилярная артерия и ствол (Arteria basilaris)"
+      },
+      {
+        "x": 0,
+        "y": 0.08,
+        "z": -0.01,
+        "nx": 0,
+        "ny": 1,
+        "nz": 0,
+        "text": "Верхний сагиттальный синус (Sinus sagittalis superior)"
+      },
+      {
+        "x": 0,
+        "y": -0.05,
+        "z": -0.05,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Мозжечок и проводящие пути (Cerebellum)"
+      }
+    ],
     "videoUrl": null,
     "createdAt": "2026-08-18T12:10:55.650Z",
     "updatedAt": "2026-08-18T12:10:55.650Z"
@@ -5312,8 +6416,54 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/woman/662d1973a743.webp",
     "labels": [],
-    "modelUrl": null,
-    "labels3d": [],
+    "modelUrl": "/uploads/organ-brain.glb",
+    "labels3d": [
+      {
+        "x": 0,
+        "y": 0.05,
+        "z": 0.05,
+        "nx": 0,
+        "ny": 0,
+        "nz": 1,
+        "text": "Кора больших полушарий (Cortex cerebri)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Виллизиев круг и сосудистая сеть (Circulus arteriosus)"
+      },
+      {
+        "x": -0.03,
+        "y": -0.06,
+        "z": -0.02,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Базилярная артерия и ствол (Arteria basilaris)"
+      },
+      {
+        "x": 0,
+        "y": 0.08,
+        "z": -0.01,
+        "nx": 0,
+        "ny": 1,
+        "nz": 0,
+        "text": "Верхний сагиттальный синус (Sinus sagittalis superior)"
+      },
+      {
+        "x": 0,
+        "y": -0.05,
+        "z": -0.05,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Мозжечок и проводящие пути (Cerebellum)"
+      }
+    ],
     "videoUrl": null,
     "createdAt": "2026-08-18T12:10:56.300Z",
     "updatedAt": "2026-08-18T12:10:56.300Z"
@@ -5336,8 +6486,54 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/woman/662d1973a743.webp",
     "labels": [],
-    "modelUrl": null,
-    "labels3d": [],
+    "modelUrl": "/uploads/organ-brain.glb",
+    "labels3d": [
+      {
+        "x": 0,
+        "y": 0.05,
+        "z": 0.05,
+        "nx": 0,
+        "ny": 0,
+        "nz": 1,
+        "text": "Кора больших полушарий (Cortex cerebri)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Виллизиев круг и сосудистая сеть (Circulus arteriosus)"
+      },
+      {
+        "x": -0.03,
+        "y": -0.06,
+        "z": -0.02,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Базилярная артерия и ствол (Arteria basilaris)"
+      },
+      {
+        "x": 0,
+        "y": 0.08,
+        "z": -0.01,
+        "nx": 0,
+        "ny": 1,
+        "nz": 0,
+        "text": "Верхний сагиттальный синус (Sinus sagittalis superior)"
+      },
+      {
+        "x": 0,
+        "y": -0.05,
+        "z": -0.05,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Мозжечок и проводящие пути (Cerebellum)"
+      }
+    ],
     "videoUrl": null,
     "createdAt": "2026-08-18T12:10:56.300Z",
     "updatedAt": "2026-08-18T12:10:56.300Z"
@@ -5363,8 +6559,54 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/woman/662d1973a743.webp",
     "labels": [],
-    "modelUrl": null,
-    "labels3d": [],
+    "modelUrl": "/uploads/organ-brain.glb",
+    "labels3d": [
+      {
+        "x": 0,
+        "y": 0.05,
+        "z": 0.05,
+        "nx": 0,
+        "ny": 0,
+        "nz": 1,
+        "text": "Кора больших полушарий (Cortex cerebri)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Виллизиев круг и сосудистая сеть (Circulus arteriosus)"
+      },
+      {
+        "x": -0.03,
+        "y": -0.06,
+        "z": -0.02,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Базилярная артерия и ствол (Arteria basilaris)"
+      },
+      {
+        "x": 0,
+        "y": 0.08,
+        "z": -0.01,
+        "nx": 0,
+        "ny": 1,
+        "nz": 0,
+        "text": "Верхний сагиттальный синус (Sinus sagittalis superior)"
+      },
+      {
+        "x": 0,
+        "y": -0.05,
+        "z": -0.05,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Мозжечок и проводящие пути (Cerebellum)"
+      }
+    ],
     "videoUrl": null,
     "createdAt": "2026-08-18T12:10:56.300Z",
     "updatedAt": "2026-08-18T12:10:56.300Z"
@@ -5388,8 +6630,54 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/woman/662d1973a743.webp",
     "labels": [],
-    "modelUrl": null,
-    "labels3d": [],
+    "modelUrl": "/uploads/organ-brain.glb",
+    "labels3d": [
+      {
+        "x": 0,
+        "y": 0.05,
+        "z": 0.05,
+        "nx": 0,
+        "ny": 0,
+        "nz": 1,
+        "text": "Кора больших полушарий (Cortex cerebri)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Виллизиев круг и сосудистая сеть (Circulus arteriosus)"
+      },
+      {
+        "x": -0.03,
+        "y": -0.06,
+        "z": -0.02,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Базилярная артерия и ствол (Arteria basilaris)"
+      },
+      {
+        "x": 0,
+        "y": 0.08,
+        "z": -0.01,
+        "nx": 0,
+        "ny": 1,
+        "nz": 0,
+        "text": "Верхний сагиттальный синус (Sinus sagittalis superior)"
+      },
+      {
+        "x": 0,
+        "y": -0.05,
+        "z": -0.05,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Мозжечок и проводящие пути (Cerebellum)"
+      }
+    ],
     "videoUrl": null,
     "createdAt": "2026-08-18T12:10:56.300Z",
     "updatedAt": "2026-08-18T12:10:56.300Z"
@@ -5411,8 +6699,54 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/woman/662d1973a743.webp",
     "labels": [],
-    "modelUrl": null,
-    "labels3d": [],
+    "modelUrl": "/uploads/organ-brain.glb",
+    "labels3d": [
+      {
+        "x": 0,
+        "y": 0.05,
+        "z": 0.05,
+        "nx": 0,
+        "ny": 0,
+        "nz": 1,
+        "text": "Кора больших полушарий (Cortex cerebri)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Виллизиев круг и сосудистая сеть (Circulus arteriosus)"
+      },
+      {
+        "x": -0.03,
+        "y": -0.06,
+        "z": -0.02,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Базилярная артерия и ствол (Arteria basilaris)"
+      },
+      {
+        "x": 0,
+        "y": 0.08,
+        "z": -0.01,
+        "nx": 0,
+        "ny": 1,
+        "nz": 0,
+        "text": "Верхний сагиттальный синус (Sinus sagittalis superior)"
+      },
+      {
+        "x": 0,
+        "y": -0.05,
+        "z": -0.05,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Мозжечок и проводящие пути (Cerebellum)"
+      }
+    ],
     "videoUrl": null,
     "createdAt": "2026-08-18T12:10:56.300Z",
     "updatedAt": "2026-08-18T12:10:56.300Z"
@@ -5439,8 +6773,54 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/woman/662d1973a743.webp",
     "labels": [],
-    "modelUrl": null,
-    "labels3d": [],
+    "modelUrl": "/uploads/organ-brain.glb",
+    "labels3d": [
+      {
+        "x": 0,
+        "y": 0.05,
+        "z": 0.05,
+        "nx": 0,
+        "ny": 0,
+        "nz": 1,
+        "text": "Кора больших полушарий (Cortex cerebri)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Виллизиев круг и сосудистая сеть (Circulus arteriosus)"
+      },
+      {
+        "x": -0.03,
+        "y": -0.06,
+        "z": -0.02,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Базилярная артерия и ствол (Arteria basilaris)"
+      },
+      {
+        "x": 0,
+        "y": 0.08,
+        "z": -0.01,
+        "nx": 0,
+        "ny": 1,
+        "nz": 0,
+        "text": "Верхний сагиттальный синус (Sinus sagittalis superior)"
+      },
+      {
+        "x": 0,
+        "y": -0.05,
+        "z": -0.05,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Мозжечок и проводящие пути (Cerebellum)"
+      }
+    ],
     "videoUrl": null,
     "createdAt": "2026-08-18T12:10:56.300Z",
     "updatedAt": "2026-08-18T12:10:56.300Z"
@@ -5465,8 +6845,54 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/woman/662d1973a743.webp",
     "labels": [],
-    "modelUrl": null,
-    "labels3d": [],
+    "modelUrl": "/uploads/organ-brain.glb",
+    "labels3d": [
+      {
+        "x": 0,
+        "y": 0.05,
+        "z": 0.05,
+        "nx": 0,
+        "ny": 0,
+        "nz": 1,
+        "text": "Кора больших полушарий (Cortex cerebri)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Виллизиев круг и сосудистая сеть (Circulus arteriosus)"
+      },
+      {
+        "x": -0.03,
+        "y": -0.06,
+        "z": -0.02,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Базилярная артерия и ствол (Arteria basilaris)"
+      },
+      {
+        "x": 0,
+        "y": 0.08,
+        "z": -0.01,
+        "nx": 0,
+        "ny": 1,
+        "nz": 0,
+        "text": "Верхний сагиттальный синус (Sinus sagittalis superior)"
+      },
+      {
+        "x": 0,
+        "y": -0.05,
+        "z": -0.05,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Мозжечок и проводящие пути (Cerebellum)"
+      }
+    ],
     "videoUrl": null,
     "createdAt": "2026-08-18T12:10:56.300Z",
     "updatedAt": "2026-08-18T12:10:56.300Z"
@@ -5492,8 +6918,54 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/woman/662d1973a743.webp",
     "labels": [],
-    "modelUrl": null,
-    "labels3d": [],
+    "modelUrl": "/uploads/organ-brain.glb",
+    "labels3d": [
+      {
+        "x": 0,
+        "y": 0.05,
+        "z": 0.05,
+        "nx": 0,
+        "ny": 0,
+        "nz": 1,
+        "text": "Кора больших полушарий (Cortex cerebri)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Виллизиев круг и сосудистая сеть (Circulus arteriosus)"
+      },
+      {
+        "x": -0.03,
+        "y": -0.06,
+        "z": -0.02,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Базилярная артерия и ствол (Arteria basilaris)"
+      },
+      {
+        "x": 0,
+        "y": 0.08,
+        "z": -0.01,
+        "nx": 0,
+        "ny": 1,
+        "nz": 0,
+        "text": "Верхний сагиттальный синус (Sinus sagittalis superior)"
+      },
+      {
+        "x": 0,
+        "y": -0.05,
+        "z": -0.05,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Мозжечок и проводящие пути (Cerebellum)"
+      }
+    ],
     "videoUrl": null,
     "createdAt": "2026-08-18T12:10:56.300Z",
     "updatedAt": "2026-08-18T12:10:56.300Z"
@@ -5514,8 +6986,54 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/woman/662d1973a743.webp",
     "labels": [],
-    "modelUrl": null,
-    "labels3d": [],
+    "modelUrl": "/uploads/organ-brain.glb",
+    "labels3d": [
+      {
+        "x": 0,
+        "y": 0.05,
+        "z": 0.05,
+        "nx": 0,
+        "ny": 0,
+        "nz": 1,
+        "text": "Кора больших полушарий (Cortex cerebri)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Виллизиев круг и сосудистая сеть (Circulus arteriosus)"
+      },
+      {
+        "x": -0.03,
+        "y": -0.06,
+        "z": -0.02,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Базилярная артерия и ствол (Arteria basilaris)"
+      },
+      {
+        "x": 0,
+        "y": 0.08,
+        "z": -0.01,
+        "nx": 0,
+        "ny": 1,
+        "nz": 0,
+        "text": "Верхний сагиттальный синус (Sinus sagittalis superior)"
+      },
+      {
+        "x": 0,
+        "y": -0.05,
+        "z": -0.05,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Мозжечок и проводящие пути (Cerebellum)"
+      }
+    ],
     "videoUrl": null,
     "createdAt": "2026-08-18T12:10:56.300Z",
     "updatedAt": "2026-08-18T12:10:56.300Z"
@@ -5537,8 +7055,54 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/woman/662d1973a743.webp",
     "labels": [],
-    "modelUrl": null,
-    "labels3d": [],
+    "modelUrl": "/uploads/organ-brain.glb",
+    "labels3d": [
+      {
+        "x": 0,
+        "y": 0.05,
+        "z": 0.05,
+        "nx": 0,
+        "ny": 0,
+        "nz": 1,
+        "text": "Кора больших полушарий (Cortex cerebri)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Виллизиев круг и сосудистая сеть (Circulus arteriosus)"
+      },
+      {
+        "x": -0.03,
+        "y": -0.06,
+        "z": -0.02,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Базилярная артерия и ствол (Arteria basilaris)"
+      },
+      {
+        "x": 0,
+        "y": 0.08,
+        "z": -0.01,
+        "nx": 0,
+        "ny": 1,
+        "nz": 0,
+        "text": "Верхний сагиттальный синус (Sinus sagittalis superior)"
+      },
+      {
+        "x": 0,
+        "y": -0.05,
+        "z": -0.05,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Мозжечок и проводящие пути (Cerebellum)"
+      }
+    ],
     "videoUrl": null,
     "createdAt": "2026-08-18T12:10:56.300Z",
     "updatedAt": "2026-08-18T12:10:56.300Z"
@@ -5559,8 +7123,54 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/woman/662d1973a743.webp",
     "labels": [],
-    "modelUrl": null,
-    "labels3d": [],
+    "modelUrl": "/uploads/organ-brain.glb",
+    "labels3d": [
+      {
+        "x": 0,
+        "y": 0.05,
+        "z": 0.05,
+        "nx": 0,
+        "ny": 0,
+        "nz": 1,
+        "text": "Кора больших полушарий (Cortex cerebri)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Виллизиев круг и сосудистая сеть (Circulus arteriosus)"
+      },
+      {
+        "x": -0.03,
+        "y": -0.06,
+        "z": -0.02,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Базилярная артерия и ствол (Arteria basilaris)"
+      },
+      {
+        "x": 0,
+        "y": 0.08,
+        "z": -0.01,
+        "nx": 0,
+        "ny": 1,
+        "nz": 0,
+        "text": "Верхний сагиттальный синус (Sinus sagittalis superior)"
+      },
+      {
+        "x": 0,
+        "y": -0.05,
+        "z": -0.05,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Мозжечок и проводящие пути (Cerebellum)"
+      }
+    ],
     "videoUrl": null,
     "createdAt": "2026-08-18T12:10:56.300Z",
     "updatedAt": "2026-08-18T12:10:56.300Z"
@@ -5583,8 +7193,54 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/woman/662d1973a743.webp",
     "labels": [],
-    "modelUrl": null,
-    "labels3d": [],
+    "modelUrl": "/uploads/organ-brain.glb",
+    "labels3d": [
+      {
+        "x": 0,
+        "y": 0.05,
+        "z": 0.05,
+        "nx": 0,
+        "ny": 0,
+        "nz": 1,
+        "text": "Кора больших полушарий (Cortex cerebri)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Виллизиев круг и сосудистая сеть (Circulus arteriosus)"
+      },
+      {
+        "x": -0.03,
+        "y": -0.06,
+        "z": -0.02,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Базилярная артерия и ствол (Arteria basilaris)"
+      },
+      {
+        "x": 0,
+        "y": 0.08,
+        "z": -0.01,
+        "nx": 0,
+        "ny": 1,
+        "nz": 0,
+        "text": "Верхний сагиттальный синус (Sinus sagittalis superior)"
+      },
+      {
+        "x": 0,
+        "y": -0.05,
+        "z": -0.05,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Мозжечок и проводящие пути (Cerebellum)"
+      }
+    ],
     "videoUrl": null,
     "createdAt": "2026-08-18T12:10:56.300Z",
     "updatedAt": "2026-08-18T12:10:56.300Z"
@@ -5605,8 +7261,54 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/woman/662d1973a743.webp",
     "labels": [],
-    "modelUrl": null,
-    "labels3d": [],
+    "modelUrl": "/uploads/organ-brain.glb",
+    "labels3d": [
+      {
+        "x": 0,
+        "y": 0.05,
+        "z": 0.05,
+        "nx": 0,
+        "ny": 0,
+        "nz": 1,
+        "text": "Кора больших полушарий (Cortex cerebri)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Виллизиев круг и сосудистая сеть (Circulus arteriosus)"
+      },
+      {
+        "x": -0.03,
+        "y": -0.06,
+        "z": -0.02,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Базилярная артерия и ствол (Arteria basilaris)"
+      },
+      {
+        "x": 0,
+        "y": 0.08,
+        "z": -0.01,
+        "nx": 0,
+        "ny": 1,
+        "nz": 0,
+        "text": "Верхний сагиттальный синус (Sinus sagittalis superior)"
+      },
+      {
+        "x": 0,
+        "y": -0.05,
+        "z": -0.05,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Мозжечок и проводящие пути (Cerebellum)"
+      }
+    ],
     "videoUrl": null,
     "createdAt": "2026-08-18T12:10:56.300Z",
     "updatedAt": "2026-08-18T12:10:56.300Z"
@@ -5628,8 +7330,54 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/woman/662d1973a743.webp",
     "labels": [],
-    "modelUrl": null,
-    "labels3d": [],
+    "modelUrl": "/uploads/organ-brain.glb",
+    "labels3d": [
+      {
+        "x": 0,
+        "y": 0.05,
+        "z": 0.05,
+        "nx": 0,
+        "ny": 0,
+        "nz": 1,
+        "text": "Кора больших полушарий (Cortex cerebri)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Виллизиев круг и сосудистая сеть (Circulus arteriosus)"
+      },
+      {
+        "x": -0.03,
+        "y": -0.06,
+        "z": -0.02,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Базилярная артерия и ствол (Arteria basilaris)"
+      },
+      {
+        "x": 0,
+        "y": 0.08,
+        "z": -0.01,
+        "nx": 0,
+        "ny": 1,
+        "nz": 0,
+        "text": "Верхний сагиттальный синус (Sinus sagittalis superior)"
+      },
+      {
+        "x": 0,
+        "y": -0.05,
+        "z": -0.05,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Мозжечок и проводящие пути (Cerebellum)"
+      }
+    ],
     "videoUrl": null,
     "createdAt": "2026-08-18T12:10:56.300Z",
     "updatedAt": "2026-08-18T12:10:56.300Z"
@@ -5650,8 +7398,54 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/woman/662d1973a743.webp",
     "labels": [],
-    "modelUrl": null,
-    "labels3d": [],
+    "modelUrl": "/uploads/organ-brain.glb",
+    "labels3d": [
+      {
+        "x": 0,
+        "y": 0.05,
+        "z": 0.05,
+        "nx": 0,
+        "ny": 0,
+        "nz": 1,
+        "text": "Кора больших полушарий (Cortex cerebri)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Виллизиев круг и сосудистая сеть (Circulus arteriosus)"
+      },
+      {
+        "x": -0.03,
+        "y": -0.06,
+        "z": -0.02,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Базилярная артерия и ствол (Arteria basilaris)"
+      },
+      {
+        "x": 0,
+        "y": 0.08,
+        "z": -0.01,
+        "nx": 0,
+        "ny": 1,
+        "nz": 0,
+        "text": "Верхний сагиттальный синус (Sinus sagittalis superior)"
+      },
+      {
+        "x": 0,
+        "y": -0.05,
+        "z": -0.05,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Мозжечок и проводящие пути (Cerebellum)"
+      }
+    ],
     "videoUrl": null,
     "createdAt": "2026-08-18T12:10:56.300Z",
     "updatedAt": "2026-08-18T12:10:56.300Z"
@@ -5679,8 +7473,54 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/woman/662d1973a743.webp",
     "labels": [],
-    "modelUrl": null,
-    "labels3d": [],
+    "modelUrl": "/uploads/organ-brain.glb",
+    "labels3d": [
+      {
+        "x": 0,
+        "y": 0.05,
+        "z": 0.05,
+        "nx": 0,
+        "ny": 0,
+        "nz": 1,
+        "text": "Кора больших полушарий (Cortex cerebri)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Виллизиев круг и сосудистая сеть (Circulus arteriosus)"
+      },
+      {
+        "x": -0.03,
+        "y": -0.06,
+        "z": -0.02,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Базилярная артерия и ствол (Arteria basilaris)"
+      },
+      {
+        "x": 0,
+        "y": 0.08,
+        "z": -0.01,
+        "nx": 0,
+        "ny": 1,
+        "nz": 0,
+        "text": "Верхний сагиттальный синус (Sinus sagittalis superior)"
+      },
+      {
+        "x": 0,
+        "y": -0.05,
+        "z": -0.05,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Мозжечок и проводящие пути (Cerebellum)"
+      }
+    ],
     "videoUrl": null,
     "createdAt": "2026-08-18T12:10:56.300Z",
     "updatedAt": "2026-08-18T12:10:56.300Z"
@@ -7034,8 +8874,54 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/woman/8cbe374d6883.webp",
     "labels": [],
-    "modelUrl": null,
-    "labels3d": [],
+    "modelUrl": "/uploads/organ-brain.glb",
+    "labels3d": [
+      {
+        "x": 0,
+        "y": 0.05,
+        "z": 0.05,
+        "nx": 0,
+        "ny": 0,
+        "nz": 1,
+        "text": "Кора больших полушарий (Cortex cerebri)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Виллизиев круг и сосудистая сеть (Circulus arteriosus)"
+      },
+      {
+        "x": -0.03,
+        "y": -0.06,
+        "z": -0.02,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Базилярная артерия и ствол (Arteria basilaris)"
+      },
+      {
+        "x": 0,
+        "y": 0.08,
+        "z": -0.01,
+        "nx": 0,
+        "ny": 1,
+        "nz": 0,
+        "text": "Верхний сагиттальный синус (Sinus sagittalis superior)"
+      },
+      {
+        "x": 0,
+        "y": -0.05,
+        "z": -0.05,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Мозжечок и проводящие пути (Cerebellum)"
+      }
+    ],
     "videoUrl": null,
     "createdAt": "2026-08-18T12:10:56.301Z",
     "updatedAt": "2026-08-18T12:10:56.301Z"
@@ -7068,8 +8954,54 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/woman/8cbe374d6883.webp",
     "labels": [],
-    "modelUrl": null,
-    "labels3d": [],
+    "modelUrl": "/uploads/organ-brain.glb",
+    "labels3d": [
+      {
+        "x": 0,
+        "y": 0.05,
+        "z": 0.05,
+        "nx": 0,
+        "ny": 0,
+        "nz": 1,
+        "text": "Кора больших полушарий (Cortex cerebri)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Виллизиев круг и сосудистая сеть (Circulus arteriosus)"
+      },
+      {
+        "x": -0.03,
+        "y": -0.06,
+        "z": -0.02,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Базилярная артерия и ствол (Arteria basilaris)"
+      },
+      {
+        "x": 0,
+        "y": 0.08,
+        "z": -0.01,
+        "nx": 0,
+        "ny": 1,
+        "nz": 0,
+        "text": "Верхний сагиттальный синус (Sinus sagittalis superior)"
+      },
+      {
+        "x": 0,
+        "y": -0.05,
+        "z": -0.05,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Мозжечок и проводящие пути (Cerebellum)"
+      }
+    ],
     "videoUrl": null,
     "createdAt": "2026-08-18T12:10:56.301Z",
     "updatedAt": "2026-08-18T12:10:56.301Z"
@@ -7102,8 +9034,54 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/woman/8cbe374d6883.webp",
     "labels": [],
-    "modelUrl": null,
-    "labels3d": [],
+    "modelUrl": "/uploads/organ-brain.glb",
+    "labels3d": [
+      {
+        "x": 0,
+        "y": 0.05,
+        "z": 0.05,
+        "nx": 0,
+        "ny": 0,
+        "nz": 1,
+        "text": "Кора больших полушарий (Cortex cerebri)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Виллизиев круг и сосудистая сеть (Circulus arteriosus)"
+      },
+      {
+        "x": -0.03,
+        "y": -0.06,
+        "z": -0.02,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Базилярная артерия и ствол (Arteria basilaris)"
+      },
+      {
+        "x": 0,
+        "y": 0.08,
+        "z": -0.01,
+        "nx": 0,
+        "ny": 1,
+        "nz": 0,
+        "text": "Верхний сагиттальный синус (Sinus sagittalis superior)"
+      },
+      {
+        "x": 0,
+        "y": -0.05,
+        "z": -0.05,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Мозжечок и проводящие пути (Cerebellum)"
+      }
+    ],
     "videoUrl": null,
     "createdAt": "2026-08-18T12:10:56.301Z",
     "updatedAt": "2026-08-18T12:10:56.301Z"
@@ -7136,8 +9114,54 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/woman/8cbe374d6883.webp",
     "labels": [],
-    "modelUrl": null,
-    "labels3d": [],
+    "modelUrl": "/uploads/organ-brain.glb",
+    "labels3d": [
+      {
+        "x": 0,
+        "y": 0.05,
+        "z": 0.05,
+        "nx": 0,
+        "ny": 0,
+        "nz": 1,
+        "text": "Кора больших полушарий (Cortex cerebri)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Виллизиев круг и сосудистая сеть (Circulus arteriosus)"
+      },
+      {
+        "x": -0.03,
+        "y": -0.06,
+        "z": -0.02,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Базилярная артерия и ствол (Arteria basilaris)"
+      },
+      {
+        "x": 0,
+        "y": 0.08,
+        "z": -0.01,
+        "nx": 0,
+        "ny": 1,
+        "nz": 0,
+        "text": "Верхний сагиттальный синус (Sinus sagittalis superior)"
+      },
+      {
+        "x": 0,
+        "y": -0.05,
+        "z": -0.05,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Мозжечок и проводящие пути (Cerebellum)"
+      }
+    ],
     "videoUrl": null,
     "createdAt": "2026-08-18T12:10:56.301Z",
     "updatedAt": "2026-08-18T12:10:56.301Z"
@@ -7170,8 +9194,54 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/woman/8cbe374d6883.webp",
     "labels": [],
-    "modelUrl": null,
-    "labels3d": [],
+    "modelUrl": "/uploads/organ-brain.glb",
+    "labels3d": [
+      {
+        "x": 0,
+        "y": 0.05,
+        "z": 0.05,
+        "nx": 0,
+        "ny": 0,
+        "nz": 1,
+        "text": "Кора больших полушарий (Cortex cerebri)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Виллизиев круг и сосудистая сеть (Circulus arteriosus)"
+      },
+      {
+        "x": -0.03,
+        "y": -0.06,
+        "z": -0.02,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Базилярная артерия и ствол (Arteria basilaris)"
+      },
+      {
+        "x": 0,
+        "y": 0.08,
+        "z": -0.01,
+        "nx": 0,
+        "ny": 1,
+        "nz": 0,
+        "text": "Верхний сагиттальный синус (Sinus sagittalis superior)"
+      },
+      {
+        "x": 0,
+        "y": -0.05,
+        "z": -0.05,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Мозжечок и проводящие пути (Cerebellum)"
+      }
+    ],
     "videoUrl": null,
     "createdAt": "2026-08-18T12:10:56.301Z",
     "updatedAt": "2026-08-18T12:10:56.301Z"
@@ -7201,8 +9271,54 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/woman/8cbe374d6883.webp",
     "labels": [],
-    "modelUrl": null,
-    "labels3d": [],
+    "modelUrl": "/uploads/organ-brain.glb",
+    "labels3d": [
+      {
+        "x": 0,
+        "y": 0.05,
+        "z": 0.05,
+        "nx": 0,
+        "ny": 0,
+        "nz": 1,
+        "text": "Кора больших полушарий (Cortex cerebri)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Виллизиев круг и сосудистая сеть (Circulus arteriosus)"
+      },
+      {
+        "x": -0.03,
+        "y": -0.06,
+        "z": -0.02,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Базилярная артерия и ствол (Arteria basilaris)"
+      },
+      {
+        "x": 0,
+        "y": 0.08,
+        "z": -0.01,
+        "nx": 0,
+        "ny": 1,
+        "nz": 0,
+        "text": "Верхний сагиттальный синус (Sinus sagittalis superior)"
+      },
+      {
+        "x": 0,
+        "y": -0.05,
+        "z": -0.05,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Мозжечок и проводящие пути (Cerebellum)"
+      }
+    ],
     "videoUrl": null,
     "createdAt": "2026-08-18T12:10:56.301Z",
     "updatedAt": "2026-08-18T12:10:56.301Z"
@@ -7232,8 +9348,54 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/woman/8cbe374d6883.webp",
     "labels": [],
-    "modelUrl": null,
-    "labels3d": [],
+    "modelUrl": "/uploads/organ-brain.glb",
+    "labels3d": [
+      {
+        "x": 0,
+        "y": 0.05,
+        "z": 0.05,
+        "nx": 0,
+        "ny": 0,
+        "nz": 1,
+        "text": "Кора больших полушарий (Cortex cerebri)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Виллизиев круг и сосудистая сеть (Circulus arteriosus)"
+      },
+      {
+        "x": -0.03,
+        "y": -0.06,
+        "z": -0.02,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Базилярная артерия и ствол (Arteria basilaris)"
+      },
+      {
+        "x": 0,
+        "y": 0.08,
+        "z": -0.01,
+        "nx": 0,
+        "ny": 1,
+        "nz": 0,
+        "text": "Верхний сагиттальный синус (Sinus sagittalis superior)"
+      },
+      {
+        "x": 0,
+        "y": -0.05,
+        "z": -0.05,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Мозжечок и проводящие пути (Cerebellum)"
+      }
+    ],
     "videoUrl": null,
     "createdAt": "2026-08-18T12:10:56.301Z",
     "updatedAt": "2026-08-18T12:10:56.301Z"
@@ -7266,8 +9428,54 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/woman/8cbe374d6883.webp",
     "labels": [],
-    "modelUrl": null,
-    "labels3d": [],
+    "modelUrl": "/uploads/organ-brain.glb",
+    "labels3d": [
+      {
+        "x": 0,
+        "y": 0.05,
+        "z": 0.05,
+        "nx": 0,
+        "ny": 0,
+        "nz": 1,
+        "text": "Кора больших полушарий (Cortex cerebri)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Виллизиев круг и сосудистая сеть (Circulus arteriosus)"
+      },
+      {
+        "x": -0.03,
+        "y": -0.06,
+        "z": -0.02,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Базилярная артерия и ствол (Arteria basilaris)"
+      },
+      {
+        "x": 0,
+        "y": 0.08,
+        "z": -0.01,
+        "nx": 0,
+        "ny": 1,
+        "nz": 0,
+        "text": "Верхний сагиттальный синус (Sinus sagittalis superior)"
+      },
+      {
+        "x": 0,
+        "y": -0.05,
+        "z": -0.05,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Мозжечок и проводящие пути (Cerebellum)"
+      }
+    ],
     "videoUrl": null,
     "createdAt": "2026-08-18T12:10:56.301Z",
     "updatedAt": "2026-08-18T12:10:56.301Z"
@@ -10685,8 +12893,54 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/child/a0436a682ccd.webp",
     "labels": [],
-    "modelUrl": null,
-    "labels3d": [],
+    "modelUrl": "/uploads/organ-brain.glb",
+    "labels3d": [
+      {
+        "x": 0,
+        "y": 0.05,
+        "z": 0.05,
+        "nx": 0,
+        "ny": 0,
+        "nz": 1,
+        "text": "Кора больших полушарий (Cortex cerebri)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Виллизиев круг и сосудистая сеть (Circulus arteriosus)"
+      },
+      {
+        "x": -0.03,
+        "y": -0.06,
+        "z": -0.02,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Базилярная артерия и ствол (Arteria basilaris)"
+      },
+      {
+        "x": 0,
+        "y": 0.08,
+        "z": -0.01,
+        "nx": 0,
+        "ny": 1,
+        "nz": 0,
+        "text": "Верхний сагиттальный синус (Sinus sagittalis superior)"
+      },
+      {
+        "x": 0,
+        "y": -0.05,
+        "z": -0.05,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Мозжечок и проводящие пути (Cerebellum)"
+      }
+    ],
     "videoUrl": null,
     "createdAt": "2026-08-18T12:10:56.784Z",
     "updatedAt": "2026-08-18T12:10:56.784Z"
@@ -10710,8 +12964,54 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/child/a0436a682ccd.webp",
     "labels": [],
-    "modelUrl": null,
-    "labels3d": [],
+    "modelUrl": "/uploads/organ-brain.glb",
+    "labels3d": [
+      {
+        "x": 0,
+        "y": 0.05,
+        "z": 0.05,
+        "nx": 0,
+        "ny": 0,
+        "nz": 1,
+        "text": "Кора больших полушарий (Cortex cerebri)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Виллизиев круг и сосудистая сеть (Circulus arteriosus)"
+      },
+      {
+        "x": -0.03,
+        "y": -0.06,
+        "z": -0.02,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Базилярная артерия и ствол (Arteria basilaris)"
+      },
+      {
+        "x": 0,
+        "y": 0.08,
+        "z": -0.01,
+        "nx": 0,
+        "ny": 1,
+        "nz": 0,
+        "text": "Верхний сагиттальный синус (Sinus sagittalis superior)"
+      },
+      {
+        "x": 0,
+        "y": -0.05,
+        "z": -0.05,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Мозжечок и проводящие пути (Cerebellum)"
+      }
+    ],
     "videoUrl": null,
     "createdAt": "2026-08-18T12:10:56.784Z",
     "updatedAt": "2026-08-18T12:10:56.784Z"
@@ -10737,8 +13037,54 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/child/a0436a682ccd.webp",
     "labels": [],
-    "modelUrl": null,
-    "labels3d": [],
+    "modelUrl": "/uploads/organ-brain.glb",
+    "labels3d": [
+      {
+        "x": 0,
+        "y": 0.05,
+        "z": 0.05,
+        "nx": 0,
+        "ny": 0,
+        "nz": 1,
+        "text": "Кора больших полушарий (Cortex cerebri)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Виллизиев круг и сосудистая сеть (Circulus arteriosus)"
+      },
+      {
+        "x": -0.03,
+        "y": -0.06,
+        "z": -0.02,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Базилярная артерия и ствол (Arteria basilaris)"
+      },
+      {
+        "x": 0,
+        "y": 0.08,
+        "z": -0.01,
+        "nx": 0,
+        "ny": 1,
+        "nz": 0,
+        "text": "Верхний сагиттальный синус (Sinus sagittalis superior)"
+      },
+      {
+        "x": 0,
+        "y": -0.05,
+        "z": -0.05,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Мозжечок и проводящие пути (Cerebellum)"
+      }
+    ],
     "videoUrl": null,
     "createdAt": "2026-08-18T12:10:56.784Z",
     "updatedAt": "2026-08-18T12:10:56.784Z"
@@ -10762,8 +13108,54 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/child/a0436a682ccd.webp",
     "labels": [],
-    "modelUrl": null,
-    "labels3d": [],
+    "modelUrl": "/uploads/organ-brain.glb",
+    "labels3d": [
+      {
+        "x": 0,
+        "y": 0.05,
+        "z": 0.05,
+        "nx": 0,
+        "ny": 0,
+        "nz": 1,
+        "text": "Кора больших полушарий (Cortex cerebri)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Виллизиев круг и сосудистая сеть (Circulus arteriosus)"
+      },
+      {
+        "x": -0.03,
+        "y": -0.06,
+        "z": -0.02,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Базилярная артерия и ствол (Arteria basilaris)"
+      },
+      {
+        "x": 0,
+        "y": 0.08,
+        "z": -0.01,
+        "nx": 0,
+        "ny": 1,
+        "nz": 0,
+        "text": "Верхний сагиттальный синус (Sinus sagittalis superior)"
+      },
+      {
+        "x": 0,
+        "y": -0.05,
+        "z": -0.05,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Мозжечок и проводящие пути (Cerebellum)"
+      }
+    ],
     "videoUrl": null,
     "createdAt": "2026-08-18T12:10:56.784Z",
     "updatedAt": "2026-08-18T12:10:56.784Z"
@@ -10785,8 +13177,54 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/child/a0436a682ccd.webp",
     "labels": [],
-    "modelUrl": null,
-    "labels3d": [],
+    "modelUrl": "/uploads/organ-brain.glb",
+    "labels3d": [
+      {
+        "x": 0,
+        "y": 0.05,
+        "z": 0.05,
+        "nx": 0,
+        "ny": 0,
+        "nz": 1,
+        "text": "Кора больших полушарий (Cortex cerebri)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Виллизиев круг и сосудистая сеть (Circulus arteriosus)"
+      },
+      {
+        "x": -0.03,
+        "y": -0.06,
+        "z": -0.02,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Базилярная артерия и ствол (Arteria basilaris)"
+      },
+      {
+        "x": 0,
+        "y": 0.08,
+        "z": -0.01,
+        "nx": 0,
+        "ny": 1,
+        "nz": 0,
+        "text": "Верхний сагиттальный синус (Sinus sagittalis superior)"
+      },
+      {
+        "x": 0,
+        "y": -0.05,
+        "z": -0.05,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Мозжечок и проводящие пути (Cerebellum)"
+      }
+    ],
     "videoUrl": null,
     "createdAt": "2026-08-18T12:10:56.784Z",
     "updatedAt": "2026-08-18T12:10:56.784Z"
@@ -10807,8 +13245,54 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/child/a0436a682ccd.webp",
     "labels": [],
-    "modelUrl": null,
-    "labels3d": [],
+    "modelUrl": "/uploads/organ-brain.glb",
+    "labels3d": [
+      {
+        "x": 0,
+        "y": 0.05,
+        "z": 0.05,
+        "nx": 0,
+        "ny": 0,
+        "nz": 1,
+        "text": "Кора больших полушарий (Cortex cerebri)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Виллизиев круг и сосудистая сеть (Circulus arteriosus)"
+      },
+      {
+        "x": -0.03,
+        "y": -0.06,
+        "z": -0.02,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Базилярная артерия и ствол (Arteria basilaris)"
+      },
+      {
+        "x": 0,
+        "y": 0.08,
+        "z": -0.01,
+        "nx": 0,
+        "ny": 1,
+        "nz": 0,
+        "text": "Верхний сагиттальный синус (Sinus sagittalis superior)"
+      },
+      {
+        "x": 0,
+        "y": -0.05,
+        "z": -0.05,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Мозжечок и проводящие пути (Cerebellum)"
+      }
+    ],
     "videoUrl": null,
     "createdAt": "2026-08-18T12:10:56.784Z",
     "updatedAt": "2026-08-18T12:10:56.784Z"
@@ -12065,8 +14549,54 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/child/3230bb73adfa.webp",
     "labels": [],
-    "modelUrl": null,
-    "labels3d": [],
+    "modelUrl": "/uploads/organ-brain.glb",
+    "labels3d": [
+      {
+        "x": 0,
+        "y": 0.05,
+        "z": 0.05,
+        "nx": 0,
+        "ny": 0,
+        "nz": 1,
+        "text": "Кора больших полушарий (Cortex cerebri)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Виллизиев круг и сосудистая сеть (Circulus arteriosus)"
+      },
+      {
+        "x": -0.03,
+        "y": -0.06,
+        "z": -0.02,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Базилярная артерия и ствол (Arteria basilaris)"
+      },
+      {
+        "x": 0,
+        "y": 0.08,
+        "z": -0.01,
+        "nx": 0,
+        "ny": 1,
+        "nz": 0,
+        "text": "Верхний сагиттальный синус (Sinus sagittalis superior)"
+      },
+      {
+        "x": 0,
+        "y": -0.05,
+        "z": -0.05,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Мозжечок и проводящие пути (Cerebellum)"
+      }
+    ],
     "videoUrl": null,
     "createdAt": "2026-08-18T12:10:56.785Z",
     "updatedAt": "2026-08-18T12:10:56.785Z"
@@ -12097,8 +14627,54 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/child/3230bb73adfa.webp",
     "labels": [],
-    "modelUrl": null,
-    "labels3d": [],
+    "modelUrl": "/uploads/organ-brain.glb",
+    "labels3d": [
+      {
+        "x": 0,
+        "y": 0.05,
+        "z": 0.05,
+        "nx": 0,
+        "ny": 0,
+        "nz": 1,
+        "text": "Кора больших полушарий (Cortex cerebri)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Виллизиев круг и сосудистая сеть (Circulus arteriosus)"
+      },
+      {
+        "x": -0.03,
+        "y": -0.06,
+        "z": -0.02,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Базилярная артерия и ствол (Arteria basilaris)"
+      },
+      {
+        "x": 0,
+        "y": 0.08,
+        "z": -0.01,
+        "nx": 0,
+        "ny": 1,
+        "nz": 0,
+        "text": "Верхний сагиттальный синус (Sinus sagittalis superior)"
+      },
+      {
+        "x": 0,
+        "y": -0.05,
+        "z": -0.05,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Мозжечок и проводящие пути (Cerebellum)"
+      }
+    ],
     "videoUrl": null,
     "createdAt": "2026-08-18T12:10:56.785Z",
     "updatedAt": "2026-08-18T12:10:56.785Z"
@@ -12128,8 +14704,54 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/child/3230bb73adfa.webp",
     "labels": [],
-    "modelUrl": null,
-    "labels3d": [],
+    "modelUrl": "/uploads/organ-brain.glb",
+    "labels3d": [
+      {
+        "x": 0,
+        "y": 0.05,
+        "z": 0.05,
+        "nx": 0,
+        "ny": 0,
+        "nz": 1,
+        "text": "Кора больших полушарий (Cortex cerebri)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Виллизиев круг и сосудистая сеть (Circulus arteriosus)"
+      },
+      {
+        "x": -0.03,
+        "y": -0.06,
+        "z": -0.02,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Базилярная артерия и ствол (Arteria basilaris)"
+      },
+      {
+        "x": 0,
+        "y": 0.08,
+        "z": -0.01,
+        "nx": 0,
+        "ny": 1,
+        "nz": 0,
+        "text": "Верхний сагиттальный синус (Sinus sagittalis superior)"
+      },
+      {
+        "x": 0,
+        "y": -0.05,
+        "z": -0.05,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Мозжечок и проводящие пути (Cerebellum)"
+      }
+    ],
     "videoUrl": null,
     "createdAt": "2026-08-18T12:10:56.785Z",
     "updatedAt": "2026-08-18T12:10:56.785Z"
@@ -12160,8 +14782,54 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/child/3230bb73adfa.webp",
     "labels": [],
-    "modelUrl": null,
-    "labels3d": [],
+    "modelUrl": "/uploads/organ-brain.glb",
+    "labels3d": [
+      {
+        "x": 0,
+        "y": 0.05,
+        "z": 0.05,
+        "nx": 0,
+        "ny": 0,
+        "nz": 1,
+        "text": "Кора больших полушарий (Cortex cerebri)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Виллизиев круг и сосудистая сеть (Circulus arteriosus)"
+      },
+      {
+        "x": -0.03,
+        "y": -0.06,
+        "z": -0.02,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Базилярная артерия и ствол (Arteria basilaris)"
+      },
+      {
+        "x": 0,
+        "y": 0.08,
+        "z": -0.01,
+        "nx": 0,
+        "ny": 1,
+        "nz": 0,
+        "text": "Верхний сагиттальный синус (Sinus sagittalis superior)"
+      },
+      {
+        "x": 0,
+        "y": -0.05,
+        "z": -0.05,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Мозжечок и проводящие пути (Cerebellum)"
+      }
+    ],
     "videoUrl": null,
     "createdAt": "2026-08-18T12:10:56.785Z",
     "updatedAt": "2026-08-18T12:10:56.785Z"
@@ -12191,8 +14859,54 @@
     ],
     "imageUrl": "https://wmapp.life-style.uz/uploads/configurator/child/3230bb73adfa.webp",
     "labels": [],
-    "modelUrl": null,
-    "labels3d": [],
+    "modelUrl": "/uploads/organ-brain.glb",
+    "labels3d": [
+      {
+        "x": 0,
+        "y": 0.05,
+        "z": 0.05,
+        "nx": 0,
+        "ny": 0,
+        "nz": 1,
+        "text": "Кора больших полушарий (Cortex cerebri)"
+      },
+      {
+        "x": 0,
+        "y": -0.04,
+        "z": 0.01,
+        "nx": 0,
+        "ny": -1,
+        "nz": 0,
+        "text": "Виллизиев круг и сосудистая сеть (Circulus arteriosus)"
+      },
+      {
+        "x": -0.03,
+        "y": -0.06,
+        "z": -0.02,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Базилярная артерия и ствол (Arteria basilaris)"
+      },
+      {
+        "x": 0,
+        "y": 0.08,
+        "z": -0.01,
+        "nx": 0,
+        "ny": 1,
+        "nz": 0,
+        "text": "Верхний сагиттальный синус (Sinus sagittalis superior)"
+      },
+      {
+        "x": 0,
+        "y": -0.05,
+        "z": -0.05,
+        "nx": 0,
+        "ny": -1,
+        "nz": -1,
+        "text": "Мозжечок и проводящие пути (Cerebellum)"
+      }
+    ],
     "videoUrl": null,
     "createdAt": "2026-08-18T12:10:56.785Z",
     "updatedAt": "2026-08-18T12:10:56.785Z"
