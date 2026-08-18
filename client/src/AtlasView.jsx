@@ -284,7 +284,14 @@ export default function AtlasView({ lang = 'ru' }) {
               </button>
             </div>
           ) : (
-            <span className="hint-text">💡 {t.scannerHint}</span>
+            <span className="hint-text">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ marginRight: '6px', verticalAlign: 'middle' }}>
+                <circle cx="12" cy="12" r="10" />
+                <line x1="12" y1="16" x2="12" y2="12" />
+                <line x1="12" y1="8" x2="12.01" y2="8" />
+              </svg>
+              {t.scannerHint}
+            </span>
           )}
         </div>
       </div>
@@ -298,7 +305,15 @@ export default function AtlasView({ lang = 'ru' }) {
           <div className="pane-card bodymap-card">
             <div className="bodymap-header">
               <div className="bodymap-title">
-                <h2>{t.bodyMapTitle}</h2>
+                <h2>
+                  <svg className="bodymap-title-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2">
+                    <circle cx="12" cy="5" r="3" />
+                    <path d="M6 22V12a3 3 0 0 1 3-3h6a3 3 0 0 1 3 3v10" />
+                    <path d="M9 14v8" />
+                    <path d="M15 14v8" />
+                  </svg>
+                  {t.bodyMapTitle}
+                </h2>
                 <span className="bodymap-subtitle">{t.bodyMapSubtitle}</span>
               </div>
               {bodyMap?.imageUrl && bodyMap?.modelUrl && (
@@ -408,10 +423,6 @@ export default function AtlasView({ lang = 'ru' }) {
                         </div>
                       ))
                     )}
-                  </div>
-
-                  <div className="bodymap-scanner-hint">
-                    <span>💡 {t.scannerHint}</span>
                   </div>
                 </div>
               )

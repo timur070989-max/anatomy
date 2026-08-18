@@ -371,6 +371,14 @@ body {
   font-size: 1.1rem;
   font-weight: 700;
   color: var(--wm-text-white);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.bodymap-title-icon {
+  color: var(--wm-cyan);
+  filter: drop-shadow(0 0 6px rgba(0, 229, 255, 0.5));
 }
 
 .bodymap-subtitle {
