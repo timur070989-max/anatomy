@@ -459,7 +459,14 @@ export default function Model3DViewer({
         )}
 
         <div className="viewport-hint">
-          <span>💡 Нажмите на анатомическую зону для приближения структуры • Вращение: ЛКМ</span>
+          <span>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ marginRight: '5px', verticalAlign: 'middle' }}>
+              <circle cx="12" cy="12" r="10" />
+              <line x1="12" y1="16" x2="12" y2="12" />
+              <line x1="12" y1="8" x2="12.01" y2="8" />
+            </svg>
+            Нажмите на анатомическую зону для выбора органа • Вращение: ЛКМ • Масштаб: Колесо мыши
+          </span>
         </div>
       </div>
 
