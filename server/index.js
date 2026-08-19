@@ -57,7 +57,10 @@ app.use(cors());
 app.use(express.json());
 app.use('/uploads', express.static(UPLOADS_DIR));
 
-app.get('/', (req, res) => res.json({ ok: true, service: 'anatomy-server' }));
+const CLIENT_DIST = path.join(__dirname, '..', 'client', 'dist');
+if (fs.existsSync(CLIENT_DIST)) {
+  app.use(express.static(CLIENT_DIST));
+}
 
 app.post('/api/auth/login', (req, res) => {
   const { email, password } = req.body || {};
@@ -261,11 +264,20 @@ app.put('/api/bodymaps/:profile', requireAuth, uploadFields, (req, res) => {
   res.json(saved);
 });
 
+if (fs.existsSync(CLIENT_DIST)) {
+  app.get('*', (req, res, next) => {
+    if (req.path.startsWith('/api') || req.path.startsWith('/uploads')) {
+      return next();
+    }
+    res.sendFile(path.join(CLIENT_DIST, 'index.html'));
+  });
+}
+
 app.use((err, req, res, next) => {
   res.status(400).json({ error: err.message || 'Unexpected error' });
 });
 
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 4001;
 app.listen(PORT, () => {
   console.log(`[anatomy-server] listening on port ${PORT}`);
 });
