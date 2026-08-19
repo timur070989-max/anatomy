@@ -182,7 +182,7 @@ export default function AtlasView({ lang = 'ru' }) {
       .getBodyMap(apiProfile)
       .then((map) => {
         setBodyMap(map);
-        setBodyMapView(map?.modelUrl ? '3d' : '2d');
+        setBodyMapView('2d');
       })
       .catch(() => setBodyMap(null));
   }, [bodyProfile]);
