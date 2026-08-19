@@ -3314,7 +3314,7 @@
         "text": "Нижний зубной ряд и дёсны (Gingiva)"
       }
     ],
-    "modelUrl": "/uploads/organ-teeth-mouth.glb",
+    "modelUrl": "/uploads/organ-mouth.glb",
     "labels3d": [
       {
         "x": 0,
@@ -3390,7 +3390,7 @@
         "text": "Нижний зубной ряд и дёсны (Gingiva)"
       }
     ],
-    "modelUrl": "/uploads/organ-teeth-mouth.glb",
+    "modelUrl": "/uploads/organ-mouth.glb",
     "labels3d": [
       {
         "x": 0,
@@ -3477,7 +3477,7 @@
         "text": "Нижний зубной ряд и дёсны (Gingiva)"
       }
     ],
-    "modelUrl": "/uploads/organ-pharynx-larynx.glb",
+    "modelUrl": "/uploads/organ-larynx.glb",
     "labels3d": [
       {
         "x": 0,
@@ -3564,7 +3564,7 @@
         "text": "Нижний зубной ряд и дёсны (Gingiva)"
       }
     ],
-    "modelUrl": "/uploads/organ-pharynx-larynx.glb",
+    "modelUrl": "/uploads/organ-larynx.glb",
     "labels3d": [
       {
         "x": 0,
@@ -3651,7 +3651,7 @@
         "text": "Нижний зубной ряд и дёсны (Gingiva)"
       }
     ],
-    "modelUrl": "/uploads/organ-pharynx-larynx.glb",
+    "modelUrl": "/uploads/organ-larynx.glb",
     "labels3d": [
       {
         "x": 0,
@@ -4028,7 +4028,7 @@
         "text": "Диафрагма (Diaphragma)"
       }
     ],
-    "modelUrl": "/uploads/organ-trachea-bronchi.glb",
+    "modelUrl": "/uploads/organ-lungs.glb",
     "labels3d": [
       {
         "x": 0,
@@ -4140,7 +4140,7 @@
         "text": "Диафрагма (Diaphragma)"
       }
     ],
-    "modelUrl": "/uploads/organ-trachea-bronchi.glb",
+    "modelUrl": "/uploads/organ-lungs.glb",
     "labels3d": [
       {
         "x": 0,
@@ -4252,7 +4252,7 @@
         "text": "Диафрагма (Diaphragma)"
       }
     ],
-    "modelUrl": "/uploads/organ-trachea-bronchi.glb",
+    "modelUrl": "/uploads/organ-lungs.glb",
     "labels3d": [
       {
         "x": 0,
@@ -4361,7 +4361,7 @@
         "text": "Диафрагма (Diaphragma)"
       }
     ],
-    "modelUrl": "/uploads/organ-trachea-bronchi.glb",
+    "modelUrl": "/uploads/organ-lungs.glb",
     "labels3d": [
       {
         "x": 0,
@@ -4466,7 +4466,7 @@
         "text": "Диафрагма (Diaphragma)"
       }
     ],
-    "modelUrl": "/uploads/organ-trachea-bronchi.glb",
+    "modelUrl": "/uploads/organ-lungs.glb",
     "labels3d": [
       {
         "x": 0,
@@ -4580,7 +4580,7 @@
         "text": "Диафрагма (Diaphragma)"
       }
     ],
-    "modelUrl": "/uploads/organ-trachea-bronchi.glb",
+    "modelUrl": "/uploads/organ-lungs.glb",
     "labels3d": [
       {
         "x": 0,
@@ -4693,7 +4693,7 @@
         "text": "Диафрагма (Diaphragma)"
       }
     ],
-    "modelUrl": "/uploads/organ-trachea-bronchi.glb",
+    "modelUrl": "/uploads/organ-lungs.glb",
     "labels3d": [
       {
         "x": 0,
@@ -4807,7 +4807,7 @@
         "text": "Диафрагма (Diaphragma)"
       }
     ],
-    "modelUrl": "/uploads/organ-trachea-bronchi.glb",
+    "modelUrl": "/uploads/organ-lungs.glb",
     "labels3d": [
       {
         "x": 0,
@@ -4919,7 +4919,7 @@
         "text": "Диафрагма (Diaphragma)"
       }
     ],
-    "modelUrl": "/uploads/organ-trachea-bronchi.glb",
+    "modelUrl": "/uploads/organ-lungs.glb",
     "labels3d": [
       {
         "x": 0,
@@ -5037,7 +5037,7 @@
         "text": "Диафрагма (Diaphragma)"
       }
     ],
-    "modelUrl": "/uploads/organ-trachea-bronchi.glb",
+    "modelUrl": "/uploads/organ-lungs.glb",
     "labels3d": [
       {
         "x": 0,
@@ -5152,7 +5152,7 @@
         "text": "Межжелудочковая перегородка (Septum)"
       }
     ],
-    "modelUrl": "/uploads/organ-nose.glb",
+    "modelUrl": "/uploads/organ-heart.glb",
     "labels3d": [
       {
         "x": 0,
@@ -8575,7 +8575,7 @@
         "text": "Общий жёлчный проток (Ductus Choledochus)"
       }
     ],
-    "modelUrl": "/uploads/organ-gallbladder.glb",
+    "modelUrl": "/uploads/organ-liver.glb",
     "labels3d": [
       {
         "x": 0,
@@ -8665,7 +8665,7 @@
         "text": "Общий жёлчный проток (Ductus Choledochus)"
       }
     ],
-    "modelUrl": "/uploads/organ-gallbladder.glb",
+    "modelUrl": "/uploads/organ-liver.glb",
     "labels3d": [
       {
         "x": 0,
@@ -8757,7 +8757,7 @@
         "text": "Общий жёлчный проток (Ductus Choledochus)"
       }
     ],
-    "modelUrl": "/uploads/organ-gallbladder.glb",
+    "modelUrl": "/uploads/organ-liver.glb",
     "labels3d": [
       {
         "x": 0,
@@ -8845,7 +8845,7 @@
         "text": "Общий жёлчный проток (Ductus Choledochus)"
       }
     ],
-    "modelUrl": "/uploads/organ-gallbladder.glb",
+    "modelUrl": "/uploads/organ-liver.glb",
     "labels3d": [
       {
         "x": 0,
@@ -8933,7 +8933,7 @@
         "text": "Общий жёлчный проток (Ductus Choledochus)"
       }
     ],
-    "modelUrl": "/uploads/organ-gallbladder.glb",
+    "modelUrl": "/uploads/organ-liver.glb",
     "labels3d": [
       {
         "x": 0,
@@ -9021,7 +9021,7 @@
         "text": "Общий жёлчный проток (Ductus Choledochus)"
       }
     ],
-    "modelUrl": "/uploads/organ-gallbladder.glb",
+    "modelUrl": "/uploads/organ-liver.glb",
     "labels3d": [
       {
         "x": 0,
@@ -9111,7 +9111,7 @@
         "text": "Общий жёлчный проток (Ductus Choledochus)"
       }
     ],
-    "modelUrl": "/uploads/organ-gallbladder.glb",
+    "modelUrl": "/uploads/organ-liver.glb",
     "labels3d": [
       {
         "x": 0,
@@ -9198,7 +9198,7 @@
         "text": "Общий жёлчный проток (Ductus Choledochus)"
       }
     ],
-    "modelUrl": "/uploads/organ-gallbladder.glb",
+    "modelUrl": "/uploads/organ-liver.glb",
     "labels3d": [
       {
         "x": 0,
@@ -9284,7 +9284,7 @@
         "text": "Общий жёлчный проток (Ductus Choledochus)"
       }
     ],
-    "modelUrl": "/uploads/organ-gallbladder.glb",
+    "modelUrl": "/uploads/organ-liver.glb",
     "labels3d": [
       {
         "x": 0,
@@ -9370,7 +9370,7 @@
         "text": "Общий жёлчный проток (Ductus Choledochus)"
       }
     ],
-    "modelUrl": "/uploads/organ-gallbladder.glb",
+    "modelUrl": "/uploads/organ-liver.glb",
     "labels3d": [
       {
         "x": 0,
@@ -9457,7 +9457,7 @@
         "text": "Общий жёлчный проток (Ductus Choledochus)"
       }
     ],
-    "modelUrl": "/uploads/organ-gallbladder.glb",
+    "modelUrl": "/uploads/organ-liver.glb",
     "labels3d": [
       {
         "x": 0,
@@ -9544,7 +9544,7 @@
         "text": "Общий жёлчный проток (Ductus Choledochus)"
       }
     ],
-    "modelUrl": "/uploads/organ-gallbladder.glb",
+    "modelUrl": "/uploads/organ-liver.glb",
     "labels3d": [
       {
         "x": 0,
@@ -10562,7 +10562,7 @@
         "text": "Двенадцатиперстная кишка (Duodenum)"
       }
     ],
-    "modelUrl": "/uploads/organ-pancreas.glb",
+    "modelUrl": "/uploads/organ-stomach.glb",
     "labels3d": [
       {
         "x": -0.06,
@@ -10651,7 +10651,7 @@
         "text": "Двенадцатиперстная кишка (Duodenum)"
       }
     ],
-    "modelUrl": "/uploads/organ-pancreas.glb",
+    "modelUrl": "/uploads/organ-stomach.glb",
     "labels3d": [
       {
         "x": -0.06,
@@ -10737,7 +10737,7 @@
         "text": "Мочеточник (Ureter)"
       }
     ],
-    "modelUrl": "/uploads/organ-left-kidney.glb",
+    "modelUrl": "/uploads/organ-kidney.glb",
     "labels3d": [
       {
         "x": 0,
@@ -10830,7 +10830,7 @@
         "text": "Мочеточник (Ureter)"
       }
     ],
-    "modelUrl": "/uploads/organ-nose.glb",
+    "modelUrl": "/uploads/organ-kidney.glb",
     "labels3d": [
       {
         "x": 0,
@@ -10917,7 +10917,7 @@
         "text": "Мочеточник (Ureter)"
       }
     ],
-    "modelUrl": "/uploads/organ-left-kidney.glb",
+    "modelUrl": "/uploads/organ-kidney.glb",
     "labels3d": [
       {
         "x": 0,
@@ -11007,7 +11007,7 @@
         "text": "Мочеточник (Ureter)"
       }
     ],
-    "modelUrl": "/uploads/organ-left-kidney.glb",
+    "modelUrl": "/uploads/organ-kidney.glb",
     "labels3d": [
       {
         "x": 0,
@@ -11097,7 +11097,7 @@
         "text": "Мочеточник (Ureter)"
       }
     ],
-    "modelUrl": "/uploads/organ-left-kidney.glb",
+    "modelUrl": "/uploads/organ-kidney.glb",
     "labels3d": [
       {
         "x": 0,
@@ -11198,7 +11198,7 @@
         "text": "Мочеточник (Ureter)"
       }
     ],
-    "modelUrl": "/uploads/organ-left-kidney.glb",
+    "modelUrl": "/uploads/organ-kidney.glb",
     "labels3d": [
       {
         "x": 0,
@@ -11256,7 +11256,7 @@
     ],
     "imageUrl": "/uploads/schema-skeleton.png",
     "labels": [],
-    "modelUrl": "/uploads/organ-intestines.glb",
+    "modelUrl": "/uploads/organ-intestine.glb",
     "labels3d": [
       {
         "x": 0,
@@ -11301,7 +11301,7 @@
     ],
     "imageUrl": "/uploads/schema-skeleton.png",
     "labels": [],
-    "modelUrl": "/uploads/organ-intestines.glb",
+    "modelUrl": "/uploads/organ-intestine.glb",
     "labels3d": [
       {
         "x": 0,
@@ -11341,7 +11341,7 @@
     ],
     "imageUrl": "/uploads/schema-skeleton.png",
     "labels": [],
-    "modelUrl": "/uploads/organ-intestines.glb",
+    "modelUrl": "/uploads/organ-intestine.glb",
     "labels3d": [
       {
         "x": 0,
@@ -11383,7 +11383,7 @@
     ],
     "imageUrl": "/uploads/schema-skeleton.png",
     "labels": [],
-    "modelUrl": "/uploads/organ-intestines.glb",
+    "modelUrl": "/uploads/organ-intestine.glb",
     "labels3d": [
       {
         "x": 0,
@@ -11422,7 +11422,7 @@
     ],
     "imageUrl": "/uploads/schema-skeleton.png",
     "labels": [],
-    "modelUrl": "/uploads/organ-intestines.glb",
+    "modelUrl": "/uploads/organ-intestine.glb",
     "labels3d": [
       {
         "x": 0,
@@ -11467,7 +11467,7 @@
     ],
     "imageUrl": "/uploads/schema-skeleton.png",
     "labels": [],
-    "modelUrl": "/uploads/organ-intestines.glb",
+    "modelUrl": "/uploads/organ-intestine.glb",
     "labels3d": [
       {
         "x": 0,
@@ -11518,7 +11518,7 @@
     ],
     "imageUrl": "/uploads/schema-skeleton.png",
     "labels": [],
-    "modelUrl": "/uploads/organ-intestines.glb",
+    "modelUrl": "/uploads/organ-intestine.glb",
     "labels3d": [
       {
         "x": 0,
@@ -11562,7 +11562,7 @@
     ],
     "imageUrl": "/uploads/schema-skeleton.png",
     "labels": [],
-    "modelUrl": "/uploads/organ-intestines.glb",
+    "modelUrl": "/uploads/organ-intestine.glb",
     "labels3d": [
       {
         "x": 0,
@@ -17003,7 +17003,7 @@
         "text": "Нижний зубной ряд и дёсны (Gingiva)"
       }
     ],
-    "modelUrl": "/uploads/organ-teeth-mouth.glb",
+    "modelUrl": "/uploads/organ-mouth.glb",
     "labels3d": [
       {
         "x": 0,
@@ -17079,7 +17079,7 @@
         "text": "Нижний зубной ряд и дёсны (Gingiva)"
       }
     ],
-    "modelUrl": "/uploads/organ-teeth-mouth.glb",
+    "modelUrl": "/uploads/organ-mouth.glb",
     "labels3d": [
       {
         "x": 0,
@@ -17166,7 +17166,7 @@
         "text": "Нижний зубной ряд и дёсны (Gingiva)"
       }
     ],
-    "modelUrl": "/uploads/organ-pharynx-larynx.glb",
+    "modelUrl": "/uploads/organ-larynx.glb",
     "labels3d": [
       {
         "x": 0,
@@ -17253,7 +17253,7 @@
         "text": "Нижний зубной ряд и дёсны (Gingiva)"
       }
     ],
-    "modelUrl": "/uploads/organ-pharynx-larynx.glb",
+    "modelUrl": "/uploads/organ-larynx.glb",
     "labels3d": [
       {
         "x": 0,
@@ -17340,7 +17340,7 @@
         "text": "Нижний зубной ряд и дёсны (Gingiva)"
       }
     ],
-    "modelUrl": "/uploads/organ-pharynx-larynx.glb",
+    "modelUrl": "/uploads/organ-larynx.glb",
     "labels3d": [
       {
         "x": 0,
@@ -17716,7 +17716,7 @@
         "text": "Диафрагма (Diaphragma)"
       }
     ],
-    "modelUrl": "/uploads/organ-trachea-bronchi.glb",
+    "modelUrl": "/uploads/organ-lungs.glb",
     "labels3d": [
       {
         "x": 0,
@@ -17825,7 +17825,7 @@
         "text": "Диафрагма (Diaphragma)"
       }
     ],
-    "modelUrl": "/uploads/organ-trachea-bronchi.glb",
+    "modelUrl": "/uploads/organ-lungs.glb",
     "labels3d": [
       {
         "x": 0,
@@ -17934,7 +17934,7 @@
         "text": "Диафрагма (Diaphragma)"
       }
     ],
-    "modelUrl": "/uploads/organ-trachea-bronchi.glb",
+    "modelUrl": "/uploads/organ-lungs.glb",
     "labels3d": [
       {
         "x": 0,
@@ -18042,7 +18042,7 @@
         "text": "Диафрагма (Diaphragma)"
       }
     ],
-    "modelUrl": "/uploads/organ-trachea-bronchi.glb",
+    "modelUrl": "/uploads/organ-lungs.glb",
     "labels3d": [
       {
         "x": 0,
@@ -18147,7 +18147,7 @@
         "text": "Диафрагма (Diaphragma)"
       }
     ],
-    "modelUrl": "/uploads/organ-trachea-bronchi.glb",
+    "modelUrl": "/uploads/organ-lungs.glb",
     "labels3d": [
       {
         "x": 0,
@@ -18260,7 +18260,7 @@
         "text": "Диафрагма (Diaphragma)"
       }
     ],
-    "modelUrl": "/uploads/organ-trachea-bronchi.glb",
+    "modelUrl": "/uploads/organ-lungs.glb",
     "labels3d": [
       {
         "x": 0,
@@ -18372,7 +18372,7 @@
         "text": "Диафрагма (Diaphragma)"
       }
     ],
-    "modelUrl": "/uploads/organ-trachea-bronchi.glb",
+    "modelUrl": "/uploads/organ-lungs.glb",
     "labels3d": [
       {
         "x": 0,
@@ -18485,7 +18485,7 @@
         "text": "Диафрагма (Diaphragma)"
       }
     ],
-    "modelUrl": "/uploads/organ-trachea-bronchi.glb",
+    "modelUrl": "/uploads/organ-lungs.glb",
     "labels3d": [
       {
         "x": 0,
@@ -18597,7 +18597,7 @@
         "text": "Диафрагма (Diaphragma)"
       }
     ],
-    "modelUrl": "/uploads/organ-trachea-bronchi.glb",
+    "modelUrl": "/uploads/organ-lungs.glb",
     "labels3d": [
       {
         "x": 0,
@@ -18714,7 +18714,7 @@
         "text": "Диафрагма (Diaphragma)"
       }
     ],
-    "modelUrl": "/uploads/organ-trachea-bronchi.glb",
+    "modelUrl": "/uploads/organ-lungs.glb",
     "labels3d": [
       {
         "x": 0,
@@ -18886,7 +18886,7 @@
         "text": "Межжелудочковая перегородка (Septum)"
       }
     ],
-    "modelUrl": "/uploads/organ-nose.glb",
+    "modelUrl": "/uploads/organ-heart.glb",
     "labels3d": [
       {
         "x": 0,
@@ -22279,7 +22279,7 @@
         "text": "Общий жёлчный проток (Ductus Choledochus)"
       }
     ],
-    "modelUrl": "/uploads/organ-gallbladder.glb",
+    "modelUrl": "/uploads/organ-liver.glb",
     "labels3d": [
       {
         "x": 0,
@@ -22369,7 +22369,7 @@
         "text": "Общий жёлчный проток (Ductus Choledochus)"
       }
     ],
-    "modelUrl": "/uploads/organ-gallbladder.glb",
+    "modelUrl": "/uploads/organ-liver.glb",
     "labels3d": [
       {
         "x": 0,
@@ -22460,7 +22460,7 @@
         "text": "Общий жёлчный проток (Ductus Choledochus)"
       }
     ],
-    "modelUrl": "/uploads/organ-gallbladder.glb",
+    "modelUrl": "/uploads/organ-liver.glb",
     "labels3d": [
       {
         "x": 0,
@@ -22548,7 +22548,7 @@
         "text": "Общий жёлчный проток (Ductus Choledochus)"
       }
     ],
-    "modelUrl": "/uploads/organ-gallbladder.glb",
+    "modelUrl": "/uploads/organ-liver.glb",
     "labels3d": [
       {
         "x": 0,
@@ -22636,7 +22636,7 @@
         "text": "Общий жёлчный проток (Ductus Choledochus)"
       }
     ],
-    "modelUrl": "/uploads/organ-gallbladder.glb",
+    "modelUrl": "/uploads/organ-liver.glb",
     "labels3d": [
       {
         "x": 0,
@@ -22724,7 +22724,7 @@
         "text": "Общий жёлчный проток (Ductus Choledochus)"
       }
     ],
-    "modelUrl": "/uploads/organ-gallbladder.glb",
+    "modelUrl": "/uploads/organ-liver.glb",
     "labels3d": [
       {
         "x": 0,
@@ -22814,7 +22814,7 @@
         "text": "Общий жёлчный проток (Ductus Choledochus)"
       }
     ],
-    "modelUrl": "/uploads/organ-gallbladder.glb",
+    "modelUrl": "/uploads/organ-liver.glb",
     "labels3d": [
       {
         "x": 0,
@@ -22901,7 +22901,7 @@
         "text": "Общий жёлчный проток (Ductus Choledochus)"
       }
     ],
-    "modelUrl": "/uploads/organ-gallbladder.glb",
+    "modelUrl": "/uploads/organ-liver.glb",
     "labels3d": [
       {
         "x": 0,
@@ -22987,7 +22987,7 @@
         "text": "Общий жёлчный проток (Ductus Choledochus)"
       }
     ],
-    "modelUrl": "/uploads/organ-gallbladder.glb",
+    "modelUrl": "/uploads/organ-liver.glb",
     "labels3d": [
       {
         "x": 0,
@@ -23073,7 +23073,7 @@
         "text": "Общий жёлчный проток (Ductus Choledochus)"
       }
     ],
-    "modelUrl": "/uploads/organ-gallbladder.glb",
+    "modelUrl": "/uploads/organ-liver.glb",
     "labels3d": [
       {
         "x": 0,
@@ -23160,7 +23160,7 @@
         "text": "Общий жёлчный проток (Ductus Choledochus)"
       }
     ],
-    "modelUrl": "/uploads/organ-gallbladder.glb",
+    "modelUrl": "/uploads/organ-liver.glb",
     "labels3d": [
       {
         "x": 0,
@@ -23247,7 +23247,7 @@
         "text": "Общий жёлчный проток (Ductus Choledochus)"
       }
     ],
-    "modelUrl": "/uploads/organ-gallbladder.glb",
+    "modelUrl": "/uploads/organ-liver.glb",
     "labels3d": [
       {
         "x": 0,
@@ -24264,7 +24264,7 @@
         "text": "Двенадцатиперстная кишка (Duodenum)"
       }
     ],
-    "modelUrl": "/uploads/organ-pancreas.glb",
+    "modelUrl": "/uploads/organ-stomach.glb",
     "labels3d": [
       {
         "x": -0.06,
@@ -24349,7 +24349,7 @@
         "text": "Двенадцатиперстная кишка (Duodenum)"
       }
     ],
-    "modelUrl": "/uploads/organ-pancreas.glb",
+    "modelUrl": "/uploads/organ-stomach.glb",
     "labels3d": [
       {
         "x": -0.06,
@@ -24435,7 +24435,7 @@
         "text": "Мочеточник (Ureter)"
       }
     ],
-    "modelUrl": "/uploads/organ-left-kidney.glb",
+    "modelUrl": "/uploads/organ-kidney.glb",
     "labels3d": [
       {
         "x": 0,
@@ -24528,7 +24528,7 @@
         "text": "Мочеточник (Ureter)"
       }
     ],
-    "modelUrl": "/uploads/organ-nose.glb",
+    "modelUrl": "/uploads/organ-kidney.glb",
     "labels3d": [
       {
         "x": 0,
@@ -24613,7 +24613,7 @@
         "text": "Мочеточник (Ureter)"
       }
     ],
-    "modelUrl": "/uploads/organ-left-kidney.glb",
+    "modelUrl": "/uploads/organ-kidney.glb",
     "labels3d": [
       {
         "x": 0,
@@ -24705,7 +24705,7 @@
         "text": "Мочеточник (Ureter)"
       }
     ],
-    "modelUrl": "/uploads/organ-left-kidney.glb",
+    "modelUrl": "/uploads/organ-kidney.glb",
     "labels3d": [
       {
         "x": 0,
@@ -24796,7 +24796,7 @@
         "text": "Мочеточник (Ureter)"
       }
     ],
-    "modelUrl": "/uploads/organ-left-kidney.glb",
+    "modelUrl": "/uploads/organ-kidney.glb",
     "labels3d": [
       {
         "x": 0,
@@ -24893,7 +24893,7 @@
         "text": "Мочеточник (Ureter)"
       }
     ],
-    "modelUrl": "/uploads/organ-left-kidney.glb",
+    "modelUrl": "/uploads/organ-kidney.glb",
     "labels3d": [
       {
         "x": 0,
@@ -24951,7 +24951,7 @@
     ],
     "imageUrl": "/uploads/schema-skeleton.png",
     "labels": [],
-    "modelUrl": "/uploads/organ-intestines.glb",
+    "modelUrl": "/uploads/organ-intestine.glb",
     "labels3d": [
       {
         "x": 0,
@@ -24996,7 +24996,7 @@
     ],
     "imageUrl": "/uploads/schema-skeleton.png",
     "labels": [],
-    "modelUrl": "/uploads/organ-intestines.glb",
+    "modelUrl": "/uploads/organ-intestine.glb",
     "labels3d": [
       {
         "x": 0,
@@ -25036,7 +25036,7 @@
     ],
     "imageUrl": "/uploads/schema-skeleton.png",
     "labels": [],
-    "modelUrl": "/uploads/organ-intestines.glb",
+    "modelUrl": "/uploads/organ-intestine.glb",
     "labels3d": [
       {
         "x": 0,
@@ -25075,7 +25075,7 @@
     ],
     "imageUrl": "/uploads/schema-skeleton.png",
     "labels": [],
-    "modelUrl": "/uploads/organ-intestines.glb",
+    "modelUrl": "/uploads/organ-intestine.glb",
     "labels3d": [
       {
         "x": 0,
@@ -25117,7 +25117,7 @@
     ],
     "imageUrl": "/uploads/schema-skeleton.png",
     "labels": [],
-    "modelUrl": "/uploads/organ-intestines.glb",
+    "modelUrl": "/uploads/organ-intestine.glb",
     "labels3d": [
       {
         "x": 0,
@@ -25162,7 +25162,7 @@
     ],
     "imageUrl": "/uploads/schema-skeleton.png",
     "labels": [],
-    "modelUrl": "/uploads/organ-intestines.glb",
+    "modelUrl": "/uploads/organ-intestine.glb",
     "labels3d": [
       {
         "x": 0,
@@ -25213,7 +25213,7 @@
     ],
     "imageUrl": "/uploads/schema-skeleton.png",
     "labels": [],
-    "modelUrl": "/uploads/organ-intestines.glb",
+    "modelUrl": "/uploads/organ-intestine.glb",
     "labels3d": [
       {
         "x": 0,
@@ -25257,7 +25257,7 @@
     ],
     "imageUrl": "/uploads/schema-skeleton.png",
     "labels": [],
-    "modelUrl": "/uploads/organ-intestines.glb",
+    "modelUrl": "/uploads/organ-intestine.glb",
     "labels3d": [
       {
         "x": 0,
@@ -25538,7 +25538,7 @@
         "text": "Влагалище (Vagina)"
       }
     ],
-    "modelUrl": "/uploads/organ-female-reproductive.glb",
+    "modelUrl": "/uploads/organ-uterus.glb",
     "labels3d": [
       {
         "x": 0,
@@ -25643,7 +25643,7 @@
         "text": "Влагалище (Vagina)"
       }
     ],
-    "modelUrl": "/uploads/organ-female-reproductive.glb",
+    "modelUrl": "/uploads/organ-uterus.glb",
     "labels3d": [
       {
         "x": 0,
@@ -25748,7 +25748,7 @@
         "text": "Влагалище (Vagina)"
       }
     ],
-    "modelUrl": "/uploads/organ-female-reproductive.glb",
+    "modelUrl": "/uploads/organ-uterus.glb",
     "labels3d": [
       {
         "x": 0,
@@ -25854,7 +25854,7 @@
         "text": "Влагалище (Vagina)"
       }
     ],
-    "modelUrl": "/uploads/organ-female-reproductive.glb",
+    "modelUrl": "/uploads/organ-uterus.glb",
     "labels3d": [
       {
         "x": 0,
@@ -25956,7 +25956,7 @@
         "text": "Влагалище (Vagina)"
       }
     ],
-    "modelUrl": "/uploads/organ-female-reproductive.glb",
+    "modelUrl": "/uploads/organ-uterus.glb",
     "labels3d": [
       {
         "x": 0,
@@ -26063,7 +26063,7 @@
         "text": "Влагалище (Vagina)"
       }
     ],
-    "modelUrl": "/uploads/organ-female-reproductive.glb",
+    "modelUrl": "/uploads/organ-uterus.glb",
     "labels3d": [
       {
         "x": 0,
@@ -26164,7 +26164,7 @@
         "text": "Влагалище (Vagina)"
       }
     ],
-    "modelUrl": "/uploads/organ-female-reproductive.glb",
+    "modelUrl": "/uploads/organ-uterus.glb",
     "labels3d": [
       {
         "x": 0,
@@ -26275,7 +26275,7 @@
         "text": "Влагалище (Vagina)"
       }
     ],
-    "modelUrl": "/uploads/organ-female-reproductive.glb",
+    "modelUrl": "/uploads/organ-uterus.glb",
     "labels3d": [
       {
         "x": 0,
@@ -26386,7 +26386,7 @@
         "text": "Влагалище (Vagina)"
       }
     ],
-    "modelUrl": "/uploads/organ-female-reproductive.glb",
+    "modelUrl": "/uploads/organ-uterus.glb",
     "labels3d": [
       {
         "x": 0,
@@ -26495,7 +26495,7 @@
         "text": "Влагалище (Vagina)"
       }
     ],
-    "modelUrl": "/uploads/organ-female-reproductive.glb",
+    "modelUrl": "/uploads/organ-uterus.glb",
     "labels3d": [
       {
         "x": 0,
@@ -26612,7 +26612,7 @@
         "text": "Влагалище (Vagina)"
       }
     ],
-    "modelUrl": "/uploads/organ-female-reproductive.glb",
+    "modelUrl": "/uploads/organ-uterus.glb",
     "labels3d": [
       {
         "x": 0,
@@ -26709,7 +26709,7 @@
         "text": "Влагалище (Vagina)"
       }
     ],
-    "modelUrl": "/uploads/organ-female-reproductive.glb",
+    "modelUrl": "/uploads/organ-uterus.glb",
     "labels3d": [
       {
         "x": 0,
@@ -26823,7 +26823,7 @@
         "text": "Влагалище (Vagina)"
       }
     ],
-    "modelUrl": "/uploads/organ-female-reproductive.glb",
+    "modelUrl": "/uploads/organ-uterus.glb",
     "labels3d": [
       {
         "x": 0,
@@ -26918,7 +26918,7 @@
         "text": "Влагалище (Vagina)"
       }
     ],
-    "modelUrl": "/uploads/organ-female-reproductive.glb",
+    "modelUrl": "/uploads/organ-uterus.glb",
     "labels3d": [
       {
         "x": 0,
@@ -29632,7 +29632,7 @@
         "text": "Нижний зубной ряд и дёсны (Gingiva)"
       }
     ],
-    "modelUrl": "/uploads/organ-teeth-mouth.glb",
+    "modelUrl": "/uploads/organ-mouth.glb",
     "labels3d": [
       {
         "x": 0,
@@ -29707,7 +29707,7 @@
         "text": "Нижний зубной ряд и дёсны (Gingiva)"
       }
     ],
-    "modelUrl": "/uploads/organ-teeth-mouth.glb",
+    "modelUrl": "/uploads/organ-mouth.glb",
     "labels3d": [
       {
         "x": 0,
@@ -29789,7 +29789,7 @@
         "text": "Нижний зубной ряд и дёсны (Gingiva)"
       }
     ],
-    "modelUrl": "/uploads/organ-teeth-mouth.glb",
+    "modelUrl": "/uploads/organ-mouth.glb",
     "labels3d": [
       {
         "x": 0,
@@ -29872,7 +29872,7 @@
         "text": "Нижний зубной ряд и дёсны (Gingiva)"
       }
     ],
-    "modelUrl": "/uploads/organ-pharynx-larynx.glb",
+    "modelUrl": "/uploads/organ-larynx.glb",
     "labels3d": [
       {
         "x": 0,
@@ -29958,7 +29958,7 @@
         "text": "Нижний зубной ряд и дёсны (Gingiva)"
       }
     ],
-    "modelUrl": "/uploads/organ-pharynx-larynx.glb",
+    "modelUrl": "/uploads/organ-larynx.glb",
     "labels3d": [
       {
         "x": 0,
@@ -30042,7 +30042,7 @@
         "text": "Нижний зубной ряд и дёсны (Gingiva)"
       }
     ],
-    "modelUrl": "/uploads/organ-pharynx-larynx.glb",
+    "modelUrl": "/uploads/organ-larynx.glb",
     "labels3d": [
       {
         "x": 0,
@@ -30408,7 +30408,7 @@
         "text": "Диафрагма (Diaphragma)"
       }
     ],
-    "modelUrl": "/uploads/organ-trachea-bronchi.glb",
+    "modelUrl": "/uploads/organ-lungs.glb",
     "labels3d": [
       {
         "x": 0,
@@ -30515,7 +30515,7 @@
         "text": "Диафрагма (Diaphragma)"
       }
     ],
-    "modelUrl": "/uploads/organ-trachea-bronchi.glb",
+    "modelUrl": "/uploads/organ-lungs.glb",
     "labels3d": [
       {
         "x": 0,
@@ -30622,7 +30622,7 @@
         "text": "Диафрагма (Diaphragma)"
       }
     ],
-    "modelUrl": "/uploads/organ-trachea-bronchi.glb",
+    "modelUrl": "/uploads/organ-lungs.glb",
     "labels3d": [
       {
         "x": 0,
@@ -30728,7 +30728,7 @@
         "text": "Диафрагма (Diaphragma)"
       }
     ],
-    "modelUrl": "/uploads/organ-trachea-bronchi.glb",
+    "modelUrl": "/uploads/organ-lungs.glb",
     "labels3d": [
       {
         "x": 0,
@@ -30831,7 +30831,7 @@
         "text": "Диафрагма (Diaphragma)"
       }
     ],
-    "modelUrl": "/uploads/organ-trachea-bronchi.glb",
+    "modelUrl": "/uploads/organ-lungs.glb",
     "labels3d": [
       {
         "x": 0,
@@ -30940,7 +30940,7 @@
         "text": "Диафрагма (Diaphragma)"
       }
     ],
-    "modelUrl": "/uploads/organ-trachea-bronchi.glb",
+    "modelUrl": "/uploads/organ-lungs.glb",
     "labels3d": [
       {
         "x": 0,
@@ -31045,7 +31045,7 @@
         "text": "Диафрагма (Diaphragma)"
       }
     ],
-    "modelUrl": "/uploads/organ-trachea-bronchi.glb",
+    "modelUrl": "/uploads/organ-lungs.glb",
     "labels3d": [
       {
         "x": 0,
@@ -31154,7 +31154,7 @@
         "text": "Диафрагма (Diaphragma)"
       }
     ],
-    "modelUrl": "/uploads/organ-trachea-bronchi.glb",
+    "modelUrl": "/uploads/organ-lungs.glb",
     "labels3d": [
       {
         "x": 0,
@@ -31264,7 +31264,7 @@
         "text": "Диафрагма (Diaphragma)"
       }
     ],
-    "modelUrl": "/uploads/organ-trachea-bronchi.glb",
+    "modelUrl": "/uploads/organ-lungs.glb",
     "labels3d": [
       {
         "x": 0,
@@ -31375,7 +31375,7 @@
         "text": "Диафрагма (Diaphragma)"
       }
     ],
-    "modelUrl": "/uploads/organ-trachea-bronchi.glb",
+    "modelUrl": "/uploads/organ-lungs.glb",
     "labels3d": [
       {
         "x": 0,
@@ -31481,7 +31481,7 @@
         "text": "Диафрагма (Diaphragma)"
       }
     ],
-    "modelUrl": "/uploads/organ-trachea-bronchi.glb",
+    "modelUrl": "/uploads/organ-lungs.glb",
     "labels3d": [
       {
         "x": 0,
@@ -31589,7 +31589,7 @@
         "text": "Диафрагма (Diaphragma)"
       }
     ],
-    "modelUrl": "/uploads/organ-trachea-bronchi.glb",
+    "modelUrl": "/uploads/organ-lungs.glb",
     "labels3d": [
       {
         "x": 0,
@@ -31701,7 +31701,7 @@
         "text": "Диафрагма (Diaphragma)"
       }
     ],
-    "modelUrl": "/uploads/organ-trachea-bronchi.glb",
+    "modelUrl": "/uploads/organ-lungs.glb",
     "labels3d": [
       {
         "x": 0,
@@ -34439,7 +34439,7 @@
         "text": "Общий жёлчный проток (Ductus Choledochus)"
       }
     ],
-    "modelUrl": "/uploads/organ-gallbladder.glb",
+    "modelUrl": "/uploads/organ-liver.glb",
     "labels3d": [
       {
         "x": 0,
@@ -34531,7 +34531,7 @@
         "text": "Общий жёлчный проток (Ductus Choledochus)"
       }
     ],
-    "modelUrl": "/uploads/organ-gallbladder.glb",
+    "modelUrl": "/uploads/organ-liver.glb",
     "labels3d": [
       {
         "x": 0,
@@ -34618,7 +34618,7 @@
         "text": "Общий жёлчный проток (Ductus Choledochus)"
       }
     ],
-    "modelUrl": "/uploads/organ-gallbladder.glb",
+    "modelUrl": "/uploads/organ-liver.glb",
     "labels3d": [
       {
         "x": 0,
@@ -34705,7 +34705,7 @@
         "text": "Общий жёлчный проток (Ductus Choledochus)"
       }
     ],
-    "modelUrl": "/uploads/organ-gallbladder.glb",
+    "modelUrl": "/uploads/organ-liver.glb",
     "labels3d": [
       {
         "x": 0,
@@ -34792,7 +34792,7 @@
         "text": "Общий жёлчный проток (Ductus Choledochus)"
       }
     ],
-    "modelUrl": "/uploads/organ-gallbladder.glb",
+    "modelUrl": "/uploads/organ-liver.glb",
     "labels3d": [
       {
         "x": 0,
@@ -34881,7 +34881,7 @@
         "text": "Общий жёлчный проток (Ductus Choledochus)"
       }
     ],
-    "modelUrl": "/uploads/organ-gallbladder.glb",
+    "modelUrl": "/uploads/organ-liver.glb",
     "labels3d": [
       {
         "x": 0,
@@ -34971,7 +34971,7 @@
         "text": "Общий жёлчный проток (Ductus Choledochus)"
       }
     ],
-    "modelUrl": "/uploads/organ-gallbladder.glb",
+    "modelUrl": "/uploads/organ-liver.glb",
     "labels3d": [
       {
         "x": 0,
@@ -35772,7 +35772,7 @@
         "text": "Двенадцатиперстная кишка (Duodenum)"
       }
     ],
-    "modelUrl": "/uploads/organ-pancreas.glb",
+    "modelUrl": "/uploads/organ-stomach.glb",
     "labels3d": [
       {
         "x": -0.06,
@@ -35853,7 +35853,7 @@
         "text": "Мочеточник (Ureter)"
       }
     ],
-    "modelUrl": "/uploads/organ-left-kidney.glb",
+    "modelUrl": "/uploads/organ-kidney.glb",
     "labels3d": [
       {
         "x": 0,
@@ -35946,7 +35946,7 @@
         "text": "Мочеточник (Ureter)"
       }
     ],
-    "modelUrl": "/uploads/organ-left-kidney.glb",
+    "modelUrl": "/uploads/organ-kidney.glb",
     "labels3d": [
       {
         "x": 0,
@@ -36044,7 +36044,7 @@
         "text": "Мочеточник (Ureter)"
       }
     ],
-    "modelUrl": "/uploads/organ-left-kidney.glb",
+    "modelUrl": "/uploads/organ-kidney.glb",
     "labels3d": [
       {
         "x": 0,
@@ -36108,7 +36108,7 @@
     ],
     "imageUrl": "/uploads/schema-skeleton.png",
     "labels": [],
-    "modelUrl": "/uploads/organ-intestines.glb",
+    "modelUrl": "/uploads/organ-intestine.glb",
     "labels3d": [
       {
         "x": 0,
@@ -36157,7 +36157,7 @@
     ],
     "imageUrl": "/uploads/schema-skeleton.png",
     "labels": [],
-    "modelUrl": "/uploads/organ-intestines.glb",
+    "modelUrl": "/uploads/organ-intestine.glb",
     "labels3d": [
       {
         "x": 0,
@@ -36201,7 +36201,7 @@
     ],
     "imageUrl": "/uploads/schema-skeleton.png",
     "labels": [],
-    "modelUrl": "/uploads/organ-intestines.glb",
+    "modelUrl": "/uploads/organ-intestine.glb",
     "labels3d": [
       {
         "x": 0,
@@ -36245,7 +36245,7 @@
     ],
     "imageUrl": "/uploads/schema-skeleton.png",
     "labels": [],
-    "modelUrl": "/uploads/organ-intestines.glb",
+    "modelUrl": "/uploads/organ-intestine.glb",
     "labels3d": [
       {
         "x": 0,
@@ -36293,7 +36293,7 @@
     ],
     "imageUrl": "/uploads/schema-skeleton.png",
     "labels": [],
-    "modelUrl": "/uploads/organ-intestines.glb",
+    "modelUrl": "/uploads/organ-intestine.glb",
     "labels3d": [
       {
         "x": 0,
@@ -36341,7 +36341,7 @@
     ],
     "imageUrl": "/uploads/schema-skeleton.png",
     "labels": [],
-    "modelUrl": "/uploads/organ-intestines.glb",
+    "modelUrl": "/uploads/organ-intestine.glb",
     "labels3d": [
       {
         "x": 0,
@@ -36388,7 +36388,7 @@
     ],
     "imageUrl": "/uploads/schema-skeleton.png",
     "labels": [],
-    "modelUrl": "/uploads/organ-intestines.glb",
+    "modelUrl": "/uploads/organ-intestine.glb",
     "labels3d": [
       {
         "x": 0,
@@ -36436,7 +36436,7 @@
     ],
     "imageUrl": "/uploads/schema-skeleton.png",
     "labels": [],
-    "modelUrl": "/uploads/organ-intestines.glb",
+    "modelUrl": "/uploads/organ-intestine.glb",
     "labels3d": [
       {
         "x": 0,
