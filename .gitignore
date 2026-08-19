@@ -1,6 +1,3 @@
 node_modules/
 dist/
-server/uploads/*
-!server/uploads/.gitkeep
-server/data/users.json
 .env

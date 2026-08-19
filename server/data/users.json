@@ -1,0 +1,9 @@
+[
+  {
+    "id": "admin_root",
+    "email": "admin@worldmedicine.com",
+    "passwordHash": "3de65eaa105c875f36b8b4e5463ef4ec:2d02422837e160b23a0bb239332a026efaa973cf5d93b3f1c65cc6477465ca23f49241992b99405c8329331a4495750ae0aca2b36b83fb33028bb85498cb06c3",
+    "role": "admin",
+    "createdAt": "2026-08-18T22:13:26.455Z"
+  }
+]
