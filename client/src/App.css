@@ -1193,35 +1193,43 @@ body {
 
 /* 3D Hotspot Pins directly attached to 3D Model */
 .hotspot-3d {
-  background: var(--wm-blue-primary);
-  border: 2px solid #00E5FF;
+  background: rgba(0, 82, 156, 0.85);
+  border: 1.5px solid #00E5FF;
   border-radius: 50%;
-  width: 26px;
-  height: 26px;
+  width: 14px;
+  height: 14px;
+  min-width: 14px;
+  min-height: 14px;
   color: #ffffff;
   font-weight: 700;
-  font-size: 0.74rem;
-  box-shadow: 0 0 14px rgba(0, 229, 255, 0.65);
+  font-size: 0.54rem;
+  line-height: 1;
+  box-shadow: 0 0 6px rgba(0, 229, 255, 0.6);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.18s cubic-bezier(0.4, 0, 0.2, 1);
   outline: none;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .hotspot-3d:hover,
 .hotspot-3d.active {
   background: #00E5FF;
   color: #000000;
-  transform: scale(1.35);
-  box-shadow: 0 0 24px #00E5FF;
+  transform: scale(1.6);
+  box-shadow: 0 0 14px #00E5FF;
   z-index: 50;
 }
 
 .hotspot-badge {
   line-height: 1;
   display: block;
+  font-size: 0.54rem;
+  font-weight: 800;
+  transform: scale(0.9);
 }
 
 .hotspot-tooltip {
