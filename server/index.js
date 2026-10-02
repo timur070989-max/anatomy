@@ -8,9 +8,16 @@ const store = require('./store');
 const userStore = require('./userStore');
 const { issueToken, requireAuth, requireRole } = require('./auth');
 
+function badRequest(message) {
+  const err = new Error(message);
+  err.status = 400;
+  return err;
+}
+
 const UPLOADS_DIR = path.join(__dirname, 'uploads');
 if (!fs.existsSync(UPLOADS_DIR)) fs.mkdirSync(UPLOADS_DIR, { recursive: true });
 
+const IMAGE_EXTENSIONS = new Set(['.png', '.jpg', '.jpeg', '.webp', '.gif']);
 const MODEL_EXTENSIONS = new Set(['.glb', '.gltf']);
 const VIDEO_EXTENSIONS = new Set(['.mp4', '.webm', '.mov']);
 
@@ -18,7 +25,7 @@ const upload = multer({
   storage: multer.diskStorage({
     destination: (req, file, cb) => cb(null, UPLOADS_DIR),
     filename: (req, file, cb) => {
-      const ext = path.extname(file.originalname);
+      const ext = path.extname(file.originalname).toLowerCase();
       cb(null, `${Date.now()}-${Math.random().toString(36).slice(2, 8)}${ext}`);
     },
   }),
@@ -26,22 +33,27 @@ const upload = multer({
   limits: { fileSize: 300 * 1024 * 1024 },
   fileFilter: (req, file, cb) => {
     if (file.fieldname === 'image' || file.fieldname === 'xray') {
-      if (!file.mimetype.startsWith('image/')) return cb(new Error('Only image uploads are allowed for image/xray fields'));
+      // The browser-supplied mimetype alone is not enough: an .html or .svg file
+      // sent as "image/png" would be served from our origin and could run
+      // scripts (stealing the admin token from localStorage).
+      if (!file.mimetype.startsWith('image/') || !IMAGE_EXTENSIONS.has(path.extname(file.originalname).toLowerCase())) {
+        return cb(badRequest('Only .png, .jpg, .jpeg, .webp or .gif files are allowed for image/xray fields'));
+      }
       return cb(null, true);
     }
     if (file.fieldname === 'model') {
       if (!MODEL_EXTENSIONS.has(path.extname(file.originalname).toLowerCase())) {
-        return cb(new Error('Only .glb or .gltf files are allowed for the model field'));
+        return cb(badRequest('Only .glb or .gltf files are allowed for the model field'));
       }
       return cb(null, true);
     }
     if (file.fieldname === 'video') {
       if (!VIDEO_EXTENSIONS.has(path.extname(file.originalname).toLowerCase())) {
-        return cb(new Error('Only .mp4, .webm or .mov files are allowed for the video field'));
+        return cb(badRequest('Only .mp4, .webm or .mov files are allowed for the video field'));
       }
       return cb(null, true);
     }
-    cb(new Error('Unexpected field'));
+    cb(badRequest('Unexpected field'));
   },
 });
 
@@ -52,10 +64,38 @@ const uploadFields = upload.fields([
   { name: 'xray', maxCount: 1 },
 ]);
 
+userStore.bootstrapAdminFromEnv();
+
 const app = express();
+app.disable('x-powered-by');
 app.use(cors());
-app.use(express.json());
-app.use('/uploads', express.static(UPLOADS_DIR));
+app.use(express.json({ limit: '1mb' }));
+app.use(
+  '/uploads',
+  express.static(UPLOADS_DIR, {
+    setHeaders: (res) => {
+      // Never let the browser reinterpret an uploaded file as HTML/script.
+      res.setHeader('X-Content-Type-Options', 'nosniff');
+      res.setHeader('Content-Security-Policy', "default-src 'none'; img-src 'self'; media-src 'self'; sandbox");
+    },
+  })
+);
+
+// Brute-force protection for /api/auth/login: per IP, 10 failed attempts per 15 minutes.
+const LOGIN_WINDOW_MS = 15 * 60 * 1000;
+const LOGIN_MAX_FAILURES = 10;
+const loginFailures = new Map();
+
+function clientIp(req) {
+  return (req.headers['x-forwarded-for'] || '').split(',')[0].trim() || req.socket.remoteAddress || 'unknown';
+}
+
+function recentFailures(ip, now = Date.now()) {
+  const list = (loginFailures.get(ip) || []).filter((t) => now - t < LOGIN_WINDOW_MS);
+  if (list.length) loginFailures.set(ip, list);
+  else loginFailures.delete(ip);
+  return list;
+}
 
 const CLIENT_DIST = path.join(__dirname, '..', 'client', 'dist');
 if (fs.existsSync(CLIENT_DIST)) {
@@ -63,12 +103,20 @@ if (fs.existsSync(CLIENT_DIST)) {
 }
 
 app.post('/api/auth/login', (req, res) => {
+  const ip = clientIp(req);
+  if (recentFailures(ip).length >= LOGIN_MAX_FAILURES) {
+    return res.status(429).json({ error: 'Too many failed login attempts. Try again in 15 minutes.' });
+  }
   const { email, password } = req.body || {};
-  if (!email || !password) return res.status(400).json({ error: 'email and password are required' });
+  if (typeof email !== 'string' || typeof password !== 'string' || !email || !password) {
+    return res.status(400).json({ error: 'email and password are required' });
+  }
   const user = userStore.getUserByEmail(email);
   if (!user || !userStore.verifyPassword(password, user.passwordHash)) {
+    loginFailures.set(ip, [...recentFailures(ip), Date.now()]);
     return res.status(401).json({ error: 'Invalid email or password' });
   }
+  loginFailures.delete(ip);
   const token = issueToken(user);
   res.json({ token, user: { id: user.id, email: user.email, role: user.role } });
 });
@@ -85,6 +133,9 @@ app.post('/api/users', requireAuth, requireRole('admin'), (req, res) => {
   const { email, password, role } = req.body || {};
   if (!email || !password || !role) return res.status(400).json({ error: 'email, password and role are required' });
   if (!['admin', 'editor'].includes(role)) return res.status(400).json({ error: 'role must be admin or editor' });
+  if (typeof password !== 'string' || password.length < 10) {
+    return res.status(400).json({ error: 'password must be at least 10 characters' });
+  }
   try {
     const user = userStore.createUser({ email, password, role });
     res.status(201).json(user);
@@ -274,7 +325,12 @@ if (fs.existsSync(CLIENT_DIST)) {
 }
 
 app.use((err, req, res, next) => {
-  res.status(400).json({ error: err.message || 'Unexpected error' });
+  // Upload validation and body-parser errors carry a 4xx status; anything else
+  // is a server bug and must not leak internals to the client.
+  if (err instanceof multer.MulterError) return res.status(400).json({ error: err.message });
+  if (err.status >= 400 && err.status < 500) return res.status(err.status).json({ error: err.message });
+  console.error('[anatomy-server] unexpected error:', err);
+  res.status(500).json({ error: 'Internal server error' });
 });
 
 const PORT = process.env.PORT || 4001;

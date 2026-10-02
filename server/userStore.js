@@ -12,6 +12,7 @@ function readAll() {
 }
 
 function writeAll(users) {
+  fs.mkdirSync(path.dirname(USERS_FILE), { recursive: true });
   fs.writeFileSync(USERS_FILE, JSON.stringify(users, null, 2), 'utf8');
 }
 
@@ -22,9 +23,11 @@ function hashPassword(password) {
 }
 
 function verifyPassword(password, stored) {
-  const [salt, hash] = stored.split(':');
-  const check = crypto.scryptSync(password, salt, 64).toString('hex');
-  return crypto.timingSafeEqual(Buffer.from(hash, 'hex'), Buffer.from(check, 'hex'));
+  const [salt, hash] = String(stored || '').split(':');
+  if (!salt || !hash) return false;
+  const check = crypto.scryptSync(String(password), salt, 64);
+  const expected = Buffer.from(hash, 'hex');
+  return expected.length === check.length && crypto.timingSafeEqual(expected, check);
 }
 
 function listUsers() {
@@ -70,6 +73,26 @@ function countUsers() {
   return readAll().length;
 }
 
+// users.json is not in git, so a fresh deploy (e.g. Render, which has no shell
+// on the free tier) starts with no accounts. Create the first admin from
+// ADMIN_EMAIL / ADMIN_PASSWORD; does nothing once any user exists.
+function bootstrapAdminFromEnv(env = process.env) {
+  if (countUsers() > 0) return null;
+  const email = (env.ADMIN_EMAIL || '').trim();
+  const password = env.ADMIN_PASSWORD || '';
+  if (!email || !password) {
+    console.warn('[users] No users yet. Set ADMIN_EMAIL and ADMIN_PASSWORD (or run scripts/create-admin.js) to create the first admin.');
+    return null;
+  }
+  if (password.length < 12) {
+    throw new Error('[users] ADMIN_PASSWORD must be at least 12 characters');
+  }
+  fs.mkdirSync(path.dirname(USERS_FILE), { recursive: true });
+  const user = createUser({ email, password, role: 'admin' });
+  console.log(`[users] Created first admin ${user.email} from ADMIN_EMAIL/ADMIN_PASSWORD`);
+  return user;
+}
+
 module.exports = {
   hashPassword,
   verifyPassword,
@@ -79,4 +102,5 @@ module.exports = {
   createUser,
   deleteUser,
   countUsers,
+  bootstrapAdminFromEnv,
 };
