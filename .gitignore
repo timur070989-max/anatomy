@@ -1,3 +1,6 @@
 node_modules/
 dist/
 .env
+
+# Accounts and password hashes — never commit (bootstrap via ADMIN_EMAIL/ADMIN_PASSWORD)
+server/data/users.json
